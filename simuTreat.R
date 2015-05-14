@@ -1,6 +1,6 @@
 # simuTreat.R to simulate treatments
 #    of different feedstocks to generate GHG and cost outputs.
-
+library(rgl)
 setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
@@ -25,8 +25,10 @@ f1 <- Feedstock(type="GTW",
 g1 <- GlobalFactors()
 res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = F)
 dfres <- data.frame(LoVecRep,TKNVecRep,res)
+#plot3d(LoVecRep,TKNVecRep,res)
 tabres <- xtabs(res ~ LoVecRep+TKNVecRep, data=dfres)
-persp(LoVec,TKNVec,tabres,theta=30,phi=30,shade=0.25,col="lightblue",ticktype="detailed")
+persp(LoVec,TKNVec,tabres,theta=30,phi=30,shade=0.25,
+      col="lightblue",ticktype="simple")
 #opens an interactive session
 #persp3d(LoVec,TKNVec,tabres,theta=30,phi=30,ticktype="detailed")
 #print (dfres)
