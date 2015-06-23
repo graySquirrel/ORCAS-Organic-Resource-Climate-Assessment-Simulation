@@ -1,0 +1,148 @@
+---
+title: "decay explore, take 2"
+author: "Fritz Ebner"
+date: "June 23, 2015"
+output: word_document
+---
+
+We have 2 different decaying components and we want to predict the function of consituent K parameters (function of K1 and K2) to match the fitted parameters from the summed curve.  
+
+  A uniform distribution will be sampled "NumRuns"" times between KLOW and KHI, and between BLOW and BHI to create "NumRuns" pairs of exponential curves.  Each exponent will be evaluated between 0 and XMAX to create sample data.  The pairs of exp's will be summed to make a new exp, whose K and B values will be fitted with regression.
+  
+  for each of the "NumRuns" samples, various metrics will be used to combine the K1 and K2 values in order to create a new K value that we want to match to the fitted K value.  Errors for each sample will be calculated, and box plots are shown at the end to assess goodness of fit.
+```{r}
+######### INPUT YOUR VALUES HERE #############
+KLOW <- 0.14
+KHI  <- 0.64
+BLOW <- 165
+BHI  <- 496
+NumRuns <- 1000 # number of runs to sample
+XMAX <- 25 # range of x values to evaluate the exp curve
+##############################################
+KWTGE <- exp((BLOW*log(KLOW)+BHI*log(KHI))/(BLOW+BHI))
+BSUM <- (BLOW + BHI)
+```
+We do the following:
+
+  1) create a function to calculate samples from a function which is sum of 2 exponential functions with given K and B (in eq y = B*(1-e^-kx)) where x is the sample independent var.  getdf() will calculate the curve shape for any input k1,k2,b1,b2 and the fit k and b.  We show it just to show an example. the output data frame has columns x, e1,e2,e3,eres, where x is independent var, e's are exponential outputs: 1 and 2 are input, 3 is sum, and eres is the fitted curve.
+
+
+
+```{r}
+library(permute)
+library(ggplot2)
+library(reshape2)
+library(nlme)
+set.seed(42)
+getdf <- function(k1,k2,b1,b2) {
+    x <- 0:XMAX
+    k3 <- (k1+k2)/2
+    e1 <- b1*(1-exp(-k1*x))
+    e2 <- b2*(1-exp(-k2*x))
+    e3 <- e1 + e2
+    df <- data.frame(x,e3)
+    mod <- nls(e3 ~ b*(1-exp(-k * x)), data = df, 
+               start = list(k = k1+k1, b = b1+b2))
+    eres <- coef(mod)[2]*(1-exp(-coef(mod)[1]*x))
+    print(paste("k1",k1," k2",k2," fitted k",coef(mod)[1]))
+    print(paste("arith mean", (k1+k2)/2, " geom mean",sqrt(k1*k2)))
+    print(paste("weighted geom mean ",exp((b1*log(k1) + b2*log(k2))/(b1+b2))))
+    print(paste("sum of bs ",b1+b2, " fitted B ", coef(mod)[2]))
+    df2 <- data.frame(x,e1,e2,e3,eres)
+}
+ggplot(df <- getdf(0.9361045, 0.4646047, 0.09528066, 0.08728357), 
+       aes(df$x)) +                    
+    geom_line(aes(y=df$e1), colour="red") +  
+    geom_line(aes(y=df$e2), colour="green") +
+    geom_line(aes(y=df$e3), colour="blue") +
+    geom_line(aes(y=df$eres), colour="black")
+```
+
+  2) create a function similar to getdf() called fitdf() which creates a data frame of the following items:
+
+  "Samps","K1","K2","B1","B2","%ofB1","%ofB2","fitK","fitB"
+
+  Samples is the number of samples used to create the exponential curve.  the more samples there are, the closer the last element will get to the B value of the curve.  the fit will differ depending on how long the tail of the exponential is.  if it is very long, the B value will be fit more closely than the K value.
+
+  K1, K2, B1, B2 are the constituent k and b values from the curves that are added together to get the final curve
+
+  %ofB shows how long the exponent tail is...  this is the % difference between the last value in the exp and the actual B value.
+
+  fitK, fitB are the regression results for K and B of the sum of exponent curves
+  
+```{r}
+fitdf <- function(klo, khi, blo, bhi, samps) {
+    set.seed(42)
+    x <- 0:XMAX
+    k1s <- runif(samps, klo,khi)
+    b1s <- runif(samps, blo,bhi)
+    k2s <- runif(samps, klo,khi)
+    b2s <- runif(samps, blo,bhi)
+    arow<-NULL
+    for (i in 1:samps){
+        k1<-k1s[[i]]; k2<-k2s[[i]];b1<-b1s[[i]];b2<-b2s[[i]]
+        e1 <- b1*(1-exp(-k1*x))
+        e2 <- b2*(1-exp(-k2*x))
+        e3 <- e1 + e2
+        tmpdf <- data.frame(x,e3)
+        mod <- nls(e3 ~ b*(1-exp(-k * x)), data = tmpdf, 
+                   start = list(k = KWTGE, b = BSUM))
+        arow <- rbind(arow,matrix(c(XMAX,k1,k2,b1,b2,
+                                    e1[[XMAX]]/b1,e2[[XMAX]]/b2,
+                                    coef(mod)[1],coef(mod)[2]),
+                                  nrow = 1))
+    }
+    arow
+}
+```
+
+   To use the fitdf function, call fitdf as in the following block.  Define the low and high values of K and B, and the number of runs you want to make.  The input parameters are the ones shown at the top of this document where it says "INPUT YOUR VALUES HERE".
+   
+```{r}
+
+df <- data.frame(fitdf(KLOW,KHI,BLOW,BHI,NumRuns))
+colnames(df)<- c("Samps","K1","K2","B1","B2","%ofB1","%ofB2","fitK","fitB")
+print(head(df),digits = 4)
+```
+
+  Now that we have a set of NumRuns K and B values, we can go ahead and look at different ways to combine Ks such that we minimize the error between f(K1,K2) and fitK.  The hypothesis is that there is a function f(K1,K2) that approximates fitK over a wide range of K and B values (for summing 2 exponential curves).  
+  
+```{r}
+df$MeanK <- (df$K1+df$K2)/2
+df$WtMeanK<- (df$B1*df$K1 + df$B2*df$K2)/(df$B1 + df$B2)
+df$GeomK <- exp((log(df$K1)+log(df$K2))/2)
+df$WtGeomK<- exp((df$B1*log(df$K1)+df$B2*log(df$K2))/(df$B1+df$B2))
+
+df$meanKerror<-df$MeanK-df$fitK
+df$wtMeanKerror<-df$WtMeanK-df$fitK
+df$geomKerror<-df$GeomK-df$fitK
+df$wtGeomKerror<-df$WtGeomK-df$fitK
+
+meanSD <- sd(df$meanKerror)
+wtMeanSD <- sd(df$wtMeanKerror)
+geomSD <- sd(df$geomKerror)
+wtGeomSD <- sd(df$wtGeomKerror)
+
+```
+
+```{r, echo=FALSE}
+KMEAN <- (KLOW + KHI)/2
+print(paste("Summary of errors from ", NumRuns, " samples of sums of 2 exponentials, relative to mean K value of ", KMEAN, ":"))
+
+
+print(paste("SD of Mean K=", format(meanSD, digits = 3),
+            ", Percent of mean K=", format(100*meanSD/KMEAN, digits = 3),"%"))
+
+print(paste("SD of weighted Mean K=", format(wtMeanSD, digits = 3), 
+            ", Percent of mean K=", format(100*wtMeanSD/KMEAN, digits = 3),"%"))
+
+print(paste("SD of Geom Mean K=", format(geomSD, digits = 3), 
+            ", Percent of mean K=", format(100*geomSD/KMEAN, digits = 3),"%"))
+
+print(paste("SD of weighted Geom Mean K=", format(wtGeomSD, digits = 3), 
+            ", Percent of mean K=", format(100*wtGeomSD/KMEAN, digits = 3),"%"))
+
+bpdf <- df[,c("meanKerror","wtMeanKerror","geomKerror","wtGeomKerror")]
+par(mar=c(7,5,1,1))
+boxplot(bpdf,las=2)
+```
