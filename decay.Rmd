@@ -1,0 +1,119 @@
+---
+title: "decay explore"
+author: "Fritz Ebner"
+date: "June 8, 2015"
+output: word_document
+---
+
+we have 2 different decaying components and we want to look at how they interact.  
+First look at averaging 2 different time constants and see what the interaction looks like.
+we see that simple mean of exponent will yield a plot(blue) that is in between the constituent plots.   try with similar constants, then when one is much smaller than the other.
+
+```{r}
+library(permute)
+library(ggplot2)
+library(reshape2)
+set.seed(42)
+getdf <- function(k1,k2,b1,b2) {
+    x <- 0:100
+    k3 <- (k1+k2)/2
+    e1 <- b1*(1-exp(-k1*x))
+    e2 <- b2*(1-exp(-k2*x))
+    #e3 <- (b1+b2)*(1-exp(-k3*x))
+    e3 <- e1 + e2
+    df <- data.frame(x,e3)
+    mod <- nls(e3 ~ b*(1-exp(-k * x)), data = df, start = list(k = 1, b = 1))
+    #mod <- nls(e3 ~ (b1+b2)*(1-exp(-k * x)), data = df, start = list(k = 1))
+    eres <- coef(mod)[2]*(1-exp(-coef(mod)[1]*x))
+    #eres <- (b1+b2)*(1-exp(-coef(mod)[1]*x))
+    print(paste("k1",k1," k2",k2," kcombo",coef(mod)[1]))
+    print(paste("arith mean", (k1+k2)/2, " geom mean",sqrt(k1*k2)))
+    print(paste("weighted geom mean ",exp((b1*log(k1) + b2*log(k2))/(b1+b2))))
+    df2 <- data.frame(x,e1,e2,e3,eres)
+}
+ggplot(df <- getdf(.025,.1,.25,1), aes(df$x)) +                    
+    geom_line(aes(y=df$e1), colour="red") +  
+    geom_line(aes(y=df$e2), colour="green") +
+    geom_line(aes(y=df$e3), colour="blue") +
+    geom_line(aes(y=df$eres), colour="black")
+```
+
+OK.  lets extend this to a larger sample and see if it generalizes.  
+  Sample k from lo to hi and b from lo to hi, within ranges, then randomize ks and bs,
+  so that the pair is shuffled.  First plot the set of 100 curves.
+```{r}
+savKArith <- NULL
+savKGeom <- NULL
+savKHarm <- NULL
+savKs <- NULL
+savBs <- NULL
+mksamps <- function(blo, bhi, klo, khi, samps) {
+    #samps = 10
+    #bs<-seq(blo,bhi,length.out=samps)
+    #ks<-seq(klo,khi,length.out=samps)
+    # just shuffle the parameter lists independently
+    #ks <- ks[shuffle(samps)]
+    #bs <- bs[shuffle(samps)]
+    ks <- runif(samps, klo,khi)
+    bs <- runif(samps, blo,bhi)
+    savKs <<- ks
+    savBs <<- bs
+    # mean of Ks
+    print(paste("arith mean ks ", savKArith<<-mean(ks)))
+    # geom mean of Ks
+    print(paste("geom mean ks ",savKGeom<<-exp(mean(log(ks)))))
+    # harmonic mean of Ks
+    print(paste("harmonic mean ks ",savKHarm<<-1/mean(1/ks)))
+    # sum of Bs
+    print(paste("sum of bs ",sum(bs)))
+    
+    thenms <- c("x",paste0("k",format(ks,digits=1),"b",format(bs,digits=2)))
+    x <- 0:100
+    # now combine ks and bs into pairs of parameters
+    df <- data.frame(x)
+    for (i in 1:samps){
+        tmp <- bs[[i]]*(1-exp(-ks[[i]]*x))
+        df <- cbind(df,tmp)
+    }
+    colnames(df) <- thenms
+    df
+}
+# plot on same grid, each series colored differently -- 
+# good if the series have same scale
+num=26
+blo=165
+bhi = 496
+klo=0.14
+khi=0.64
+df <- mksamps(blo,bhi,klo,khi,num)
+dfplot <- melt(df ,  id = 'x', variable_name = 'series')
+ggplot(dfplot, aes(x,value)) + geom_line(aes(colour = variable))
+```
+  
+  Now sum the resultant curves to get the sum of exponents.  We know this is technically not an exponential, but perhaps there is a close approximation.
+
+```{r}
+sums <- rowSums(df[2:num+1])
+df <- cbind(df,sums)
+dfplot <- melt(df ,  id = 'x', variable_name = 'series')
+ggplot(dfplot, aes(x,value)) + geom_line(aes(colour = variable))
+```
+
+  ANd now fit with exponential ... see how it looks.  
+  
+```{r}
+mod2 <- nls(sums ~ b*(1-exp(-k * x)), data = df, start = list(k = 1, b = num*bhi))
+eres <- coef(mod2)[2]*(1-exp(-coef(mod2)[1]*df$x))
+df <- cbind(df,eres)
+dfplot <- melt(df ,  id = 'x', variable_name = 'series')
+ggplot(dfplot, aes(x,value)) + geom_line(aes(colour = variable))
+# fitted b and K are
+print(paste("fitK ",coef(mod2)[1], "  fitb ",coef(mod2)[2]))
+# vs original arith and geom and harm
+print(savKArith)
+print(savKGeom)
+print(savKHarm)
+# Now lets calculate the weigthed geom mean of the Ks.  Weights are Bs
+weightedGeom <- exp(sum(savBs*log(savKs))/sum(savBs))
+print(weightedGeom)
+```

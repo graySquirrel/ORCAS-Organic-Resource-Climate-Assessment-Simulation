@@ -1,5 +1,5 @@
 # Anaerobic Digestion function.
-#    included in treatmentClasses.R
+#    included in simuTreat.R
 # Functions
 #   AnaerobicDigestionTreatmentPathway(Feedstock, GlobalFactors, 
 #                           XportToField = 20, debug = F)

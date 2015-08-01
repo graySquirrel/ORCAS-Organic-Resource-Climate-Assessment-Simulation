@@ -1,4 +1,5 @@
 # R script defining classes and functions for waste treatment
+#    sourced by simuTreat.R or other files that need these classes
 #
 # Classes
 #   GlobalFactors: a 'static'ish collection of global variables
