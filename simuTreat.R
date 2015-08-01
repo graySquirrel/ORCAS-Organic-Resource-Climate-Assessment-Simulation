@@ -26,9 +26,14 @@ g1 <- GlobalFactors()
 res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = F)
 dfres <- data.frame(LoVecRep,TKNVecRep,res)
 #plot3d(LoVecRep,TKNVecRep,res)
-tabres <- xtabs(res ~ LoVecRep+TKNVecRep, data=dfres)
-persp(LoVec,TKNVec,tabres,theta=30,phi=30,shade=0.25,
-      col="lightblue",ticktype="simple")
+
+netEmissions <- xtabs(res ~ LoVecRep+TKNVecRep, data=dfres)
+#persp(LoVec,TKNVec,netEmissions,theta=30,phi=30,shade=0.25,
+#      col="lightblue",ticktype="simple")
 #opens an interactive session
-#persp3d(LoVec,TKNVec,tabres,theta=30,phi=30,ticktype="detailed")
+open3d()
+bg3d("white")
+material3d(col="black")
+persp3d(LoVec,TKNVec,netEmissions,theta=30,phi=30,ticktype="detailed",col="lightblue")
 #print (dfres)
+
