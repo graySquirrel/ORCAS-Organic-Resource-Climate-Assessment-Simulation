@@ -1,5 +1,5 @@
 # simuTreat.R to simulate treatments
-#    of different feedstocks to generate GHG and cost outputs.
+#    of different feedstocks to generate GHG outputs.
 library(rgl)
 #setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM") setwd ("fracGasm") at start of session
 source("treatmentClasses.R") 
