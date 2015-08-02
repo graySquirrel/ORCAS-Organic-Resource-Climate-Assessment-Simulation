@@ -1,5 +1,3 @@
-
-
 # Anaerobic Digestion function.
 #    included in simuTreat.R
 # Functions
