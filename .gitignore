@@ -1,0 +1,5 @@
+.RData
+*.docx
+decay.pdf
+*.html
+*.Rhistory
