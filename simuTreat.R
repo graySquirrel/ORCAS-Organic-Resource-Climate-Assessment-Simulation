@@ -29,10 +29,10 @@ f1 <- Feedstock(type="GTW",
 #print(paste("type is ", typeof(f1)))
 g1 <- GlobalFactors()
 res <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = F)
-dfres <- data.frame(LoVecRep,TKNVecRep,res)
+dfres <- data.frame(BoVecRep,TKNVecRep,res)
 #plot3d(LoVecRep,TKNVecRep,res)
 
-netEmissions <- xtabs(res ~ LoVecRep+TKNVecRep, data=dfres)
+netEmissions <- xtabs(res ~ BoVecRep+TKNVecRep, data=dfres)
 #persp(LoVec,TKNVec,netEmissions,theta=30,phi=30,shade=0.25,
 #      col="lightblue",ticktype="simple")
 #opens an interactive session
