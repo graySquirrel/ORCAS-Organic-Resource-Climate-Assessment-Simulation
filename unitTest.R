@@ -1,7 +1,7 @@
 # simuTreat.R to simulate treatments
 #    of different feedstocks to generate GHG and cost outputs.
 library(rgl)
-setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
+#setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
 
@@ -15,4 +15,4 @@ f1 <- Feedstock(type="GTW",
 g1 <- GlobalFactors()
 res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = T)
 
-res
+print(res)
