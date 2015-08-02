@@ -9,39 +9,47 @@
 AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, 
                                                XportToField = 20, debug = F)
 {
+    # step 0: Hauling
+    # TODO
+    # EMTransport <- 
     # Step 1: calculate Digester emissions kgCO2e/MT
-    meth       <- Feedstock$Lo * GlobalFactors$AD_Digester_utilizationFactor
-    if(debug) print(paste("meth ",meth))
-    leakTmp    <- meth * GlobalFactors$AD_Digester_CH4Leaks
-    CH4Leaks   <- leakTmp * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
-    incompTmp  <- meth * GlobalFactors$AD_Digester_incompleteCombustion
-    incomplete <- incompTmp * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
-    elecTmpTmp <- GlobalFactors$AD_Digester_conversionEfficiency * meth/1000
-    if(debug) print(paste("elecTmpTmp ",elecTmpTmp))
-    elecTmp    <- elecTmpTmp * (1 - 0.12)
-    if(debug) print(paste("elecTmp ",elecTmp))
-    avoidedElecEmissions <- elecTmp * GlobalFactors$AD_Digester_avoidedElectricityEmissions
-    if(debug) print(paste("CH4Leaks ",CH4Leaks," incomplete ",incomplete,
-                          " avoided ",avoidedElecEmissions))
-    Digester   <- CH4Leaks + incomplete + avoidedElecEmissions
-    if(debug) print(paste("Digester ",Digester))
+    # CH4Produced = Lo
+    # CH4Flared = CH4Produced * (1 - GlobalFactors$AD_Digester_utilizationFactor)
+    CH4Utilized       <- Feedstock$Lo * GlobalFactors$AD_Digester_utilizationFactor
+    if(debug) print(paste("CH4Utilized ",CH4Utilized))
+    CH4LeaksM3PerT    <- CH4Utilized * GlobalFactors$AD_Digester_CH4Leaks
+    EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
+    CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4incompleteCombustion
+    
+    EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
+    #    GlobalFactors$AD_Digester_N20incompleteCombustion * CH4Utilized * GlobalFactors$GWPN20/1000
+    
+    electricityGenerated <- GlobalFactors$AD_Digester_conversion_KwHPerM3 * CH4Utilized/1000
+    if(debug) print(paste("electricityGenerated ",electricityGenerated))
+    electricityAvoided    <- electricityGenerated * (1 - GlobalFactors$AD_Digester_parasiticLoad)
+    if(debug) print(paste("electricityAvoided ",electricityAvoided))
+    EMAvoidedGrid <- electricityAvoided * GlobalFactors$EFGrid
+    if(debug) print(paste("EMLeaks ",EMLeaks," EMIC ",EMIC,
+                          " avoided ",EMAvoidedGrid))
+    EMDigester   <- EMLeaks + EMIC + EMAvoidedGrid
+    if(debug) print(paste("EMDigester ",EMDigester))
     
     # Step2: calculate Storage emissions kgCO2e/MT
-    TVSinDigestate    <- Feedstock$TVS * GlobalFactors$AD_Storage_reductionInVS
-    if(debug) print(paste("TVSinDigestate ",TVSinDigestate))    
-    residualMethane   <- TVSinDigestate * GlobalFactors$AD_Storage_residualMethane
-    if(debug) print(paste("residualMethane ",residualMethane))    
-    effluentEmissions <- residualMethane * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
-    if(debug) print(paste("effluentEmissions ",effluentEmissions))
-    directN20         <- Feedstock$TKN * GlobalFactors$N20N_to_N20 * 
+    TVSDigestate    <- Feedstock$TVS * GlobalFactors$AD_Storage_reductionInVS
+    if(debug) print(paste("TVSDigestate ",TVSDigestate))    
+    CH4StorageDigestate   <- TVSDigestate * GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
+    if(debug) print(paste("CH4StorageDigestate ",CH4StorageDigestate))    
+    EMCH4DigestateEmissions <- CH4StorageDigestate * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
+    if(debug) print(paste("EMCH4DigestateEmissions ",EMCH4DigestateEmissions))
+    EMN20Direct         <- Feedstock$TKN * GlobalFactors$N20N_to_N20 * 
         GlobalFactors$GWPN20 * GlobalFactors$AD_Storage_IPCC_EF3 / 1000
-    if(debug) print(paste("directN20 ",directN20))
-    indirectN20       <- GlobalFactors$AD_Storage_IPCC_EF4timesFracGasm *
+    if(debug) print(paste("EMN20Direct ",EMN20Direct))
+    EMN20Indirect       <- GlobalFactors$AD_Storage_IPCC_EF4timesFracGasm *
         Feedstock$TKN * GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
-    if(debug) print(paste("indirectN20 ",indirectN20))
-    N20Emissions      <- directN20 + indirectN20
+    if(debug) print(paste("EMN20Indirect ",EMN20Indirect))
+    N20Emissions      <- EMN20Direct + EMN20Indirect
     if(debug) print(paste("N20Emissions ",N20Emissions))
-    Storage           <- effluentEmissions + N20Emissions
+    Storage           <- EMCH4DigestateEmissions + N20Emissions
     if(debug) print(paste("Storage ",Storage))
     
     # Step 3: Calculate Land Application  kgCO2e/MT
@@ -75,7 +83,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors,
     
     # Add together
     netEmissions <- 
-        Digester +
+        EMDigester +
         Storage +
         LandApplication +
         displacedFertilizer

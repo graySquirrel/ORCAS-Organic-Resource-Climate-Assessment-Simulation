@@ -7,30 +7,30 @@
 #      methods: GlobalFactors()
 #                   returns GlobalFactors object
 #   Feedstock:
-#      members: type,TS,TVS,Lo,TKN)
-#      methods: Feedstock(type="string",TS=0,TVS=0,Lo=0,TKN=0)
+#      members: type,TS,VS,Bo,TKN)
+#      methods: Feedstock(type="string",TS=0,VS=0,Bo=0,TKN=0)
 #                   returns Feedstock object
 #
 ########### GlobalFactors stuff
 GlobalFactors <- function()
 {
     me <- list(N20N_to_N20 = 44/28, 
-               GWPN20 = 310, 
+               GWPN20 = 265, 
                density_CH4 = 0.67, 
-               GWPCH4 = 21, 
-               Grid_emissions_factor = 533.66,
-               Energy_content_methane_BTUperm3CH4 = 35315, 
-               Heating_value = 11700, 
-               methane_KWhPerM3 = 35315/11700,
-               Hauling_kgCO2ePERtonKm = 0.107,
+               GWPCH4 = 28, 
+               EFGrid = -533.66,
+               #Energy_content_methane_BTUperm3CH4 = 35315, 
+               #Heating_value = 11700, 
+               #methane_KWhPerM3 = 35315/11700,
+               #EFfreight_kgCO2ePERtonKm = 0.107,
                AD_Digester_utilizationFactor = 0.84,
                AD_Digester_CH4Leaks = 0.03,
-               AD_Digester_incompleteCombustion = 0.005,
-               AD_Digester_conversionEfficiency = 4.19318820416827,
-               AD_Digester_electricityUtilized = 0.12,
-               AD_Digester_avoidedElectricityEmissions = -533.66,
+               AD_Digester_CH4incompleteCombustion = 0.005,
+               #AD_Digester_N20incompleteCombustion = 0.03,
+               AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
+               AD_Digester_parasiticLoad = 0.12,
                AD_Storage_reductionInVS = 0.55,
-               AD_Storage_residualMethane = 0.043,
+               AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
                AD_Storage_IPCC_EF3 = 0.005,
                AD_Storage_IPCC_EF4timesFracGasm = 0.0026,
                AD_LandApplication_mysteryFactor1 = 0.0125,
@@ -43,18 +43,21 @@ GlobalFactors <- function()
 }
 
 ########### FeedStock stuff
-Feedstock <- function(type="dontKnow",TS=0,TVS=0,Lo=0,TKN=0)
+Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
 {
-    if (!is.numeric(TS) || !is.numeric(TVS) || 
-            !is.numeric(Lo) || !is.numeric(TKN) ||
-            !all(is.finite(TS)) || !all(is.finite(TVS)) ||
-            !all(is.finite(Lo)) || !all(is.finite(TKN)))
+    if (!is.numeric(TS) || !is.numeric(VS) || 
+            !is.numeric(Bo) || !is.numeric(TKN) ||
+            !all(is.finite(TS)) || !all(is.finite(VS)) ||
+            !all(is.finite(Bo)) || !all(is.finite(TKN)))
         stop("invalid input")
-    if (length(Lo) != length(TKN))
+    if (length(Bo) != length(TKN))
         stop("lengths differ")
+    TVS = VS*TS
+    Lo=Bo*TVS/100
+    print(paste("Lo ",Lo," TVS ",TVS))
     me <- list(
         type = type,
-        TS=TS,TVS=TVS,Lo=Lo,Bo=Lo*100/TVS,TKN=TKN
+        TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS
     )
     
     ## Set the name for the class
