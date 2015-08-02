@@ -6,8 +6,7 @@
 #       returns data.frame of factor vs. outputs, labeled with row and col names
 #
 ################# Treatment Functions
-AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, 
-                                               XportToField = 20, debug = F)
+AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
 {
     # step 0: Hauling
     # TODO
@@ -53,7 +52,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors,
     if(debug) print(paste("Storage ",Storage))
     
     # Step 3: Calculate Land Application  kgCO2e/MT
-    xport           <- 1.5 * XportToField/20
+    xport           <- 1.5 * GlobalFactors$XportToField/20
     if(debug) print(paste("xport ",xport))
     Nremaining      <- Feedstock$TKN - GlobalFactors$AD_Storage_IPCC_EF3 * Feedstock$TKN -
         Feedstock$TKN*0.26
