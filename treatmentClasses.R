@@ -19,7 +19,6 @@ GlobalFactors <- function()
                density_CH4 = 0.67, 
                GWPCH4 = 28, 
                EFGrid = -533.66,
-               XportToField = 20,
                #Energy_content_methane_BTUperm3CH4 = 35315, 
                #Heating_value = 11700, 
                #methane_KWhPerM3 = 35315/11700,
