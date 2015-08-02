@@ -13,6 +13,6 @@ f1 <- Feedstock(type="GTW",
                 TKN=5600)
 
 g1 <- GlobalFactors()
-res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = T)
+res <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = T)
 
 print(res)
