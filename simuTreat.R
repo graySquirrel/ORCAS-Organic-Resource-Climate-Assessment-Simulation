@@ -23,7 +23,7 @@ f1 <- Feedstock(type="GTW",
 #print(paste("length is ",length(f1)))
 #print(paste("type is ", typeof(f1)))
 g1 <- GlobalFactors()
-res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = F)
+res <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = F)
 dfres <- data.frame(LoVecRep,TKNVecRep,res)
 #plot3d(LoVecRep,TKNVecRep,res)
 
