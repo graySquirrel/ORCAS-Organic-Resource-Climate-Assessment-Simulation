@@ -13,17 +13,22 @@ source("treatmentAnaerobicDigestion.R")
 size <- 10
 TKNVec <- seq(from =580, to=5600,length.out=size)
 LoVec <-  seq(from = 15, to=413,length.out=size)
+VS=17/18
+TS=18
+TVS=TS*VS
+BoVec <- LoVec * 100/TVS
 TKNVecRep <- rep(TKNVec,each=size)
-LoVecRep  <- rep(LoVec,times=size)
+BoVecRep  <- rep(BoVec,times=size)
+
 f1 <- Feedstock(type="GTW",
-                TS=17,
-                TVS=18,
-                Lo=LoVecRep,
+                TS=18,
+                VS=VS,
+                Bo=BoVecRep,
                 TKN=TKNVecRep)
 #print(paste("length is ",length(f1)))
 #print(paste("type is ", typeof(f1)))
 g1 <- GlobalFactors()
-res <- AnaerobicDigestionTreatmentPathway(f1, g1, 20,debug = F)
+res <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = F)
 dfres <- data.frame(LoVecRep,TKNVecRep,res)
 #plot3d(LoVecRep,TKNVecRep,res)
 
@@ -34,6 +39,6 @@ netEmissions <- xtabs(res ~ LoVecRep+TKNVecRep, data=dfres)
 open3d()
 bg3d("white")
 material3d(col="black")
-persp3d(LoVec,TKNVec,netEmissions,theta=30,phi=30,ticktype="detailed",col="lightblue")
+persp3d(BoVec,TKNVec,netEmissions,theta=30,phi=30,ticktype="detailed",col="lightblue")
 #print (dfres)
 
