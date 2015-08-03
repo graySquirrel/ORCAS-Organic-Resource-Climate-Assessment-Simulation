@@ -51,8 +51,8 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
             !all(is.finite(TS)) || !all(is.finite(VS)) ||
             !all(is.finite(Bo)) || !all(is.finite(TKN)))
         stop("invalid input")
-    if (length(Bo) != length(TKN))
-        stop("lengths differ")
+    #if (length(Bo) != length(TKN))
+    #    stop("lengths differ")
     TVS = VS*TS
     Lo=Bo*TVS/100
     #print(paste("Lo ",Lo," TVS ",TVS))
