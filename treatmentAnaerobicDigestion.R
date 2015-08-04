@@ -54,15 +54,15 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Step 3: Calculate Land Application  kgCO2e/MT
     xport           <- 1.5 * GlobalFactors$XportToField/20
     if(debug) print(paste("xport ",xport))
-    Nremaining      <- Feedstock$TKN - GlobalFactors$AD_Storage_IPCC_EF3 * Feedstock$TKN -
-        Feedstock$TKN*GlobalFactors$AD_Storage_IPCC_FracGasMS-Feedstock$TKN*GlobalFactors$AD_LandApplication_OtherNFactor
-    direct2         <- Nremaining * GlobalFactors$AD_LandApplication_EF1 *
+    Nremaining      <- Feedstock$TKN * (1- GlobalFactors$AD_Storage_IPCC_EF3 - GlobalFactors$AD_Storage_IPCC_FracGasMS-GlobalFactors$AD_LandApplication_OtherNFactor)
+    if(debug) print(paste("Nremaining ",Nremaining))
+    EMN20_LandApp_direct         <- Nremaining * GlobalFactors$AD_LandApplication_EF1 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
-    if(debug) print(paste("direct2 ",direct2))
-    indirect2       <- Nremaining * GlobalFactors$AD_LandApplication_FracGasM *
+    if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
+    EMN20_LandApp_indirect       <- Nremaining * GlobalFactors$AD_LandApplication_FracGasM * GlobalFactors$AD_Storage_IPCC_EF4 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
-    if(debug) print(paste("indirect2 ",indirect2))
-    EMN20_LandApp    <- direct2 + indirect2
+    if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
+    EMN20_LandApp    <- EMN20_LandApp_direct + EMN20_LandApp_indirect
     if(debug) print(paste("EMN20_LandApp ",EMN20_LandApp))
     EMLandApp <- xport + EMN20_LandApp
     if(debug) print(paste("EMLandApp ",EMLandApp))
