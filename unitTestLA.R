@@ -2,7 +2,7 @@
 #    of different feedstocks to generate GHG and cost outputs.
 
 library(rgl)
-setwd("/Users/jacquelineebner/fracGASM")
+#setwd("/Users/jacquelineebner/fracGASM")
 source("treatmentClasses.R") 
 source("treatmentLandApplication.R") 
 
