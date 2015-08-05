@@ -1,12 +1,11 @@
 # Anaerobic Digestion function.
 #    included in simuTreat.R
 # Functions
-#   AnaerobicDigestionTreatmentPathway(Feedstock, GlobalFactors, 
-#                           SpreadonField = 20, debug = F)
+#   AnaerobicDigestionTreatmentPathway(Feedstock, GlobalFactors, debug = F)
 #       returns data.frame of factor vs. outputs, labeled with row and col names
 #
 ################# Treatment Functions
-AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F, ADTreatment=T)
+AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
 {
  
   #EFfreight_kgCO2ePERtonKm = 0.107,
