@@ -19,28 +19,28 @@ GlobalFactors <- function()
                density_CH4 = 0.67, 
                GWPCH4 = 28, 
                EFGrid = -533.66,
-               XportToField = 20,
+               #EFfreight_kgCO2ePERtonKm = 0.107,
                #Energy_content_methane_BTUperm3CH4 = 35315, 
                #Heating_value = 11700, 
                #methane_KWhPerM3 = 35315/11700,
                #EFfreight_kgCO2ePERtonKm = 0.107,
-               AD_Digester_utilizationFactor = 0.84,
-               AD_Digester_CH4Leaks = 0.03,
-               AD_Digester_CH4incompleteCombustion = 0.005,
+               #AD_Digester_utilizationFactor = 0.84,
+               #AD_Digester_CH4Leaks = 0.03,
+               #AD_Digester_CH4incompleteCombustion = 0.005,
                #AD_Digester_N20incompleteCombustion = 0.03,
-               AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
-               AD_Digester_parasiticLoad = 0.12,
-               AD_Storage_reductionInVS = 0.55,
-               AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
-               AD_Storage_IPCC_EF3 = 0.005,
-               AD_Storage_IPCC_EF4 = 0.01,
-               AD_Storage_IPCC_FracGasMS = 0.26,
-               AD_LandApplication_FracGasM =0.2,
-               AD_LandApplication_EF1 = 0.0125,
-               AD_LandApplication_OtherNFactor = 0.02,
-               AD_LandApp_NAvailabiltiy_Factor = 0.4,
-               AD_DisplacedFertilizer_Production_Factor = -6.8,
-               AD_DisplacedFertilizer_Direct_Indirect = -5.4)
+               #AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
+               #AD_Digester_parasiticLoad = 0.12,
+               #AD_Storage_reductionInVS = 0.55,
+               #AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
+               #AD_Storage_IPCC_EF3 = 0.005,
+               IPCC_EF4 = 0.01)
+               #AD_Storage_IPCC_FracGasMS = 0.26,
+               #AD_LandApplication_FracGasM =0.2,
+               #AD_LandApplication_EF1 = 0.0125,
+               #AD_LandApplication_OtherNFactor = 0.02,
+               #AD_LandApp_NAvailabiltiy_Factor = 0.4,
+               #AD_DisplacedFertilizer_Production_Factor = -6.8,
+               #AD_DisplacedFertilizer_Direct_Indirect = -5.4)
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
 }
@@ -57,7 +57,7 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
     #    stop("lengths differ")
     TVS = VS*TS
     Lo=Bo*TVS/100
-    #print(paste("Lo ",Lo," TVS ",TVS))
+    print(paste("Lo ",Lo," TVS ",TVS))
     me <- list(
         type = type,
         TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS
