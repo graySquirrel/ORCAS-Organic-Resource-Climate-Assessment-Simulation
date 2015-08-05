@@ -3,10 +3,4 @@
 decay.pdf
 *.html
 *.Rhistory
-<<<<<<< HEAD
-unitTest.R
-
-unitTest.R
-=======
 sensitivityAnalysis.pdf
->>>>>>> origin/master
