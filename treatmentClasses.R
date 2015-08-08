@@ -57,7 +57,7 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
     #    stop("lengths differ")
     TVS = VS*TS
     Lo=Bo*TVS/100
-    print(paste("Lo ",Lo," TVS ",TVS))
+    #print(paste("Lo ",Lo," TVS ",TVS))
     me <- list(
         type = type,
         TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS
