@@ -4,3 +4,17 @@ decay.pdf
 *.html
 *.Rhistory
 sensitivityAnalysis.pdf
+
+sensitivityAnalysis2.R
+
+simuTreat2.R
+
+sensitivityAnalysis2.Rmd
+
+sensitivitySampleTest.R
+
+.Rapp.history
+
+simuTreat3.R
+
+simuTreatWithFeedstocks.R
