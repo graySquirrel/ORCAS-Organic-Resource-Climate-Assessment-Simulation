@@ -22,6 +22,10 @@ GlobalFactors <- function()
                #EFfreight_kgCO2ePERtonKm = 0.107,
                Energy_content_methane_BTUperm3CH4 = 35315, 
                Heating_value = 11700, 
+               DieselprovisionkgCO2eperL=0.45,
+               # Fruergaard et al. (2009)
+               DieselcombustionkgCO2eperL=2.720494342,
+               #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
                #AD_Digester_utilizationFactor = 0.84,
                #AD_Digester_CH4Leaks = 0.03,
                #AD_Digester_CH4incompleteCombustion = 0.005,

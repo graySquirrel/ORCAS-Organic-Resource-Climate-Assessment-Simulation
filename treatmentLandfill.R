@@ -12,11 +12,11 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
   Landfill_Oxidation_Factor = 0.10
   # could be an array 
   #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
-  DieseluseLpert =5.8
+  LFDieseluseLpert =5.8
    #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
-  DieselprovisionkgCO2eperL=0.45
+  #DieselprovisionkgCO2eperL=0.45
   # Taken from Fruergaard et al. (2009)
-  DieselcombustionkgCO2eperL=2.720494342
+  #DieselcombustionkgCO2eperL=2.720494342
   #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
  
   #Landfill_GC=0.85
@@ -27,7 +27,7 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
   k= 0.144
   
 # step 1: Landfill operation
-  EMLFoperation<-DieseluseLpert*(DieselprovisionkgCO2eperL+DieselcombustionkgCO2eperL)
+  EMLFoperation<-LFDieseluseLpert*(GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
   
 # step 2: Methane Production
     Max_Years=50
