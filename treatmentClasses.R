@@ -20,10 +20,8 @@ GlobalFactors <- function()
                GWPCH4 = 28, 
                EFGrid = -533.66,
                #EFfreight_kgCO2ePERtonKm = 0.107,
-               #Energy_content_methane_BTUperm3CH4 = 35315, 
-               #Heating_value = 11700, 
-               #methane_KWhPerM3 = 35315/11700,
-               #EFfreight_kgCO2ePERtonKm = 0.107,
+               Energy_content_methane_BTUperm3CH4 = 35315, 
+               Heating_value = 11700, 
                #AD_Digester_utilizationFactor = 0.84,
                #AD_Digester_CH4Leaks = 0.03,
                #AD_Digester_CH4incompleteCombustion = 0.005,
@@ -46,7 +44,8 @@ GlobalFactors <- function()
 }
 
 ########### FeedStock stuff
-Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
+Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
+                      percentCarboTS=0,percentProteinTS,percentLipidTS=0,fdeg=0)
 {
     if (!is.numeric(TS) || !is.numeric(VS) || 
             !is.numeric(Bo) || !is.numeric(TKN) ||
@@ -55,14 +54,24 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0)
         stop("invalid input")
     #if (length(Bo) != length(TKN))
     #    stop("lengths differ")
+  # Carbon content
+    carboPercentC<-0.444
+    proteinPercentC<-0.531
+    lipidPercentC<-0.771
+    InitialC<-(percentCarboTS*carboPercentC + 
+                 percentProteinTS*proteinPercentC +
+                 percentLipidTS*lipidPercentC)*TS*1000
     TVS = VS*TS
-    Lo=Bo*TVS/100
-    #print(paste("Lo ",Lo," TVS ",TVS))
+    Lo=Bo*TVS
+    #print(paste("TS",TS,"Lo ",Lo," TVS ",TVS,"initialC ",InitialC))
     me <- list(
         type = type,
-        TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS
+        TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS,
+        percentCarboTS=percentCarboTS,percentProteinTS=percentProteinTS,
+        percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC
     )
     
+
     ## Set the name for the class
     class(me) <- append(class(me),"Feedstock")
     return(me)
@@ -72,6 +81,9 @@ length.Feedstock <- function(obj) length(obj$TS)
 # create a generic to use in the Feedstock class
 typeof <- function(obj) UseMethod("typeof")
 typeof.Feedstock <- function(obj) obj$type
+
+
+
 
 
 
