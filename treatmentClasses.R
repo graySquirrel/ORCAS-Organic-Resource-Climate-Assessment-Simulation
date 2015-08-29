@@ -15,6 +15,7 @@
 GlobalFactors <- function()
 {
     me <- list(N20N_to_N20 = 44/28, 
+               CtoCH4=16/12,
                GWPN20 = 265, 
                density_CH4 = 0.67, 
                GWPCH4 = 28, 
@@ -51,6 +52,11 @@ GlobalFactors <- function()
 Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
                       percentCarboTS=0,percentProteinTS,percentLipidTS=0,fdeg=0)
 {
+    if(missing(percentCarboTS)) percentCarboTS=0
+    if(missing(percentProteinTS)) percentProteinTS=0
+    if(missing(percentLipidTS)) percentLipidTS=0
+    if(missing(fdeg)) fdeg=0
+    
     if (!is.numeric(TS) || !is.numeric(VS) || 
             !is.numeric(Bo) || !is.numeric(TKN) ||
             !all(is.finite(TS)) || !all(is.finite(VS)) ||

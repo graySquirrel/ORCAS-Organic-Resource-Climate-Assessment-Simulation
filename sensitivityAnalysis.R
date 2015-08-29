@@ -1,5 +1,7 @@
 # Sensitivity Analysis sample test with AD
-
+source("treatmentClasses.R") 
+source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R")
 library(pse)
 factors <- c("TS", "VS", "Bo", "TKN")
 q <- c("qunif", "qunif", "qunif","qunif")
@@ -16,7 +18,7 @@ modelRun <- function (my.data) {
     return(mapply(oneRun, my.data[,1], my.data[,2], my.data[,3], my.data[,4]))
 }
 
-myLHS <- LHS(modelRun, factors, 1000, q, q.arg, nboot=50)
+myLHS <- LHS(modelRun, factors, 100, q, q.arg, nboot=50)
 plotecdf(myLHS)
 plotscatter(myLHS)
 plotprcc(myLHS)

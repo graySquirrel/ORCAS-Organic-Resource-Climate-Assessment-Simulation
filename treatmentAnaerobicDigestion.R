@@ -71,8 +71,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("EMStorage ",EMStorage))
     
     # Send to land application trerment
-    Nremaining      <- Feedstock$TKN * (1- AD_Storage_IPCC_EF3 - AD_Storage_IPCC_FracGasMS-AD_LandApplication_OtherNFactor)
-    EMLandApp <- LandApplicationTreatmentPathway(f1, g1, debug, Ninitial = Nremaining)
+    Nremaining      <- Feedstock$TKN * 
+        (1- AD_Storage_IPCC_EF3 - AD_Storage_IPCC_FracGasMS-AD_LandApplication_OtherNFactor)
+    EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
+                                                 Ninitial = Nremaining)
     
 #     if(debug) print(paste("Nremaining ",Nremaining))
 #     ADtreatment (FALSE)

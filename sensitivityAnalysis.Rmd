@@ -20,6 +20,7 @@ library(pse)
 # treatmentClasses.R and treatmentAnaerobicDigestion.R implement the anaerobic digestion pathway
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R")
 library(pse)
 # First create a global factors object to store all global parameters we won't study
 g1 <- GlobalFactors()
