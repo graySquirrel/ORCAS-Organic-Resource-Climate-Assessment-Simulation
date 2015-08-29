@@ -7,13 +7,12 @@ source("treatmentClasses.R")
 source("treatmentLandfill.R") 
 
 
-f1 <- Feedstock(type="GTW",
-                TS=18,
-                VS=17/18,
-                Bo=887,
-                TKN=5600)
-
+f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=444,TKN=5600,
+                percentCarboTS = 0.76, percentProteinTS = 0.10, percentLipidTS = 0.11,
+                fdeg = 0.94
+                )
+print(paste("TS",f1$TS,"Lo ",f1$Lo," TVS ",f1$TVS,"initialC ",f1$InitialC))
 g1 <- GlobalFactors()
-res <- LandfillTreatmentPathway(f1, g1, debug = T)
+res <- LandfillTreatmentPathway(f1, g1, debug = F)
 
 print(res)
