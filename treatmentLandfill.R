@@ -7,15 +7,21 @@
 library(gtools)
 LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
 {
+# Hauling of the waste to the landfill not included at this time
+#EFfreight_kgCO2ePERtonKm = 0.107,
+  Landfill_Oxidation_Factor = 0.20
+  DieseluseLpert =5.8
+   #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
+  DieselprovisionkgCO2eperL=0.45
+  # Taken from Fruergaard et al. (2009)
+  DieselcombustionkgCO2eperL=2.63
+  #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
  
-  #EFfreight_kgCO2ePERtonKm = 0.107,
-  Landfill_Oxidation_Factor = 0.10
   Landfill_GC = 0.95
   k= 0.144
-#  Dieselfuel=7.5
   
 # step 1: Landfill operation
-  EMLFoperation<-19.250
+  EMLFoperation<-DieseluseLpert*(DieselprovisionkgCO2eperL+DieselcombustionkgCO2eperL)
 
   
 # step 2: Methane Production
