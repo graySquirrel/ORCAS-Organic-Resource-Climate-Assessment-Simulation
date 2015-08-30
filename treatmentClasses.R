@@ -73,12 +73,13 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
                  percentLipidTS*lipidPercentC)*TS*1000
     TVS = VS*TS
     Lo=Bo*TVS
+    Nperton<-TKN/1000
     #print(paste("TS",TS,"Lo ",Lo," TVS ",TVS,"initialC ",InitialC))
     me <- list(
         type = type,
         TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS,
         percentCarboTS=percentCarboTS,percentProteinTS=percentProteinTS,
-        percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC
+        percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC,Nperton=Nperton
     )
     
 
