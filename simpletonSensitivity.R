@@ -13,21 +13,16 @@ singleValueSensitivityByPercent <- function(percentThresh,
                                             element,
                                             FUN) {
     g1 <- GlobalFactors()
-    ifelse (element==1, 
-            s1 <- nominal[1] + -numsamp:numsamp*rangePercent*nominal[1]/(numsamp*100),
-            s1 <- nominal[1])
-    ifelse (element==2, 
-            s2 <- nominal[2] + -numsamp:numsamp*rangePercent*nominal[2]/(numsamp*100),
-            s2 <- nominal[2])
-    ifelse (element==3, 
-            s3 <- nominal[3] + -numsamp:numsamp*rangePercent*nominal[3]/(numsamp*100),
-            s3 <- nominal[3])
-    ifelse (element==4, 
-            s4 <- nominal[4] + -numsamp:numsamp*rangePercent*nominal[4]/(numsamp*100),
-            s4 <- nominal[4])
-    my.data <- data.frame(s1,s2,s3,s4)
+    my.data<-NULL
+    for (i in 1:4) {
+        ifelse (element==i, 
+                s <- nominal[i] + -numsamp:numsamp*rangePercent*nominal[i]/(numsamp*100),
+                s <- nominal[i])
+        ifelse (i==1, my.data<- data.frame(s), my.data<-cbind(my.data,s))
+    }
     f1 <- Feedstock(type="Sensitivity", my.data[,1], my.data[,2], my.data[,3], my.data[,4])
-    out <- cbind(my.data,FUN(f1, g1, debug = F))
+    out <- cbind(my.data,FUN(f1, g1, debug = F)[[1]])
+    #print(head(out))
     nomOut <- out[numsamp+1,5]
     percentdiff <- 100*(out[,5]-nomOut)/nomOut
     final <- cbind(out,percentdiff)
@@ -54,6 +49,6 @@ singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),2,
                                 AnaerobicDigestionTreatmentPathway)
 singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),3,
                                 AnaerobicDigestionTreatmentPathway)
-singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),4,
+singleValueSensitivityByPercent(1,1000,1000,c(18,17/18,887,5600),4,
                                 AnaerobicDigestionTreatmentPathway)
 

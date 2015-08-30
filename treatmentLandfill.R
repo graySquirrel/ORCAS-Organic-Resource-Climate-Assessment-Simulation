@@ -9,10 +9,10 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
 {
 # Hauling of the waste to the landfill not included at this time
 #EFfreight_kgCO2ePERtonKm = 0.107,
-  Landfill_Oxidation_Factor = 0.10
+  Landfill_Oxidation_Factor = GlobalFactors$Landfill_Oxidation_Factor
   # could be an array 
   #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
-  LFDieseluseLpert =5.8
+  LFDieseluseLpert =GlobalFactors$LFDieseluseLpert
    #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
   #DieselprovisionkgCO2eperL=0.45
   # Taken from Fruergaard et al. (2009)
@@ -22,9 +22,9 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
   #Landfill_GC=0.85
   #NYS penetration of landfills with LFG recovery-not used at this time. Assumed that landfill has LFG recovery system
   
-  Landfill_CF = 0.97
+  Landfill_CF = GlobalFactors$Landfill_CF
   #3% flare and not used to generate electricity
-  k= 0.144
+  k= GlobalFactors$k
   
 # step 1: Landfill operation
   EMLFoperation<-LFDieseluseLpert*(GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
@@ -81,6 +81,9 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     if(debug) {print(paste("Landfill_Kwh_t",Landfill_Kwh_t))}
     
     EMLandfill <- EM_displaced_grid + EMLFoperation + EMLandfillCH4 + EMCstorage
-    
+    result <- data.frame(EMLandfill,EM_displaced_grid,EMLFoperation,EMLandfillCH4,EMCstorage)
+    colnames(result) <- c("LandfillNetEmissions","EM_displaced_grid", 
+                          "EMLFoperation", "EMLandfillCH4", "EMCstorage")
+    result
 }
 

@@ -9,13 +9,15 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
 {
  
   Nremaining = Ninitial
-  LandApplication_FracGasM =0.2
-  LandApplication_EF1 = 0.0125
-  LandApplication_OtherNFactor = 0.02
-  LandApp_NAvailabiltiy_Factor = 0.4
-  LA_DisplacedFertilizer_Production_Factor = -6.8
-  LA_DisplacedFertilizer_Direct_Indirect = -5.4
-  xportToField = 20
+  LandApplication_FracGasM =GlobalFactors$LandApplication_FracGasM
+  LandApplication_EF1 = GlobalFactors$LandApplication_EF1
+  LandApplication_OtherNFactor = GlobalFactors$LandApplication_OtherNFactor
+  LandApp_NAvailabiltiy_Factor = GlobalFactors$LandApp_NAvailabiltiy_Factor
+  LA_DisplacedFertilizer_Production_Factor = 
+      GlobalFactors$LA_DisplacedFertilizer_Production_Factor
+  LA_DisplacedFertilizer_Direct_Indirect = 
+      GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect
+  xportToField = GlobalFactors$xportToField
 
     # Step 1: Calculate Land Application  kgCO2e/MT
     EMspread           <- 1.5 * xportToField/20
@@ -50,6 +52,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
     netEmissions <- 
         EMLandApp +
         displacedFertilizer
-    names(netEmissions) <- Feedstock$type
-    return(netEmissions)
+    result <- data.frame(netEmissions,EMLandApp,displacedFertilizer)
+    colnames(result) <- c("LAnetEmissions","EMLandApp", "displacedFertilizer")
+    result
 }

@@ -14,6 +14,6 @@ f1 <- Feedstock(type="GTW",
                 TKN=5600)
 
 g1 <- GlobalFactors()
-res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Ninitial = f1$TKN)
+res <- LandApplicationTreatmentPathway(f1, g1, debug = F, Ninitial = f1$TKN)
 
 print(res)

@@ -9,23 +9,26 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
 {
  
   #EFfreight_kgCO2ePERtonKm = 0.107,
-  AD_Digester_utilizationFactor = 0.84
-  AD_Digester_CH4Leaks = 0.03
-  AD_Digester_CH4incompleteCombustion = 0.005
+  AD_Digester_utilizationFactor = GlobalFactors$AD_Digester_utilizationFactor
+  AD_Digester_CH4Leaks = GlobalFactors$AD_Digester_CH4Leaks
+  AD_Digester_CH4incompleteCombustion = GlobalFactors$AD_Digester_CH4incompleteCombustion
   #AD_Digester_N20incompleteCombustion = 0.03
-  AD_Digester_conversion_KwHPerM3 = 4.19318820416827
-  AD_Digester_parasiticLoad = 0.12
-  AD_reductionInVS = 0.55
-  AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043 # 0.054
-  AD_Storage_IPCC_EF3 = 0.005
-  AD_Storage_IPCC_FracGasMS = 0.26
-  AD_LandApplication_FracGasM =0.2
-  AD_LandApplication_EF1 = 0.0125
-  AD_LandApplication_OtherNFactor = 0.02
-  AD_LandApp_NAvailabiltiy_Factor = 0.4
-  AD_DisplacedFertilizer_Production_Factor = -6.8
-  AD_DisplacedFertilizer_Direct_Indirect = -5.4
-  xportToField = 20
+  AD_Digester_conversion_KwHPerM3 = GlobalFactors$AD_Digester_conversion_KwHPerM3
+  AD_Digester_parasiticLoad = GlobalFactors$AD_Digester_parasiticLoad
+  AD_reductionInVS = GlobalFactors$AD_reductionInVS
+  AD_Storage_EFresidualMethaneM3CH4PerKgVS = 
+      GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
+  AD_Storage_IPCC_EF3 = GlobalFactors$AD_Storage_IPCC_EF3
+  AD_Storage_IPCC_FracGasMS = GlobalFactors$AD_Storage_IPCC_FracGasMS
+  AD_LandApplication_FracGasM = GlobalFactors$AD_LandApplication_FracGasM
+  AD_LandApplication_EF1 = GlobalFactors$AD_LandApplication_EF1
+  AD_LandApplication_OtherNFactor = GlobalFactors$AD_LandApplication_OtherNFactor
+  AD_LandApp_NAvailabiltiy_Factor = GlobalFactors$AD_LandApp_NAvailabiltiy_Factor
+  AD_DisplacedFertilizer_Production_Factor = 
+      GlobalFactors$AD_DisplacedFertilizer_Production_Factor
+  AD_DisplacedFertilizer_Direct_Indirect = 
+      GlobalFactors$AD_DisplacedFertilizer_Direct_Indirect
+  xportToField = GlobalFactors$xportToField
   
 # step 0: Hauling
     # TODO
@@ -57,7 +60,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("TVSDigestate ",TVSDigestate))    
     CH4StorageDigestate   <- TVSDigestate * AD_Storage_EFresidualMethaneM3CH4PerKgVS
     if(debug) print(paste("CH4StorageDigestate ",CH4StorageDigestate))    
-    EMCH4DigestateEmissions <- CH4StorageDigestate * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
+    EMCH4DigestateEmissions <- CH4StorageDigestate * GlobalFactors$density_CH4 * 
+        GlobalFactors$GWPCH4
     if(debug) print(paste("EMCH4DigestateEmissions ",EMCH4DigestateEmissions))
     EMN20_storage_Direct         <- Feedstock$TKN * GlobalFactors$N20N_to_N20 * 
         GlobalFactors$GWPN20 * AD_Storage_IPCC_EF3 / 1000
@@ -110,8 +114,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     netEmissions <- 
         EMDigester +
         EMStorage +
-        EMLandApp #+
+        EMLandApp[[1]] #+
         #displacedFertilizer
-    names(netEmissions) <- Feedstock$type
-    return(netEmissions)
+    result <- data.frame(netEmissions,EMDigester,EMStorage)
+    colnames(result) <- c("ADnetEmissions","EMDigester", "EMStorage")
+    result <- cbind(result,EMLandApp)
+    result
 }
