@@ -18,3 +18,8 @@ sensitivitySampleTest.R
 simuTreat3.R
 
 simuTreatWithFeedstocks.R
+*.pdf
+sensitivityAnalysis_cache/latex/unnamed-chunk-4_0751afc4905a8e1602530e6cdb41cd53.RData
+*.rdb
+sensitivityAnalysis_cache/latex/unnamed-chunk-4_0751afc4905a8e1602530e6cdb41cd53.rdx
+sensitivityAnalysis_cache/latex/__packages
