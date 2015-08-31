@@ -45,3 +45,6 @@ f1 <- Feedstock(type="GTW",TS=18,VS=17/18,Bo=887,TKN=5600)
 singleValueSensitivityByPercent(feedstock=f1,outPercentThresh=20,numsamp=10000,
                                 rangePercent=100,elementName='AD_Digester_utilizationFactor',
                                 FUN=AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(feedstock=f1,outPercentThresh=20,numsamp=10000,
+                                rangePercent=100,elementName='AD_Digester_CH4Leaks',
+                                FUN=AnaerobicDigestionTreatmentPathway)
