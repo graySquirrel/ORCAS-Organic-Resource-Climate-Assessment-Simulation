@@ -59,8 +59,7 @@ GlobalFactors <- function()
                LandApplication_OtherNFactor = 0.02,
                LandApp_NAvailabiltiy_Factor = 0.4,
                LA_DisplacedFertilizer_Production_Factor = -6.8,
-               LA_DisplacedFertilizer_Direct_Indirect = -5.4,
-               xportToField = 20)
+               LA_DisplacedFertilizer_Direct_Indirect = -5.4)
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
 }
