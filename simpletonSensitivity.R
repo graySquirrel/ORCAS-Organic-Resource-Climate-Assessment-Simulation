@@ -14,7 +14,7 @@ singleValueSensitivityByPercent <- function(percentThresh,
                                             FUN) {
     g1 <- GlobalFactors()
     my.data<-NULL
-    for (i in 1:4) {
+    for (i in 1:length(nominal)) {
         ifelse (element==i, 
                 s <- nominal[i] + -numsamp:numsamp*rangePercent*nominal[i]/(numsamp*100),
                 s <- nominal[i])

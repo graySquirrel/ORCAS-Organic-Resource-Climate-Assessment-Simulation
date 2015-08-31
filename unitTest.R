@@ -17,3 +17,5 @@ g1 <- GlobalFactors()
 res <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = F)
 
 print(res)
+str(res)
+res[1,1]
