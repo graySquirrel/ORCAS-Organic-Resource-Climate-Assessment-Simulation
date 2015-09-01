@@ -25,7 +25,7 @@ out <- FUN(f1, g1, debug = F)
 inout <- cbind(inputs,out)
 
 # plot Net Emissions vs. each of the 4 inputs.
-plot(inputs[,1],out[,1])
-plot(inputs[,2],out[,1])
-plot(inputs[,3],out[,1])
-plot(inputs[,4],out[,1])
+plot(inputs$TS,out[,1])
+plot(inputs$VS,out[,1])
+plot(inputs$Bo,out[,1])
+plot(inputs$TKN,out[,1])
