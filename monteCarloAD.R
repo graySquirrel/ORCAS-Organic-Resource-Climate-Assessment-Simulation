@@ -47,6 +47,6 @@ input <- data.frame(g1$AD_Digester_utilizationFactor,
                  g1$AD_DisplacedFertilizer_Production_Factor,
                  g1$AD_DisplacedFertilizer_Direct_Indirect,
                  g1$xportToField)
-dev.off() 
+if(dev.cur() != 1) dev.off() 
 hist.data.frame(input)    
 hist.data.frame(out)
