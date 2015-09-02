@@ -6,7 +6,7 @@ source("treatmentAnaerobicDigestion.R")
 source("treatmentLandApplication.R")
 library(Hmisc)
 #################################################################################
-numsamp = 1000
+numsamp = 10000
 f1 <- Feedstock(type = "GTW",TS = 18,VS = 17 / 18,Bo = 887,TKN = 5600)
 g1 <- GlobalFactors()
 # Create samples over range of input factors that you want.
@@ -47,5 +47,6 @@ input <- data.frame(g1$AD_Digester_utilizationFactor,
                  g1$AD_DisplacedFertilizer_Production_Factor,
                  g1$AD_DisplacedFertilizer_Direct_Indirect,
                  g1$xportToField)
+dev.off() 
 hist.data.frame(input)    
 hist.data.frame(out)
