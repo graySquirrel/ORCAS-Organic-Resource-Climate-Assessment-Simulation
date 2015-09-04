@@ -14,52 +14,56 @@
 ########### GlobalFactors stuff
 GlobalFactors <- function()
 {
-    me <- list(N20N_to_N20 = 44/28, 
-               CtoCH4=16/12,
-               GWPN20 = 265, 
-               density_CH4 = 0.67, 
-               GWPCH4 = 28, 
-               EFGrid = -533.66,
-               #EFfreight_kgCO2ePERtonKm = 0.107,
-               Energy_content_methane_BTUperm3CH4 = 35315, 
-               Heating_value = 11700, 
-               DieselprovisionkgCO2eperL=0.45,
-               # Fruergaard et al. (2009)
-               DieselcombustionkgCO2eperL=2.720494342,
-               #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
-               IPCC_EF4 = 0.01,
-               
-               #Anaerobic Digestion
-               #EFfreight_kgCO2ePERtonKm = 0.107,
-               AD_Digester_utilizationFactor = 0.84,
-               AD_Digester_CH4Leaks = 0.03,
-               AD_Digester_CH4incompleteCombustion = 0.005,
-               #AD_Digester_N20incompleteCombustion = 0.03,
-               AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
-               AD_Digester_parasiticLoad = 0.12,
-               AD_reductionInVS = 0.55,
-               AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
-               AD_Storage_IPCC_EF3 = 0.005,
-               AD_Storage_IPCC_FracGasMS = 0.26,
-               AD_LandApplication_FracGasM =0.2,
-               AD_LandApplication_EF1 = 0.0125,
-               AD_LandApplication_OtherNFactor = 0.02,
-               AD_LandApp_NAvailabiltiy_Factor = 0.4,
-               AD_DisplacedFertilizer_Production_Factor = -6.8,
-               AD_DisplacedFertilizer_Direct_Indirect = -5.4,
-               xportToField = 20,
-               #Landfill
-               Landfill_Oxidation_Factor = 0.10,
-               LFDieseluseLpert =5.8,
-               Landfill_CF = 0.97,
-               k= 0.144,
-               #Land Application
-               LandApplication_FracGasM =0.2,
-               LandApplication_EF1 = 0.0125,
-               LandApplication_OtherNFactor = 0.02,
-               LandApp_NAvailabiltiy_Factor = 0.4,
-               LA_DisplacedFertilizer_Production_Factor = -6.8,
-               LA_DisplacedFertilizer_Direct_Indirect = -5.4)
+    me <- list(
+        # Conversion constants
+        N20N_to_N20 = 44/28, 
+        density_CH4 = 0.67,
+        CtoCH4=16/12,
+        Energy_content_methane_BTUperm3CH4 = 35315, 
+        # AR5 GWP factors
+        GWPN20 = 265, 
+        GWPCH4 = 28, 
+        # Emission factors
+        EFGrid = -533.66,
+        #EFfreight_kgCO2ePERtonKm = 0.107,
+        DieselprovisionkgCO2eperL=0.45,
+        # Fruergaard et al. (2009)
+        DieselcombustionkgCO2eperL=2.720494342,
+        #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
+        IPCC_EF4 = 0.01,
+        
+        #Anaerobic Digestion
+        #EFfreight_kgCO2ePERtonKm = 0.107,
+        AD_Digester_utilizationFactor = 0.84,
+        AD_Digester_CH4Leaks = 0.03,
+        AD_Digester_CH4incompleteCombustion = 0.005,
+        #AD_Digester_N20incompleteCombustion = 0.03,
+        AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
+        AD_Digester_parasiticLoad = 0.12,
+        AD_reductionInVS = 0.55,
+        AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
+        AD_Storage_IPCC_EF3 = 0.005,
+        AD_Storage_IPCC_FracGasMS = 0.26,
+        AD_LandApplication_FracGasM =0.2,
+        AD_LandApplication_EF1 = 0.0125,
+        AD_LandApplication_OtherNFactor = 0.02,
+        AD_LandApp_NAvailabiltiy_Factor = 0.4,
+        AD_DisplacedFertilizer_Production_Factor = -6.8,
+        AD_DisplacedFertilizer_Direct_Indirect = -5.4,
+        xportToField = 20,
+        #Landfill
+        Heating_value = 11700, 
+        Landfill_Oxidation_Factor = 0.10,
+        LFDieseluseLpert =5.83,
+        Landfill_CF = 0.90,
+        k= 0.144,
+        #Land Application
+        LandApplication_FracGasM =0.2,
+        LandApplication_EF1 = 0.0125,
+        LandApplication_OtherNFactor = 0.02,
+        LandApp_NAvailabiltiy_Factor = 0.4,
+        LA_DisplacedFertilizer_Production_Factor = -6.8,
+        LA_DisplacedFertilizer_Direct_Indirect = -5.4)
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
 }
@@ -74,19 +78,19 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
     if(missing(fdeg)) fdeg=0
     
     if (!is.numeric(TS) || !is.numeric(VS) || 
-            !is.numeric(Bo) || !is.numeric(TKN) ||
-            !all(is.finite(TS)) || !all(is.finite(VS)) ||
-            !all(is.finite(Bo)) || !all(is.finite(TKN)))
+        !is.numeric(Bo) || !is.numeric(TKN) ||
+        !all(is.finite(TS)) || !all(is.finite(VS)) ||
+        !all(is.finite(Bo)) || !all(is.finite(TKN)))
         stop("invalid input")
     #if (length(Bo) != length(TKN))
     #    stop("lengths differ")
-  # Carbon content
+    # Carbon content
     carboPercentC<-0.444
     proteinPercentC<-0.531
     lipidPercentC<-0.771
     InitialC<-(percentCarboTS*carboPercentC + 
-                 percentProteinTS*proteinPercentC +
-                 percentLipidTS*lipidPercentC)*TS*1000
+                   percentProteinTS*proteinPercentC +
+                   percentLipidTS*lipidPercentC)*TS*1000
     TVS = VS*TS
     Lo=Bo*TVS
     Nperton<-TKN/1000
@@ -98,7 +102,7 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
         percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC,Nperton=Nperton
     )
     
-
+    
     ## Set the name for the class
     class(me) <- append(class(me),"Feedstock")
     return(me)
