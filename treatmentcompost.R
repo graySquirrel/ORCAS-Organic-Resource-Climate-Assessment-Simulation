@@ -3,8 +3,11 @@
 #   compostTreatmentPathway(Feedstock, GlobalFactors, debug = F)
 #       returns data.frame of factor vs. outputs, labeled with row and col names
 #
+# Application enumeration:  'noDisplace' = no displacement
+#                           'Fertilizer' = Fertilizer displacement
+#                           'Peat' = Peat displacement
 ################# Treatment Functions
-compostTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
+compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', debug = F)
 {
   Compost_dieseLlpert<-3
   #Boldrin,2009
@@ -34,7 +37,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
    EMCompost_N2O=Feedstock$Nperton*Compost_N2OperN*GlobalFactors$N20N_to_N20*
      GlobalFactors$GWPN20
    if(debug) {print(paste("EMCompost_CH4", (EMCompost_CH4),"EMCompost_N2O",(EMCompost_N2O)))}
-   
+   EMBio <- EMCompost_N2O + EMCompost_CH4
   
 #Step 3 Carbon storage
     CStorage<-Feedstock$InitialC*(1-(Feedstock$fdeg+Compost_storage_factor))
@@ -59,7 +62,9 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     EMLandApp <- EMspread + EMN20_LandApp
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
-    # Step 4: Displaced fertilizer kgCO2e/MT
+    EMCompost <- EMCompostoperation + EMBio + EMCstorage + EMLandApp
+    
+    # Step 5: Displaced fertilizer kgCO2e/MT
     Nremaining      <- Nremaining - 
       Nremaining * GlobalFactors$LandApplication_EF1 -
       Nremaining * 0.2
@@ -72,9 +77,15 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     EM_displacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
     if(debug) print(paste("displacedFertilizer ",EM_displacedFertilizer))
     
-    # Step 5: Displaced peat kgCO2e/Mt
+    # Step 6: Displaced peat kgCO2e/Mt
    EM_displaced_Peat<-Peatdisplacementfactor*Compost_mass*EF_Peat_kgCO2eperton
     
+   final <- switch(Application,
+          'noDisplace' = EMCompost,
+          'Fertilizer' = EMCompost + EM_displacedFertilizer,
+          'Peat' = EMCompost + EM_displaced_Peat)
+   result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
+                        EMBio, EMCstorage, EMLandApp, EM_displaced_Peat, EM_displacedFertilizer)
 }
     
 
