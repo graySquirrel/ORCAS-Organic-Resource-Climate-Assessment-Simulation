@@ -27,10 +27,13 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
   k= GlobalFactors$k
   
 # step 1: Landfill operation
-  EMLFoperation<-LFDieseluseLpert*(GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-  
+  EMLFoperation<-LFDieseluseLpert*
+      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+  if (debug) print(paste("sum diesel",
+                         (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)))
 # step 2: Methane Production
     Max_Years=50
+    LCEMax = 0.9
     bytens <- FALSE
     if(bytens == TRUE){
         tcol <- seq(from=0.1,to=Max_Years,by=0.1)
@@ -48,7 +51,7 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     years2_4 <- c(0.5,0.5,0.5)
     years5_14 <- c(rep(0.75,10))
     years15_17 <- c(0.825,0.825,0.825)
-    yearsFinal <- rep(0.9,Max_Years-17)
+    yearsFinal <- rep(LCEMax,Max_Years-17)
     
     Landfill_LCE<- c(years0_1,years2_4,years5_14,years15_17,yearsFinal)
     if(debug) {print(paste("Landfill_LCE len ",length(Landfill_LCE)));
@@ -68,7 +71,8 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     if(debug) {print(paste("Landfill_recovered_CH4 ",Landfill_recovered_CH4))}
     
     #Landfill gas that is recovered for electricity, net of gas flared
-    Landfill_Kwh_t<-Landfill_recovered_CH4*GlobalFactors$Energy_content_methane_BTUperm3CH4/GlobalFactors$Heating_value
+    Landfill_Kwh_t<-Landfill_recovered_CH4*
+        GlobalFactors$Energy_content_methane_BTUperm3CH4/GlobalFactors$Heating_value
     EM_displaced_grid<-Landfill_Kwh_t*GlobalFactors$EFGrid/1000
     
     #Step 3 Carbon storage
