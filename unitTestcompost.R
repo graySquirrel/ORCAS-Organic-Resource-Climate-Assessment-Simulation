@@ -14,5 +14,8 @@ f1$InitialC<-142.72
 #print(paste("Lo ",f1$Lo, "TVS ",f1$TVS,"InitialC ",f1$InitialC))
 g1 <- GlobalFactors()
 res <- compostTreatmentPathway(f1, g1, debug = T)
-
+print(res)
+res <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer', debug = T)
+print(res)
+res <- compostTreatmentPathway(f1, g1, Application = 'Peat', debug = T)
 print(res)
