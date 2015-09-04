@@ -56,7 +56,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("EMDigester ",EMDigester))
     
     # Step2: calculate Storage emissions kgCO2e/MT
-    TVSDigestate    <- Feedstock$TVS * AD_reductionInVS
+    TVSDigestate    <- Feedstock$TVS * (1-AD_reductionInVS)*1000
     if(debug) print(paste("TVSDigestate ",TVSDigestate))    
     CH4StorageDigestate   <- TVSDigestate * AD_Storage_EFresidualMethaneM3CH4PerKgVS
     if(debug) print(paste("CH4StorageDigestate ",CH4StorageDigestate))    
