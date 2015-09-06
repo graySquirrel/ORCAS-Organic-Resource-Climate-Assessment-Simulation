@@ -4,8 +4,12 @@
 #   LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug = F)
 #       returns data.frame of factor vs. outputs, labeled with row and col names
 #
+# Application enumeration:  'noDisplace' = no displacement
+#                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
-LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F, Ninitial = 0)
+LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, 
+                                            debug = F, Ninitial = 0,
+                                            Application = 'noDisplace')
 {
  
   Nremaining = Ninitial
@@ -25,7 +29,8 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
     EMN20_LandApp_direct         <- Nremaining * LandApplication_EF1 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
-    EMN20_LandApp_indirect       <- Nremaining * LandApplication_FracGasM * GlobalFactors$IPCC_EF4 *
+    EMN20_LandApp_indirect       <- Nremaining * LandApplication_FracGasM * 
+        GlobalFactors$IPCC_EF4 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
     EMN20_LandApp    <- EMN20_LandApp_direct + EMN20_LandApp_indirect
@@ -33,26 +38,34 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
     EMLandApp <- EMspread + EMN20_LandApp
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
-    # Step 4: Displaced fertilizer kgCO2e/MT
+    # Step 4: Carbon Sequestration kgCO2e/MT
+    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)
+    EMCstorage<-CStorage*(-44/12)
+    
+    # Step 5: Displaced fertilizer kgCO2e/MT
     Nremaining      <- Nremaining - 
         Nremaining * LandApplication_EF1 -
-        Nremaining * 0.2
-    effectiveNapplied <- Nremaining * 
-        LandApp_NAvailabiltiy_Factor
+        Nremaining * 0.02 - Nremaining * 0.2
+    effectiveNapplied <- Nremaining * LandApp_NAvailabiltiy_Factor
+    if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
+    
     avoidedNfert    <- LA_DisplacedFertilizer_Production_Factor *
         effectiveNapplied/1000
+    if(debug) print(paste("avoidedNfert ",avoidedNfert))
+    
     avoidedInorganicFertdirectandIndirect <- LA_DisplacedFertilizer_Direct_Indirect *
         effectiveNapplied/1000
-    displacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
-    if(debug) print(paste("displacedFertilizer ",displacedFertilizer))
+    if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
+                          avoidedInorganicFertdirectandIndirect))
     
-    # Step 5: Carbon Sequestration kgCO2e/MT
+    EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
+    if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
     
     # Add together
-    netEmissions <- 
-        EMLandApp +
-        displacedFertilizer
-    result <- data.frame(netEmissions,EMLandApp,displacedFertilizer)
-    colnames(result) <- c("LAnetEmissions","EMLandApp", "displacedFertilizer")
+    EMNetLandapp <- switch(Application,
+                    'noDisplace' = EMLandApp + EMCstorage,
+                    'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
+    result <- data.frame(EMNetLandapp, Application, EMLandApp, EMCstorage, 
+                         EMdisplacedFertilizer)
     result
 }

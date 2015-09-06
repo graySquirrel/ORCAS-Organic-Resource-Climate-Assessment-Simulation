@@ -41,7 +41,7 @@ GlobalFactors <- function()
         AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
         AD_Digester_parasiticLoad = 0.12,
         AD_reductionInVS = 0.55,
-        AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.043, # 0.054
+        AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.054,
         AD_Storage_IPCC_EF3 = 0.005,
         AD_Storage_IPCC_FracGasMS = 0.26,
         AD_LandApplication_FracGasM =0.2,
