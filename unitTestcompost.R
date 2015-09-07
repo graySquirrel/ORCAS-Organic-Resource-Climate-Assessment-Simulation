@@ -12,7 +12,7 @@ f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
 
 print(paste("Lo ",f1$Lo, "TVS ",f1$TVS,"InitialC ",f1$InitialC))
 g1 <- GlobalFactors()
-res <- compostTreatmentPathway(f1, g1, debug = T)
+res <- compostTreatmentPathway(f1, g1, Application = 'noDisplace', debug = T)
 print(res)
 res <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer', debug = T)
 print(res)
