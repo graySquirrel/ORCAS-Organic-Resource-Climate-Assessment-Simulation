@@ -46,7 +46,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
     CStorage<-Feedstock$InitialC*(1-(Feedstock$fdeg+Compost_storage_factor))
     #Assuming that the same amount is stored long term as AD degradability test
     if(debug) {print(paste("CStorage", (CStorage)))}
-    EMCstorage<-CStorage*-44/12
+    EMCstorage<-CStorage * -44/12
     if(debug) {print(paste("EMCstorage", (EMCstorage)))}
     
 #Step 4 Compost application
