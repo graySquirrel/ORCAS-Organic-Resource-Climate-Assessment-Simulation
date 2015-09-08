@@ -7,7 +7,9 @@ source("treatmentLandApplication.R")
 library(Hmisc)
 #################################################################################
 numsamp = 10000
-f1 <- Feedstock(type = "GTW",TS = 18,VS = 17 / 18,Bo = 887,TKN = 5600)
+f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
+                percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
+                fdeg = 0.85)
 g1 <- GlobalFactors()
 # Create samples over range of input factors that you want.
 # If you don't like them, change them.
