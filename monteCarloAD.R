@@ -30,6 +30,7 @@ g1$AD_DisplacedFertilizer_Direct_Indirect = runif(numsamp,-7.5,-2.5)  #-5.4
 g1$xportToField = runif(numsamp,15,25)  #20
 
 out <- AnaerobicDigestionTreatmentPathway(f1, g1, debug = F)
+outOfInterest <- out[,c(1,2,3,4)]
 ##############################################################################
 input <- data.frame(g1$AD_Digester_utilizationFactor,
                  g1$AD_Digester_CH4Leaks,
@@ -47,6 +48,7 @@ input <- data.frame(g1$AD_Digester_utilizationFactor,
                  g1$AD_DisplacedFertilizer_Production_Factor,
                  g1$AD_DisplacedFertilizer_Direct_Indirect,
                  g1$xportToField)
+
 if(dev.cur() != 1) dev.off() 
 hist.data.frame(input)    
-hist.data.frame(out)
+hist.data.frame(outOfInterest)
