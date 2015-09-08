@@ -3,7 +3,7 @@
 #setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
-source("treatmentLandApplication.R") #land app does not use feedstock
+source("treatmentLandApplication.R") 
 source("treatmentLandfill.R")
 source("treatmentcompost.R")
 ###########################################################
@@ -24,10 +24,10 @@ plotit <- function(a,x,title,xlab) {
 ###########################################################
 ####  Change these params to do a diff one.
 numsampsPerDimension = 10 # Will create numsampsPerDimension^4 samples for the cube
-inputs <- data.frame(createSamples(dims=4,level=1,samps=numsampsPerDimension, min=14,max=22))
-inputs <- cbind(inputs, createSamples(dims=4,level=2,samps=numsampsPerDimension, min=13/18, max= 18/18))
-inputs <- cbind(inputs, createSamples(dims=4,level=3,samps=numsampsPerDimension, min=750, max=950))
-inputs <- cbind(inputs, createSamples(dims=4,level=4,samps=numsampsPerDimension, min=4500, max=6500))
+inputs <- data.frame(createSamples(dims=4,level=1,samps=numsampsPerDimension, min=0,max=1))
+inputs <- cbind(inputs, createSamples(dims=4,level=2,samps=numsampsPerDimension, min=0.8, max= 1))
+inputs <- cbind(inputs, createSamples(dims=4,level=3,samps=numsampsPerDimension, min=180, max=1100))
+inputs <- cbind(inputs, createSamples(dims=4,level=4,samps=numsampsPerDimension, min=3700, max=13000))
 colnames(inputs) <- c("TS","VS","Bo","TKN")
 
 f1 <- Feedstock(type="variability", TS=inputs[,1], VS=inputs[,2], Bo=inputs[,3], TKN=inputs[,4])
