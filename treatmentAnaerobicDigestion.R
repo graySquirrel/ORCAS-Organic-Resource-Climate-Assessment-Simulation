@@ -23,15 +23,15 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
       GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
   AD_Storage_IPCC_EF3 = GlobalFactors$AD_Storage_IPCC_EF3
   AD_Storage_IPCC_FracGasMS = GlobalFactors$AD_Storage_IPCC_FracGasMS
-  AD_LandApplication_FracGasM = GlobalFactors$AD_LandApplication_FracGasM
-  AD_LandApplication_EF1 = GlobalFactors$AD_LandApplication_EF1
+  #AD_LandApplication_FracGasM = GlobalFactors$AD_LandApplication_FracGasM
+  #AD_LandApplication_EF1 = GlobalFactors$AD_LandApplication_EF1
   AD_LandApplication_OtherNFactor = GlobalFactors$AD_LandApplication_OtherNFactor
-  AD_LandApp_NAvailabiltiy_Factor = GlobalFactors$AD_LandApp_NAvailabiltiy_Factor
-  AD_DisplacedFertilizer_Production_Factor = 
-      GlobalFactors$AD_DisplacedFertilizer_Production_Factor
-  AD_DisplacedFertilizer_Direct_Indirect = 
-      GlobalFactors$AD_DisplacedFertilizer_Direct_Indirect
-  xportToField = GlobalFactors$xportToField
+  #AD_LandApp_NAvailabiltiy_Factor = GlobalFactors$AD_LandApp_NAvailabiltiy_Factor
+  #AD_DisplacedFertilizer_Production_Factor = 
+  #    GlobalFactors$AD_DisplacedFertilizer_Production_Factor
+  #AD_DisplacedFertilizer_Direct_Indirect = 
+  #    GlobalFactors$AD_DisplacedFertilizer_Direct_Indirect
+  #xportToField = GlobalFactors$xportToField
   
 # step 0: Hauling
     # TODO
