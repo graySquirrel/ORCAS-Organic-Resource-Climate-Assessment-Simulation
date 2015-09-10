@@ -15,7 +15,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
   Nremaining = Ninitial
   LandApplication_FracGasM =GlobalFactors$LandApplication_FracGasM
   LandApplication_EF1 = GlobalFactors$LandApplication_EF1
-  LandApplication_OtherNFactor = GlobalFactors$LandApplication_OtherNFactor
+  #LandApplication_OtherNFactor = GlobalFactors$LandApplication_OtherNFactor
   LandApp_NAvailabiltiy_Factor = GlobalFactors$LandApp_NAvailabiltiy_Factor
   LA_DisplacedFertilizer_Production_Factor = 
       GlobalFactors$LA_DisplacedFertilizer_Production_Factor
