@@ -44,12 +44,12 @@ GlobalFactors <- function()
         AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.054,
         AD_Storage_IPCC_EF3 = 0.005,
         AD_Storage_IPCC_FracGasMS = 0.26,
-        AD_LandApplication_FracGasM =0.2,
-        AD_LandApplication_EF1 = 0.0125,
+        #AD_LandApplication_FracGasM =0.2,
+        #AD_LandApplication_EF1 = 0.0125,
         AD_LandApplication_OtherNFactor = 0.02,
-        AD_LandApp_NAvailabiltiy_Factor = 0.4,
-        AD_DisplacedFertilizer_Production_Factor = -6.8,
-        AD_DisplacedFertilizer_Direct_Indirect = -5.4,
+        #AD_LandApp_NAvailabiltiy_Factor = 0.4,
+        #AD_DisplacedFertilizer_Production_Factor = -6.8,
+        #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
         xportToField = 20,
         #Landfill
         Heating_value = 11700, 
@@ -60,7 +60,7 @@ GlobalFactors <- function()
         #Land Application
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
-        LandApplication_OtherNFactor = 0.02,
+        #LandApplication_OtherNFactor = 0.02,
         LandApp_NAvailabiltiy_Factor = 0.4,
         LA_DisplacedFertilizer_Production_Factor = -6.8,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4)
