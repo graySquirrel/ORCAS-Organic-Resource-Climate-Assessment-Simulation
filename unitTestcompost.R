@@ -6,7 +6,7 @@ source("treatmentClasses.R")
 source("treatmentcompost.R") 
 
 
-f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
+f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=15000,
                 percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
                 fdeg = 0.85)
 
