@@ -17,7 +17,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
   Compost_degradedC_CH4<-0.02
   #Boldrin,2009
   Compost_N2OperN<-0.015
-  Compost_storage_factor<-0.00
+  Compost_storage_factor<-0.6
 # Additional decay beyond AD degradation tests due to organisms and fungi
   Compost_mass_reduction=0.4
   Compost_spread_diesellpert<-0.4
@@ -43,7 +43,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
    EMBio <- EMCompost_N2O + EMCompost_CH4
   
 #Step 3 Carbon storage
-    CStorage<-Feedstock$InitialC*(1-(Feedstock$fdeg+Compost_storage_factor))
+    CStorage<-Feedstock$InitialC * (1-Feedstock$fdeg) * (1-Compost_storage_factor)
     #Assuming that the same amount is stored long term as AD degradability test
     if(debug) {print(paste("CStorage", (CStorage)))}
     EMCstorage<-CStorage * -44/12
