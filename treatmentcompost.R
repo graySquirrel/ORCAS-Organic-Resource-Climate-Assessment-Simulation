@@ -9,23 +9,23 @@
 ################# Treatment Functions
 compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', debug = F)
 {
-  Compost_EF1 = 0.015 # Boldrin
-  Compost_dieseLlpert<-3
+  Compost_EF1 <- GlobalFactors$Compost_EF1
+  Compost_dieseLlpert <- GlobalFactors$Compost_dieseLlpert
   #Boldrin,2009
-  CompostPercentCdegraded<-0.58
+  CompostPercentCdegraded <- GlobalFactors$CompostPercentCdegraded
   #Boldrin,2009
-  Compost_degradedC_CH4<-0.02
+  Compost_degradedC_CH4 <- GlobalFactors$Compost_degradedC_CH4
   #Boldrin,2009
-  Compost_N2OperN<-0.015
-  Compost_storage_factor<-0.6
+  Compost_N2OperN <- GlobalFactors$Compost_N2OperN
+  Compost_storage_factor <- GlobalFactors$Compost_storage_factor
 # Additional decay beyond AD degradation tests due to organisms and fungi
-  Compost_mass_reduction=0.4
-  Compost_spread_diesellpert<-0.4
-  Compost_N_remaining<-0.4
-  Compost_NAvailabiltiy_Factor<-0.4
-  xportToField<-60
-  Peatdisplacementfactor<-1
-  EF_Peat_kgCO2eperton<- -970
+  Compost_mass_reduction <- GlobalFactors$Compost_mass_reduction
+  Compost_spread_diesellpert <- GlobalFactors$Compost_spread_diesellpert
+  Compost_N_remaining <- GlobalFactors$Compost_N_remaining
+  Compost_NAvailabiltiy_Factor <- GlobalFactors$Compost_NAvailabiltiy_Factor
+  Compost_xportToField <- GlobalFactors$Compost_xportToField
+  Peatdisplacementfactor <- GlobalFactors$Peatdisplacementfactor
+  EF_Peat_kgCO2eperton <- GlobalFactors$EF_Peat_kgCO2eperton
 # Hauling of the waste to the compost facility not included at this time
 # step 1: Compost operation
   EMCompostoperation<-Compost_dieseLlpert*
@@ -51,7 +51,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
     
 #Step 4 Compost application
     Compost_mass<- 1000*Compost_mass_reduction
-    EMspread           <- 1.5 * xportToField/20
+    EMspread           <- 1.5 * Compost_xportToField/20
     if(debug) print(paste("EMspread ",EMspread))
     Nremaining<-Feedstock$Nperton*Compost_N_remaining
     if(debug) print(paste("Nremaining 1 ",Nremaining))
@@ -74,7 +74,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
       Compost_NAvailabiltiy_Factor
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
       effectiveNapplied
-    avoidedInorganicFertdirectandIndirect <- GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
+    avoidedInorganicFertdirectandIndirect <- 
+        GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
       effectiveNapplied
     EM_displacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
     if(debug) print(paste("displacedFertilizer ",EM_displacedFertilizer))
@@ -87,7 +88,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
           'Fertilizer' = EMCompost + EM_displacedFertilizer,
           'Peat' = EMCompost + EM_displaced_Peat)
    result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
-                        EMBio, EMCstorage, EMLandApp, EM_displaced_Peat, EM_displacedFertilizer)
+                        EMBio, EMCstorage, EMLandApp, EM_displaced_Peat, 
+                        EM_displacedFertilizer)
 }
     
 

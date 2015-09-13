@@ -31,7 +31,24 @@ GlobalFactors <- function()
         DieselcombustionkgCO2eperL=2.720494342,
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
         IPCC_EF4 = 0.01,
-        
+        #Compost
+        Compost_EF1 = 0.015, # Boldrin
+        Compost_dieseLlpert = 3,
+        #Boldrin,2009
+        CompostPercentCdegraded = 0.58,
+        #Boldrin,2009
+        Compost_degradedC_CH4 = 0.02,
+        #Boldrin,2009
+        Compost_N2OperN = 0.015,
+        Compost_storage_factor = 0.6,
+        # Additional decay beyond AD degradation tests due to organisms and fungi
+        Compost_mass_reduction = 0.4,
+        Compost_spread_diesellpert = 0.4,
+        Compost_N_remaining = 0.4,
+        Compost_NAvailabiltiy_Factor = 0.4,
+        Compost_xportToField = 60,
+        Peatdisplacementfactor = 1,
+        EF_Peat_kgCO2eperton = -970,
         #Anaerobic Digestion
         #EFfreight_kgCO2ePERtonKm = 0.107,
         AD_Digester_utilizationFactor = 0.84,
