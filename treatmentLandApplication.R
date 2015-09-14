@@ -8,7 +8,7 @@
 #                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
 LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, 
-                                            debug = F, Ninitial = 0,
+                                            debug = F, Ninitial = Feedstock$TKN,
                                             Application = 'noDisplace')
 {
  
