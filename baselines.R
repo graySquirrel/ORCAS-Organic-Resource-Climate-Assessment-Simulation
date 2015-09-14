@@ -5,15 +5,13 @@ source("treatmentAnaerobicDigestion.R")
 source("treatmentLandApplication.R") 
 source("treatmentLandfill.R")
 source("treatmentcompost.R")
+source("parseGlobalFactors.R")
 
 i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
 f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
                 percentCarboTS = i$PercentCarboTS, percentLipidTS = i$PercentlipidTS,
                 percentProteinTS = i$PercentproteinTS, fdeg = i$fdeg)
-# f1 <- Feedstock(type="baseline",TS=0.3,VS=0.90,Bo=334,TKN=5600,
-#                 percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
-#                 fdeg = 0.85)
-g1 <- GlobalFactors()
+g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
 o<-NULL
 o$AD <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'noDisplace')
 o$ADf <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'Fertilizer')
