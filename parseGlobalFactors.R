@@ -2,7 +2,7 @@
 # maybe later we will add it as a function
 #
 source("treatmentClasses.R") 
-getGlobalFactorsFromFile <- function(file = "Globalfactors.csv") {
+getGlobalFactorsFromFile <- function(file = "Globalfactors.csv",doRanges=TRUE) {
     r <- read.csv(file=file,stringsAsFactors = FALSE)
     numSamps <- 1001
     set.seed(1234)
@@ -27,12 +27,19 @@ getGlobalFactorsFromFile <- function(file = "Globalfactors.csv") {
                     "Value" = {print(paste("setting ",currentName, "from",
                                            currentValue, "to", newValue))
                         g1[[currentName]] <- newValue},
-                    "Range" = {print(paste("setting ",currentName," to ",
-                                           numSamps,"samples between",
-                                           r[[i,"Range.Lo"]], "and", r[[i,"Range.High"]]))
-                        g1[[r$sw.name[i]]] <- runif(n = numSamps,
-                                                    min = r[[i,"Range.Lo"]],
-                                                    max = r[[i,"Range.High"]])},
+                    "Range" = {
+                        if (doRanges) {
+                            print(paste("setting ",currentName," to ",
+                                        numSamps,"samples between",
+                                        r[[i,"Range.Lo"]], "and", r[[i,"Range.High"]]))
+                            g1[[r$sw.name[i]]] <- runif(n = numSamps,
+                                                        min = r[[i,"Range.Lo"]],
+                                                        max = r[[i,"Range.High"]])}
+                        else {
+                            print(paste("setting ",currentName, "from",
+                                        currentValue, "to", newValue))
+                            g1[[currentName]] <- newValue
+                        }},
                     {print(paste("!no action on",currentName))}
             )
         } else {
