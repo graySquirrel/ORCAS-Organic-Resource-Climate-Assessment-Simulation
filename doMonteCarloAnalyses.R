@@ -70,14 +70,15 @@ y <- rbind(y1,y2,y3,y4)
 y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Nominal)]) # order by LF
 
 # Plot Nominal values
-ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) + 
+p1 <- ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) + 
     geom_bar(position=position_dodge(), stat="identity") +
     geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 
 # Make a second plot to show median values
-ggplot(y, aes(x=feedstock, y=Median,fill=treatment)) + 
+p2 <- ggplot(y, aes(x=feedstock, y=Median,fill=treatment)) + 
     geom_bar(position=position_dodge(), stat="identity") +
     geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
-
+print(p1)
+print(p2)
