@@ -1,46 +1,1 @@
-Global Factors,Units,sw name,Use,Value,Range Lo,Range High,Source,,Source,Notes
-Relevant Emission Factors,,,no,,,,,,,
-Provision of diesel,kgCO2e/L diesel,DieselprovisionkgCO2eperL,Value,0.45,0.4,0.5, Fruergaard et al. (2009),,0,0
-Diesel combustion,kgCO2e/L diesel,DieselcombustionkgCO2eperL,Value,2.72,,,GREET 2014,,0,
-Grid electricity displacement,,EFGrid,no,,,,,,,
-Production N fertilizer,,LA_DisplacedFertilizer_Production_Factor,no,,,,,,,
-Production K fertilizer,,not used,no,,,,,,,
-Production P fertilizer,,not used,no,,,,,,,
-Production of Peat,,EF_Peat_kgCO2eperton,no,,,,,,,
-Landfill,,,no,,,,,,,
-diesel use at landfill ,L/t,LFDieseluseLpert,Range,5.83,4,10,WARM v.13,,Hunziker,0.7 gal/1000lbs; high compared to 1–3 L diesel tonne–1 waste (Hunziker)
-Factor of oxidation,%,Landfill_Oxidation_Factor,Range,0.1,0.1,0.35,EPA biogenic ,,,"Barlaz and Warm provide a schedule ranging from 10-35%, with 20% average)"
-max landfill capture efficiency,%,LCEMax,Range,0.9,0.85,0.95,,,,
-Gas Capture factor (GC),%,not used,Value,0.85,0.85,0.9,WARM,,,not used:85  % Landfills in NYS  with GC recovery
-Correction factor,fraction,not used,Value,1,,,,,,"not used at this time, assumed, 0.9 in CCARv. 2, could also be correction factor from Cho paper for bo to Lo"
-Heat rate of LF to E conversion,btu/kwh,Heating_value,Value,11700,8979,13648,0,,EPA 2013,"no used 29% efficiency based upon 3412 btu/kwh, 25%-38%"
-Carbon storage factor,%,not used,Range,1,0.9,1.1,,,,Correction factor for carbon storage
-Anaerobic Digestion,,,no,,,,,,,
-Methane conversion factor ,%,AD_Digester_utilizationFactor,Range,0.84,0.7,0.9,"Ebner et al, 2014",,,scaling factor for lab B0 to commercial Methane yeild
-Methane leaks,% methane utilized,AD_Digester_CH4Leaks,Range,0.03,0,0.1,"Ebner et al., 2014",,,3% of methane utilized
-Methane incomplete combustion factor,% methane utilized,AD_Digester_CH4incompleteCombustion,Value,0.005,,,"Dressler, 2012",,,"Hildesheim, Gottingen, Celle"
-Incomplete combustion CH4IC,kgCO2e/t,,Value,7.10782632,,,0.378882,,,
-Conversion Efficiency,MWh/t,AD_Digester_conversion_KwHPerM3,Value,4.193188204,,,"Ebner et al, 2014",,,KWh/m3 methane 43% efficiency
-Parasitic load,% KWh generated,AD_Digester_parasiticLoad,Range,0.12,0.1,0.2,"Ebner et al, 2015",,,Parasitic load
-VS destruction,%,AD_reductionInVS,Range,0.55,0.4,0.7,"Ebner et al., 2014",,,assuming a 55% reduction in VS
-Effluent residual methane factor,m3CH4/kgVS,AD_Storage_EFresidualMethaneM3CH4PerKgVS,Range,0.054,0.004,0.074,"Ebner et al., 2014",,,
-Direct N2O emission factor ,kgCO2e/t,AD_Storage_IPCC_EF3,Value,0.005,,,"IPCC protocol, EF3=0.005",,assumes that N in is the same as N out adjusted for D losses,
-Indirect N volitilization factor,KgNvol/kg N,AD_Storage_IPCC_FracGasMS,Value,0.26,,,FracGASMS=0.26,,0,
-Indirect N2O-N from NH3,Kg N2O-N/kg N,AD_LandApplication_OtherNFactor,Value,0.01,,,"IPCC, EF4=0.01",,assumes that N is is the same as N out adjusted for D losses,
-Land Application,,,no,,,,,,,
-Xport to field,kgCO2e/t,xportToField,Range,20,10,20,"Moller,2006  based upon 20km to field and scalable",,,
-Direct N2O emission factor,Kg N2O-N/kg N,LandApplication_EF1,Value,0.0125,,,IPCC EF1=0.0125,,,
-Indirect N2O-N from NH3,Kg N2O-N/kg N,IPCC_EF4,Value,0.01,,,"IPCC, EF4=0.01, ",,,
-Indirect N volatilization factor,KgNvol/kg N,LandApplication_FracGasM,Value,0.2,,,"IPCC, FracGASM=0.20",,,
-Carbon storage factor,0,not used,Value,1,,,,,,
-Effective N applied,mg/kg,LandApp_NAvailabiltiy_Factor,Value,0.4,,,,,,purely arbitrary mineralization factor of 40%
-Compost,,,no,,,,,,,
-Diesel use,L/t,Compost_dieseLlpert,Range,3,0.4,6,"Boldrin, 2009",,,
-Electricity use ,KWh/t,not used,no,0,0.03,65,"Boldrin, 2009",,,
-carbon degraded,%/initial C,CompostPercentCdegraded,Range,0.58,0.4,0.83,"Boldrin, 2010",,,
-% CH4 emissions,%CH4-C/degraded C,Compost_degradedC_CH4,Range,0.02,0.008,0.036,"Boldrin, 2012",,,
-% N emissions,%N2O-N/degraded N,Compost_N2OperN,Range,0.015,0.01,0.018,"Boldrin, 2009 ",,,
-Carbon Storage factor,% deg beyond fd,Compost_storage_factor,Range,0.6,0.2,0.8,"based upon 2-14% of  C applied (Smith et al. 2001,Brinkmann et al. 2004; Den Boer et al. 2005, Fisher 2006)  ",,,
-Compost mass degradation,%compost/fw,Compost_mass_reduction,Value,0.4,,,"Boldrin, 2009",,,
-Transport to application,km,Compost_xportToField,Value,30,,,estimated,,,
-N loss,%initial N,Compost_N_remaining,Range,0.38,0.26,0.51,Boldrin,,,
+Global Factors,Units,sw name,Use,Value,Range Lo,Range High,Source,,Source,NotesRelevant Emission Factors,,,no,,,,,,,Provision of diesel,kgCO2e/L diesel,DieselprovisionkgCO2eperL,Value,0.45,0.4,0.5, Fruergaard et al. (2009),,0,0Diesel combustion,kgCO2e/L diesel,DieselcombustionkgCO2eperL,Value,2.72,,,GREET 2014,,0,Grid electricity displacement,,EFGrid,no,,,,,,,Production N fertilizer,,LA_DisplacedFertilizer_Production_Factor,no,,,,,,,Production K fertilizer,,not used,no,,,,,,,Production P fertilizer,,not used,no,,,,,,,Production of Peat,,EF_Peat_kgCO2eperton,no,,,,,,,Landfill,,,no,,,,,,,diesel use at landfill ,L/t,LFDieseluseLpert,Range,5.83,4,10,WARM v.13,,Hunziker,0.7 gal/1000lbs; high compared to 1_3 L diesel tonne_1 waste (Hunziker)Factor of oxidation,%,Landfill_Oxidation_Factor,Value,0.1,0.1,0.35,EPA biogenic ,,,"Barlaz and Warm provide a schedule ranging from 10-35%, with 20% average)"max landfill capture efficiency,%,LCEMax,Range,0.9,0.85,0.95,,,,Gas Capture factor (GC),%,not used,Value,0.85,0.85,0.9,WARM,,,not used:85  % Landfills in NYS  with GC recoveryCorrection factor,fraction,BMP_Correctionfactor,Range,0.7,0.7,1,,,,"not used at this time, assumed, 0.9 in CCARv. 2, could also be correction factor from Cho paper for bo to Lo"Heat rate of LF to E conversion,btu/kwh,Heating_value,Value,11700,8979,13648,0,,EPA 2013,"no used 29% efficiency based upon 3412 btu/kwh, 25%-38%"Carbon storage factor,%,not used,Range,1,0.9,1.1,,,,Correction factor for carbon storageAnaerobic Digestion,,,no,,,,,,,Methane conversion factor ,%,AD_Digester_utilizationFactor,Range,0.84,0.7,0.9,"Ebner et al, 2014",,,scaling factor for lab B0 to commercial Methane yeildMethane leaks,% methane utilized,AD_Digester_CH4Leaks,Range,0.03,0,0.1,"Ebner et al., 2014",,,3% of methane utilizedMethane incomplete combustion factor,% methane utilized,AD_Digester_CH4incompleteCombustion,Value,0.005,,,"Dressler, 2012",,,"Hildesheim, Gottingen, Celle"Incomplete combustion CH4IC,kgCO2e/t,,Value,7.10782632,,,0.378882,,,Conversion Efficiency,MWh/t,AD_Digester_conversion_KwHPerM3,Value,4.193188204,,,"Ebner et al, 2014",,,KWh/m3 methane 43% efficiencyParasitic load,% KWh generated,AD_Digester_parasiticLoad,Range,0.12,0.1,0.2,"Ebner et al, 2015",,,Parasitic loadVS destruction,%,AD_reductionInVS,Range,0.55,0.4,0.7,"Ebner et al., 2014",,,assuming a 55% reduction in VSEffluent residual methane factor,m3CH4/kgVS,AD_Storage_EFresidualMethaneM3CH4PerKgVS,Range,0.054,0.004,0.074,"Ebner et al., 2014",,,Direct N2O emission factor ,kgCO2e/t,AD_Storage_IPCC_EF3,Value,0.005,,,"IPCC protocol, EF3=0.005",,assumes that N in is the same as N out adjusted for D losses,Indirect N volitilization factor,KgNvol/kg N,AD_Storage_IPCC_FracGasMS,Value,0.26,,,FracGASMS=0.26,,0,Indirect N2O-N from NH3,Kg N2O-N/kg N,AD_LandApplication_OtherNFactor,Value,0.01,,,"IPCC, EF4=0.01",,assumes that N is is the same as N out adjusted for D losses,Land Application,,,no,,,,,,,Xport to field,kgCO2e/t,xportToField,Range,20,10,20,"Moller,2006  based upon 20km to field and scalable",,,Direct N2O emission factor,Kg N2O-N/kg N,LandApplication_EF1,Value,0.0125,,,IPCC EF1=0.0125,,,Indirect N2O-N from NH3,Kg N2O-N/kg N,IPCC_EF4,Value,0.01,,,"IPCC, EF4=0.01, ",,,Indirect N volatilization factor,KgNvol/kg N,LandApplication_FracGasM,Value,0.2,,,"IPCC, FracGASM=0.20",,,Carbon storage factor,0,not used,Value,1,,,,,,Effective N applied,mg/kg,LandApp_NAvailabiltiy_Factor,Value,0.4,,,,,,purely arbitrary mineralization factor of 40%Compost,,,no,,,,,,,Diesel use,L/t,Compost_dieseLlpert,Range,3,0.4,6,"Boldrin, 2009",,,Electricity use ,KWh/t,not used,no,0,0.03,65,"Boldrin, 2009",,,carbon degraded,%/initial C,CompostPercentCdegraded,Range,0.58,0.4,0.83,"Boldrin, 2010",,,% CH4 emissions,%CH4-C/degraded C,Compost_degradedC_CH4,Range,0.02,0.008,0.036,"Boldrin, 2012",,,% N emissions,%N2O-N/degraded N,Compost_N2OperN,Range,0.015,0.01,0.018,"Boldrin, 2009 ",,,Carbon Storage factor,% deg beyond fd,Compost_storage_factor,Range,0.6,0.2,0.8,"based upon 2-14% of  C applied (Smith et al. 2001,Brinkmann et al. 2004; Den Boer et al. 2005, Fisher 2006)  ",,,Compost mass degradation,%compost/fw,Compost_mass_reduction,Value,0.4,,,"Boldrin, 2009",,,Transport to application,km,Compost_xportToField,Value,30,,,estimated,,,Is this different than for what is displacedN loss,%initial N,Compost_N_remaining,Range,0.38,0.26,0.51,Boldrin,,,
