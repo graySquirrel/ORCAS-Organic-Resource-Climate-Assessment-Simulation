@@ -9,11 +9,11 @@ Production P fertilizer,,not used,no,,,,,,,
 Production of Peat,,EF_Peat_kgCO2eperton,no,,,,,,,
 Landfill,,,no,,,,,,,
 diesel use at landfill ,L/t,LFDieseluseLpert,Range,5.83,4,10,WARM v.13,,Hunziker,0.7 gal/1000lbs; high compared to 1–3 L diesel tonne–1 waste (Hunziker)
-Factor of oxidation,%,Landfill_Oxidation_Factor,Range,0.1,0,1,EPA biogenic ,,,"Barlaz and Warm provide a schedule ranging from 10-35%, with 20% average)"
+Factor of oxidation,%,Landfill_Oxidation_Factor,Range,0.1,0.1,0.35,EPA biogenic ,,,"Barlaz and Warm provide a schedule ranging from 10-35%, with 20% average)"
 max landfill capture efficiency,%,LCEMax,Range,0.9,0.85,0.95,,,,
-Gas Capture factor (GC),%,not used,Range,0.85,0.85,0.9,WARM,,,not used:85  % Landfills in NYS  with GC recovery
+Gas Capture factor (GC),%,not used,Value,0.85,0.85,0.9,WARM,,,not used:85  % Landfills in NYS  with GC recovery
 Correction factor,fraction,not used,Value,1,,,,,,"not used at this time, assumed, 0.9 in CCARv. 2, could also be correction factor from Cho paper for bo to Lo"
-Heat rate of LF to E conversion,btu/kwh,Heating_value,Range,11700,8979,13648,0,,EPA 2013,"29% efficiency based upon 3412 btu/kwh, 25%-38%"
+Heat rate of LF to E conversion,btu/kwh,Heating_value,Value,11700,8979,13648,0,,EPA 2013,"no used 29% efficiency based upon 3412 btu/kwh, 25%-38%"
 Carbon storage factor,%,not used,Range,1,0.9,1.1,,,,Correction factor for carbon storage
 Anaerobic Digestion,,,no,,,,,,,
 Methane conversion factor ,%,AD_Digester_utilizationFactor,Range,0.84,0.7,0.9,"Ebner et al, 2014",,,scaling factor for lab B0 to commercial Methane yeild
@@ -36,7 +36,7 @@ Carbon storage factor,0,not used,Value,1,,,,,,
 Effective N applied,mg/kg,LandApp_NAvailabiltiy_Factor,Value,0.4,,,,,,purely arbitrary mineralization factor of 40%
 Compost,,,no,,,,,,,
 Diesel use,L/t,Compost_dieseLlpert,Range,3,0.4,6,"Boldrin, 2009",,,
-Electricity use ,KWh/t,not used,Range,0,0.03,65,"Boldrin, 2009",,,
+Electricity use ,KWh/t,not used,no,0,0.03,65,"Boldrin, 2009",,,
 carbon degraded,%/initial C,CompostPercentCdegraded,Range,0.58,0.4,0.83,"Boldrin, 2010",,,
 % CH4 emissions,%CH4-C/degraded C,Compost_degradedC_CH4,Range,0.02,0.008,0.036,"Boldrin, 2012",,,
 % N emissions,%N2O-N/degraded N,Compost_N2OperN,Range,0.015,0.01,0.018,"Boldrin, 2009 ",,,
