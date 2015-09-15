@@ -32,9 +32,6 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
         } else {
           out <- FUN(f1, g1)
         }
-        #out <- FUN(f1, g1,Application='Fertilizer')
-        #out <- FUN(f1, g1,Application='Peat')
-
         q <- out[,1]
         outRanges <- cbind(outRanges, q)
     }
@@ -50,11 +47,15 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
     o
 }
 #####################################################################
-app <- 'Fertilizer'
-ADstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway,Application=app)
+# Do the MC for all pathways, then pick what you want to show.
+ADstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway)
+ADfstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway, Application='Fertilizer')
 LFstats <- calculatePathwayMC(FUN=LandfillTreatmentPathway)
-CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway,Application=app)
-LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway,Application=app)
+CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway)
+CMfstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Fertilizer')
+CMpstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Peat')
+LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway)
+LAfstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
 #####################################################################
 # Get baselines
 b <- getBaselineResults()
@@ -69,25 +70,20 @@ massageDataforPlot <- function(in1,in2,treat) {
 }
 # Now do the dirty work of plotting
 library(ggplot2)
-if(app=='Fertilizer') {
-  y1 <- massageDataforPlot(ADstats$confDat, b$ADf$ADnetEmissions,"ADf")
-  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
-  y3 <- massageDataforPlot(CMstats$confDat, b$CMf$final,"CMf")
-  y4 <- massageDataforPlot(LAstats$confDat, b$LAf$EMNetLandapp,"LAf")
-} else if (app=='Peat') {
-  y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
-  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
-  y3 <- massageDataforPlot(CMstats$confDat, b$CMp$final,"CMp")
-  y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
-} else {
-  y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
-  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
-  y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
-  y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
-}
+y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
+y1f <- massageDataforPlot(ADfstats$confDat, b$ADf$ADnetEmissions,"ADf")
+y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
+y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
+y3f <- massageDataforPlot(CMfstats$confDat, b$CMf$final,"CMf")
+y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
+y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
+y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
 
+#y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
 #y <- rbind(y1,y2,y3,y4)
-y <- rbind(y1,y3,y4)
+#y <- rbind(y1f,y2,y3f,y4f)
+y <- rbind(y1,y3p,y4)
+
 y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Nominal)]) # order by LF
 
 # Plot Nominal values
