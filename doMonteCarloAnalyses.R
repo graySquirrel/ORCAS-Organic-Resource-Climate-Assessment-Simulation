@@ -37,8 +37,6 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
     }
     colnames(outRanges) <- stocks$Feedstock
     bpstats <- boxplot(outRanges,plot=FALSE)
-#     outRanges <- outRanges[,order(bpstats$stats[3,])]
-#     bpstats <- boxplot(outRanges,plot=FALSE) # redo to get in same order
     confDat <- apply(outRanges,2,function(x) quantile(x,probs=c(.025,.5,.975)))
     o<-NULL
     o$confDat <- confDat
