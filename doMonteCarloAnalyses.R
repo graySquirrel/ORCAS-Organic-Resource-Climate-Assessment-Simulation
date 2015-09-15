@@ -42,6 +42,8 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
     o$confDat <- confDat
     o$bpstats <- bpstats
     o$outRanges <- outRanges
+    o$f1 <- stocks
+    o$g1 <- g1
     o
 }
 #####################################################################
@@ -97,3 +99,16 @@ p2 <- ggplot(y, aes(x=feedstock, y=Median,fill=treatment)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 print(p1)
 print(p2)
+
+#####################################################################
+# sensitivity analysis...  start slow
+plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
+    df <- data.frame(theObj$outRanges)
+    var <- sub(" ",".",feedstock)
+    y <- df[[var]]
+    x <- theObj$g1[[rangeFactor]]
+    plot(x, y, xlab=xlabl,ylab=paste(feedstock,treatment))
+    abline(lm(y ~ x),col='red')
+}
+par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
+plotFactorSensitivity(ADstats,"Food waste","AD_Digester_CH4Leaks","CH4 Leaks","AD")
