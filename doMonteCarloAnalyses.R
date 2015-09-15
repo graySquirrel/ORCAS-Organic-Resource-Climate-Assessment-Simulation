@@ -13,7 +13,8 @@ source("baselines.R")
 #################################################################################
 calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
                              factorFile="Globalfactors.csv",
-                             FUN=NULL) {
+                             FUN=NULL,
+                             Application=NULL) {
     set.seed(1234)
     stocks <- read.csv(file=feedstockfile,sep = ",",stringsAsFactors=FALSE)
     g1 <- getGlobalFactorsFromFile(file = factorFile)
@@ -26,7 +27,14 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
                         percentLipidTS = stocks[i,]$PercentlipidTS,
                         percentProteinTS = stocks[i,]$PercentproteinTS, 
                         fdeg = stocks[i,]$fdeg)
-        out <- FUN(f1, g1)
+        if(length(Application)!=0) {
+          out <- FUN(f1, g1,Application=Application)
+        } else {
+          out <- FUN(f1, g1)
+        }
+        #out <- FUN(f1, g1,Application='Fertilizer')
+        #out <- FUN(f1, g1,Application='Peat')
+
         q <- out[,1]
         outRanges <- cbind(outRanges, q)
     }
@@ -42,10 +50,11 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
     o
 }
 #####################################################################
-ADstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway)
+app <- 'Fertilizer'
+ADstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway,Application=app)
 LFstats <- calculatePathwayMC(FUN=LandfillTreatmentPathway)
-CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway)
-LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway)
+CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway,Application=app)
+LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway,Application=app)
 #####################################################################
 # Get baselines
 b <- getBaselineResults()
@@ -60,13 +69,25 @@ massageDataforPlot <- function(in1,in2,treat) {
 }
 # Now do the dirty work of plotting
 library(ggplot2)
+if(app=='Fertilizer') {
+  y1 <- massageDataforPlot(ADstats$confDat, b$ADf$ADnetEmissions,"ADf")
+  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
+  y3 <- massageDataforPlot(CMstats$confDat, b$CMf$final,"CMf")
+  y4 <- massageDataforPlot(LAstats$confDat, b$LAf$EMNetLandapp,"LAf")
+} else if (app=='Peat') {
+  y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
+  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
+  y3 <- massageDataforPlot(CMstats$confDat, b$CMp$final,"CMp")
+  y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
+} else {
+  y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
+  y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
+  y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
+  y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
+}
 
-y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
-y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
-y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
-y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
-
-y <- rbind(y1,y2,y3,y4)
+#y <- rbind(y1,y2,y3,y4)
+y <- rbind(y1,y3,y4)
 y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Nominal)]) # order by LF
 
 # Plot Nominal values
