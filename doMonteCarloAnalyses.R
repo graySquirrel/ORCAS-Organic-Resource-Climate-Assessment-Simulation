@@ -112,3 +112,16 @@ plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) 
 }
 par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(ADstats,"Food waste","AD_Digester_CH4Leaks","CH4 Leaks","AD")
+plotFactorSensitivity(ADstats,"Food waste","AD_Digester_utilizationFactor","utilization Factor","AD")
+plotFactorSensitivity(ADstats,"Food waste","AD_Digester_parasiticLoad","parastic load","AD")
+plotFactorSensitivity(ADstats,"Food waste","AD_reductionInVS","reduct in VS","AD")
+plotFactorSensitivity(ADstats,"Food waste","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","AD")
+plotFactorSensitivity(ADstats,"Food waste","xportToField","xportToField","AD")
+
+par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
+plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_CH4Leaks","CH4 Leaks","AD")
+plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_utilizationFactor","utilization Factor","AD")
+plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_parasiticLoad","parastic load","AD")
+plotFactorSensitivity(ADstats,"Baked goods","AD_reductionInVS","reduct in VS","AD")
+plotFactorSensitivity(ADstats,"Baked goods","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","AD")
+plotFactorSensitivity(ADstats,"Baked goods","xportToField","xportToField","AD")
