@@ -74,6 +74,7 @@ GlobalFactors <- function()
         LFDieseluseLpert =5.83,
         Landfill_CF = 0.90,
         k= 0.144,
+        LCEMax = 0.9,
         #Land Application
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
