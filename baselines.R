@@ -22,6 +22,7 @@ getBaselineResults <- function() {
     o$CMf <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer')
     o$CMp <- compostTreatmentPathway(f1, g1, Application = 'Peat')
     o$LF <- LandfillTreatmentPathway(f1, g1)
+    o$feedstock <- f1$type
     o
 }
 
