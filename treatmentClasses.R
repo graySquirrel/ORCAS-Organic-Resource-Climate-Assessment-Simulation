@@ -27,7 +27,7 @@ GlobalFactors <- function()
         EFGrid = -533.66,
         #EFfreight_kgCO2ePERtonKm = 0.107,
         DieselprovisionkgCO2eperL=0.45,
-        # Fruergaard et al. (2009)
+        # Taken from Fruergaard et al. (2009)
         DieselcombustionkgCO2eperL=2.720494342,
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
         IPCC_EF4 = 0.01,
@@ -71,10 +71,14 @@ GlobalFactors <- function()
         #Landfill
         Heating_value = 11700, 
         Landfill_Oxidation_Factor = 0.10,
+        # could change yearly as described in Warm v.13 but asssumed an average value in this model
+        #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
         LFDieseluseLpert =5.83,
+        #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
         Landfill_CF = 0.90,
         k= 0.144,
         LCEMax = 0.9,
+        BMP_Correctionfactor = 1,
         #Land Application
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
