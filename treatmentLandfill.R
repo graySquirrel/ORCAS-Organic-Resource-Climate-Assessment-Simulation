@@ -73,7 +73,7 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
                          (GlobalFactors$DieselprovisionkgCO2eperL+
                               GlobalFactors$DieselcombustionkgCO2eperL)))
 # step 2: Methane Production
-    LCEMax = 0.9
+    LCEMax = GlobalFactors$LCEMax
     # inputs will either be vectors of N or 1.
     maxvec <- max(length(k),length(LCEMax),length(Landfill_Oxidation_Factor))
     if(length(k)==1){k<-rep(k,maxvec)}
