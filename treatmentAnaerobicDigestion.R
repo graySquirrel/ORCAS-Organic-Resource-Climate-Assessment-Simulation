@@ -11,13 +11,9 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace')
 {
  
-  AD_Storage_IPCC_FracGasMS = GlobalFactors$AD_Storage_IPCC_FracGasMS
-  AD_LandApplication_OtherNFactor = GlobalFactors$AD_LandApplication_OtherNFactor
- 
-
     # Step 1: calculate Digester emissions kgCO2e/MT
 
-    CH4Utilized       <- Feedstock$Lo * GlobalFactors$AD_Digester_utilizationFactor
+    CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_Digester_utilizationFactor
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
     CH4LeaksM3PerT    <- CH4Utilized * GlobalFactors$AD_Digester_CH4Leaks
     EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
@@ -47,7 +43,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMN20_storage_Direct         <- Feedstock$TKN * GlobalFactors$N20N_to_N20 * 
         GlobalFactors$GWPN20 *GlobalFactors$AD_Storage_IPCC_EF3 / 1000
     if(debug) print(paste("EMN20_Storage_Direct ",EMN20_storage_Direct))
-    EMN20_storage_Indirect       <- GlobalFactors$IPCC_EF4*AD_Storage_IPCC_FracGasMS*
+    EMN20_storage_Indirect       <- GlobalFactors$IPCC_EF4 * 
+      GlobalFactors$AD_Storage_IPCC_FracGasMS *
         Feedstock$TKN * GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_storage_Indirect ",EMN20_storage_Indirect))
     EMN20_Storage     <- EMN20_storage_Direct + EMN20_storage_Indirect
@@ -57,7 +54,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Send to land application trerment
     Nremaining      <- Feedstock$TKN * 
-        (1-GlobalFactors$AD_Storage_IPCC_EF3 - AD_Storage_IPCC_FracGasMS-AD_LandApplication_OtherNFactor)
+        (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
+           GlobalFactors$AD_Storage_IPCC_FracGasMS - GlobalFactors$AD_LandApplication_OtherNFactor)
     EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
                                                  Ninitial = Nremaining, 
                                                  Application = Application)
