@@ -20,7 +20,7 @@ GlobalFactors <- function()
         density_CH4 = 0.67,
         CtoCH4=16/12,
         Energy_content_methane_BTUperm3CH4 = 35315, 
-        # AR5 GWP factors
+        # AR5 GWP factors,
         GWPN20 = 265, 
         GWPCH4 = 28, 
         # Emission factors
@@ -30,7 +30,9 @@ GlobalFactors <- function()
         # Taken from Fruergaard et al. (2009)
         DieselcombustionkgCO2eperL=2.720494342,
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
+        # Land Application 
         IPCC_EF4 = 0.01,
+        
         #Compost
         Compost_EF1 = 0.015, # Boldrin
         Compost_dieseLlpert = 3,
@@ -49,16 +51,20 @@ GlobalFactors <- function()
         Compost_xportToField = 60,
         Peatdisplacementfactor = 1,
         EF_Peat_kgCO2eperton = -970,
+        
         #Anaerobic Digestion
-        #EFfreight_kgCO2ePERtonKm = 0.107,
         AD_Digester_utilizationFactor = 0.84,
+        #Ebner et al., 2015, correction from Bo to Methane utilized (includes leaks, flares and MCF)
         AD_Digester_CH4Leaks = 0.03,
+        # Moller
         AD_Digester_CH4incompleteCombustion = 0.005,
         #AD_Digester_N20incompleteCombustion = 0.03,
+        # Ebner et al., 2015
         AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
         AD_Digester_parasiticLoad = 0.12,
         AD_reductionInVS = 0.55,
         AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.054,
+        #IPCC
         AD_Storage_IPCC_EF3 = 0.005,
         AD_Storage_IPCC_FracGasMS = 0.26,
         #AD_LandApplication_FracGasM =0.2,
@@ -68,17 +74,26 @@ GlobalFactors <- function()
         #AD_DisplacedFertilizer_Production_Factor = -6.8,
         #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
         xportToField = 20,
+        
         #Landfill
-        Heating_value = 11700, 
-        Landfill_Oxidation_Factor = 0.10,
-        # could change yearly as described in Warm v.13 but asssumed an average value in this model
-        #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
         LFDieseluseLpert =5.83,
         #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
+        Landfill_Oxidation_Factor = 0.10,
+        #EPA, LMOP
+        # could change yearly as described in Warm v.13 but asssumed an average value in this model
+        #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
+        Heating_value = 11700, 
+        #EPA, LMOP
         Landfill_CF = 0.90,
         k= 0.144,
+        #WARM v13       
+        #Both feedstock and landfill parameter 
         LCEMax = 0.9,
+        #Levis and Barlaz, 
         BMP_Correctionfactor = 1,
+        #Cho, 2012 
+        
+        
         #Land Application
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
