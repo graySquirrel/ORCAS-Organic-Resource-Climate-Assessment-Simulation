@@ -7,7 +7,7 @@
 ################# Treatment Functions
 # this is an inner loop over many years.  have to do this because input factors
 # are vectors, and this calcs over orthogonal vector (years). don't know a better way.
-calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=TRUE) {
+calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=FALSE) {
     Max_Years=100
     bytens <- FALSE
     
@@ -58,7 +58,8 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
                               GlobalFactors$DieselcombustionkgCO2eperL)))
 # step 2: Methane Production
     # inputs will either be vectors of N or 1.
-    maxvec <- max(length(GlobalFactors$k),length(GlobalFactors$LCEMax),length(GlobalFactors$Landfill_Oxidation_Factor))
+    maxvec <- max(length(GlobalFactors$k),length(GlobalFactors$LCEMax),
+                  length(GlobalFactors$Landfill_Oxidation_Factor))
     if(length(GlobalFactors$k)==1){GlobalFactors$k<-rep(GlobalFactors$k,maxvec)}
     if(length(GlobalFactors$LCEMax)==1){GlobalFactors$LCEMax<-rep(GlobalFactors$LCEMax,maxvec)}
     if(length(GlobalFactors$Landfill_Oxidation_Factor)==1){GlobalFactors$Landfill_Oxidation_Factor<-
@@ -66,13 +67,15 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     outfe<-NULL
     outfr<-NULL
     for (i in 1:maxvec) {
-        if(debug){print(paste(GlobalFactors$k[i],GlobalFactors$LCEMax[i],GlobalFactors$Landfill_Oxidation_Factor[i]))}
+        if(debug){print(paste(GlobalFactors$k[i],GlobalFactors$LCEMax[i],
+                              GlobalFactors$Landfill_Oxidation_Factor[i]))}
         onef<-calcOverMaxYears(onek=GlobalFactors$k[i],oneLCEMax=GlobalFactors$LCEMax[i],
-                               oneOxidationFactor=GlobalFactors$Landfill_Oxidation_Factor[i],debug=debug)
+                               oneOxidationFactor=GlobalFactors$Landfill_Oxidation_Factor[i],
+                               debug=debug)
         outfe<-c(outfe,onef$Fraction_Emitted)
         outfr<-c(outfr,onef$Fraction_recovered)
     }
-    #LF_Lo is estimated based upon BMP
+    #Allows for a correction factor to adjust LF_Lo based upon BMP and Cho et al., 
     LF_Lo<-Feedstock$Lo*GlobalFactors$BMP_Correctionfactor
     
     EMLandfillCH4 <- outfe * GlobalFactors$density_CH4 *
