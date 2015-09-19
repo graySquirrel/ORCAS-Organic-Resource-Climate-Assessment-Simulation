@@ -79,8 +79,8 @@ y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
 y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
 y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
 
-#y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
-y <- rbind(y1,y2,y3,y4)
+y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
+#y <- rbind(y1,y2,y3,y4)
 #y <- rbind(y1f,y2,y3f,y4f)
 #y <- rbind(y1,y3,y4)
 
@@ -131,8 +131,8 @@ plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_dieseLlpert","die
 plotFactorSensitivity(CMstats,"Unsweetened dry goods","CompostPercentCdegraded","percent C degraded","CM")
 plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_degradedC_CH4","degraded C CH4","CM")
 plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_N2OperN","N20 per N","CM")
-plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_storage_factor","storage factor","CM")
-plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_N_remaining","compost N remaining","CM")
+plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_CS_factor","storage factor","CM")
+plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_N_loss","compost N remaining","CM")
 
 par(mfrow=c(1,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(LFstats,"Sweet dry goods","LFDieseluseLpert","diesel","LF")
