@@ -11,9 +11,9 @@ f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
                 fdeg = 0.85)
 
 g1 <- GlobalFactors()
-res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Ninitial = f1$TKN, 
+res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
                                        Application = 'noDisplace')
 print(res)
-res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Ninitial = f1$TKN, 
+res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
                                        Application = 'Fertilizer')
 print(res)
