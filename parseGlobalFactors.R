@@ -29,7 +29,7 @@ getGlobalFactorsFromFile <- function(file = "Globalfactors.csv",doRanges=TRUE) {
                         g1[[currentName]] <- newValue},
                     "Range" = {
                         if (doRanges) {
-                            print(paste("setting ",currentName," to ",
+                            print(paste("ranging ",currentName," to ",
                                         numSamps,"samples between",
                                         r[[i,"Range.Lo"]], "and", r[[i,"Range.High"]]))
                             g1[[r$sw.name[i]]] <- runif(n = numSamps,
