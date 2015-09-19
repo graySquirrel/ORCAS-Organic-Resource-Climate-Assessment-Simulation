@@ -8,12 +8,10 @@
 #                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
 LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, 
-                                            debug = F, Ninitial = Feedstock$TKN,
+                                            debug = F, Nremaining = Feedstock$TKN,
                                             Application = 'noDisplace')
 {
- 
-  Nremaining = Ninitial
-  LandApplication_FracGasM =GlobalFactors$LandApplication_FracGasM
+
   LandApplication_EF1 = GlobalFactors$LandApplication_EF1
   #LandApplication_OtherNFactor = GlobalFactors$LandApplication_OtherNFactor
   LandApp_NAvailabiltiy_Factor = GlobalFactors$LandApp_NAvailabiltiy_Factor
@@ -29,7 +27,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     EMN20_LandApp_direct         <- Nremaining * LandApplication_EF1 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
-    EMN20_LandApp_indirect       <- Nremaining * LandApplication_FracGasM * 
+    EMN20_LandApp_indirect       <- Nremaining * GlobalFactors$LandApplication_FracGasM * 
         GlobalFactors$IPCC_EF4 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
@@ -39,7 +37,8 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
     # Step 4: Carbon Sequestration kgCO2e/MT
-    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)
+    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(1-GlobalFactors$LA_CSfactor)
+    
     EMCstorage<-CStorage*(-44/12)
     
     # Step 5: Displaced fertilizer kgCO2e/MT
