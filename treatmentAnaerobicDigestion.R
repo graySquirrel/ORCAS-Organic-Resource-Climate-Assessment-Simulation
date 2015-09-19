@@ -57,7 +57,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
         (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
            GlobalFactors$AD_Storage_IPCC_FracGasMS - GlobalFactors$AD_LandApplication_OtherNFactor)
     EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
-                                                 Ninitial = Nremaining, 
+                                                 Nremaining = Nremaining, 
                                                  Application = Application)
     # Add together
     netEmissions <- 
