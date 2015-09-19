@@ -41,14 +41,15 @@ GlobalFactors <- function()
         #Boldrin,2009
         Compost_degradedC_CH4 = 0.02,
         #Boldrin,2009
-        Compost_N2OperN = 0.015,
-        Compost_storage_factor = 0.6,
+        Compost_N2OperN = 0.005,
+        Compost_CS_factor = 0.8,
         # Additional decay beyond AD degradation tests due to organisms and fungi
         Compost_mass_reduction = 0.4,
         Compost_spread_diesellpert = 0.4,
-        Compost_N_remaining = 0.4,
+        Compost_N_loss = 0.38,
         Compost_NAvailabiltiy_Factor = 0.4,
-        Compost_xportToField = 60,
+        Compost_xportToField = 30,
+        Compost_FracGasC =0.016,
         Peatdisplacementfactor = 1,
         EF_Peat_kgCO2eperton = -970,
         
@@ -101,6 +102,7 @@ GlobalFactors <- function()
         LandApp_NAvailabiltiy_Factor = 0.4,
         LA_DisplacedFertilizer_Production_Factor = -6.8,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4)
+        LA_CSfactor = 
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
 }
