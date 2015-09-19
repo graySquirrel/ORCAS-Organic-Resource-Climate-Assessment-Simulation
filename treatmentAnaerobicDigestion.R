@@ -20,11 +20,14 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4incompleteCombustion
     
     EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
-    #    AD_Digester_N20incompleteCombustion * CH4Utilized * GlobalFactors$GWPN20/1000
+    #    AD_Digester_N20incompleteCombustion * CH4Utilized * 
+    #       GlobalFactors$GWPN20/1000
     
-    electricityGenerated <- GlobalFactors$AD_Digester_conversion_KwHPerM3 * CH4Utilized/1000
+    electricityGenerated <- GlobalFactors$AD_Digester_conversion_KwHPerM3 * 
+        CH4Utilized/1000
     if(debug) print(paste("electricityGenerated ",electricityGenerated))
-    electricityAvoided    <- electricityGenerated * (1 - GlobalFactors$AD_Digester_parasiticLoad)
+    electricityAvoided    <- electricityGenerated * 
+        (1 - GlobalFactors$AD_Digester_parasiticLoad)
     if(debug) print(paste("electricityAvoided ",electricityAvoided))
     EMAvoidedGrid <- electricityAvoided * GlobalFactors$EFGrid
     if(debug) print(paste("EMLeaks ",EMLeaks," EMIC ",EMIC,
@@ -35,7 +38,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Step2: calculate Storage emissions kgCO2e/MT
     TVSDigestate    <- Feedstock$TVS * (1-GlobalFactors$AD_reductionInVS)*1000
     if(debug) print(paste("TVSDigestate ",TVSDigestate))    
-    CH4StorageDigestate   <- TVSDigestate *GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
+    CH4StorageDigestate   <- TVSDigestate *
+        GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
     if(debug) print(paste("CH4StorageDigestate ",CH4StorageDigestate))    
     EMCH4DigestateEmissions <- CH4StorageDigestate * GlobalFactors$density_CH4 * 
         GlobalFactors$GWPCH4
@@ -55,7 +59,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Send to land application trerment
     Nremaining      <- Feedstock$TKN * 
         (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
-           GlobalFactors$AD_Storage_IPCC_FracGasMS - GlobalFactors$AD_LandApplication_OtherNFactor)
+           GlobalFactors$AD_Storage_IPCC_FracGasMS - 
+             GlobalFactors$AD_LandApplication_OtherNFactor)
     EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
                                                  Nremaining = Nremaining, 
                                                  Application = Application)
