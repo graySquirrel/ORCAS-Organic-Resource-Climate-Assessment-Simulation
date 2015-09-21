@@ -12,7 +12,8 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
                                             Application = 'noDisplace')
 {
     # Step 1: Calculate Land Application  kgCO2e/MT
-    EMspread           <- 1.5 * GlobalFactors$xportToField/20
+    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
+      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
     if(debug) print(paste("EMspread ",EMspread))
     EMN20_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
         GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
@@ -37,7 +38,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     Nremaining      <- Nremaining - 
         Nremaining * GlobalFactors$LandApplication_EF1 -
         Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$LandApp_NAvailabiltiy_Factor
+    effectiveNapplied <- Nremaining * GlobalFactors$NAvailability_Factor
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
