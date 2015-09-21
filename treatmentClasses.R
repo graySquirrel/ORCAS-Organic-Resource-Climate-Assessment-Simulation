@@ -32,6 +32,8 @@ GlobalFactors <- function()
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
         # Land Application 
         IPCC_EF4 = 0.01,
+        NAvailability_Factor = 0.4,
+        DieselspreadLpertkm = 0.30,
         
         #Compost
         Compost_EF1 = 0.015, # Boldrin
@@ -47,7 +49,7 @@ GlobalFactors <- function()
         Compost_mass_reduction = 0.4,
         Compost_spread_diesellpert = 0.4,
         Compost_N_loss = 0.38,
-        Compost_NAvailabiltiy_Factor = 0.4,
+        #Compost_NAvailabiltiy_Factor = 0.4,
         Compost_xportToField = 30,
         Compost_FracGasC =0.016,
         Peatdisplacementfactor = 1,
@@ -74,7 +76,7 @@ GlobalFactors <- function()
         #AD_LandApp_NAvailabiltiy_Factor = 0.4,
         #AD_DisplacedFertilizer_Production_Factor = -6.8,
         #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
-        xportToField = 20,
+      
         
         #Landfill
         LFDieseluseLpert =5.83,
@@ -99,10 +101,11 @@ GlobalFactors <- function()
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
         #LandApplication_OtherNFactor = 0.02,
-        LandApp_NAvailabiltiy_Factor = 0.4,
+        #LandApp_NAvailabiltiy_Factor = 0.4,
         LA_DisplacedFertilizer_Production_Factor = -6.8,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4,
-        LA_CSfactor = 0.8
+        LA_CSfactor = 0.8,
+        LA_xportToField = 20
     )
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
