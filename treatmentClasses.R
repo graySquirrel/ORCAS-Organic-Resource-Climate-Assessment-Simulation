@@ -54,7 +54,7 @@ GlobalFactors <- function()
         EF_Peat_kgCO2eperton = -970,
         
         #Anaerobic Digestion
-        AD_Digester_utilizationFactor = 0.84,
+        AD_MCFactor = 0.84,
         #Ebner et al., 2015, correction from Bo to Methane utilized (includes leaks, flares and MCF)
         AD_Digester_CH4Leaks = 0.03,
         # Moller

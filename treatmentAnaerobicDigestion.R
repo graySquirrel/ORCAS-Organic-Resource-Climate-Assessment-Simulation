@@ -13,7 +13,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
  
     # Step 1: calculate Digester emissions kgCO2e/MT
 
-    CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_Digester_utilizationFactor
+    CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_MCFactor
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
     CH4LeaksM3PerT    <- CH4Utilized * GlobalFactors$AD_Digester_CH4Leaks
     EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
