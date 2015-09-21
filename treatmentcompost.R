@@ -39,7 +39,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
     
 #Step 4 Compost application
     Compost_mass<- 1000*GlobalFactors$Compost_mass_reduction
-    EMspread           <- 1.5 * GlobalFactors$Compost_xportToField/20
+    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$Compost_xportToField*
+      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
     if(debug) print(paste("EMspread ",EMspread))
     
     Nremaining<-Feedstock$Nperton*(1-GlobalFactors$Compost_N_loss)
@@ -60,7 +61,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
     
     # Step 5: Displaced fertilizer kgCO2e/MT
     effectiveNapplied <- Nremaining * 
-      GlobalFactors$Compost_NAvailabiltiy_Factor
+      GlobalFactors$NAvailability_Factor
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
       effectiveNapplied
     avoidedInorganicFertdirectandIndirect <- 
