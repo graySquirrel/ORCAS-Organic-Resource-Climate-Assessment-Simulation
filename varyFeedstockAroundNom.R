@@ -61,9 +61,9 @@ getBaselineFeedstocks <- function(ins, f, g) {
     o<-NULL
     o$AD <- AnaerobicDigestionTreatmentPathway(f, g, Application = 'noDisplace')
     o$ADf <- AnaerobicDigestionTreatmentPathway(f, g, Application = 'Fertilizer')
-    o$LA <- LandApplicationTreatmentPathway(f, g, Ninitial = f$TKN, 
+    o$LA <- LandApplicationTreatmentPathway(f, g, Nremaining = f$TKN, 
                                             Application = 'noDisplace')
-    o$LAf <- LandApplicationTreatmentPathway(f, g, Ninitial = f$TKN, 
+    o$LAf <- LandApplicationTreatmentPathway(f, g, Nremaining = f$TKN, 
                                              Application = 'Fertilizer')
     o$CM <- compostTreatmentPathway(f, g, Application = 'noDisplace')
     o$CMf <- compostTreatmentPathway(f, g, Application = 'Fertilizer')
@@ -95,8 +95,8 @@ f2 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
 g2 <- GlobalFactors()
 o2 <- getBaselineFeedstocks(i,f2,g2)
 
-if(dev.cur() != 1) dev.off() 
-#par(mfrow=c(2,2))
+#if(dev.cur() != 1) dev.off() 
+par(mfrow=c(2,2))
 noranges=FALSE
 if(noranges) {
     plotAllOneVar(inputs$TS, inVar2=i$TS,xaxis='TS',doleg=TRUE)
