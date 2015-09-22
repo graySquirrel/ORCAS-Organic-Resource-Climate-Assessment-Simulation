@@ -56,19 +56,64 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMStorage           <- EMCH4DigestateEmissions + EMN20_Storage
     if(debug) print(paste("EMStorage ",EMStorage))
     
-    # Send to land application trerment
+    #Send to land application trerment
     Nremaining      <- Feedstock$TKN * 
-        (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
-           GlobalFactors$AD_Storage_IPCC_FracGasMS - 
-             GlobalFactors$AD_LandApplication_OtherNFactor)
-    EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
-                                                 Nremaining = Nremaining, 
-                                                 Application = Application)
+      (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
+         GlobalFactors$AD_Storage_IPCC_FracGasMS - 
+         GlobalFactors$AD_LandApplication_OtherNFactor)
+    #EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
+    #Nremaining = Nremaining, 
+    # Application = Application)
+    
+    # Step 3 Land Application
+    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
+      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+    if(debug) print(paste("EMspread ",EMspread))
+    EMN20_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
+      GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
+    if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
+    EMN20_LandApp_indirect       <- Nremaining * 
+      GlobalFactors$LandApplication_FracGasM * 
+      GlobalFactors$IPCC_EF4 *
+      GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
+    if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
+    EMN20_LandApp    <- EMN20_LandApp_direct + EMN20_LandApp_indirect
+    if(debug) print(paste("EMN20_LandApp ",EMN20_LandApp))
+    EMLandApp <- EMspread + EMN20_LandApp
+    if(debug) print(paste("EMLandApp ",EMLandApp))
+    
+    # Step 4: Carbon Sequestration kgCO2e/MT
+    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+    
+    EMCstorage<-CStorage*(-44/12)
+    if(debug) print(paste("EMCstorage ",EMCstorage))
+    
+    # Step 5: Displaced fertilizer kgCO2e/MT
+    Nremaining      <- Nremaining - 
+      Nremaining * GlobalFactors$LandApplication_EF1 -
+      Nremaining * 0.02 - Nremaining * 0.2
+    effectiveNapplied <- Nremaining * GlobalFactors$NAvailability_Factor
+    if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
+    
+    avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
+      effectiveNapplied/1000
+    if(debug) print(paste("avoidedNfert ",avoidedNfert))
+    
+    avoidedInorganicFertdirectandIndirect <- 
+      GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
+      effectiveNapplied/1000
+    if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
+                          avoidedInorganicFertdirectandIndirect))
+    
+    EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
+    if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
+    
+
     # Add together
     netEmissions <- 
         EMDigester +
         EMStorage +
-        EMLandApp$EMNetLandapp
+        EMLandApp
     
     result <- data.frame(netEmissions,EMDigester,EMStorage)
     colnames(result) <- c("ADnetEmissions","EMDigester", "EMStorage")
