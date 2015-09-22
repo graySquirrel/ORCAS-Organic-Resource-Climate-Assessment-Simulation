@@ -44,7 +44,7 @@ GlobalFactors <- function()
         Compost_degradedC_CH4 = 0.02,
         #Boldrin,2009
         Compost_N2OperN = 0.005,
-        Compost_CS_factor = 0.8,
+        Compost_CS_factor = 0.2,
         # Additional decay beyond AD degradation tests due to organisms and fungi
         Compost_mass_reduction = 0.4,
         Compost_spread_diesellpert = 0.4,
@@ -76,6 +76,8 @@ GlobalFactors <- function()
         #AD_LandApp_NAvailabiltiy_Factor = 0.4,
         #AD_DisplacedFertilizer_Production_Factor = -6.8,
         #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
+        AD_CSfactor = 0.4,
+        AD_xportTofield = 20,
       
         
         #Landfill
