@@ -79,8 +79,8 @@ y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
 y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
 y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
 
-y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
-#y <- rbind(y1,y2,y3,y4)
+#y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
+y <- rbind(y1,y2,y3,y4)
 #y <- rbind(y1f,y2,y3f,y4f)
 #y <- rbind(y1,y3,y4)
 
@@ -116,7 +116,7 @@ plotFactorSensitivity(ADstats,"Food waste","AD_MCFactor","utilization Factor","A
 plotFactorSensitivity(ADstats,"Food waste","AD_Digester_parasiticLoad","parastic load","AD")
 plotFactorSensitivity(ADstats,"Food waste","AD_reductionInVS","reduct in VS","AD")
 plotFactorSensitivity(ADstats,"Food waste","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","AD")
-plotFactorSensitivity(ADstats,"Food waste","xportToField","xportToField","AD")
+plotFactorSensitivity(ADstats,"Food waste","AD_xportTofield","xportToField","AD")
 
 par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_CH4Leaks","CH4 Leaks","AD")
@@ -124,7 +124,7 @@ plotFactorSensitivity(ADstats,"Baked goods","AD_MCFactor","utilization Factor","
 plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_parasiticLoad","parastic load","AD")
 plotFactorSensitivity(ADstats,"Baked goods","AD_reductionInVS","reduct in VS","AD")
 plotFactorSensitivity(ADstats,"Baked goods","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","AD")
-plotFactorSensitivity(ADstats,"Baked goods","xportToField","xportToField","AD")
+plotFactorSensitivity(ADstats,"Baked goods","AD_xportTofield","xportToField","AD")
 
 par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_dieseLlpert","diesel","CM")
