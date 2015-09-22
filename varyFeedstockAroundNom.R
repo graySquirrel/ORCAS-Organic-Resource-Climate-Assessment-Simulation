@@ -96,7 +96,7 @@ g2 <- GlobalFactors()
 o2 <- getBaselineFeedstocks(i,f2,g2)
 
 #if(dev.cur() != 1) dev.off() 
-par(mfrow=c(2,2))
+#par(mfrow=c(2,2))
 noranges=FALSE
 if(noranges) {
     plotAllOneVar(inputs$TS, inVar2=i$TS,xaxis='TS',doleg=TRUE)
