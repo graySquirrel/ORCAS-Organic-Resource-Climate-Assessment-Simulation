@@ -29,7 +29,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
     # Step 4: Carbon Sequestration kgCO2e/MT
-    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(1-GlobalFactors$LA_CSfactor)
+    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$LA_CSfactor)
     
     EMCstorage<-CStorage*(-44/12)
     if(debug) print(paste("EMCstorage ",EMCstorage))
