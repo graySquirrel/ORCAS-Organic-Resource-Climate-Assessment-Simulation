@@ -7,6 +7,12 @@ source("treatmentLandfill.R")
 source("treatmentcompost.R")
 source("parseGlobalFactors.R")
 
+addNorms <- function(df,ts) {
+    df1 <- cbind(df,df[1]/ts)
+    colnames(df1) <- c(colnames(df),"NormTS")
+    df1
+}
+
 getBaselineResults <- function() {
     i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
     f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
@@ -15,13 +21,21 @@ getBaselineResults <- function() {
     g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
     o<-NULL
     o$AD <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'noDisplace')
+    o$AD <- addNorms(o$AD,f1$TS)
     o$ADf <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'Fertilizer')
+    o$ADf <- addNorms(o$ADf,f1$TS)
     o$LA <- LandApplicationTreatmentPathway(f1, g1, Application = 'noDisplace')
+    o$LA <- addNorms(o$LA,f1$TS)
     o$LAf <- LandApplicationTreatmentPathway(f1, g1, Application = 'Fertilizer')
+    o$LAf <- addNorms(o$LAf,f1$TS)
     o$CM <- compostTreatmentPathway(f1, g1, Application = 'noDisplace')
+    o$CM <- addNorms(o$CM,f1$TS)
     o$CMf <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer')
+    o$CMf <- addNorms(o$CMf,f1$TS)
     o$CMp <- compostTreatmentPathway(f1, g1, Application = 'Peat')
+    o$CMp <- addNorms(o$CMp,f1$TS)
     o$LF <- LandfillTreatmentPathway(f1, g1)
+    o$LF <- addNorms(o$LF,f1$TS)
     o$f1 <- f1
     o$g1 <- g1
     o
