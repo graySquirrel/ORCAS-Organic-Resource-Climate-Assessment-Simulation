@@ -66,7 +66,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Application = Application)
     
     # Step 3 Land Application
-    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
+    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$AD_xportTofield*
       (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
     if(debug) print(paste("EMspread ",EMspread))
     EMN20_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
@@ -84,9 +84,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Step 4: Carbon Sequestration kgCO2e/MT
     CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
-    
+    if(debug) print(paste("InitialC ",Feedstock$InitialC))
     EMCstorage<-CStorage*(-44/12)
     if(debug) print(paste("EMCstorage ",EMCstorage))
+    if(debug) print(paste("fdeg ",Feedstock$fdeg))
     
     # Step 5: Displaced fertilizer kgCO2e/MT
     Nremaining      <- Nremaining - 
@@ -108,12 +109,21 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
     if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
     
+    # Add together
+    EMNetLandapp <- switch(Application,
+                           'noDisplace' = EMLandApp + EMCstorage,
+                           'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
+    result <- data.frame(EMNetLandapp, Application, EMLandApp, EMCstorage, 
+                         EMdisplacedFertilizer)
+    result
+    
 
     # Add together
     netEmissions <- 
         EMDigester +
         EMStorage +
-        EMLandApp
+        EMNetLandapp 
+     
     
     result <- data.frame(netEmissions,EMDigester,EMStorage)
     colnames(result) <- c("ADnetEmissions","EMDigester", "EMStorage")
