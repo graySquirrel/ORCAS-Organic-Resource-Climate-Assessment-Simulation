@@ -8,7 +8,7 @@ source("treatmentLandApplication.R")
 
 f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
                 percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
-                fdeg = 0.85)
+                fdeg = 0.841)
 
 g1 <- GlobalFactors()
 res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
