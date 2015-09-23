@@ -24,7 +24,7 @@ GlobalFactors <- function()
         GWPN20 = 265, 
         GWPCH4 = 28, 
         # Emission factors
-        EFGrid = -533.66,
+        EFGrid = -537.36,
         #EFfreight_kgCO2ePERtonKm = 0.107,
         DieselprovisionkgCO2eperL=0.45,
         # Taken from Fruergaard et al. (2009)
@@ -36,7 +36,6 @@ GlobalFactors <- function()
         DieselspreadLpertkm = 0.30,
         
         #Compost
-        Compost_EF1 = 0.015, # Boldrin
         Compost_dieseLlpert = 3,
         #Boldrin,2009
         CompostPercentCdegraded = 0.58,
@@ -47,13 +46,14 @@ GlobalFactors <- function()
         Compost_CS_factor = 0.2,
         # Additional decay beyond AD degradation tests due to organisms and fungi
         Compost_mass_reduction = 0.4,
+        Compost_xportToField = 30,
         Compost_spread_diesellpert = 0.4,
         Compost_N_loss = 0.38,
         #Compost_NAvailabiltiy_Factor = 0.4,
-        Compost_xportToField = 30,
         Compost_FracGasC =0.016,
         Peatdisplacementfactor = 1,
         EF_Peat_kgCO2eperton = -970,
+        Compost_EF1 = 0.015, # Boldrin
         
         #Anaerobic Digestion
         AD_MCFactor = 0.84,
@@ -89,7 +89,7 @@ GlobalFactors <- function()
         #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
         Heating_value = 11700, 
         #EPA, LMOP
-        Landfill_CF = 0.90,
+        Landfill_CF = 0.85,
         k= 0.144,
         #WARM v13       
         #Both feedstock and landfill parameter 
@@ -106,7 +106,7 @@ GlobalFactors <- function()
         #LandApp_NAvailabiltiy_Factor = 0.4,
         LA_DisplacedFertilizer_Production_Factor = -6.8,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4,
-        LA_CSfactor = 0.8,
+        LA_CSfactor = 0.7,
         LA_xportToField = 20
     )
     class(me) <- append(class(me), "GlobalFactors")
