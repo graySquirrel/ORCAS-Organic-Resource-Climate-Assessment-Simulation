@@ -127,6 +127,6 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     result <- data.frame(netEmissions,EMDigester,EMStorage)
     colnames(result) <- c("ADnetEmissions","EMDigester", "EMStorage")
-    result <- cbind(result,EMLandApp)
+    result <- cbind(result,EMLandApp,EMCstorage,EMdisplacedFertilizer)
     result
 }
