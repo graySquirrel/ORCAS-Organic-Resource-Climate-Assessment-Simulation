@@ -11,6 +11,9 @@
 #      methods: Feedstock(type="string",TS=0,VS=0,Bo=0,TKN=0)
 #                   returns Feedstock object
 #
+########### other globals
+numSamps <- 1001
+set.seed(1234)
 ########### GlobalFactors stuff
 GlobalFactors <- function()
 {
