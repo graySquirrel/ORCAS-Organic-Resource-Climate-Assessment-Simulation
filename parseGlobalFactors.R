@@ -4,8 +4,6 @@
 source("treatmentClasses.R") 
 getGlobalFactorsFromFile <- function(file = "Globalfactors.csv",doRanges=TRUE) {
     r <- read.csv(file=file,stringsAsFactors = FALSE)
-    numSamps <- 1001
-    set.seed(1234)
     # We create a new global factors object to match names
     g1 <- GlobalFactors()
     for (i in 1:length(r$sw.name)) {
