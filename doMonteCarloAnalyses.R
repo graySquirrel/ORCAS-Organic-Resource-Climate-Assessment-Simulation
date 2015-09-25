@@ -15,7 +15,6 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
                              factorFile="Globalfactors.csv",
                              FUN=NULL,
                              Application=NULL) {
-    set.seed(1234)
     stocks <- read.csv(file=feedstockfile,sep = ",",stringsAsFactors=FALSE)
     g1 <- getGlobalFactorsFromFile(file = factorFile)
     outRanges <- NULL
@@ -120,12 +119,12 @@ plotFactorSensitivity(ADstats,"Food waste","AD_Storage_EFresidualMethaneM3CH4Per
 plotFactorSensitivity(ADstats,"Food waste","AD_xportTofield","xportToField","AD")
 
 par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
-plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_CH4Leaks","CH4 Leaks","AD")
-plotFactorSensitivity(ADstats,"Baked goods","AD_MCFactor","utilization Factor","AD")
-plotFactorSensitivity(ADstats,"Baked goods","AD_Digester_parasiticLoad","parastic load","AD")
-plotFactorSensitivity(ADstats,"Baked goods","AD_reductionInVS","reduct in VS","AD")
-plotFactorSensitivity(ADstats,"Baked goods","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","AD")
-plotFactorSensitivity(ADstats,"Baked goods","AD_xportTofield","xportToField","AD")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_Digester_CH4Leaks","CH4 Leaks","ADf")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_MCFactor","utilization Factor","ADf")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_Digester_parasiticLoad","parastic load","ADf")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_reductionInVS","reduct in VS","ADf")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_Storage_EFresidualMethaneM3CH4PerKgVS","storage resid methane","ADf")
+plotFactorSensitivity(ADfstats,"Baked goods","AD_xportTofield","xportToField","ADf")
 
 par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(CMstats,"Unsweetened dry goods","Compost_dieseLlpert","diesel","CM")
