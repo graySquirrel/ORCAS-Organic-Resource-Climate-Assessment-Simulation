@@ -58,34 +58,56 @@ LAfstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandApplicationTreatme
 b <- getBaselineResults()
 #####################################################################
 # sensitivity analysis...  start slow
-plotFactorSensitivity <- function(theObj,feedstock,stockFactor,treatment) {
+plotFactorSensitivity <- function(theObj,feedstock,stockFactor,treatment,
+                                  type="p",add=FALSE,ylim=NULL) {
     y <- unlist(theObj$out[1])
     x <- theObj$f1[[stockFactor]]
-    plot(x, y, xlab=stockFactor,ylab=paste(feedstock,treatment))
+    if (!add) {
+        plot(x, y, xlab=stockFactor,ylab=paste(feedstock,treatment),type=type,ylim=ylim)
+    }
     abline(lm(y ~ x),col='red')
 }
-par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
-plotFactorSensitivity(ADstats,feedstockName,"TS","AD")
-plotFactorSensitivity(ADstats,feedstockName,"VS","AD")
-plotFactorSensitivity(ADstats,feedstockName,"Lo","AD")
+par(mfrow=c(3,3)) # how many do you want to show?  rows x columns number of graphs
 plotFactorSensitivity(ADstats,feedstockName,"Bo","AD")
-plotFactorSensitivity(ADstats,feedstockName,"TKN","AD")
-plotFactorSensitivity(ADstats,feedstockName,"TVS","AD")
-
-par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
-plotFactorSensitivity(CMstats,feedstockName,"TS","CM")
-plotFactorSensitivity(CMstats,feedstockName,"VS","CM")
-plotFactorSensitivity(CMstats,feedstockName,"Lo","CM")
 plotFactorSensitivity(CMstats,feedstockName,"Bo","CM")
-plotFactorSensitivity(CMstats,feedstockName,"TKN","CM")
-plotFactorSensitivity(CMstats,feedstockName,"TVS","CM")
-
-par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
-plotFactorSensitivity(LFstats,feedstockName,"TS","LF")
-plotFactorSensitivity(LFstats,feedstockName,"VS","LF")
-plotFactorSensitivity(LFstats,feedstockName,"Lo","LF")
+plotFactorSensitivity(ADfstats,feedstockName,"Bo","ADf")
 plotFactorSensitivity(LFstats,feedstockName,"Bo","LF")
-plotFactorSensitivity(LFstats,feedstockName,"TKN","LF")
-plotFactorSensitivity(LFstats,feedstockName,"TVS","LF")
+plotFactorSensitivity(CMfstats,feedstockName,"Bo","CMf")
+plotFactorSensitivity(CMpstats,feedstockName,"Bo","CMp")
+plotFactorSensitivity(LAstats,feedstockName,"Bo","LA")
+plotFactorSensitivity(LAfstats,feedstockName,"Bo","LAf")
+
+plotFactorSensitivity(ADstats,feedstockName,"Bo","AD",type="n",ylim=c(10,150))
+plotFactorSensitivity(CMstats,feedstockName,"Bo","CM",type="n",add=TRUE)
+# plotFactorSensitivity(ADfstats,feedstockName,"Bo","ADf",type="n",add=TRUE)
+# plotFactorSensitivity(LFstats,feedstockName,"Bo","LF",type="n",add=TRUE)
+# plotFactorSensitivity(CMfstats,feedstockName,"Bo","CMf",type="n",add=TRUE)
+# plotFactorSensitivity(CMpstats,feedstockName,"Bo","CMp",type="n",add=TRUE)
+# plotFactorSensitivity(LAstats,feedstockName,"Bo","LA",type="n",add=TRUE)
+# plotFactorSensitivity(LAfstats,feedstockName,"Bo","LAf",type="n",add=TRUE)
+
+# par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
+# plotFactorSensitivity(ADstats,feedstockName,"TS","AD")
+# plotFactorSensitivity(ADstats,feedstockName,"VS","AD")
+# plotFactorSensitivity(ADstats,feedstockName,"Lo","AD")
+# plotFactorSensitivity(ADstats,feedstockName,"Bo","AD")
+# plotFactorSensitivity(ADstats,feedstockName,"TKN","AD")
+# plotFactorSensitivity(ADstats,feedstockName,"TVS","AD")
+# 
+# par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
+# plotFactorSensitivity(CMstats,feedstockName,"TS","CM")
+# plotFactorSensitivity(CMstats,feedstockName,"VS","CM")
+# plotFactorSensitivity(CMstats,feedstockName,"Lo","CM")
+# plotFactorSensitivity(CMstats,feedstockName,"Bo","CM")
+# plotFactorSensitivity(CMstats,feedstockName,"TKN","CM")
+# plotFactorSensitivity(CMstats,feedstockName,"TVS","CM")
+# 
+# par(mfrow=c(2,3)) # how many do you want to show?  rows x columns number of graphs
+# plotFactorSensitivity(LFstats,feedstockName,"TS","LF")
+# plotFactorSensitivity(LFstats,feedstockName,"VS","LF")
+# plotFactorSensitivity(LFstats,feedstockName,"Lo","LF")
+# plotFactorSensitivity(LFstats,feedstockName,"Bo","LF")
+# plotFactorSensitivity(LFstats,feedstockName,"TKN","LF")
+# plotFactorSensitivity(LFstats,feedstockName,"TVS","LF")
 
 
