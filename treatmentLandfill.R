@@ -45,8 +45,9 @@ calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=FALSE) {
     o$Fraction_recovered <- Fraction_recovered
     o
 }
-############################################################################3
-LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
+############################################################################
+LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
+                                     sequesterCarbon = TRUE)
 {
  
   
@@ -89,8 +90,12 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
     EM_displaced_grid<-Landfill_Kwh_t*GlobalFactors$EFGrid/1000
     
     #Step 3 Carbon storage
-    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)
-    EMCstorage<-CStorage*(-44/12)
+    if (sequesterCarbon == TRUE) {
+        CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)
+        EMCstorage<-CStorage*(-44/12)
+    } else {
+        EMCstorage <- CStorage <- 0
+    }
     if(debug) {print(paste("EMCstorage ",EMCstorage))}
     if(debug) {print(paste("EMLFoperation", (EMLFoperation)))}
     if(debug) {print(paste("EMLandfillCH4 ",EMLandfillCH4))}

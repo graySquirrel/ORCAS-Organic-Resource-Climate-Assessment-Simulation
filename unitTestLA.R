@@ -17,3 +17,9 @@ print(res)
 res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
                                        Application = 'Fertilizer')
 print(res)
+res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
+                                       Application = 'noDisplace', sequesterCarbon = F)
+print(res)
+res <- LandApplicationTreatmentPathway(f1, g1, debug = T, Nremaining = f1$TKN, 
+                                       Application = 'Fertilizer', sequesterCarbon = F)
+print(res)

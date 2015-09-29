@@ -9,7 +9,8 @@
 ################# Treatment Functions
 LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, 
                                             debug = F, Nremaining = Feedstock$TKN,
-                                            Application = 'noDisplace')
+                                            Application = 'noDisplace',
+                                            sequesterCarbon = TRUE)
 {
     # Step 1: Calculate Land Application  kgCO2e/MT
     EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
@@ -29,9 +30,12 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
     # Step 4: Carbon Sequestration kgCO2e/MT
-    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$LA_CSfactor)
-    
-    EMCstorage<-CStorage*(-44/12)
+    if (sequesterCarbon == TRUE) {
+        CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$LA_CSfactor)
+        EMCstorage<-CStorage*(-44/12)
+    } else {
+        EMCstorage <- CStorage <- 0
+    }
     if(debug) print(paste("EMCstorage ",EMCstorage))
     
     # Step 5: Displaced fertilizer kgCO2e/MT

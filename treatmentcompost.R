@@ -8,7 +8,9 @@
 #                           'Peat' = Peat displacement
 #                           'Blended' = 21% peat, 18% fertilizer, 61% no displacement
 ################# Treatment Functions
-compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', debug = F)
+compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', 
+                                    debug = F,
+                                    sequesterCarbon = TRUE)
 {
  
 # Hauling of the waste to the compost facility not included at this time
@@ -32,10 +34,14 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
    EMBio <- EMCompost_N2O + EMCompost_CH4
   
 #Step 3 Carbon storage
-    CStorage<-Feedstock$InitialC * (1-Feedstock$fdeg) * (GlobalFactors$Compost_CS_factor)
-    #Assuming that the same amount is stored long term as AD degradability test
+   if (sequesterCarbon == TRUE) {
+       CStorage<-Feedstock$InitialC * (1-Feedstock$fdeg) * (GlobalFactors$Compost_CS_factor)
+       #Assuming that the same amount is stored long term as AD degradability test
+       EMCstorage<-CStorage * -44/12
+   } else {
+       EMCstorage <- CStorage <- 0
+   }
     if(debug) {print(paste("CStorage", (CStorage)))}
-    EMCstorage<-CStorage * -44/12
     if(debug) {print(paste("EMCstorage", (EMCstorage)))}
     
 #Step 4 Compost application

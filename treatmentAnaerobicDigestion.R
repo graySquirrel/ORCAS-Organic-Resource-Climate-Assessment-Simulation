@@ -1,14 +1,12 @@
 # Anaerobic Digestion function.
-#    included in simuTreat.R
-# Functions
-#   AnaerobicDigestionTreatmentPathway(Feedstock, GlobalFactors, debug = F)
 #       returns data.frame of factor vs. outputs, labeled with row and col names
 #
 # Application enumeration:  'noDisplace' = no displacement
 #                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
 AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
-                                               Application = 'noDisplace')
+                                               Application = 'noDisplace',
+                                               sequesterCarbon = TRUE)
 {
  
     # Step 1: calculate Digester emissions kgCO2e/MT
@@ -83,9 +81,13 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
     # Step 4: Carbon Sequestration kgCO2e/MT
-    CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+    if (sequesterCarbon == TRUE) {
+        CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+        EMCstorage<-CStorage*(-44/12)
+    } else {
+        CStorage <- EMCstorage <- 0
+    }
     if(debug) print(paste("InitialC ",Feedstock$InitialC))
-    EMCstorage<-CStorage*(-44/12)
     if(debug) print(paste("EMCstorage ",EMCstorage))
     if(debug) print(paste("fdeg ",Feedstock$fdeg))
     

@@ -1,8 +1,6 @@
 # simuTreat.R to simulate treatments
 #    of different feedstocks to generate GHG and cost outputs.
 
-library(rgl)
-#setwd("/Users/jacquelineebner/fracGASM")
 source("treatmentClasses.R") 
 source("treatmentLandfill.R") 
 
@@ -14,5 +12,6 @@ f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
 print(paste("TS",f1$TS,"Lo ",f1$Lo," TVS ",f1$TVS,"initialC ",f1$InitialC))
 g1 <- GlobalFactors()
 res <- LandfillTreatmentPathway(f1, g1, debug = T)
-
+print(res)
+res <- LandfillTreatmentPathway(f1, g1, debug = T, sequesterCarbon = F)
 print(res)
