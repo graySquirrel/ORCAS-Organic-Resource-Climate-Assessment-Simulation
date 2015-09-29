@@ -110,7 +110,12 @@ GlobalFactors <- function()
         LA_DisplacedFertilizer_Production_Factor = -6.8,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4,
         LA_CSfactor = 0.7,
-        LA_xportToField = 20
+        LA_xportToField = 20,
+        
+        # Animal Feed
+        EFCornDisplacement = -592,
+        CornTS = 0.88,
+        CornTDN = 0.88
     )
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
@@ -118,7 +123,8 @@ GlobalFactors <- function()
 
 ########### FeedStock stuff
 Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
-                      percentCarboTS=0,percentProteinTS,percentLipidTS=0,fdeg=0)
+                      percentCarboTS=0,percentProteinTS,percentLipidTS=0,
+                      fdeg=0,TDN=0, Phosphorus=0, Pottasium=0)
 {
     if(missing(percentCarboTS)) percentCarboTS=0
     if(missing(percentProteinTS)) percentProteinTS=0
@@ -147,7 +153,8 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
         type = type,
         TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS,
         percentCarboTS=percentCarboTS,percentProteinTS=percentProteinTS,
-        percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC,Nperton=Nperton
+        percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC,Nperton=Nperton,
+        TDN=TDN, Phosphorus=Phosphorus, Pottasium=Pottasium
     )
     
     
