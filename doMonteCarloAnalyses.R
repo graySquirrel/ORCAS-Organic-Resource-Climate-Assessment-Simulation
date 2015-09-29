@@ -54,6 +54,7 @@ LFstats <- calculatePathwayMC(FUN=LandfillTreatmentPathway)
 CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway)
 CMfstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Fertilizer')
 CMpstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Peat')
+CMbstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Blended')
 LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway)
 LAfstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
 #####################################################################
@@ -76,6 +77,7 @@ y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
 y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
 y3f <- massageDataforPlot(CMfstats$confDat, b$CMf$final,"CMf")
 y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
+y3b <- massageDataforPlot(CMbstats$confDat, b$CMb$final,"CMb")
 y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
 y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
 
@@ -92,10 +94,10 @@ p1 <- ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) +
     geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 
-# Make a second plot to show median values
-p2 <- ggplot(y, aes(x=feedstock, y=Median,fill=treatment)) + 
+# Plot Nominals without ranges.
+p2 <- ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) + 
     geom_bar(position=position_dodge(), stat="identity") +
-    geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
+    #geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 print(p1)
 print(p2)
