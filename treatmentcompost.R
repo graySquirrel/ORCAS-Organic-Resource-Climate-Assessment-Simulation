@@ -6,6 +6,7 @@
 # Application enumeration:  'noDisplace' = no displacement
 #                           'Fertilizer' = Fertilizer displacement
 #                           'Peat' = Peat displacement
+#                           'Blended' = 21% peat, 18% fertilizer, 61% no displacement
 ################# Treatment Functions
 compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', debug = F)
 {
@@ -76,7 +77,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noD
    final <- switch(Application,
           'noDisplace' = EMCompost,
           'Fertilizer' = EMCompost + EM_displacedFertilizer,
-          'Peat' = EMCompost + EM_displaced_Peat)
+          'Peat' = EMCompost + EM_displaced_Peat,
+          'Blended' = EMCompost + 0.21*EM_displaced_Peat + 0.18*EM_displacedFertilizer)
    result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
                         EMBio, EMCstorage, EMCompApp, EM_displaced_Peat, 
                         EM_displacedFertilizer)
