@@ -10,4 +10,5 @@ AnimalFeedTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
         (GlobalFactors$CornTS * GlobalFactors$CornTDN)
     if (debug) print(paste("AF_DisplacementFactor", AF_DisplacementFactor))
     EMAnimalFeed <- AF_DisplacementFactor * GlobalFactors$EFCornDisplacement
+    result <- data.frame(EMAnimalFeed)
 }
