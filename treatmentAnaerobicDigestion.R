@@ -115,10 +115,6 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMNetLandapp <- switch(Application,
                            'noDisplace' = EMLandApp + EMCstorage,
                            'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
-    result <- data.frame(EMNetLandapp, Application, EMLandApp, EMCstorage, 
-                         EMdisplacedFertilizer)
-    result
-    
 
     # Add together
     netEmissions <- 
