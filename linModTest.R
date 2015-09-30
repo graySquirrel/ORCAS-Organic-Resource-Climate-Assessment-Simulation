@@ -85,7 +85,7 @@ coef(LALMS)
 
 y<-unlist(o$LF[1])
 names(y) <- o$f1$type
-LFLM <- lm(y ~ Lo + InitialC : fdeg) # pretty good fit!
+LFLM <- lm(y ~ Lo + InitialC + InitialC : fdeg) # perfect fit!
 summary(LFLM)
 par(mfrow=c(2,2))
 plot(LFLM, las = 1)
@@ -93,16 +93,18 @@ coef(LFLM)
 plot(fitted(LFLM))
 points(y, cex=2)
 # > coef(LFLM)
-# (Intercept)            Lo InitialC:fdeg 
-# 24.979245      9.280776     -4.099185 
-LFLMS <- lm(unlist(o$LF[1]) ~ scaledLo + scaledInitialC : scaledfdeg)
+# (Intercept)            Lo      InitialC InitialC:fdeg 
+# 18.481100      5.756141     -3.666667      3.666667 
+LFLMS <- lm(unlist(o$LF[1]) ~ scaledLo + scaledInitialC + scaledInitialC : scaledfdeg)
 summary(LFLMS)
 plot(LFLMS)
 coef(LFLMS)
 plot(fitted(LFLMS))
 points(y, cex=2)
 # > coef(LFLMS)
-# (Intercept)                  scaledLo scaledInitialC:scaledfdeg 
-# 24.97924                1964.86018                -950.74331 
+# (Intercept)                  scaledLo            scaledInitialC 
+# 18.4811                 1218.6494                 -935.4396 
+# scaledInitialC:scaledfdeg 
+# 850.4273 
 
 
