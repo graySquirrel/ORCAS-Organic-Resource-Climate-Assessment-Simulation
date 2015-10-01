@@ -42,13 +42,13 @@ plotAllOneVar <- function(inVar=NULL,xaxis='no',
     myin<-inVar
     minlim <- min(outAD[,1],outLF[,1],outCM[,1],outCMf[,1],outCMp[,1])
     maxlim <- max(outAD[,1],outLF[,1],outCM[,1],outCMf[,1],outCMp[,1])
-    plot(outAD[,1] ~ myin,xlab=xaxis,ylab='Net Emissions', type = 'n',
-             ylim=c(minlim, maxlim))
-    plotit(outAD[,1], myin,'red',plotranges)
-    plotit(outLF[,1], myin,'green3',plotranges)
-    plotit(outCM[,1], myin,'black',plotranges)
-    plotit(outCMf[,1], myin,'cyan',plotranges)
-    plotit(outCMp[,1], myin,'blue',plotranges)
+     plot(outAD[,1] ~ myin,xlab=xaxis,ylab='Net Emissions', type = 'n',
+              ylim=c(minlim, 3000))
+#     plotit(outAD[,1], myin,'red',plotranges)
+#     plotit(outLF[,1], myin,'green3',plotranges)
+#     plotit(outCM[,1], myin,'black',plotranges)
+#     plotit(outCMf[,1], myin,'cyan',plotranges)
+#     plotit(outCMp[,1], myin,'blue',plotranges)
     if(doleg)
         legend(0.05, maxlim*0.95, c("AD","LF","CM","CMf","CMp"),
                lty=c(1,1,1,1,1),

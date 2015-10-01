@@ -18,7 +18,8 @@ getBaselineResults <- function() {
     i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
     f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
                     percentCarboTS = i$PercentCarboTS, percentLipidTS = i$PercentlipidTS,
-                    percentProteinTS = i$PercentproteinTS, fdeg = i$fdeg)
+                    percentProteinTS = i$PercentproteinTS, fdeg = i$fdeg,TDN=i$TDN, 
+                    Phosphorus=i$Phosphorus, Potassium=i$Potassium)
     g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
     o<-NULL
     o$AF  <- AnimalFeedTreatmentPathway(f1, g1) # only path without a sequesterCarbon = F case
@@ -71,7 +72,7 @@ getBaselineResults <- function() {
 
 o <- getBaselineResults()
 result <- data.frame(
-                     o$AD[[1]],o$ADf[[1]],
+                     o$AF[[1]],o$AD[[1]],o$ADf[[1]],
                      o$LA[[1]],o$LAf[[1]],o$CM[[1]],
                      o$CMf[[1]],o$CMp[[1]],o$CMb[[1]],o$LF[[1]],
                      o$ADNoCS[[1]],o$ADfNoCS[[1]],
@@ -80,7 +81,7 @@ result <- data.frame(
                      o$f1$TS,o$f1$VS,o$f1$Bo,o$f1$TKN,o$f1$percentCarboTS,
                      o$f1$percentLipidTS,
                      o$f1$percentProteinTS,o$f1$Lo,o$f1$TVS,o$f1$fdeg,o$f1$TDN)
-colnames(result) <- c("AD no displacement", 
+colnames(result) <- c("Animal Feed","AD no displacement", 
                       "AD Fertilizer displacement",
                       "Land Application no displacement", 
                       "Land Application Fertlizer displacement",
@@ -98,5 +99,7 @@ colnames(result) <- c("AD no displacement",
                       "percentCarboTS","percentLipidTS","percentProteinTS","Lo","TVS","fdeg","TDN")
 result <- t(result)
 colnames(result) <- o$f1$type
+result <- result[,order(result[1,])]
+
 write.csv(result, file="baselinesOutput.csv",row.names=TRUE)
 write.csv(o, file="allPathwaysBreakdowns.csv",row.names=o$f1$type)

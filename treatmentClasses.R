@@ -124,7 +124,7 @@ GlobalFactors <- function()
 ########### FeedStock stuff
 Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
                       percentCarboTS=0,percentProteinTS,percentLipidTS=0,
-                      fdeg=0,TDN=0, Phosphorus=0, Pottasium=0)
+                      fdeg=0,TDN=0, Phosphorus=0, Potassium=0)
 {
     if(missing(percentCarboTS)) percentCarboTS=0
     if(missing(percentProteinTS)) percentProteinTS=0
@@ -154,7 +154,7 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
         TS=TS,VS=VS,Lo=Lo,Bo=Bo,TKN=TKN,TVS=TVS,
         percentCarboTS=percentCarboTS,percentProteinTS=percentProteinTS,
         percentLipidTS=percentLipidTS,fdeg=fdeg,InitialC=InitialC,Nperton=Nperton,
-        TDN=TDN, Phosphorus=Phosphorus, Pottasium=Pottasium
+        TDN=TDN, Phosphorus=Phosphorus, Potassium=Potassium
     )
     
     

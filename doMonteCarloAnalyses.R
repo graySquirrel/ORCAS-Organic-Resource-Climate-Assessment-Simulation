@@ -25,7 +25,9 @@ calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
                         percentCarboTS = stocks[i,]$PercentCarboTS, 
                         percentLipidTS = stocks[i,]$PercentlipidTS,
                         percentProteinTS = stocks[i,]$PercentproteinTS, 
-                        fdeg = stocks[i,]$fdeg)
+                        fdeg = stocks[i,]$fdeg, TDN=stocks[i,]$TDN,
+                        Phosphorus = stocks[i,]$Phosphorus,
+                        Potassium=stocks[i,]$Potassium)
         if(length(Application)!=0) {
           out <- FUN(f1, g1,Application=Application)
         } else {
@@ -57,6 +59,7 @@ CMpstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Peat'
 CMbstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Blended')
 LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway)
 LAfstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
+AFstats <- calculatePathwayMC(FUN=AnimalFeedTreatmentPathway)
 #####################################################################
 # Get baselines
 b <- getBaselineResults()
@@ -64,7 +67,7 @@ b <- getBaselineResults()
 massageDataforPlot <- function(in1,in2,treat) {
     df <-data.frame(t(in1))
     df <- cbind(rownames(df),df,in2)
-    colnames(df)<- c("feedstock","lo","Median","hi","Nominal")
+    colnames(df)<- c("feedstock","lo","Median","hi","Emissions")
     df$treatment <- treat
     df$feedstock <- factor(df$feedstock)
     df
@@ -80,28 +83,30 @@ y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
 y3b <- massageDataforPlot(CMbstats$confDat, b$CMb$final,"CMb")
 y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
 y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
+y5 <- massageDataforPlot(AFstats$confDat,b$AF$EMAnimalFeed,"AF")
 
 #y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
-y <- rbind(y1,y2,y3,y4)
+#y <- rbind(y1,y2,y3,y4)
+y <- rbind(y1,y2,y5,y3)
 #y <- rbind(y1f,y2,y3f,y4f)
 #y <- rbind(y1,y3,y4)
 
-y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Nominal)]) # order by LF
+y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) # order by LF
 
 # Plot Nominal values
-p1 <- ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) + 
+p1 <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
     geom_bar(position=position_dodge(), stat="identity") +
     geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 
 # Plot Nominals without ranges.
-p2 <- ggplot(y, aes(x=feedstock, y=Nominal,fill=treatment)) + 
+p2 <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
     geom_bar(position=position_dodge(), stat="identity") +
     #geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
 print(p1)
 print(p2)
-
+stop()
 #####################################################################
 # sensitivity analysis...  start slow
 plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
