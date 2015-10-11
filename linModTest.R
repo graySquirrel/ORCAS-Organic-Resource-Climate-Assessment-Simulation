@@ -14,7 +14,10 @@ Lo<-o$f1$Lo
 TVS<-o$f1$TVS
 InitialC<-o$f1$InitialC
 fdeg <- o$f1$fdeg
+rdeg <- o$f1$rdeg
 npert <- o$f1$Nperton
+Bo <- o$f1$Bo
+TS <- o$f1$TS
 
 # scaling is done by dividing the columns of x by the root mean square of the vector
 # this is the default scaling algorithm in the r scale function
@@ -23,49 +26,52 @@ scaledLo<-scale(o$f1$Lo, center = FALSE)
 scaledTVS<-scale(o$f1$TVS, center = FALSE)
 scaledInitialC<-scale(o$f1$InitialC, center = FALSE)
 scaledfdeg <- scale(o$f1$fdeg, center = FALSE)
+scaledrdeg <- scale(o$f1$rdeg, center = FALSE)
 scalednpert <- scale(o$f1$Nperton, center = FALSE)
 
-ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + TKN + InitialC + InitialC : fdeg) # perfect fit!
+ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC : rdeg) # perfect fit!
 summary(ADLM)
-#anova(ADLM)
 par(mfrow=c(2,2))
 plot(ADLM)
 coef(ADLM)
-# > coef(ADLM)
-# (Intercept)            Lo           TVS           TKN      InitialC InitialC:fdeg 
-# 19.02000000   -1.11405959  455.86800000    0.00748218   -1.46666667    1.46666667 
-ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scaledTKN + 
-               scaledInitialC + scaledInitialC : scaledfdeg)
+ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scaledTKN + scaledInitialC : scaledrdeg)
 summary(ADLMS)
 plot(ADLMS)
 coef(ADLMS)
-# > coef(ADLMS)
-# (Intercept)                  scaledLo                 scaledTVS 
-# 19.02000                -235.86082                 244.90025 
-# scaledTKN            scaledInitialC scaledInitialC:scaledfdeg 
-# 79.48989                -374.17586                 340.17093
 
-CMLM <- lm(unlist(o$CM[1]) ~ npert + InitialC + InitialC : fdeg)# perfect fit!
+ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + npert + InitialC : rdeg) # perfect fit!
+summary(ADfLM)
+par(mfrow=c(2,2))
+plot(ADfLM)
+coef(ADfLM)
+ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledTKN + scaledInitialC : scaledrdeg)
+summary(ADfLMS)
+plot(ADfLMS)
+coef(ADfLMS)
+
+CMLM <- lm(unlist(o$CM[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
 summary(CMLM)
 par(mfrow=c(2,2))
 plot(CMLM)
 coef(CMLM)
-# > coef(CMLM)
-# (Intercept)         npert      InitialC InitialC:fdeg 
-# 38.040000      5.954970     -2.133600      2.566667 
-CMLMS <- lm(unlist(o$CM[1]) ~ scalednpert + scaledInitialC + scaledInitialC : scaledfdeg)
+CMLMS <- lm(unlist(o$CM[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
 summary(CMLMS)
 plot(CMLMS)
 coef(CMLMS)
-# > coef(CMLMS)
-# (Intercept)               scalednpert            scaledInitialC 
-# 38.04000                  63.26497                -544.32383 
-# scaledInitialC:scaledfdeg 
-# 595.29912 
+
+CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
+summary(CMbLM)
+par(mfrow=c(2,2))
+plot(CMbLM)
+coef(CMbLM)
+CMbLMS <- lm(unlist(o$CMb[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
+summary(CMbLMS)
+plot(CMbLMS)
+coef(CMbLMS)
 
 y<-unlist(o$LA[1])
 names(y) <- o$f1$type
-LALM <- lm(y ~ TKN + InitialC + InitialC: fdeg)# perfect fit!
+LALM <- lm(y ~ npert + InitialC:rdeg)# perfect fit!
 summary(LALM)
 par(mfrow=c(2,2))
 plot(LALM)
@@ -85,7 +91,7 @@ coef(LALMS)
 
 y<-unlist(o$LF[1])
 names(y) <- o$f1$type
-LFLM <- lm(y ~ Lo + InitialC + InitialC : fdeg) # perfect fit!
+LFLM <- lm(y ~ Lo + InitialC:rdeg) # perfect fit!
 summary(LFLM)
 par(mfrow=c(2,2))
 plot(LFLM, las = 1)
