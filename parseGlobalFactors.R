@@ -2,10 +2,15 @@
 # maybe later we will add it as a function
 #
 source("treatmentClasses.R") 
-getGlobalFactorsFromFile <- function(file = "Globalfactors.csv",
+getGlobalFactorsFromFile <- function(GFmemfile = NULL,
                                      doRanges=TRUE,
                                      verbose=FALSE) {
-    r <- read.csv(file=file,stringsAsFactors = FALSE)
+    # We are passing in an in-memory representation of the file contents
+    # but if its null, then pull it in from the default file
+    if (is.null(GFmemfile)) {
+        r <- read.csv(file="GlobalFactors.csv",stringsAsFactors = FALSE)
+    }
+    else r <- GFmemfile
     # We create a new global factors object to match names
     g1 <- GlobalFactors()
     for (i in 1:length(r$sw.name)) {
