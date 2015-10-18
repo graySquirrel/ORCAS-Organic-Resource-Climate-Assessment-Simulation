@@ -13,15 +13,27 @@ addNorms <- function(df,ts) {
     df1
 }
 
-getBaselineResults <- function(verbose = FALSE) {
-    i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
+getBaselineResults <- function(verbose = FALSE,
+                               FSmemfile=NULL,
+                               GFmemfile=NULL) {
+    if (is.null(FSmemfile)) {
+        i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
+    }
+    else i <- FSmemfile
     f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
-                    percentCarboTS = i$PercentCarboTS, percentLipidTS = i$PercentlipidTS,
-                    percentProteinTS = i$PercentproteinTS, fdeg = i$fdeg,TDN=i$TDN, 
+                    percentCarboTS = i$PercentCarboTS, 
+                    percentLipidTS = i$PercentlipidTS,
+                    percentProteinTS = i$PercentproteinTS, 
+                    fdeg = i$fdeg,TDN=i$TDN, 
                     Phosphorus=i$Phosphorus, Potassium=i$Potassium)
-    g1 <- getGlobalFactorsFromFile(doRanges = FALSE, verbose = verbose)
+    if (is.null(GFmemfile)) {
+        g1 <- getGlobalFactorsFromFile(doRanges = FALSE, verbose = verbose)
+    }
+    else g1 <- getGlobalFactorsFromFile(GFmemfile = GFmemfile, doRanges = FALSE)
     o<-NULL
-    o$AF  <- AnimalFeedTreatmentPathway(f1, g1) # only path without a sequesterCarbon = F case
+    # only path without a sequesterCarbon = F case
+    
+    o$AF  <- AnimalFeedTreatmentPathway(f1, g1) 
     
     o$AD  <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'noDisplace')
     o$ADf <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'Fertilizer')
@@ -33,15 +45,24 @@ getBaselineResults <- function(verbose = FALSE) {
     o$CMb <- compostTreatmentPathway(f1, g1, Application = 'Blended')
     o$LF  <- LandfillTreatmentPathway(f1, g1)
     
-    o$ADNoCS  <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'noDisplace', sequesterCarbon = F)
-    o$ADfNoCS <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'Fertilizer', sequesterCarbon = F)
-    o$LANoCS  <- LandApplicationTreatmentPathway(f1, g1, Application = 'noDisplace', sequesterCarbon = F)
-    o$LAfNoCS <- LandApplicationTreatmentPathway(f1, g1, Application = 'Fertilizer', sequesterCarbon = F)
-    o$CMNoCS  <- compostTreatmentPathway(f1, g1, Application = 'noDisplace', sequesterCarbon = F)
-    o$CMfNoCS <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer', sequesterCarbon = F)
-    o$CMpNoCS <- compostTreatmentPathway(f1, g1, Application = 'Peat', sequesterCarbon = F)
-    o$CMbNoCS <- compostTreatmentPathway(f1, g1, Application = 'Blended', sequesterCarbon = F)
-    o$LFNoCS  <- LandfillTreatmentPathway(f1, g1, sequesterCarbon = F)
+    o$ADNoCS  <- AnaerobicDigestionTreatmentPathway(f1, g1, 
+                                Application = 'noDisplace', sequesterCarbon = F)
+    o$ADfNoCS <- AnaerobicDigestionTreatmentPathway(f1, g1, 
+                                Application = 'Fertilizer', sequesterCarbon = F)
+    o$LANoCS  <- LandApplicationTreatmentPathway(f1, g1, 
+                                Application = 'noDisplace', sequesterCarbon = F)
+    o$LAfNoCS <- LandApplicationTreatmentPathway(f1, g1, 
+                                Application = 'Fertilizer', sequesterCarbon = F)
+    o$CMNoCS  <- compostTreatmentPathway(f1, g1, 
+                                Application = 'noDisplace', sequesterCarbon = F)
+    o$CMfNoCS <- compostTreatmentPathway(f1, g1, 
+                                Application = 'Fertilizer', sequesterCarbon = F)
+    o$CMpNoCS <- compostTreatmentPathway(f1, g1, 
+                                Application = 'Peat', sequesterCarbon = F)
+    o$CMbNoCS <- compostTreatmentPathway(f1, g1,
+                                Application = 'Blended', sequesterCarbon = F)
+    o$LFNoCS  <- LandfillTreatmentPathway(f1, g1, 
+                                sequesterCarbon = F)
     
     o$LF  <- addNorms(o$LF,f1$TS)
     o$CMb <- addNorms(o$CMb,f1$TS)
@@ -70,12 +91,12 @@ getBaselineResults <- function(verbose = FALSE) {
 }
 
 #### Support funcs for monte carlo and plotting
-calculatePathwayMC <- function(feedstockfile="Feedstock.csv",
-                               factorFile="Globalfactors.csv",
+calculatePathwayMC <- function(FSmemfile=NULL,
+                               GFmemfile=NULL,
                                FUN=NULL,
                                Application=NULL) {
-    stocks <- read.csv(file=feedstockfile,sep = ",",stringsAsFactors=FALSE)
-    g1 <- getGlobalFactorsFromFile(file = factorFile)
+    stocks <- FSmemfile # just lazy don't want to rename stocks
+    g1 <- getGlobalFactorsFromFile(GFmemfile=GFmemfile)
     outRanges <- NULL
     for(i in 1:length(stocks$Feedstock)) {
         #print(i)
@@ -116,33 +137,62 @@ massageDataforPlot <- function(in1,in2,treat) {
     df$feedstock <- factor(df$feedstock)
     df
 }
-# Now do the dirty work of plotting
-createPathwaysPlot <- function(doRanges = FALSE, CS, paths, disp) {
-    b <- getBaselineResults()
-    
+
+plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
+    df <- data.frame(theObj$outRanges)
+    var <- gsub(" ",".",feedstock)
+    y <- df[[var]]
+    x <- theObj$g1[[rangeFactor]]
+    plot(x, y, xlab=xlabl,ylab=paste(feedstock,treatment))
+    abline(lm(y ~ x),col='red')
+}
+
+calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
+    if (is.null(FSmemfile)) {
+        FSmemfile <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
+    } 
+    if (is.null(GFmemfile)) {
+        GFmemfile <- read.csv(file="Globalfactors.csv", stringsAsFactors = FALSE)
+    }
+    o <- NULL
+    o$b <- getBaselineResults(GFmemfile = GFmemfile, FSmemfile = FSmemfile)
     # Do the MC for all pathways, then pick what you want to show.
-    ADstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway)
-    ADfstats <- calculatePathwayMC(FUN=AnaerobicDigestionTreatmentPathway, Application='Fertilizer')
-    LFstats <- calculatePathwayMC(FUN=LandfillTreatmentPathway)
-    CMstats <- calculatePathwayMC(FUN=compostTreatmentPathway)
-    CMfstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Fertilizer')
-    CMpstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Peat')
-    CMbstats <- calculatePathwayMC(FUN=compostTreatmentPathway, Application = 'Blended')
-    LAstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway)
-    LAfstats <- calculatePathwayMC(FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
-    AFstats <- calculatePathwayMC(FUN=AnimalFeedTreatmentPathway)
-    
-    
-    y1 <- massageDataforPlot(ADstats$confDat, b$AD$ADnetEmissions,"AD")
-    y1f <- massageDataforPlot(ADfstats$confDat, b$ADf$ADnetEmissions,"ADf")
-    y2 <- massageDataforPlot(LFstats$confDat, b$LF$LandfillNetEmissions,"LF")
-    y3 <- massageDataforPlot(CMstats$confDat, b$CM$final,"CM")
-    y3f <- massageDataforPlot(CMfstats$confDat, b$CMf$final,"CMf")
-    y3p <- massageDataforPlot(CMpstats$confDat, b$CMp$final,"CMp")
-    y3b <- massageDataforPlot(CMbstats$confDat, b$CMb$final,"CMb")
-    y4 <- massageDataforPlot(LAstats$confDat, b$LA$EMNetLandapp,"LA")
-    y4f <- massageDataforPlot(LAfstats$confDat, b$LAf$EMNetLandapp,"LAf")
-    y5 <- massageDataforPlot(AFstats$confDat,b$AF$EMAnimalFeed,"AF")
+    # TODO: revisit if/when this becomes too slow
+    o$ADstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                  FUN=AnaerobicDigestionTreatmentPathway)
+    o$ADfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                   FUN=AnaerobicDigestionTreatmentPathway, Application='Fertilizer')
+    o$LFstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                  FUN=LandfillTreatmentPathway)
+    o$CMstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                  FUN=compostTreatmentPathway)
+    o$CMfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                   FUN=compostTreatmentPathway, Application = 'Fertilizer')
+    o$CMpstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                   FUN=compostTreatmentPathway, Application = 'Peat')
+    o$CMbstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                   FUN=compostTreatmentPathway, Application = 'Blended')
+    o$LAstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                  FUN=LandApplicationTreatmentPathway)
+    o$LAfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                   FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
+    o$AFstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                  FUN=AnimalFeedTreatmentPathway)
+    o
+}
+# Now do the dirty work of plotting
+# s is the AllStats object...  
+createPathwaysPlot <- function(doRanges = FALSE,s = NULL) {
+    y1 <- massageDataforPlot(s$ADstats$confDat, s$b$AD$ADnetEmissions,"AD")
+    y1f <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"ADf")
+    y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"LF")
+    y3 <- massageDataforPlot(s$CMstats$confDat, s$b$CM$final,"CM")
+    y3f <- massageDataforPlot(s$CMfstats$confDat, s$b$CMf$final,"CMf")
+    y3p <- massageDataforPlot(s$CMpstats$confDat, s$b$CMp$final,"CMp")
+    y3b <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CMb")
+    y4 <- massageDataforPlot(s$LAstats$confDat, s$b$LA$EMNetLandapp,"LA")
+    y4f <- massageDataforPlot(s$LAfstats$confDat, s$b$LAf$EMNetLandapp,"LAf")
+    y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
     
     #y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
     #y <- rbind(y1,y2,y3,y4)
@@ -150,19 +200,20 @@ createPathwaysPlot <- function(doRanges = FALSE, CS, paths, disp) {
     #y <- rbind(y1f,y2,y3f,y4f)
     #y <- rbind(y1,y3,y4)
     
-    y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) # order by LF
+    # order by LF
+    y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) 
     
     if(!doRanges) {
         # Plot Nominals without ranges.
         myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
             geom_bar(position=position_dodge(), stat="identity") +
-            #geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
             theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
     } else {
         # Plot Nominal values
         myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
             geom_bar(position=position_dodge(), stat="identity") +
-            geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, position=position_dodge(0.9)) +
+            geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, 
+                          position=position_dodge(0.9)) +
             theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
     }
     myplot
