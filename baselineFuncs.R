@@ -137,8 +137,8 @@ massageDataforPlot <- function(in1,in2,treat) {
     df$feedstock <- factor(df$feedstock)
     df
 }
-
-plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
+# plot factor sensitivity
+plotFS <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
     df <- data.frame(theObj$outRanges)
     var <- gsub(" ",".",feedstock)
     y <- df[[var]]
@@ -146,7 +146,14 @@ plotFactorSensitivity <- function(theObj,feedstock,rangeFactor,xlabl,treatment) 
     plot(x, y, xlab=xlabl,ylab=paste(feedstock,treatment))
     abline(lm(y ~ x),col='red')
 }
-
+plotFS2 <- function(theObj,feedstock,rangeFactor,treatment) {
+    df <- data.frame(theObj$outRanges)
+    var <- gsub(" ",".",feedstock)
+    y <- df[[var]]
+    x <- unlist(rangeFactor)
+    plot(x, y, xlab=names(rangeFactor),ylab=paste(feedstock,treatment))
+    abline(lm(y ~ x),col='red')
+}
 calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
     if (is.null(FSmemfile)) {
         FSmemfile <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
