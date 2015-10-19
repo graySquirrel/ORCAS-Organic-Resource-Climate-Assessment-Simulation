@@ -1,0 +1,30 @@
+---
+title: "doMonteCarlo.Rmd"
+author: "Ebner"
+date: "October 18, 2015"
+output: word_document
+---
+
+```{r, echo=FALSE}
+source("baselineFuncs.R")
+AllStats <- calcAllStats()
+#print(createPathwaysPlot(FALSE,s=AllStats))
+print(createPathwaysPlot(TRUE,s=AllStats))
+
+# for (i in 1:length(AllStats$ADstats$g1)) 
+#     {
+#     print(names(AllStats$ADstats$g1[i]))
+#     }
+#par(mfrow=c(1,2)) # how many do you want to show?  rows x columns number of graphs
+for (i in 1:length(AllStats$ADstats$g1)) {
+    if (length(AllStats$ADstats$g1[[i]]) > 1) {
+        plotFS2(AllStats$ADstats,"Food waste",AllStats$ADstats$g1[i],"AD")
+        plotFS2(AllStats$ADstats,"Baked goods",AllStats$ADstats$g1[i],"AD")
+        plotFS2(AllStats$ADstats,"Unsweetened dry goods",AllStats$ADstats$g1[i],"AD")
+        plotFS2(AllStats$ADstats,"Prep waste",AllStats$ADstats$g1[i],"AD")
+        plotFS2(AllStats$ADstats,"Salad mix",AllStats$ADstats$g1[i],"AD")
+        plotFS2(AllStats$ADstats,"Coffee",AllStats$ADstats$g1[i],"AD") 
+    }
+}
+
+```
