@@ -1,0 +1,66 @@
+---
+output: word_document
+---
+# simpletonSensitivity.R will vary a factor independently until a change in output of
+#    a chosen percentage is reached.
+#setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
+```{r}
+source("treatmentClasses.R") 
+source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R") 
+source("parseGlobalFactors.R")
+
+#################################################################################
+singleValueSensitivityByPercent <- function(percentThresh,
+                                            numsamp,
+                                            rangePercent,
+                                            factorName,
+                                            FUN) {
+    # row 1 is "Food waste""
+    f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)[1,]
+    
+    g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
+    f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
+                    percentCarboTS=f$PercentCarboTS,percentProteinTS=f$PercentproteinTS,
+                    percentLipidTS=f$PercentlipidTS,
+                    fdeg=f$fdeg,TDN=f$TDN, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
+
+    tmpfac <- g1[[factorName]]
+    g1[[factorName]] <- tmpfac + -numsamp:numsamp*rangePercent*tmpfac/(numsamp*100)
+    
+    out <- cbind(g1[[factorName]],FUN(f1, g1, debug = F)[[1]])
+    #out <- FUN(f1, g1, debug = F)[[1]]
+    
+    #print(head(out))
+    nomOut <- out[numsamp+1,2]
+    percentdiff <- 100*(out[,2]-nomOut)/nomOut
+    final <- cbind(out,percentdiff)
+    colnames(final) <- c("in","out","percentDiff")
+    within <- which(abs(final[,3]) < percentThresh)
+    if (length(within)==dim(out)[[1]]) {
+        print("search range too small - never reached difference threshold")
+        print(paste("largest percent difference value is",abs(final[1,3])))
+        stop("out of range")
+    }
+    inputNom <- final[numsamp+1,1]
+    inputAtThresh <- final[within[1],1]
+    #print(within)
+    #print(final[within[1],])
+    outPercAtThresh <- final[within[1],3] # the percent value
+    outputAtThresh  <- final[within[1],2]  # the absolute value
+    print(paste("Result: for", abs(outPercAtThresh), "percent output difference, the factor changed", 
+                abs(100*(inputAtThresh-inputNom)/inputNom), "percent."))
+    print(paste("Result: for", abs(outputAtThresh), "abs output difference, ",
+                "from ",nomOut," to ",outputAtThresh,
+                "the factor changed", abs(inputAtThresh-inputNom)))
+    
+    
+}
+##############################################################################
+singleValueSensitivityByPercent(20,1000,20,"EFGrid",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_Digester_CH4Leaks",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_Digester_conversion_KwHPerM3",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_reductionInVS",AnaerobicDigestionTreatmentPathway)
+```
+
+
