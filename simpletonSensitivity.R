@@ -9,46 +9,52 @@ source("treatmentLandApplication.R")
 singleValueSensitivityByPercent <- function(percentThresh,
                                             numsamp,
                                             rangePercent,
-                                            nominal,
-                                            element,
+                                            factorName,
                                             FUN) {
-    g1 <- GlobalFactors()
-    my.data<-NULL
-    for (i in 1:length(nominal)) {
-        ifelse (element==i, 
-                s <- nominal[i] + -numsamp:numsamp*rangePercent*nominal[i]/(numsamp*100),
-                s <- nominal[i])
-        ifelse (i==1, my.data<- data.frame(s), my.data<-cbind(my.data,s))
-    }
-    f1 <- Feedstock(type="Sensitivity", my.data[,1], my.data[,2], my.data[,3], my.data[,4])
-    out <- cbind(my.data,FUN(f1, g1, debug = F)[[1]])
+    # row 1 is "Food waste""
+    f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)[1,]
+    
+    g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
+    f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
+                    percentCarboTS=f$PercentCarboTS,percentProteinTS=f$PercentproteinTS,
+                    percentLipidTS=f$PercentlipidTS,
+                    fdeg=f$fdeg,TDN=f$TDN, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
+
+    tmpfac <- g1[[factorName]]
+    g1[[factorName]] <- tmpfac + -numsamp:numsamp*rangePercent*tmpfac/(numsamp*100)
+    
+    out <- cbind(g1[[factorName]],FUN(f1, g1, debug = F)[[1]])
+    #out <- FUN(f1, g1, debug = F)[[1]]
+    
     #print(head(out))
-    nomOut <- out[numsamp+1,5]
-    percentdiff <- 100*(out[,5]-nomOut)/nomOut
+    nomOut <- out[numsamp+1,2]
+    percentdiff <- 100*(out[,2]-nomOut)/nomOut
     final <- cbind(out,percentdiff)
-    colnames(final) <- c("TS","VS", "Bo","TKN","out","percentDiff")
-    within <- which(abs(final[,6]) < percentThresh)
+    colnames(final) <- c("in","out","percentDiff")
+    within <- which(abs(final[,3]) < percentThresh)
     if (length(within)==dim(out)[[1]]) {
         print("search range too small - never reached difference threshold")
-        print(paste("largest percent difference value is",abs(final[1,6])))
+        print(paste("largest percent difference value is",abs(final[1,3])))
         stop("out of range")
     }
-    inputNom <- final[numsamp+1,element]
-    inputAtThresh <- final[within[1],element]
+    inputNom <- final[numsamp+1,1]
+    inputAtThresh <- final[within[1],1]
     #print(within)
     #print(final[within[1],])
-    outputAtThresh <- final[within[1],6]
-    print(paste("Result: for", abs(outputAtThresh), "percent output difference, the factor changed", 
+    outPercAtThresh <- final[within[1],3] # the percent value
+    outputAtThresh  <- final[within[1],2]  # the absolute value
+    print(paste("Result: for", abs(outPercAtThresh), "percent output difference, the factor changed", 
                 abs(100*(inputAtThresh-inputNom)/inputNom), "percent."))
+    print(paste("Result: for", abs(outputAtThresh), "abs output difference, ",
+                "from ",nomOut," to ",outputAtThresh,
+                "the factor changed", abs(inputAtThresh-inputNom)))
+    
     
 }
 ##############################################################################
-singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),1,
-                                AnaerobicDigestionTreatmentPathway)
-singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),2,
-                                AnaerobicDigestionTreatmentPathway)
-singleValueSensitivityByPercent(20,1000,100,c(18,17/18,887,5600),3,
-                                AnaerobicDigestionTreatmentPathway)
-singleValueSensitivityByPercent(1,1000,1000,c(18,17/18,887,5600),4,
-                                AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"EFGrid",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_Digester_CH4Leaks",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_Digester_conversion_KwHPerM3",AnaerobicDigestionTreatmentPathway)
+singleValueSensitivityByPercent(20,1000,20,"AD_reductionInVS",AnaerobicDigestionTreatmentPathway)
+
 
