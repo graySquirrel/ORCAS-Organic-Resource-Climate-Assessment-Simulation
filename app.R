@@ -1,6 +1,14 @@
 library(shiny)
 source("baselineFuncs.R")
-foo <- NULL
+
+df <- data.frame(c("AD_Digester_CH4Leaks","AD_MCFactor","AD_Digester_parasiticLoad"),
+                 c("CH4 Leaks","utilization factor","parastic load"),
+                 c("AD","AD","AD"),
+                 c("ADstats","ADstats","ADstats"),
+                 c("Food waste","Food waste","Food waste"),
+                 stringsAsFactors = FALSE)
+colnames(df) <- c("p","n1","n2","s","f")
+
 
 ui <- fluidPage(
     # *Input() functions,
@@ -11,19 +19,6 @@ ui <- fluidPage(
                checkboxInput(inputId = "ranges", label = "show uncertainty"),
                textInput(inputId = "filename", label = "feedstock file", 
                          value = "Feedstock.csv")
-               #             checkboxInput(inputId = "CStorage", label = "include Carbon Storage", value = TRUE),
-               #             checkboxGroupInput(inputId = "pathways",
-               #                                label = "treatment pathways",
-               #                                choices = c("AD"="AD",
-               #                                            "Animal Feed"="AF",
-               #                                            "Compost"="CM",
-               #                                            "Landfill"="LF"), 
-               #                                selected = c("AD","AF","CM")),
-               #             radioButtons(inputId = "displacement", label = "choose displacement option",
-               #                          choices = c("none" = "none",
-               #                                      "Fertilizer displacement" = "FD",
-               #                                      "Peat displacement" = "Peat",
-               #                                      "Blended" = "Blended"))
         ),
         column(10,
                # submitButton(text = "Calculate")
@@ -37,33 +32,19 @@ ui <- fluidPage(
 
 server <- function(input, output) {
     AllStats <- calcAllStats(FSmemfile=NULL, GFmemfile=NULL)
-    output$args <- renderText(
-        {a<-paste("Range",input$ranges,", CStorage", input$CStorage)
-        b <- foo
-        print(paste(a,b))
-        })
     output$pathwaysChart <- renderPlot({
         createPathwaysPlot(s=AllStats,
                            doRanges = input$ranges)
     }, height = 600, width = 800)
     output$sensitivitiesChart <- renderUI({ 
-        plot_output_list <- list(
-            plotOutput("CH4 Leaks, AD"),
-            plotOutput("utilization Factor, AD")
-            )
+        plot_output_list <- lapply(1:dim(df)[1], function(i){plotOutput(df[[i,1]])})
         do.call(tagList, plot_output_list)
         }) 
-    output[["CH4 Leaks, AD"]] <- renderPlot({
-        plotFactorSensitivity(AllStats$ADstats,"Food waste",
-                               "AD_Digester_CH4Leaks","CH4 Leaks","AD") },
-        width=400,height=300)
-    output[["utilization Factor, AD"]] <- renderPlot({
-        plotFactorSensitivity(AllStats$ADstats,"Food waste",
-                              "AD_MCFactor","utilization Factor","AD")  },
-        width=400,height=300)
-    
-    
-    foo <- 1#reactive({input$filename})
+    for(i in 1:dim(df)[1]) {
+        output[[df[[i,1]]]] <- renderPlot({
+            plotFS(AllStats[[df[i,4]]],df[[i,5]],df[[i,1]],df[[i,2]],df[[i,3]])
+        },width=400)
+    }
 }
 
 shinyApp(ui = ui, server = server)
