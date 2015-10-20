@@ -68,7 +68,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     
     # Step 5: Displaced fertilizer kgCO2e/MT
     effectiveNapplied <- Nremaining * 
-      GlobalFactors$NAvailability_Factor
+      GlobalFactors$N_availabilityfactor
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
       effectiveNapplied
     avoidedInorganicFertdirectandIndirect <- 

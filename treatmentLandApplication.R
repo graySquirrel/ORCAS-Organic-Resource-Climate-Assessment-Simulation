@@ -42,7 +42,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     Nremaining      <- Nremaining - 
         Nremaining * GlobalFactors$LandApplication_EF1 -
         Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$NAvailability_Factor
+    effectiveNapplied <- Nremaining * GlobalFactors$N_availabilityfactor
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *

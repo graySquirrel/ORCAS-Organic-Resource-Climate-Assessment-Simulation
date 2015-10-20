@@ -8,7 +8,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace',
                                                sequesterCarbon = TRUE)
 {
- 
+    # step 0: grind up goo
+    
     # Step 1: calculate Digester emissions kgCO2e/MT
 
     CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_MCFactor
@@ -95,7 +96,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     Nremaining      <- Nremaining - 
       Nremaining * GlobalFactors$LandApplication_EF1 -
       Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$NAvailability_Factor
+    effectiveNapplied <- Nremaining * GlobalFactors$N_availabilityfactor
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
