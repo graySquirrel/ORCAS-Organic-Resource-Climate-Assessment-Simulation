@@ -8,7 +8,7 @@
 #                           'Peat' = Peat displacement
 #                           'Blended' = 21% peat, 18% fertilizer, 61% no displacement
 ################# Treatment Functions
-compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'noDisplace', 
+compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Blended', 
                                     debug = F,
                                     sequesterCarbon = TRUE)
 {
