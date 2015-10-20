@@ -147,6 +147,15 @@ plotFS2 <- function(theObj,feedstock,rangeFactor,treatment) {
     plot(x, y, xlab=names(rangeFactor),ylab=paste(feedstock,treatment))
     abline(lm(y ~ x),col='red')
 }
+plotFS3 <- function(theObj,feedstock,rangeFactor,xlabl,treatment) {
+    df <- data.frame(theObj$outRanges)
+    var <- gsub(" ",".",feedstock)
+    y <- df[[var]]
+    x <- unlist(rangeFactor)
+    plot(x, y, xlab=xlabl,ylab=paste(feedstock,treatment))
+    abline(lm(y ~ x),col='red')
+}
+
 calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
     if (is.null(FSmemfile)) {
         FSmemfile <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
