@@ -1,4 +1,11 @@
 library(shiny)
+source("treatmentClasses.R") 
+source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R") 
+source("treatmentLandfill.R")
+source("treatmentcompost.R")
+source("treatmentAnimalFeed.R")
+source("parseGlobalFactors.R")
 source("baselineFuncs.R")
 
 df <- data.frame(c("AD_Digester_CH4Leaks","AD_MCFactor","AD_Digester_parasiticLoad"),
