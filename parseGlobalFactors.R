@@ -1,7 +1,6 @@
 # Parse GlobalFactor.csv and create a global factors variable in the current env
 # maybe later we will add it as a function
 #
-source("treatmentClasses.R") 
 getGlobalFactorsFromFile <- function(GFmemfile = NULL,
                                      doRanges=TRUE,
                                      verbose=FALSE) {
