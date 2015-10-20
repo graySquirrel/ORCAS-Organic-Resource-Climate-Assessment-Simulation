@@ -23,15 +23,63 @@ print(createPathwaysPlot(TRUE,s=AllStats))
 #     print(names(AllStats$ADstats$g1[i]))
 #     }
 #par(mfrow=c(1,2)) # how many do you want to show?  rows x columns number of graphs
-for (i in 1:length(AllStats$ADstats$g1)) {
-    if (length(AllStats$ADstats$g1[[i]]) > 1) {
-        plotFS2(AllStats$ADstats,"Food waste",AllStats$ADstats$g1[i],"AD")
-        plotFS2(AllStats$ADstats,"Baked goods",AllStats$ADstats$g1[i],"AD")
-        plotFS2(AllStats$ADstats,"Unsweetened dry goods",AllStats$ADstats$g1[i],"AD")
-        plotFS2(AllStats$ADstats,"Prep waste",AllStats$ADstats$g1[i],"AD")
-        plotFS2(AllStats$ADstats,"Salad mix",AllStats$ADstats$g1[i],"AD")
-        plotFS2(AllStats$ADstats,"Coffee",AllStats$ADstats$g1[i],"AD") 
+
+plotfeedstocks <- function(a,b,c,xLabel) {
+    plotFS3(a,"Food waste",b,xLabel,c)
+    plotFS3(a,"Baked goods",b,xLabel,c)
+    plotFS3(a,"Unsweetened dry goods",b,xLabel,c)
+    plotFS3(a,"Prep waste",b,xLabel,c)
+    plotFS3(a,"Salad mix",b,xLabel,c)
+    plotFS3(a,"Coffee",b,xLabel,c)
+}
+
+GFmemfile <- read.csv("Globalfactors.csv",stringsAsFactors = FALSE)
+glob <- getGlobalFactorsFromFile(doRanges = FALSE)
+
+for (i in 1:length(GFmemfile[,1])){
+    if (GFmemfile[i,1] != "" ) {
+        pw <- GFmemfile[i,1]
+        gf <- GFmemfile[i,"sw.name"]
+        val <- glob[[gf]]
+        if (length(val) != 0 && GFmemfile[[i,"Use"]] == "Range") { 
+            #print(paste(GFmemfile[i,1], i, GFmemfile[i,"sw.name"]))
+            xAD <- AllStats$ADstats$g1[[GFmemfile[i,"sw.name"]]]
+            xLF <- AllStats$LFstats$g1[[GFmemfile[i,"sw.name"]]]
+            xCM <- AllStats$CMbstats$g1[[GFmemfile[i,"sw.name"]]]
+            xAF <- AllStats$AFstats$g1[[GFmemfile[i,"sw.name"]]]
+            xLabel <- GFmemfile[i,"sw.name"]
+            switch(GFmemfile[i,1],
+                   'All' = {
+                       plotfeedstocks(AllStats$ADfstats,xAD,"AD",xLabel)
+                       plotfeedstocks(AllStats$LFstats,xLF,"LF",xLabel)
+                       plotfeedstocks(AllStats$CMbstats,xCM,"CM",xLabel)
+                       #plotfeedstocks(AllStats$AFstats,xAF,"AF",xLabel)
+                   },
+                   'AD' = {
+                       plotfeedstocks(AllStats$ADfstats,xAD,"AD",xLabel)
+                   },
+                   'LF' = {
+                       plotfeedstocks(AllStats$LFstats,xLF,"LF",xLabel)
+                   },
+                   'CM' = {
+                       plotfeedstocks(AllStats$CMbstats,xCM,"CM",xLabel)
+                   },
+                   'AF' = {
+                       plotfeedstocks(AllStats$AFstats,xAF,"AF",xLabel)
+                   }
+            )
+        }
     }
 }
+# for (i in 1:length(AllStats$ADstats$g1)) {
+#     if (length(AllStats$ADstats$g1[[i]]) > 1) {
+#         plotFS2(AllStats$ADstats,"Food waste",AllStats$ADstats$g1[i],"AD")
+#         plotFS2(AllStats$ADstats,"Baked goods",AllStats$ADstats$g1[i],"AD")
+#         plotFS2(AllStats$ADstats,"Unsweetened dry goods",AllStats$ADstats$g1[i],"AD")
+#         plotFS2(AllStats$ADstats,"Prep waste",AllStats$ADstats$g1[i],"AD")
+#         plotFS2(AllStats$ADstats,"Salad mix",AllStats$ADstats$g1[i],"AD")
+#         plotFS2(AllStats$ADstats,"Coffee",AllStats$ADstats$g1[i],"AD") 
+#     }
+# }
 
 ```
