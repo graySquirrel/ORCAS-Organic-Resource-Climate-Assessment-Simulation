@@ -1,10 +1,3 @@
-source("treatmentClasses.R") 
-source("treatmentAnaerobicDigestion.R") 
-source("treatmentLandApplication.R") 
-source("treatmentLandfill.R")
-source("treatmentcompost.R")
-source("treatmentAnimalFeed.R")
-source("parseGlobalFactors.R")
 library(ggplot2)
 
 addNorms <- function(df,ts) {
