@@ -5,38 +5,80 @@
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
 source("treatmentLandApplication.R") 
+source("treatmentcompost.R")
+source("treatmentAnimalFeed.R")
+source("treatmentLandfill.R")
 source("parseGlobalFactors.R")
 
 f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
 f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
-                    percentCarboTS=f$PercentCarboTS,percentProteinTS=f$PercentproteinTS,
-                    percentLipidTS=f$PercentlipidTS,
-                    fdeg=f$fdeg,TDN=f$TDN, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
+                percentCarboTS=f$PercentCarboTS,percentProteinTS=f$PercentproteinTS,
+                percentLipidTS=f$PercentlipidTS,
+                fdeg=f$fdeg,TDN=f$TDN, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
+
+GFmemfile <- read.csv("Globalfactors.csv",stringsAsFactors = FALSE)
+glob <- getGlobalFactorsFromFile(doRanges = FALSE)
+
 #################################################################################
-singleValueSensitivityByPercent <- function(pathway,
-                                            factorName,
-                                            FUN,
-                                            f1) {
-    GFmemfile <- read.csv("Globalfactors.csv",stringsAsFactors = FALSE)
+singleValueSensitivityByRange <- function(pathway,
+                                          factorName,
+                                          FUN,
+                                          f1) {
+    print(factorName)
+    factorName <- factorName[[1]]
+    print(factorName)
+    
+    print(paste("pathway",pathway,"factorname",factorName))
     g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
     nom <- g1[[factorName]]
     outNom <- FUN(f1, g1, debug = F)[[1]]
     low <- GFmemfile[GFmemfile$sw.name==factorName,"Range.Lo"]
-    g1[[factorName]] <- low
+    g1[[factorName]] <- low[1] # in case there are multiple entries of same factor
     outLo <- FUN(f1, g1, debug = F)[[1]]
     high <- GFmemfile[GFmemfile$sw.name==factorName,"Range.High"]
-    g1[[factorName]] <- high
+    g1[[factorName]] <- high[1] # in case there are multiple entries of same factor
     outHi <- FUN(f1, g1, debug = F)[[1]]
-    
-    o <- data.frame(f1$type, pathway, factorName, nom, outNom, low, outLo, high, outHi)
+    #print(paste("pathway",pathway,"factorName",factorName,"nom",nom,"nom",outNom,"low",low,"low",outLo,"hi",high,"hi",outHi))
+    print(length(factorName))
+    print(length(pathway))
+    print(length(f1$type))
+    data.frame(f1$type, pathway, factorName, nom, outNom, low, outLo, high, outHi)
 }
 ##############################################################################
-p <- AnaerobicDigestionTreatmentPathway
-o <- singleValueSensitivityByPercent("AD","EFGrid",p,f1)
-o <- rbind(o,singleValueSensitivityByPercent("AD","AD_Digester_CH4Leaks",p,f1))
-o <- rbind(o,singleValueSensitivityByPercent("AD","AD_Digester_conversion_KwHPerM3",p,f1))
-o <- rbind(o,singleValueSensitivityByPercent("AD","AD_reductionInVS",p,f1))
+fl <- NULL
+o <- NULL
+fl$AD <- AnaerobicDigestionTreatmentPathway
+fl$CM <- compostTreatmentPathway
+fl$AF <- AnimalFeedTreatmentPathway
+fl$LF <- LandfillTreatmentPathway
+fl$LA <- LandApplicationTreatmentPathway
 
+for (i in 1:length(GFmemfile[,1])){
+    if (GFmemfile[i,1] != "" ) {
+        pw <- GFmemfile[i,1]
+        gf <- GFmemfile[i,"sw.name"][1] # to prevent multiple instances of same factor
+        val <- glob[[gf]]
+        print(paste("pw",pw,"gf",gf,"val",val))
+        if (length(val) != 0) { # meaning if the factor exists in globalFactors
+            if (GFmemfile[i,1] == "All") {
+                ifelse(is.null(o),
+                       o <- singleValueSensitivityByRange("AD",gf,
+                                                          AnaerobicDigestionTreatmentPathway,f1),
+                       o <- rbind(o,singleValueSensitivityByRange("AD",gf,
+                                                                  AnaerobicDigestionTreatmentPathway,f1)))
+                o <- rbind(o,singleValueSensitivityByRange("CM",gf,compostTreatmentPathway,f1))
+                o <- rbind(o,singleValueSensitivityByRange("AF",gf,AnimalFeedTreatmentPathway,f1))
+                o <- rbind(o,singleValueSensitivityByRange("LF",gf,LandfillTreatmentPathway,f1))
+                o <- rbind(o,singleValueSensitivityByRange("LA",gf,LandApplicationTreatmentPathway,f1))
+            } else {
+                FUN <- fl[[GFmemfile[i,1]]]
+                ifelse(is.null(o),
+                       o <- singleValueSensitivityByRange(pw,gf,FUN,f1),
+                       o <- rbind(o,singleValueSensitivityByRange(pw,gf,FUN,f1)))
+            }
+        }
+    }
+}
 ord <- order(o$f1.type)
 o <- o[ord,]
 
