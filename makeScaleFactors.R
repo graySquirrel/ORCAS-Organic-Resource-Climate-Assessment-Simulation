@@ -23,4 +23,4 @@ CMs <- compostTreatmentPathway(f1,g1,Application = "Blended")[[1]]
 AFs <- AnimalFeedTreatmentPathway(f1,g1)[[1]]
 scaleFactors <- data.frame(Landfill=LFs,AD=ADs,Compost=CMs,Animal.Feed=AFs)
 rownames(scaleFactors) <- f1$type
-write.csv(scaleFactors, file = "scaleFactors.csv")
+write.csv(scaleFactors, file = "tonnageRepurposer/scaleFactors.csv")
