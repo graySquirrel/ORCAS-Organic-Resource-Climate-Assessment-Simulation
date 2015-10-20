@@ -24,24 +24,15 @@ singleValueSensitivityByRange <- function(pathway,
                                           factorName,
                                           FUN,
                                           f1) {
-    print(factorName)
-    factorName <- factorName[[1]]
-    print(factorName)
-    
-    print(paste("pathway",pathway,"factorname",factorName))
     g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
     nom <- g1[[factorName]]
     outNom <- FUN(f1, g1, debug = F)[[1]]
-    low <- GFmemfile[GFmemfile$sw.name==factorName,"Range.Lo"]
-    g1[[factorName]] <- low[1] # in case there are multiple entries of same factor
+    low <- GFmemfile[GFmemfile$sw.name==factorName,"Range.Lo"][[1]]# elim multiple entries 
+    g1[[factorName]] <- low 
     outLo <- FUN(f1, g1, debug = F)[[1]]
-    high <- GFmemfile[GFmemfile$sw.name==factorName,"Range.High"]
-    g1[[factorName]] <- high[1] # in case there are multiple entries of same factor
+    high <- GFmemfile[GFmemfile$sw.name==factorName,"Range.High"][[1]]# elim multiple entries 
+    g1[[factorName]] <- high 
     outHi <- FUN(f1, g1, debug = F)[[1]]
-    #print(paste("pathway",pathway,"factorName",factorName,"nom",nom,"nom",outNom,"low",low,"low",outLo,"hi",high,"hi",outHi))
-    print(length(factorName))
-    print(length(pathway))
-    print(length(f1$type))
     data.frame(f1$type, pathway, factorName, nom, outNom, low, outLo, high, outHi)
 }
 ##############################################################################
@@ -56,9 +47,8 @@ fl$LA <- LandApplicationTreatmentPathway
 for (i in 1:length(GFmemfile[,1])){
     if (GFmemfile[i,1] != "" ) {
         pw <- GFmemfile[i,1]
-        gf <- GFmemfile[i,"sw.name"][1] # to prevent multiple instances of same factor
+        gf <- GFmemfile[i,"sw.name"]
         val <- glob[[gf]]
-        print(paste("pw",pw,"gf",gf,"val",val))
         if (length(val) != 0) { # meaning if the factor exists in globalFactors
             if (GFmemfile[i,1] == "All") {
                 ifelse(is.null(o),
