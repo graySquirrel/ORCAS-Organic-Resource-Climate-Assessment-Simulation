@@ -1,5 +1,11 @@
 # create baseline results
-
+source("treatmentClasses.R") 
+source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R") 
+source("treatmentLandfill.R")
+source("treatmentcompost.R")
+source("treatmentAnimalFeed.R")
+source("parseGlobalFactors.R")
 source("baselineFuncs.R") #includes sourcing of all other important scripts.
 
 o <- getBaselineResults(verbose = TRUE)
