@@ -35,7 +35,7 @@ GlobalFactors <- function()
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
         # Land Application 
         IPCC_EF4 = 0.01,
-        NAvailability_Factor = 0.4,
+        N_availabilityfactor = 0.4,
         DieselspreadLpertkm = 0.30,
         
         #Compost
