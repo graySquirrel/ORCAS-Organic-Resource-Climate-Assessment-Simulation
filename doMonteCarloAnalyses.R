@@ -3,6 +3,13 @@
 # get feedstocks from Feedstock.csv
 # just do the calculations here and return processed data to caller
 # plotting can be done in R or another application
+source("treatmentClasses.R") 
+source("treatmentAnaerobicDigestion.R") 
+source("treatmentLandApplication.R") 
+source("treatmentLandfill.R")
+source("treatmentcompost.R")
+source("treatmentAnimalFeed.R")
+source("parseGlobalFactors.R")
 source("baselineFuncs.R")
 
 #################################################################################
