@@ -8,8 +8,6 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace',
                                                sequesterCarbon = TRUE)
 {
-<<<<<<< HEAD
- 
     # Step 0: Grinding
   EMgrind=GlobalFactors$Dieselgrindpert*
     (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
@@ -22,13 +20,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     CH4LeaksM3PerT    <- CH4generated * GlobalFactors$AD_Digester_CH4Leaks
     CH4flareM3perT <- CH4generated * GlobalFactors$AD_flared
     CH4Utilized       <- CH4generated-  CH4LeaksM3PerT - CH4flareM3perT
-=======
-    # step 0: grind up goo
-    
-    # Step 1: calculate Digester emissions kgCO2e/MT
 
-    CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_MCFactor
->>>>>>> origin/master
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
     # Digester emissions inlcude leaks and incomplete combustion of methane
     # (N2O emissions are assumed small and neglected) 
