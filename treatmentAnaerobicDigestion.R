@@ -8,20 +8,38 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace',
                                                sequesterCarbon = TRUE)
 {
+<<<<<<< HEAD
+ 
+    # Step 0: Grinding
+  EMgrind=GlobalFactors$Dieselgrindpert*
+    (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+  
+  
+  #Step 1: calculate Digester emissions kgCO2e/MT
+    # Correction from lab scale BMP to commercial AD
+    CH4generated <-Feedstock$Lo *  GlobalFactors$AD_MCFactor
+    # Deduct leaks and flared methane
+    CH4LeaksM3PerT    <- CH4generated * GlobalFactors$AD_Digester_CH4Leaks
+    CH4flareM3perT <- CH4generated * GlobalFactors$AD_flared
+    CH4Utilized       <- CH4generated-  CH4LeaksM3PerT - CH4flareM3perT
+=======
     # step 0: grind up goo
     
     # Step 1: calculate Digester emissions kgCO2e/MT
 
     CH4Utilized       <- Feedstock$Lo *  GlobalFactors$AD_MCFactor
+>>>>>>> origin/master
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
-    CH4LeaksM3PerT    <- CH4Utilized * GlobalFactors$AD_Digester_CH4Leaks
+    # Digester emissions inlcude leaks and incomplete combustion of methane
+    # (N2O emissions are assumed small and neglected) 
+    
     EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
     CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4incompleteCombustion
-    
     EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
     #    AD_Digester_N20incompleteCombustion * CH4Utilized * 
     #       GlobalFactors$GWPN20/1000
     
+    # A credit is given for displacement of electricity exported to the grid
     electricityGenerated <- GlobalFactors$AD_Digester_conversion_KwHPerM3 * 
         CH4Utilized/1000
     if(debug) print(paste("electricityGenerated ",electricityGenerated))
@@ -83,13 +101,23 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Step 4: Carbon Sequestration kgCO2e/MT
     if (sequesterCarbon == TRUE) {
-        CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+        #CStorageold<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+        
+        kgCH4Cproduced <-CH4Utilized* GlobalFactors$density_CH4 *12/16
+        # Assumes 60% methane content of biogas
+        kgCO2Cproduced <-CH4Utilized/0.6*0.4 *1.98 *12/44
+        # Digestate C applied is calculated through mass balance
+        DigestateC <-Feedstock$InitialC- CH4LeaksM3PerT -CH4flareM3perT -
+          kgCH4Cproduced -kgCO2Cproduced -CH4ICM3PerT -CH4StorageDigestate
+        CStorage <-DigestateC * GlobalFactors$AD_CSfactor
         EMCstorage<-CStorage*(-44/12)
+        
     } else {
         CStorage <- EMCstorage <- 0
     }
     if(debug) print(paste("InitialC ",Feedstock$InitialC))
     if(debug) print(paste("EMCstorage ",EMCstorage))
+    if(debug) print(paste("fdeg ",Feedstock$fdeg))
     if(debug) print(paste("fdeg ",Feedstock$fdeg))
     
     # Step 5: Displaced fertilizer kgCO2e/MT
@@ -99,6 +127,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     effectiveNapplied <- Nremaining * GlobalFactors$N_availabilityfactor
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
+    #only considers N displacement at this time
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
       effectiveNapplied/1000
     if(debug) print(paste("avoidedNfert ",avoidedNfert))
@@ -119,6 +148,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
 
     # Add together
     netEmissions <- 
+        EMgrind +
         EMDigester +
         EMStorage +
         EMNetLandapp 
