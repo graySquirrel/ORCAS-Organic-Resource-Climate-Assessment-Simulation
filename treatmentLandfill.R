@@ -23,12 +23,14 @@ calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=FALSE) {
    
     #Q is portion of LF_Lo generating methane in a given year
     if(debug) {print(paste("Q len ",length(Q)));print(Q)}
-    years0_1 <- c(0)
+    years0_1 <- c(0,0)
     years2_4 <- c(0.5,0.5,0.5)
     years5_14 <- c(rep(0.75,10))
-    years15_17 <- c(0.825,0.825,0.825)
-    yearsFinal <- rep(oneLCEMax,Max_Years-17)
-    Landfill_LCE<- c(years0_1,years2_4,years5_14,years15_17,yearsFinal)
+    #years15_17 <- c(0.825,0.825,0.825)
+    #yearsFinal <- rep(oneLCEMax,Max_Years-17)
+    yearsFinal <- rep(oneLCEMax,Max_Years-15)
+    #Landfill_LCE<- c(years0_1,years2_4,years5_14,years15_17,yearsFinal)
+    Landfill_LCE<- c(years0_1,years2_4,years5_14,yearsFinal)
     if(debug) {print(paste("Landfill_LCE len ",length(Landfill_LCE)));
         print(Landfill_LCE)}
     Q_Released<-Q*(1-oneOxidationFactor)*(1- Landfill_LCE)
