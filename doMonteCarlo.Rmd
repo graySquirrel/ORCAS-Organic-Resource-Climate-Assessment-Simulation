@@ -53,7 +53,7 @@ for (i in 1:length(GFmemfile[,1])){
                        plotfeedstocks(AllStats$ADfstats,xAD,"AD",xLabel)
                        plotfeedstocks(AllStats$LFstats,xLF,"LF",xLabel)
                        plotfeedstocks(AllStats$CMbstats,xCM,"CM",xLabel)
-                       #plotfeedstocks(AllStats$AFstats,xAF,"AF",xLabel)
+                       plotfeedstocks(AllStats$AFstats,xAF,"AF",xLabel)
                    },
                    'AD' = {
                        plotfeedstocks(AllStats$ADfstats,xAD,"AD",xLabel)
