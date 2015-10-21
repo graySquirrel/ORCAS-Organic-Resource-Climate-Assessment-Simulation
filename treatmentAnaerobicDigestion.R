@@ -93,14 +93,14 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Step 4: Carbon Sequestration kgCO2e/MT
     if (sequesterCarbon == TRUE) {
-        #CStorageold<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$AD_CSfactor)
+      # Digestate C applied is calculated through mass balance
+        BiogasM3pert<-CH4generated/GlobalFactors$CH4content
+        kgCH4Cbiogas <-CH4generated* GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
+        CO2M3biogas <- BiogasM3pert - CH4generated
+        kgCO2Cbiogas <- CO2M3biogas*GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
+        kgCH4StorageDigestate <- CH4StorageDigestate *GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
         
-        kgCH4Cproduced <-CH4Utilized* GlobalFactors$density_CH4 *12/16
-        # Assumes 60% methane content of biogas
-        kgCO2Cproduced <-CH4Utilized/0.6*0.4 *1.98 *12/44
-        # Digestate C applied is calculated through mass balance
-        DigestateC <-Feedstock$InitialC- CH4LeaksM3PerT -CH4flareM3perT -
-          kgCH4Cproduced -kgCO2Cproduced -CH4ICM3PerT -CH4StorageDigestate
+        DigestateC <- Feedstock$InitialC - kgCH4Cbiogas- kgCO2Cbiogas - kgCH4StorageDigestate
         CStorage <-DigestateC * GlobalFactors$AD_CSfactor
         EMCstorage<-CStorage*(-44/12)
         
