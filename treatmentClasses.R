@@ -37,6 +37,7 @@ GlobalFactors <- function()
         IPCC_EF4 = 0.01,
         N_availabilityfactor = 0.4,
         DieselspreadLpertkm = 0.30,
+        Dieselgrindpert = 2.65,
         
         #Compost
         Compost_dieseLlpert = 3,
@@ -81,7 +82,8 @@ GlobalFactors <- function()
         #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
         AD_CSfactor = 0.4,
         AD_xportTofield = 20,
-      
+        AD_flared=0.03,
+        CH4content=0.60,
         
         #Landfill
         LFDieseluseLpert =5.83,
