@@ -115,7 +115,8 @@ GlobalFactors <- function()
         # Animal Feed
         EFCornDisplacement = -592,
         CornTS = 0.88,
-        CornTDN = 0.88
+        CornTDN = 0.88,
+        AF_loss = 0.1
     )
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
