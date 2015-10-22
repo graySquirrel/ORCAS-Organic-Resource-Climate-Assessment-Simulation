@@ -42,7 +42,7 @@ for (i in 1:length(GFmemfile[,1])){
         gf <- GFmemfile[i,"sw.name"]
         val <- glob[[gf]]
         if (length(val) != 0 && GFmemfile[[i,"Use"]] == "Range") { 
-            #print(paste(GFmemfile[i,1], i, GFmemfile[i,"sw.name"]))
+            print(paste(GFmemfile[i,1], i, GFmemfile[i,"sw.name"]))
             xAD <- AllStats$ADstats$g1[[GFmemfile[i,"sw.name"]]]
             xLF <- AllStats$LFstats$g1[[GFmemfile[i,"sw.name"]]]
             xCM <- AllStats$CMbstats$g1[[GFmemfile[i,"sw.name"]]]
