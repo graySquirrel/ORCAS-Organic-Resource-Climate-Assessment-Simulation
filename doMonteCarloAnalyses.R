@@ -33,7 +33,7 @@ source("baselineFuncs.R")
 AllStats <- calcAllStats()
 print(createPathwaysPlot(FALSE,s=AllStats))
 print(createPathwaysPlot(TRUE,s=AllStats))
-
+stop()
 #####################################################################
 # sensitivity analysis...  start slow
 
