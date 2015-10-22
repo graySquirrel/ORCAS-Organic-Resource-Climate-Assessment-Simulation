@@ -35,7 +35,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
   
 #Step 3 Carbon storage
    if (sequesterCarbon == TRUE) {
-       CStorage<-Feedstock$InitialC * (1-Feedstock$fdeg) * (GlobalFactors$Compost_CS_factor)
+       CompostC <- Feedstock$InitialC * (1-GlobalFactors$CompostPercentCdegraded)
+         CStorage<- CompostC * (GlobalFactors$Compost_CS_factor)
        #Assuming that the same amount is stored long term as AD degradability test
        EMCstorage<-CStorage * -44/12
    } else {
@@ -45,10 +46,6 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     if(debug) {print(paste("EMCstorage", (EMCstorage)))}
     
 #Step 4 Compost application
-    Compost_mass<- 1000*GlobalFactors$Compost_mass_reduction
-    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$Compost_xportToField*
-      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-    if(debug) print(paste("EMspread ",EMspread))
     
     Nremaining<-Feedstock$Nperton*(1-GlobalFactors$Compost_N_loss)
     if(debug) print(paste("Nremaining 1 ",Nremaining))
@@ -61,12 +58,16 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     if(debug) print(paste("EMN20_CompApp_indirect ",EMN20_CompApp_indirect))
     EMN20_CompApp    <- EMN20_CompApp_direct  + EMN20_CompApp_indirect
     if(debug) print(paste("EMN20_CompApp ",EMN20_CompApp))
-    EMCompApp <- EMspread + EMN20_CompApp
+    EMCompApp <- EMN20_CompApp
     if(debug) print(paste("EMCompApp ",EMCompApp))
     
     EMCompost <- EMCompostoperation + EMBio + EMCstorage + EMCompApp
     
     # Step 5: Displaced fertilizer kgCO2e/MT
+    Compost_mass<- 1000*GlobalFactors$Compost_mass_reduction
+    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$Compost_xportToField *
+      (GlobalFactors$DieselprovisionkgCO2eperL + GlobalFactors$DieselcombustionkgCO2eperL)
+    if(debug) print(paste("EMspread ",EMspread))
     effectiveNapplied <- Nremaining * 
       GlobalFactors$N_availabilityfactor
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
@@ -74,7 +75,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     avoidedInorganicFertdirectandIndirect <- 
         GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
       effectiveNapplied
-    EM_displacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
+    EM_displacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect + EMspread 
     if(debug) print(paste("displacedFertilizer ",EM_displacedFertilizer))
     
     # Step 6: Displaced peat kgCO2e/Mt
