@@ -6,20 +6,20 @@ structure of scripts:
 
 ##higher level functions:
 ####baselines.R
-create outputfile for each feedstock using nominal param values.
+    create outputfile for each feedstock using nominal param values.
 ####doMonteCarloAnalyses.R
-create nominal and +-95% limits for each feedstock and pathway and make lots of plots
+    create nominal and +-95% limits for each feedstock and pathway and make lots of plots
 ####linModTest.R (and .Rmd)
-create linear models that simplify each pathway to a single equation (for a given set of global parameters)
+    create linear models that simplify each pathway to a single equation (for a given set of global parameters)
 ####sensitivityAnalysisGF.Rmd
-sensitivity analysis of global factors using the pse package
+    sensitivity analysis of global factors using the pse package
 ####simpletonSensitivity2.R
-For each pathway, for each feedstock, for each factor, compute the nominal, low, and high values for each factor independently
+    For each pathway, for each feedstock, for each factor, compute the nominal, low, and high values for each factor             independently
 
 various other scripts to explore the space
 ###################################
 ##unit tests:
-Each pathway can be tested and debugged using the unit test scripts:
+    Each pathway can be tested and debugged using the unit test scripts:
 ####unitTest.R (for AD)
 ####unitTestAF.R
 ####unitTestLA.R
@@ -28,22 +28,22 @@ Each pathway can be tested and debugged using the unit test scripts:
 ###################################
 ##input files:
 ####GlobalFactors.csv
-file of pathway parameters and their ranges
+    file of pathway parameters and their ranges
 ####Feedstock.csv
-file of feedstock parameters and their ranges
+    file of feedstock parameters and their ranges
 ###################################
 ##output files:
 ####baselinesOutput.csv
-output of baseline for each pathway
+    output of baseline for each pathway
 ####allPathwaysBreakdowns.csv
-more detailed output includes sub-parts
+    more detailed output includes sub-parts
 ####lowHighOut.csv
-output of simpletonSensitivity2.R
+    output of simpletonSensitivity2.R
 ###################################
 ##Treatment Pathways:  functions to implement pathways
-All take in a GlobalFactors object and a Feedstock object
-outputs are a dataframe that describe total GHG emissions as well as GHG from different sub-processes. 
-Other optional parameters for displacement and carbon storage.
+    All take in a GlobalFactors object and a Feedstock object
+    outputs are a dataframe that describe total GHG emissions as well as GHG from different sub-processes. 
+    Other optional parameters for displacement and carbon storage.
 
 ####treatmentAnaerobicDigestion.R
 ####treatmentcompost.R
