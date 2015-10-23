@@ -1,8 +1,6 @@
 # foodwasteTreatmentSim
 R scripts to support waste treatment simulations to produce GHG estimates
 
-structure of scripts:
-
 
 ##higher level functions:  to use, simply source (or knit) the script
 ####baselines.R
