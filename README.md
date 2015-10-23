@@ -33,7 +33,7 @@ various other scripts to explore the space
     output of simpletonSensitivity2.R
 ###################################
 ##unit tests:
-    Each pathway can be tested and debugged using the unit test scripts:
+    Each pathway can be tested and debugged using the unit test scripts. To use, source the script.
 ####unitTest.R (for AD)
 ####unitTestAF.R
 ####unitTestLA.R
