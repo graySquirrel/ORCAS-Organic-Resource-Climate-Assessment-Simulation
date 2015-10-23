@@ -16,14 +16,7 @@ R scripts to support waste treatment simulations to produce GHG estimates
     low, and high values for each factor independently
 
 various other scripts to explore the space
-###################################
-##unit tests:
-    Each pathway can be tested and debugged using the unit test scripts:
-####unitTest.R (for AD)
-####unitTestAF.R
-####unitTestLA.R
-####unitTestLandfill.R
-####unitTestcompost.R
+
 ###################################
 ##input files:
 ####GlobalFactors.csv
@@ -33,11 +26,19 @@ various other scripts to explore the space
 ###################################
 ##output files:
 ####baselinesOutput.csv
-    output of baseline for each pathway
+    output of baseline for each pathway. Created by baselines.R
 ####allPathwaysBreakdowns.csv
-    more detailed output includes sub-parts
+    more detailed output includes sub-parts. Created by baselines.R
 ####lowHighOut.csv
     output of simpletonSensitivity2.R
+###################################
+##unit tests:
+    Each pathway can be tested and debugged using the unit test scripts:
+####unitTest.R (for AD)
+####unitTestAF.R
+####unitTestLA.R
+####unitTestLandfill.R
+####unitTestcompost.R
 ###################################
 ##Treatment Pathways:  functions to implement pathways
     All take in a GlobalFactors object and a Feedstock object
