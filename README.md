@@ -4,7 +4,7 @@ R scripts to support waste treatment simulations to produce GHG estimates
 structure of scripts:
 
 
-##higher level functions:
+##higher level functions:  to use, simply source (or knit) the script
 ####baselines.R
     create outputfile for each feedstock using nominal param values.
 ####doMonteCarloAnalyses.R
@@ -14,7 +14,8 @@ structure of scripts:
 ####sensitivityAnalysisGF.Rmd
     sensitivity analysis of global factors using the pse package
 ####simpletonSensitivity2.R
-    For each pathway, for each feedstock, for each factor, compute the nominal, low, and high values for each factor independently
+    For each pathway, for each feedstock, for each factor, compute the nominal,  
+    low, and high values for each factor independently
 
 various other scripts to explore the space
 ###################################
