@@ -56,11 +56,23 @@ various other scripts to explore the space
     Define base classes used in lots of places:
         GlobalFactors: set of parameters that related to a pathway that are set and varied
         Feedstock: set of parameters that define a feedstock
+Examples:  
+    i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
+    f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
+                    percentCarboTS = i$PercentCarboTS, 
+                    percentLipidTS = i$PercentlipidTS,
+                    percentProteinTS = i$PercentproteinTS, 
+                    fdeg = i$fdeg,TDN=i$TDN, 
+                    Phosphorus=i$Phosphorus, Potassium=i$Potassium)  
+                    
+    g1 <- GlobalFactors()
+
 ####################################
 ##Utilities:
 ####baselineFuncs.R:
     a set of utilities to calculate pathway emissions and to help in plotting
-    
+Example:  
+   o <- getBaselineResults(verbose = TRUE) # looks for "Feedstock.csv" and "GlobalFactors.csv" in .
 ####parseGlobalFactors.R:
     a function to read the GlobalFactors csv file, and set the GlobalFactors 
         object to a value or a set of values (used for Monte Carlo)
