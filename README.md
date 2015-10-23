@@ -44,6 +44,7 @@ various other scripts to explore the space
     All take in a GlobalFactors object and a Feedstock object
     outputs are a dataframe that describe total GHG emissions as well as GHG from different sub-processes. 
     Other optional parameters for displacement and carbon storage.
+    Examples of how to use these methods are shown in each respective unitTest.R file
 
 ####treatmentAnaerobicDigestion.R
 ####treatmentcompost.R
