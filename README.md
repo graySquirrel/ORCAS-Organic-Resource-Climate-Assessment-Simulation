@@ -62,4 +62,7 @@ various other scripts to explore the space
     a set of utilities to calculate pathway emissions and to help in plotting
     
 ####parseGlobalFactors.R:
-    a function to read the GlobalFactors csv file, and set the GlobalFactors object to a value or a set of values (used for Monte Carlo)
+    a function to read the GlobalFactors csv file, and set the GlobalFactors 
+        object to a value or a set of values (used for Monte Carlo)
+Example:
+g1 <- getGlobalFactorsFromFile(doRanges = FALSE, verbose = verbose) # looks for "GlobalFactors.csv" in .
