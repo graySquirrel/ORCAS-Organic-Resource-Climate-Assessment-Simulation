@@ -14,7 +14,7 @@ structure of scripts:
 ####sensitivityAnalysisGF.Rmd
     sensitivity analysis of global factors using the pse package
 ####simpletonSensitivity2.R
-    For each pathway, for each feedstock, for each factor, compute the nominal, low, and high values for each factor             independently
+    For each pathway, for each feedstock, for each factor, compute the nominal, low, and high values for each factor independently
 
 various other scripts to explore the space
 ###################################
