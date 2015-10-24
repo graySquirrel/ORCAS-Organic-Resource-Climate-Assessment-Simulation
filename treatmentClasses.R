@@ -126,13 +126,15 @@ GlobalFactors <- function()
 
 ########### FeedStock stuff
 Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
-                      percentCarboTS=0,percentProteinTS,percentLipidTS=0,
+                      percentCarboTS=0,percentProteinTS=0,percentLipidTS=0,
                       fdeg=0,TDN=0, Phosphorus=0, Potassium=0)
+# Carbodigestability = 'med'
 {
     if(missing(percentCarboTS)) percentCarboTS=0
     if(missing(percentProteinTS)) percentProteinTS=0
     if(missing(percentLipidTS)) percentLipidTS=0
     if(missing(fdeg)) fdeg=0
+   # if(missing (CarboDigest)) CarboDigest =0.73 
     
     if (!is.numeric(TS) || !is.numeric(VS) || 
         !is.numeric(Bo) || !is.numeric(TKN) ||
@@ -148,6 +150,26 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
     InitialC<-(percentCarboTS*carboPercentC + 
                    percentProteinTS*proteinPercentC +
                    percentLipidTS*lipidPercentC)*TS*1000
+    # proteinDigest <- 0.85
+    # lipidDigest <- 0.8
+    # Carbodigestability enumeration:  'med' = 35% CF and 65% NFE
+    #                           'high' = 9% CF and 91% NFE
+    #                           'low' = 60% CF and 40% NFE
+    
+    # CarboDigest <- switch(Carbodigestability,
+    #'high' = 0.78,
+    #'med' =0.78
+    #'low' = 0.73)
+
+    #if Carbodigestability = "high" CarboDigest =0.78
+    # if Carbodigestability = "low" CarboDigest =0.68
+    # if Carbodigestabiity = "me" CarboDigest =0.73
+    
+    #TDN <- proteinDigest * percentProteinTS + 
+    # lipidDigest * 2.25 * percentLipidTS + 
+    #Feedstock$Carbodigestability* percentCarboTS
+    
+    
     TVS = VS*TS
     Lo=Bo*TVS
     Nperton<-TKN/1000

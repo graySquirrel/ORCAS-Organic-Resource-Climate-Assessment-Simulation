@@ -6,7 +6,7 @@
 ############################################################################3
 AnimalFeedTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F)
 {
-    AF_DisplacementFactor <- (Feedstock$TS * Feedstock$TDN) /
+      AF_DisplacementFactor <- (Feedstock$TS * Feedstock$TDN) /
         (GlobalFactors$CornTS * GlobalFactors$CornTDN)
     if (debug) print(paste("AF_DisplacementFactor", AF_DisplacementFactor))
     EMAnimalFeed <- (1-GlobalFactors$AF_loss) *
