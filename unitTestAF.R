@@ -4,9 +4,9 @@ source("treatmentClasses.R")
 source("treatmentAnimalFeed.R") 
 
 
-f1 <- Feedstock(type="baked goods",TS=0.916,VS=0.979,Bo=465.3,TKN=14656,
-                percentCarboTS = 0.76, percentProteinTS = 0.10, percentLipidTS = 0.11,
-                fdeg = 0.94,TDN=0.89)
+f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
+                percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
+                fdeg = 0.841)
 
 g1 <- GlobalFactors()
 res <- AnimalFeedTreatmentPathway(f1, g1, debug = T)
