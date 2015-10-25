@@ -17,7 +17,7 @@ getBaselineResults <- function(verbose = FALSE,
                     percentCarboTS = i$PercentCarboTS, 
                     percentLipidTS = i$PercentlipidTS,
                     percentProteinTS = i$PercentproteinTS, 
-                    fdeg = i$fdeg,TDN=i$TDN, 
+                    fdeg = i$fdeg,
                     Phosphorus=i$Phosphorus, Potassium=i$Potassium)
     if (is.null(GFmemfile)) {
         g1 <- getGlobalFactorsFromFile(doRanges = FALSE, verbose = verbose)
@@ -98,7 +98,7 @@ calculatePathwayMC <- function(FSmemfile=NULL,
                         percentCarboTS = stocks[i,]$PercentCarboTS, 
                         percentLipidTS = stocks[i,]$PercentlipidTS,
                         percentProteinTS = stocks[i,]$PercentproteinTS, 
-                        fdeg = stocks[i,]$fdeg, TDN=stocks[i,]$TDN,
+                        fdeg = stocks[i,]$fdeg,
                         Phosphorus = stocks[i,]$Phosphorus,
                         Potassium=stocks[i,]$Potassium)
         if(length(Application)!=0) {

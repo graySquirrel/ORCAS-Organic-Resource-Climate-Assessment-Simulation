@@ -27,9 +27,10 @@ library(pse)
 f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)[1,]
 g <- read.csv(file="Globalfactors.csv", stringsAsFactors = FALSE)
 f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
-                percentCarboTS=f$PercentCarboTS,percentProteinTS=f$PercentproteinTS,
+                percentCarboTS=f$PercentCarboTS,
+                percentProteinTS=f$PercentproteinTS,
                 percentLipidTS=f$PercentlipidTS,
-                fdeg=f$fdeg,TDN=f$TDN, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
+                fdeg=f$fdeg, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
 
 # the Model uses our AD simulation.
 oneRun <- function (EFGrid,
