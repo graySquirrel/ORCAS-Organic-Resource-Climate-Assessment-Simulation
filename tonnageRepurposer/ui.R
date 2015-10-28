@@ -2,22 +2,38 @@ library(shiny)
 library(shinyTable)
 #' Define UI for application that demonstrates a simple Handsontable
 #' @author Jeff Allen \email{jeff@@trestletech.com}
-shinyUI(pageWithSidebar(
-  
-  # Application title
-  headerPanel("Simple Shiny Table!"),
-  
-  sidebarPanel(
-    #sliderInput("slider", "Number of rows:", 1, 26, 5),
-    #HTML("<hr />"),
-    helpText(HTML("A simple table with validation. The first column must be a number and if it's >= 100, it will be assigned the value of 99. Other columns can be anything.
-                   Additionally, the second column has server-side styling applied and will highlight as 'invalid' any value &gt;= 100, and will 'warn' on values &gt;= 50.
-                  <p>Created using <a href = \"http://github.com/trestletech/shinyTable\">shinyTable</a>."))
-  ),
-  
-  # Show the simple table
-  mainPanel(
-    htable("tblFrom", colHeaders="provided", rowNames = "provided"),
-    htable("tblTo", colHeaders="provided", rowNames = "provided")
-  )
+# shinyUI(
+#     pageWithSidebar(
+#         # Application title
+#         headerPanel("Move your waste!"),
+#         sidebarPanel(
+#             h3("Instructions")#,
+#             #             tableOutput("resTab")
+#         ),
+#         mainPanel(
+#             h3("Compare Scenarios.   Enter waste in MT."),
+#             htable("tblTo", colHeaders="provided"),
+#             h3("Results"),
+#             tableOutput("resTab"),
+#             plotOutput("resPlot")
+#         )     
+#     )
+# )
+
+
+
+shinyUI(fluidPage(
+    headerPanel("Move your waste!"),
+    fluidRow(
+        column(2,
+               h3("Instructions")
+        ),
+        column(6,
+               h3("Compare Scenarios.   Enter waste in MT."),
+               htable("tblTo", colHeaders="provided"),
+               h3("Results"),
+               tableOutput("resTab"),
+               plotOutput("resPlot")
+        )
+    )
 ))
