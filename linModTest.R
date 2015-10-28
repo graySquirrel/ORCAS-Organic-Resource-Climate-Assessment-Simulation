@@ -29,7 +29,7 @@ scaledfdeg <- scale(o$f1$fdeg, center = FALSE)
 scaledrdeg <- scale(o$f1$rdeg, center = FALSE)
 scalednpert <- scale(o$f1$Nperton, center = FALSE)
 
-ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC : rdeg) # perfect fit!
+ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
 summary(ADLM)
 par(mfrow=c(2,2))
 plot(ADLM)
