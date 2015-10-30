@@ -24,7 +24,7 @@ source("treatmentLandApplication.R")
 library(pse)
 # First create a feedstock object 
 # row 1 is "Food waste""
-f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)[1,]
+f <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)[2,]
 g <- read.csv(file="Globalfactors.csv", stringsAsFactors = FALSE)
 f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
                 percentCarboTS=f$PercentCarboTS,
@@ -33,12 +33,22 @@ f1 <- Feedstock(type=f$Feedstock, TS=f$TS, VS=f$VS, Bo=f$Bo, TKN=f$TKN,
                 fdeg=f$fdeg, Phosphorus=f$Phosphorus, Potassium=f$Potassium)
 
 # the Model uses our AD simulation.
-oneRun <- function (EFGrid,
-                    CH4Leaks,
-                    conv_KwHPerM3,
-                    redInVS) {
+oneRun <- function (EFGrid,dispFert,Navail,diesSpread,MCfac,flare,
+                    parasit,EFresid,ipccef3,gasm,csfac,xport,CH4Leaks,
+                    conv_KwHPerM3, redInVS) {
     g1 <- GlobalFactors()
     g1$EFGrid <- EFGrid
+    g1$LA_DisplacedFertilizer_Production_Factor <- dispFert
+    g1$N_availabilityfactor <- Navail
+    g1$DieselspreadLpertkm <- diesSpread
+    g1$AD_MCFactor <- MCfac
+    g1$AD_flared <- flare
+    g1$AD_Digester_parasiticLoad <- parasit
+    g1$AD_Storage_EFresidualMethaneM3CH4PerKgVS <- EFresid
+    g1$AD_Storage_IPCC_EF3 <- ipccef3
+    g1$AD_Storage_IPCC_FracGasMS <- gasm
+    g1$AD_CSfactor <- csfac
+    g1$AD_xportTofield <- xport
     g1$AD_Digester_CH4Leaks <- CH4Leaks
     g1$AD_Digester_conversion_KwHPerM3 <- conv_KwHPerM3
     g1$AD_reductionInVS <- redInVS
@@ -47,19 +57,49 @@ oneRun <- function (EFGrid,
     return (res[[1]]) # first element returned as simple number
 }
 modelRun <- function (my.data) {
-    return(mapply(oneRun, my.data[,1], my.data[,2], my.data[,3], my.data[,4]))
+    return(mapply(oneRun, my.data[,1], my.data[,2], my.data[,3], my.data[,4], my.data[,5],
+                   my.data[,6], my.data[,7], my.data[,8], my.data[,9], my.data[,10],
+                   my.data[,11], my.data[,12], my.data[,13], my.data[,14], my.data[,15]))
 }
 ```
 
   Ranges for these parameters are chosen from limits known for the range of feedstocks that may be sent to anaerobic digestion.  We don't know the probability distribution of these parameters, so we choose a uniform distribution to generate random samples from.
   
 ```{r}
-factors <- c("EFGrid", "CH4Leaks", "conv_KwHPerM3","redInVS")
-q <- c("qunif", "qunif", "qunif","qunif")
+factors <- c("EFGrid", "dispFert", "Navail","diesSpread", "MCfac",
+             "flare", "parasit", "EFresid", "ipccef3", "gasm",
+             "csfac", "xport", "CH4Leaks", "conv_KwHPerM3","redInVS")
+q <- c("qunif", "qunif", "qunif","qunif","qunif",
+       "qunif", "qunif", "qunif","qunif","qunif",
+       "qunif", "qunif", "qunif","qunif","qunif")
 
 #NOTE: These ranges come from the global factors csv file
 EFLo <- g$Range.Lo[g$sw.name == "EFGrid"]
 EFHi <- g$Range.High[g$sw.name == "EFGrid"]
+diLo <- g$Range.Lo[g$sw.name == "LA_DisplacedFertilizer_Production_Factor"]
+diHi <-g$Range.High[g$sw.name == "LA_DisplacedFertilizer_Production_Factor"]
+NaLo <-g$Range.Lo[g$sw.name == "N_availabilityfactor"]
+NaHi <-g$Range.High[g$sw.name == "N_availabilityfactor"]
+dALo <-g$Range.Lo[g$sw.name == "DieselspreadLpertkm"]
+dAHi <-g$Range.High[g$sw.name == "DieselspreadLpertkm"]
+MCLo <-g$Range.Lo[g$sw.name == "AD_MCFactor"]
+MCHi <-g$Range.High[g$sw.name == "AD_MCFactor"]
+
+flLo <-g$Range.Lo[g$sw.name == "AD_flared"]
+flHi <-g$Range.High[g$sw.name == "AD_flared"]
+paLo <-g$Range.Lo[g$sw.name == "AD_Digester_parasiticLoad"]
+paHi <-g$Range.High[g$sw.name == "AD_Digester_parasiticLoad"]
+rsLo <-g$Range.Lo[g$sw.name == "AD_Storage_EFresidualMethaneM3CH4PerKgVS"]
+rsHi <-g$Range.High[g$sw.name == "AD_Storage_EFresidualMethaneM3CH4PerKgVS"]
+e3Lo <-g$Range.Lo[g$sw.name == "AD_Storage_IPCC_EF3"]
+e3Hi <-g$Range.High[g$sw.name == "AD_Storage_IPCC_EF3"]
+smLo <-g$Range.Lo[g$sw.name == "AD_Storage_IPCC_FracGasMS"]
+smHi <-g$Range.High[g$sw.name == "AD_Storage_IPCC_FracGasMS"]
+    
+csLo <- g$Range.Lo[g$sw.name == "AD_CSfactor"]
+csHi <- g$Range.High[g$sw.name == "AD_CSfactor"]
+xpLo <- g$Range.Lo[g$sw.name == "AD_xportTofield"]
+xpHi <- g$Range.High[g$sw.name == "AD_xportTofield"]
 CHLo <- g$Range.Lo[g$sw.name == "AD_Digester_CH4Leaks"]
 CHHi <- g$Range.High[g$sw.name == "AD_Digester_CH4Leaks"]
 CoLo <- g$Range.Lo[g$sw.name == "AD_Digester_conversion_KwHPerM3"]
@@ -67,20 +107,37 @@ CoHi <- g$Range.High[g$sw.name == "AD_Digester_conversion_KwHPerM3"]
 ReLo <- g$Range.Lo[g$sw.name == "AD_reductionInVS"]
 ReHi <- g$Range.High[g$sw.name == "AD_reductionInVS"]
 
-q.arg<- list(list(min=EFLo, max=EFHi), list(min=CHLo,max=CHHi), list(min=CoLo,max=CoHi),list(min=ReLo,max=ReHi))
+q.arg<- list(list(min=EFLo, max=EFHi), 
+             list(min=diLo,max=diHi), 
+             list(min=NaLo,max=NaHi),
+             list(min=dALo,max=dAHi),
+             list(min=MCLo,max=MCHi),
+             
+             list(min=flLo, max=flHi), 
+             list(min=paLo,max=paHi), 
+             list(min=rsLo,max=rsHi),
+             list(min=e3Lo,max=e3Hi),
+             list(min=smLo,max=smHi),   
+             
+             list(min=csLo, max=csHi), 
+             list(min=xpLo,max=xpHi), 
+             list(min=CHLo,max=CHHi),
+             list(min=CoLo,max=CoHi),
+             list(min=ReLo,max=ReHi)
+             )
 ```
 
 The pse packages will create a LHS cube to sample the parameter space.  Latin hypercube sampling (LHS) is a statistical method for generating a sample of plausible collections of parameter values from a multidimensional distribution. The sampling method is often used to construct computer experiments.
 
 ```{r,cache=TRUE}
 # create 1000 LHS samples
-myLHS <- LHS(modelRun, factors, 1001, q, q.arg, nboot=50)
+myLHS <- LHS(modelRun, factors, 201, q, q.arg, nboot=50)
 
 ```
 
 Output of the LHS model comprise: 
 The ecdf, short for empirical cumulative distribution function, may be used to
-illustrate the distribution of the model results, in our case, the range of GHG Emissions.  Note that the entire range is negative, from about -800 to 0, meaning, AD in all cases sequesters carbon.
+illustrate the distribution of the model results, in our case, the range of GHG Emissions.  
 
 I don't know what the units of output are.
 
@@ -97,6 +154,7 @@ Another way to show this relationship is by plotting the the partial (rank) corr
 The confidence intervals shown in this plot were generated by bootstrapping.  PRCC confirms the observation made in the scatter plots, in that TS, VS, and Bo are negatively correlated with Emissions, while TKN is relatively uncorrelated.
 
 ```{r}
+par(las=2)
 plotprcc(myLHS)
 ```
 
