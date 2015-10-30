@@ -120,6 +120,8 @@ GlobalFactors <- function()
         CornTDN = 0.88,
         AF_loss = 0.1
     )
+    me$AD_Digester_OneMinusparasiticLoad <- (1-me$AD_Digester_parasiticLoad)
+    me$AD_OneMinusreductionInVS <- (1-me$AD_reductionInVS)
     class(me) <- append(class(me), "GlobalFactors")
     return(me)
 }
