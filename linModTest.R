@@ -29,16 +29,36 @@ scaledfdeg <- scale(o$f1$fdeg, center = FALSE)
 scaledrdeg <- scale(o$f1$rdeg, center = FALSE)
 scalednpert <- scale(o$f1$Nperton, center = FALSE)
 
-ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
-summary(ADLM)
-par(mfrow=c(2,2))
-plot(ADLM)
-coef(ADLM)
-ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scaledTKN + scaledInitialC : scaledrdeg)
+# print(o$g1$EFGrid)
+# ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
+# summary(ADLM)
+# par(mfrow=c(2,2))
+# plot(ADLM)
+# coef(ADLM)
+# 
+# o$g1$EFGrid <- -918
+# o$AD  <- AnaerobicDigestionTreatmentPathway(o$f1, o$g1, Application = 'noDisplace')
+# ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
+# summary(ADLM)
+# par(mfrow=c(2,2))
+# plot(ADLM)
+# coef(ADLM)
+# 
+# o$g1$EFGrid <- -537
+# o$AD  <- AnaerobicDigestionTreatmentPathway(o$f1, o$g1, Application = 'noDisplace')
+# ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
+# summary(ADLM)
+# par(mfrow=c(2,2))
+# plot(ADLM)
+# coef(ADLM)
+#stop()
+
+ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scalednpert + scaledInitialC)
 summary(ADLMS)
 plot(ADLMS)
 coef(ADLMS)
 
+stop()
 ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + npert + InitialC : rdeg) # perfect fit!
 summary(ADfLM)
 par(mfrow=c(2,2))
