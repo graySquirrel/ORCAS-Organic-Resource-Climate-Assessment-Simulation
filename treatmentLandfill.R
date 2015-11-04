@@ -5,9 +5,10 @@
 #
 #library(gtools)
 ################# Treatment Functions
-# this is an inner loop over many years.  have to do this because input factors
+# The function calcOverMax years is called in Step 2
+# It is an inner loop over many years.  have to do this because input factors
 # are vectors, and this calcs over orthogonal vector (years). don't know a better way.
-calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=FALSE) {
+calcOverMaxYears <- function(onek,oneLCEMax,oneOXMax,debug=FALSE) {
     Max_Years=100
     bytens <- FALSE
     
@@ -21,23 +22,27 @@ calcOverMaxYears <- function(onek,oneLCEMax,oneOxidationFactor,debug=FALSE) {
         Q<-onek*exp(-tcol*onek)
     }
    
-    #Q is portion of LF_Lo generating methane in a given year
+    #LCE varies by year as the LFG recovery system is implemented
     if(debug) {print(paste("Q len ",length(Q)));print(Q)}
-    years0_1 <- c(0,0)
-    years2_4 <- c(0.5,0.5,0.5)
-    years5_14 <- c(rep(0.75,10))
-    #years15_17 <- c(0.825,0.825,0.825)
-    #yearsFinal <- rep(oneLCEMax,Max_Years-17)
-    yearsFinal <- rep(oneLCEMax,Max_Years-15)
-    #Landfill_LCE<- c(years0_1,years2_4,years5_14,years15_17,yearsFinal)
-    Landfill_LCE<- c(years0_1,years2_4,years5_14,yearsFinal)
+    years1_2 <- c(0,0) 
+    years3_5 <- c(0.5,0.5,0.5)
+    years6_15 <- c(rep(0.75,10))
+    yearsFinal <- rep(oneLCEMax,Max_Years-15) 
+    Landfill_LCE<- c(years1_2,years3_5,years6_15,yearsFinal)
+    # Oxidation factor also varies by year as cover is applied
+    years1_2 <- c(.1,.1)
+    years3_10 <- c(rep(.2,7))
+    yearsFinal <- rep(oneOXMax, Max_Years-9)
+    Landfill_OX<-c(years1_2,years3_10,yearsFinal)
     if(debug) {print(paste("Landfill_LCE len ",length(Landfill_LCE)));
-        print(Landfill_LCE)}
-    Q_Released<-Q*(1-oneOxidationFactor)*(1- Landfill_LCE)
-    Q_Captured<-Q*(1-oneOxidationFactor)* Landfill_LCE
+      print(Landfill_LCE)}    
+    if(debug) {print(paste("Landfill_OX len ",length(Landfill_OX)));
+        print(Landfill_OX)}
+    Q_Released<-Q*(1-Landfill_OX)*(1- Landfill_LCE)
+    Q_Captured<-Q*(1-Landfill_OX)* Landfill_LCE
     if(debug) {print(paste("Q_Released len ",length(Q_Released)));
         print(Q_Released)}
-    #Fraction emitted is the cummulative portion of LF_Lo emitted
+    #Fraction emitted is the cummulative portion of LF_Lo not captured
     Fraction_Emitted<-sum(Q_Released)
     if(debug) {print(paste("Fraction_Emitted ",Fraction_Emitted))}
     Fraction_recovered<-sum(Q_Captured)
@@ -54,31 +59,31 @@ LandfillTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
  
   
 # step 1: Landfill operation
-  EMLFoperation<-GlobalFactors$LFDieseluseLpert*
-      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+  EMLFoperation <- GlobalFactors$LFDieseluseLpert *
+      (GlobalFactors$DieselprovisionkgCO2eperL + GlobalFactors$DieselcombustionkgCO2eperL)
   if (debug) print(paste("sum diesel",
                          (GlobalFactors$DieselprovisionkgCO2eperL+
                               GlobalFactors$DieselcombustionkgCO2eperL)))
 # step 2: Methane Production
     # inputs will either be vectors of N or 1.
     maxvec <- max(length(GlobalFactors$k),length(GlobalFactors$LCEMax),
-                  length(GlobalFactors$Landfill_Oxidation_Factor))
+                  length(GlobalFactors$Landfill_OX_Max))
     if(length(GlobalFactors$k)==1){GlobalFactors$k<-rep(GlobalFactors$k,maxvec)}
     if(length(GlobalFactors$LCEMax)==1){GlobalFactors$LCEMax<-rep(GlobalFactors$LCEMax,maxvec)}
-    if(length(GlobalFactors$Landfill_Oxidation_Factor)==1){GlobalFactors$Landfill_Oxidation_Factor<-
-        rep(GlobalFactors$Landfill_Oxidation_Factor,maxvec)}
+    if(length(GlobalFactors$Landfill_OX_Max)==1){GlobalFactors$Landfill_OX_Max<-
+        rep(GlobalFactors$Landfill_OX_Max,maxvec)}
     outfe<-NULL
     outfr<-NULL
     for (i in 1:maxvec) {
         if(debug){print(paste(GlobalFactors$k[i],GlobalFactors$LCEMax[i],
-                              GlobalFactors$Landfill_Oxidation_Factor[i]))}
+                              GlobalFactors$Landfill_OX_Max[i]))}
         onef<-calcOverMaxYears(onek=GlobalFactors$k[i],oneLCEMax=GlobalFactors$LCEMax[i],
-                               oneOxidationFactor=GlobalFactors$Landfill_Oxidation_Factor[i],
+                               oneOXMax =GlobalFactors$Landfill_OX_Max[i],
                                debug=debug)
         outfe<-c(outfe,onef$Fraction_Emitted)
         outfr<-c(outfr,onef$Fraction_recovered)
     }
-    #Allows for a correction factor to adjust LF_Lo based upon BMP and Cho et al., 
+    #Allows for a correction factor CF to adjust LF_Lo based upon BMP and Cho et al., 
     LF_Lo<-Feedstock$Lo*GlobalFactors$BMP_Correctionfactor
     
     EMLandfillCH4 <- outfe * GlobalFactors$density_CH4 *
