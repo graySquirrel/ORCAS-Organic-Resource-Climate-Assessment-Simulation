@@ -30,8 +30,8 @@ getGlobalFactorsFromFile <- function(GFmemfile = NULL,
             switch (newUse,
                     "Value" = {
                         if(verbose) print(paste("setting ",currentName, "from",
-                                           currentValue, "to", newValue))
-                        g1[[currentName]] <- newValue
+                                           currentValue, "to", as.numeric(newValue)))
+                        g1[[currentName]] <- as.numeric(newValue)
                         },
                     "Range" = {
                         if (doRanges) {
@@ -43,8 +43,8 @@ getGlobalFactorsFromFile <- function(GFmemfile = NULL,
                                                         max = r[[i,"Range.High"]])}
                         else {
                             if(verbose) print(paste("setting ",currentName, "from",
-                                        currentValue, "to", newValue))
-                            g1[[currentName]] <- newValue
+                                        currentValue, "to", as.numeric(newValue)))
+                            g1[[currentName]] <- as.numeric(newValue)
                         }},
                     {if(verbose) print(paste("!no action on",currentName))}
             )
