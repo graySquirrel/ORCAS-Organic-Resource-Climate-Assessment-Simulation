@@ -88,7 +88,7 @@ GlobalFactors <- function()
         #Landfill
         LFDieseluseLpert =5.83,
         #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
-        Landfill_Oxidation_Factor = 0.10,
+        Landfill_OX_Max = 0.35,
         #EPA, LMOP
         # could change yearly as described in Warm v.13 but asssumed an average value in this model
         #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
