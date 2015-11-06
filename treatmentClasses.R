@@ -64,13 +64,13 @@ GlobalFactors <- function()
         #Ebner et al., 2015, correction from Bo to Methane utilized (includes leaks, flares and MCF)
         AD_Digester_CH4Leaks = 0.03,
         # Moller
-        AD_Digester_CH4incompleteCombustion = 0.005,
+        AD_Digester_CH4IC = 0.005,
         #AD_Digester_N20incompleteCombustion = 0.03,
         # Ebner et al., 2015
-        AD_Digester_conversion_KwHPerM3 = 4.19318820416827,
+        AD_Digester_CE = 4.19318820416827,
         AD_Digester_parasiticLoad = 0.12,
         AD_reductionInVS = 0.55,
-        AD_Storage_EFresidualMethaneM3CH4PerKgVS = 0.054,
+        AD_Storage_residualCH4 = 0.054,
         #IPCC
         AD_Storage_IPCC_EF3 = 0.005,
         AD_Storage_IPCC_FracGasMS = 0.26,

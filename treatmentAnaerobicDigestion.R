@@ -32,13 +32,13 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # (N2O emissions are assumed small and neglected) 
     
     EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
-    CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4incompleteCombustion
+    CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4IC
     EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
     #    AD_Digester_N20incompleteCombustion * CH4Utilized * 
     #       GlobalFactors$GWPN20/1000
     
     # A credit is given for displacement of electricity exported to the grid
-    electricityGenerated <- GlobalFactors$AD_Digester_conversion_KwHPerM3 * 
+    electricityGenerated <- GlobalFactors$AD_Digester_CE * 
         CH4Utilized/1000
     if(debug) print(paste("electricityGenerated ",electricityGenerated))
     electricityAvoided    <- electricityGenerated * 
@@ -54,7 +54,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     TVSDigestate    <- Feedstock$TVS * (1-GlobalFactors$AD_reductionInVS)*1000
     if(debug) print(paste("TVSDigestate ",TVSDigestate))    
     CH4StorageDigestate   <- TVSDigestate *
-        GlobalFactors$AD_Storage_EFresidualMethaneM3CH4PerKgVS
+        GlobalFactors$AD_Storage_residualCH4
     if(debug) print(paste("CH4StorageDigestate ",CH4StorageDigestate))    
     EMCH4DigestateEmissions <- CH4StorageDigestate * GlobalFactors$density_CH4 * 
         GlobalFactors$GWPCH4
