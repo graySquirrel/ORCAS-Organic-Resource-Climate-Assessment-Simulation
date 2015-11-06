@@ -122,7 +122,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     Nremaining      <- Nremaining - 
       Nremaining * GlobalFactors$LandApplication_EF1 -
       Nremaining * 0.02 - Nremaining * GlobalFactors$LandApplication_FracGasM
-    effectiveNapplied <- Nremaining * GlobalFactors$N_Af
+    effectiveNapplied <- Nremaining * GlobalFactors$AD_N_Af
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     #only considers N displacement at this time
