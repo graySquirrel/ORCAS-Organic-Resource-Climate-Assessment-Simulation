@@ -8,14 +8,20 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace',
                                                sequesterCarbon = TRUE)
 {
-    # Step 0: Grinding
+ # Step 0: Grinding 
+ #only if high solids not implemented
+# EMgrind <- switch(TS,
+          # < '.07',= 0,
+          # > '0.7', =GlobalFactors$Dieselgrindpert*
+          #  (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+                           
   EMgrind=GlobalFactors$Dieselgrindpert*
     (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
   
   
   #Step 1: calculate Digester emissions kgCO2e/MT
     # Correction from lab scale BMP to commercial AD
-    CH4generated <-Feedstock$Lo *  GlobalFactors$AD_MCFactor
+    CH4generated <-Feedstock$Lo *  GlobalFactors$AD_Cf
     # Deduct leaks and flared methane
     CH4LeaksM3PerT    <- CH4generated * GlobalFactors$AD_Digester_CH4Leaks
     CH4flareM3perT <- CH4generated * GlobalFactors$AD_flared
@@ -65,7 +71,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMStorage           <- EMCH4DigestateEmissions + EMN20_Storage
     if(debug) print(paste("EMStorage ",EMStorage))
     
-    #Send to land application trerment
+    # Mass balance to calculate N applied to field
     Nremaining      <- Feedstock$TKN * 
       (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
          GlobalFactors$AD_Storage_IPCC_FracGasMS - 
@@ -115,8 +121,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Step 5: Displaced fertilizer kgCO2e/MT
     Nremaining      <- Nremaining - 
       Nremaining * GlobalFactors$LandApplication_EF1 -
-      Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$N_availabilityfactor
+      Nremaining * 0.02 - Nremaining * GlobalFactors$LandApplication_FracGasM
+    effectiveNapplied <- Nremaining * GlobalFactors$N_Af
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     #only considers N displacement at this time
@@ -137,6 +143,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     EMNetLandapp <- switch(Application,
                            'noDisplace' = EMLandApp + EMCstorage,
                            'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
+    
+    #If canned goods includes a recovery step to reclaim EMrecycle <- switch(Feedstock$type,
+    'canned goods', =
+      , )
 
     # Add together
     netEmissions <- 
@@ -144,6 +154,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
         EMDigester +
         EMStorage +
         EMNetLandapp 
+    # + EMrecycle
      
     
     result <- data.frame(netEmissions,EMDigester,EMStorage)

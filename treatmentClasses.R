@@ -60,7 +60,7 @@ GlobalFactors <- function()
         Compost_EF1 = 0.015, # Boldrin
         
         #Anaerobic Digestion
-        AD_MCFactor = 0.84,
+        AD_Cf = 0.90,
         #Ebner et al., 2015, correction from Bo to Methane utilized (includes leaks, flares and MCF)
         AD_Digester_CH4Leaks = 0.03,
         # Moller
