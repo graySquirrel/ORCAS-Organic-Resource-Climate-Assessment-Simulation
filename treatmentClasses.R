@@ -21,13 +21,15 @@ GlobalFactors <- function()
         # Conversion constants
         N20N_to_N20 = 44/28, 
         density_CH4 = 0.67,
+        density_CO2 = 1.799,
         CtoCH4=16/12,
+        CtoCO2=44/12,
         Energy_content_methane_BTUperm3CH4 = 35315, 
         # AR5 GWP factors,
         GWPN20 = 265, 
         GWPCH4 = 28, 
         # Emission factors
-        EFGrid = -537.36,
+        EFGrid = 692.15,
         #EFfreight_kgCO2ePERtonKm = 0.107,
         DieselprovisionkgCO2eperL=0.45,
         # Taken from Fruergaard et al. (2009)
@@ -35,13 +37,12 @@ GlobalFactors <- function()
         #Calculated from GREET 2014 CO2, CH4 and N2O emissions w IPCC AR5 GWF
         # Land Application 
         IPCC_EF4 = 0.01,
-        N_availabilityfactor = 0.4,
         DieselspreadLpertkm = 0.30,
         Dieselgrindpert = 2.65,
         
         #Compost
         Compost_dieseLlpert = 3,
-        #Boldrin,2009
+        Compost_electpert = 15,
         CompostPercentCdegraded = 0.58,
         #Boldrin,2009
         Compost_degradedC_CH4 = 0.02,
@@ -61,58 +62,53 @@ GlobalFactors <- function()
         
         #Anaerobic Digestion
         AD_Cf = 0.90,
-        #Ebner et al., 2015, correction from Bo to Methane utilized (includes leaks, flares and MCF)
-        AD_Digester_CH4Leaks = 0.03,
-        # Moller
+        AD_flared=0.03,
+        AD_Digester_CH4Leaks = 0.025,
         AD_Digester_CH4IC = 0.005,
         #AD_Digester_N20incompleteCombustion = 0.03,
-        # Ebner et al., 2015
         AD_Digester_CE = 4.19318820416827,
         AD_Digester_parasiticLoad = 0.12,
         AD_reductionInVS = 0.55,
         AD_Storage_residualCH4 = 0.054,
-        #IPCC
-        AD_Storage_IPCC_EF3 = 0.005,
-        AD_Storage_IPCC_FracGasMS = 0.26,
-        #AD_LandApplication_FracGasM =0.2,
-        #AD_LandApplication_EF1 = 0.0125,
-        AD_LandApplication_OtherNFactor = 0.02,
-        #AD_LandApp_NAvailabiltiy_Factor = 0.4,
-        #AD_DisplacedFertilizer_Production_Factor = -6.8,
-        #AD_DisplacedFertilizer_Direct_Indirect = -5.4,
-        AD_CSfactor = 0.4,
+        AD_Storage_EF3 = 0.005,
+        AD_Storage_FracGasMS = 0.26,
         AD_xportTofield = 20,
-        AD_flared=0.03,
+        AD_LA_FracGasD =0.2,
+        #AD_LandApplication_EF1 = 0.0125, in land app factors
+        AD_LandApplication_OtherNFactor = 0.02,
+        AD_LA_FracLeachD = 0.007,
+        AD_N_Availability = 0.65,
+        AD_CSfactor = 0.4,
+       
         CH4content=0.60,
         
         #Landfill
         LFDieseluseLpert =5.83,
-        #Based upon Warm v.13 model 0.7gal/t for landfill equipment operation
         Landfill_OX_Max = 0.35,
-        #EPA, LMOP
-        # could change yearly as described in Warm v.13 but asssumed an average value in this model
-        #Landfill_Oxidation_Factor<-c(.10,rep(0.2,16),rep(0.25,Max_Years-17))
         Heating_value = 11700, 
-        #EPA, LMOP
         Landfill_CF = 0.85,
         k= 0.144,
-        #WARM v13       
-        #Both feedstock and landfill parameter 
         LCEMax = 0.9,
-        #Levis and Barlaz, 
         BMP_Correctionfactor = 1,
-        #Cho, 2012 
+
         
         
         #Land Application
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
         #LandApplication_OtherNFactor = 0.02,
-        #LandApp_NAvailabiltiy_Factor = 0.4,
-        LA_DisplacedFertilizer_Production_Factor = -6.8,
-        LA_DisplacedFertilizer_Direct_Indirect = -5.4,
+        LA_Displaced_N_Production_Factor = -6.8,
+        LA_Displaced_N_Direct_Indirect = -5.4,
+        LA_Displaced_P_Production_Factor =-1.8, 
+        LA_Displaced_K_Production_Factor = -0.96,
         LA_CSfactor = 0.7,
         LA_xportToField = 20,
+        N_displacement = 1,
+        K_displacement =1, 
+        P_displacement =1,
+        K_Availability = 1,
+        P_Availability =1,
+        LA_DisplacedFertilizer_Direct_Indirect = -5.4,
         
         # Animal Feed
         EFCornDisplacement = -592,

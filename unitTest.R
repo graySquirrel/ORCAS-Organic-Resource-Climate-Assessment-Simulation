@@ -3,13 +3,14 @@
 #library(rgl)
 #setwd("C:/Users/febner/Documents/CourseraDataScience/fracGASM")
 source("treatmentClasses.R") 
-source("treatmentAnaerobicDigestion.R") 
+debugSource("treatmentAnaerobicDigestion.R") 
 source("treatmentLandApplication.R") 
+source("parseGlobalFactors.R")
 
 
-f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=5600,
+f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=6650,
                 percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
-                fdeg = 0.841)
+                fdeg = 0.841, Potassium =  112.50 , Phosphorus = 262.5 )
 
 g1 <- getGlobalFactorsFromFile(doRanges = FALSE,verbose = TRUE)
 #g1 <- GlobalFactors()

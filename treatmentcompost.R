@@ -16,7 +16,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
 # Hauling of the waste to the compost facility not included at this time
 # step 1: Compost operation
   EMCompostoperation<-GlobalFactors$Compost_dieseLlpert*
-    (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+    (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL) + 
+    GlobalFactors$Compost_electpert * GlobalFactors$EFGrid/1000
   if(debug) {print(paste("EMCompostoperation", (EMCompostoperation)))}
   
 # step 2: Biological emissions

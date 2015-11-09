@@ -21,17 +21,18 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
   
   #Step 1: calculate Digester emissions kgCO2e/MT
     # Correction from lab scale BMP to commercial AD
-    CH4generated <-Feedstock$Lo *  GlobalFactors$AD_Cf
+    CH4prod <-Feedstock$Lo *  GlobalFactors$AD_Cf
     # Deduct leaks and flared methane
-    CH4LeaksM3PerT    <- CH4generated * GlobalFactors$AD_Digester_CH4Leaks
-    CH4flareM3perT <- CH4generated * GlobalFactors$AD_flared
-    CH4Utilized       <- CH4generated-  CH4LeaksM3PerT - CH4flareM3perT
+    CH4LeaksM3PerT    <- CH4prod * GlobalFactors$AD_Digester_CH4Leaks
+    CH4flareM3perT <- CH4prod * GlobalFactors$AD_flared
+    CH4Utilized       <- CH4prod-  CH4LeaksM3PerT - CH4flareM3perT
 
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
     # Digester emissions inlcude leaks and incomplete combustion of methane
     # (N2O emissions are assumed small and neglected) 
     
-    EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4
+    EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * 
+      GlobalFactors$GWPCH4
     CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4IC
     EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
     #    AD_Digester_N20incompleteCombustion * CH4Utilized * 
@@ -44,7 +45,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     electricityAvoided    <- electricityGenerated * 
         (1 - GlobalFactors$AD_Digester_parasiticLoad)
     if(debug) print(paste("electricityAvoided ",electricityAvoided))
-    EMAvoidedGrid <- electricityAvoided * GlobalFactors$EFGrid
+    EMAvoidedGrid <- electricityAvoided * (-GlobalFactors$EFGrid)
     if(debug) print(paste("EMLeaks ",EMLeaks," EMIC ",EMIC,
                           " avoided ",EMAvoidedGrid))
     EMDigester   <- EMLeaks + EMIC + EMAvoidedGrid
@@ -60,10 +61,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
         GlobalFactors$GWPCH4
     if(debug) print(paste("EMCH4DigestateEmissions ",EMCH4DigestateEmissions))
     EMN20_storage_Direct         <- Feedstock$TKN * GlobalFactors$N20N_to_N20 * 
-        GlobalFactors$GWPN20 *GlobalFactors$AD_Storage_IPCC_EF3 / 1000
+        GlobalFactors$GWPN20 *GlobalFactors$AD_Storage_EF3 / 1000
     if(debug) print(paste("EMN20_Storage_Direct ",EMN20_storage_Direct))
     EMN20_storage_Indirect       <- GlobalFactors$IPCC_EF4 * 
-      GlobalFactors$AD_Storage_IPCC_FracGasMS *
+      GlobalFactors$AD_Storage_FracGasMS *
         Feedstock$TKN * GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_storage_Indirect ",EMN20_storage_Indirect))
     EMN20_Storage     <- EMN20_storage_Direct + EMN20_storage_Indirect
@@ -73,8 +74,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Mass balance to calculate N applied to field
     Nremaining      <- Feedstock$TKN * 
-      (1 - GlobalFactors$AD_Storage_IPCC_EF3 - 
-         GlobalFactors$AD_Storage_IPCC_FracGasMS - 
+      (1 - GlobalFactors$AD_Storage_EF3 - 
+         GlobalFactors$AD_Storage_FracGasMS -
          GlobalFactors$AD_LandApplication_OtherNFactor)
     #EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
     #Nremaining = Nremaining, 
@@ -88,9 +89,10 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
       GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
     if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
     EMN20_LandApp_indirect       <- Nremaining * 
-      GlobalFactors$LandApplication_FracGasM * 
-      GlobalFactors$IPCC_EF4 *
-      GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
+      GlobalFactors$AD_LA_FracGasD *  GlobalFactors$IPCC_EF4 *
+      GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000 +
+      GlobalFactors$AD_LA_FracLeachD * GlobalFactors$IPCC_EF4 *
+    GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000 
     if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
     EMN20_LandApp    <- EMN20_LandApp_direct + EMN20_LandApp_indirect
     if(debug) print(paste("EMN20_LandApp ",EMN20_LandApp))
@@ -100,15 +102,16 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     # Step 4: Carbon Sequestration kgCO2e/MT
     if (sequesterCarbon == TRUE) {
       # Digestate C applied is calculated through mass balance
-        BiogasM3pert<-CH4generated/GlobalFactors$CH4content
-        kgCH4Cbiogas <-CH4generated* GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
-        CO2M3biogas <- BiogasM3pert - CH4generated
-        kgCO2Cbiogas <- CO2M3biogas*GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
+        BiogasM3pert<-CH4prod/GlobalFactors$CH4content
+        kgCH4Cbiogas <-CH4prod* GlobalFactors$density_CH4 / GlobalFactors$CtoCH4
+        CO2M3biogas <- BiogasM3pert - CH4prod
+        kgCO2Cbiogas <- CO2M3biogas*GlobalFactors$density_CO2 / GlobalFactors$CtoCO2
         kgCH4StorageDigestate <- CH4StorageDigestate *GlobalFactors$density_CH4 /GlobalFactors$CtoCH4
         
-        DigestateC <- Feedstock$InitialC - kgCH4Cbiogas- kgCO2Cbiogas - kgCH4StorageDigestate
+        DigestateC <- Feedstock$InitialC - kgCH4Cbiogas- kgCO2Cbiogas - kgCH4StorageDigestate 
+        - CH4ICM3PerT * GlobalFactors$density_CH4
         CStorage <-DigestateC * GlobalFactors$AD_CSfactor
-        EMCstorage<-CStorage*(-44/12)
+        EMCstorage<-CStorage*(-GlobalFactors$CtoCO2)
         
     } else {
         CStorage <- EMCstorage <- 0
@@ -116,18 +119,27 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("InitialC ",Feedstock$InitialC))
     if(debug) print(paste("EMCstorage ",EMCstorage))
     if(debug) print(paste("fdeg ",Feedstock$fdeg))
-    if(debug) print(paste("fdeg ",Feedstock$fdeg))
-    
+
     # Step 5: Displaced fertilizer kgCO2e/MT
-    Nremaining      <- Nremaining - 
-      Nremaining * GlobalFactors$LandApplication_EF1 -
-      Nremaining * 0.02 - Nremaining * GlobalFactors$LandApplication_FracGasM
-    effectiveNapplied <- Nremaining * GlobalFactors$AD_N_Af
+        Nremaining      <- Nremaining *(1-
+        GlobalFactors$LandApplication_EF1 -
+        GlobalFactors$AD_LA_FracGasD -
+        GlobalFactors$AD_LA_FracLeachD)
+
+    effectiveNapplied <- Nremaining * GlobalFactors$AD_N_Availability
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     #only considers N displacement at this time
-    avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
-      effectiveNapplied/1000
+    avoidedNfert    <- GlobalFactors$LA_Displaced_N_Production_Factor * 
+      GlobalFactors$N_displacement * 
+      effectiveNapplied/1000 
+    avoidedPfert   <-GlobalFactors$LA_Displaced_P_Production_Factor * 
+      GlobalFactors$P_displacement * 
+      Feedstock$Phosphorus /1000 
+    avoidedKfert   <-GlobalFactors$LA_Displaced_K_Production_Factor * 
+      GlobalFactors$K_displacement * 
+      Feedstock$Potassium/1000
+     
     if(debug) print(paste("avoidedNfert ",avoidedNfert))
     
     avoidedInorganicFertdirectandIndirect <- 
@@ -136,7 +148,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
                           avoidedInorganicFertdirectandIndirect))
     
-    EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
+    EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect +
+      avoidedPfert + avoidedKfert
     if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
     
     # Add together
@@ -145,8 +158,8 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                            'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
     
     #If canned goods includes a recovery step to reclaim EMrecycle <- switch(Feedstock$type,
-    'canned goods', =
-      , )
+#     'canned goods', =
+#       , )
 
     # Add together
     netEmissions <- 
