@@ -16,17 +16,17 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
       (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
     if(debug) print(paste("EMspread ",EMspread))
-    EMN20_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
-        GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
-    if(debug) print(paste("EMN20_LandApp_direct ",EMN20_LandApp_direct))
-    EMN20_LandApp_indirect       <- Nremaining * 
+    EMN2O_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
+        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
+    if(debug) print(paste("EMN2O_LandApp_direct ",EMN2O_LandApp_direct))
+    EMN2O_LandApp_indirect       <- Nremaining * 
         GlobalFactors$LandApplication_FracGasM * 
         GlobalFactors$IPCC_EF4 *
-        GlobalFactors$N20N_to_N20 * GlobalFactors$GWPN20 / 1000
-    if(debug) print(paste("EMN20_LandApp_indirect ",EMN20_LandApp_indirect))
-    EMN20_LandApp    <- EMN20_LandApp_direct + EMN20_LandApp_indirect
-    if(debug) print(paste("EMN20_LandApp ",EMN20_LandApp))
-    EMLandApp <- EMspread + EMN20_LandApp
+        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
+    if(debug) print(paste("EMN2O_LandApp_indirect ",EMN2O_LandApp_indirect))
+    EMN2O_LandApp    <- EMN2O_LandApp_direct + EMN2O_LandApp_indirect
+    if(debug) print(paste("EMN2O_LandApp ",EMN2O_LandApp))
+    EMLandApp <- EMspread + EMN2O_LandApp
     if(debug) print(paste("EMLandApp ",EMLandApp))
     
     # Step 4: Carbon Sequestration kgCO2e/MT
@@ -42,7 +42,7 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     Nremaining      <- Nremaining - 
         Nremaining * GlobalFactors$LandApplication_EF1 -
         Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$N_availabilityfactor
+    effectiveNapplied <- Nremaining * GlobalFactors$Compost_N_Availability
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *

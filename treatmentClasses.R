@@ -19,14 +19,14 @@ GlobalFactors <- function()
 {
     me <- list(
         # Conversion constants
-        N20N_to_N20 = 44/28, 
+        N2ON_to_N2O = 44/28, 
         density_CH4 = 0.67,
         density_CO2 = 1.799,
         CtoCH4=16/12,
         CtoCO2=44/12,
         Energy_content_methane_BTUperm3CH4 = 35315, 
         # AR5 GWP factors,
-        GWPN20 = 265, 
+        GWPN2O = 265, 
         GWPCH4 = 28, 
         # Emission factors
         EFGrid = 692.15,
@@ -44,10 +44,9 @@ GlobalFactors <- function()
         Compost_dieseLlpert = 3,
         Compost_electpert = 15,
         CompostPercentCdegraded = 0.58,
-        #Boldrin,2009
         Compost_degradedC_CH4 = 0.02,
-        #Boldrin,2009
         Compost_N2OperN = 0.005,
+        Compost_NH3ofloss = 0.5,
         Compost_CS_factor = 0.2,
         # Additional decay beyond AD degradation tests due to organisms and fungi
         Compost_mass_reduction = 0.4,
@@ -55,17 +54,19 @@ GlobalFactors <- function()
         Compost_spread_diesellpert = 0.4,
         Compost_N_loss = 0.38,
         #Compost_NAvailabiltiy_Factor = 0.4,
+        Compost_N_Availability = 0.2,
         Compost_FracGasC =0.016,
         Peatdisplacementfactor = 1,
         EF_Peat_kgCO2eperton = -970,
         Compost_EF1 = 0.015, # Boldrin
+        Compost_LRO = 0.077,
         
         #Anaerobic Digestion
         AD_Cf = 0.90,
         AD_flared=0.03,
         AD_Digester_CH4Leaks = 0.025,
         AD_Digester_CH4IC = 0.005,
-        #AD_Digester_N20incompleteCombustion = 0.03,
+        #AD_Digester_N2OincompleteCombustion = 0.03,
         AD_Digester_CE = 4.19318820416827,
         AD_Digester_parasiticLoad = 0.12,
         AD_reductionInVS = 0.55,
@@ -97,18 +98,19 @@ GlobalFactors <- function()
         LandApplication_FracGasM =0.2,
         LandApplication_EF1 = 0.0125,
         #LandApplication_OtherNFactor = 0.02,
-        LA_Displaced_N_Production_Factor = -6.8,
+        Displaced_N_Production_Factor = -6.8,
         LA_Displaced_N_Direct_Indirect = -5.4,
-        LA_Displaced_P_Production_Factor =-1.8, 
-        LA_Displaced_K_Production_Factor = -0.96,
+        Displaced_P_Production_Factor =-1.8, 
+        Displaced_K_Production_Factor = -0.96,
         LA_CSfactor = 0.7,
         LA_xportToField = 20,
         N_displacement = 1,
-        K_displacement =1, 
-        P_displacement =1,
+        K_Nratio =0.57, 
+        P_Nratio =0.3,
         K_Availability = 1,
         P_Availability =1,
         LA_DisplacedFertilizer_Direct_Indirect = -5.4,
+        
         
         # Animal Feed
         EFCornDisplacement = -592,

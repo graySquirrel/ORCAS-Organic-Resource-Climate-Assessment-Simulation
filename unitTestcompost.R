@@ -9,7 +9,7 @@ source("parseGlobalFactors.R")
 
 f1 <- Feedstock(type="OFMSW",TS=0.3,VS=0.90,Bo=334,TKN=9000,
                 percentCarboTS = 0.8, percentProteinTS = 0.10, percentLipidTS = 0.10,
-                fdeg = 0.84)
+                fdeg = 0.84,Potassium =  3300 , Phosphorus = 1900 )
 
 # print(paste("Lo ",f1$Lo, "TVS ",f1$TVS,"InitialC ",f1$InitialC))
 # #g1 <- GlobalFactors()
