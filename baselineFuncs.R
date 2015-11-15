@@ -91,7 +91,7 @@ calculatePathwayMC <- function(FSmemfile=NULL,
                                FUN=NULL,
                                Application=NULL) {
     stocks <- FSmemfile # just lazy don't want to rename stocks
-    g1 <- getGlobalFactorsFromFile(GFmemfile=GFmemfile)
+    g1 <- getGlobalFactorsFromFile(GFmemfile=GFmemfile,verbose = TRUE)
     outRanges <- NULL
     for(i in 1:length(stocks$Feedstock)) {
         #print(i)
@@ -183,10 +183,10 @@ calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
                                    FUN=compostTreatmentPathway, Application = 'Peat')
     o$CMbstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                    FUN=compostTreatmentPathway, Application = 'Blended')
-    o$LAstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
-                                  FUN=LandApplicationTreatmentPathway)
-    o$LAfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
-                                   FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
+#     o$LAstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+#                                   FUN=LandApplicationTreatmentPathway)
+#     o$LAfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+#                                    FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
     o$AFstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                   FUN=AnimalFeedTreatmentPathway)
     o
@@ -201,8 +201,8 @@ createPathwaysPlot <- function(doRanges = FALSE,s = NULL) {
     y3f <- massageDataforPlot(s$CMfstats$confDat, s$b$CMf$final,"CMf")
     y3p <- massageDataforPlot(s$CMpstats$confDat, s$b$CMp$final,"CMp")
     y3b <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CMb")
-    y4 <- massageDataforPlot(s$LAstats$confDat, s$b$LA$EMNetLandapp,"LA")
-    y4f <- massageDataforPlot(s$LAfstats$confDat, s$b$LAf$EMNetLandapp,"LAf")
+#     y4 <- massageDataforPlot(s$LAstats$confDat, s$b$LA$EMNetLandapp,"LA")
+#     y4f <- massageDataforPlot(s$LAfstats$confDat, s$b$LAf$EMNetLandapp,"LAf")
     y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
     
     #y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
