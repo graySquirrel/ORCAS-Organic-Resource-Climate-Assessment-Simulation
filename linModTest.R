@@ -10,6 +10,7 @@ source("baselines.R")
 #                  I(o$f1$VS) + I(o$f1$TKN/20000)))
 
 TKN<-o$f1$TKN
+TDN<-o$f1$TDN
 Lo<-o$f1$Lo
 TVS<-o$f1$TVS
 InitialC<-o$f1$InitialC
@@ -28,6 +29,16 @@ scaledInitialC<-scale(o$f1$InitialC, center = FALSE)
 scaledfdeg <- scale(o$f1$fdeg, center = FALSE)
 scaledrdeg <- scale(o$f1$rdeg, center = FALSE)
 scalednpert <- scale(o$f1$Nperton, center = FALSE)
+
+par(mfrow=c(2,2),oma = c(0, 0, 2, 0))
+
+AFLM <- lm(unlist(o$AF[1]) ~ TS : TDN) # perfect fit!
+summary(AFLM)
+#plot(AFLM)
+coef(AFLM)
+plot(fitted(AFLM),xlab="Feedstock",ylab="Animal Feed Emissions")
+points(o$AF[1], cex=2)
+
 
 # print(o$g1$EFGrid)
 # ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)# + InitialC : rdeg) # perfect fit!
@@ -53,80 +64,96 @@ scalednpert <- scale(o$f1$Nperton, center = FALSE)
 # coef(ADLM)
 #stop()
 
-ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scalednpert + scaledInitialC)
-summary(ADLMS)
-plot(ADLMS)
-coef(ADLMS)
+# ADLM <- lm(unlist(o$AD[1]) ~ Lo + TVS + npert + InitialC)
+# summary(ADLM)
+# plot(ADLM)
+# coef(ADLM)
 
-stop()
+# ADLMS <- lm(unlist(o$AD[1]) ~ scaledLo + scaledTVS + scalednpert + scaledInitialC)
+# summary(ADLMS)
+# plot(ADLMS)
+# coef(ADLMS)
+
 ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + npert + InitialC : rdeg) # perfect fit!
 summary(ADfLM)
-par(mfrow=c(2,2))
-plot(ADfLM)
+#plot(ADfLM)
 coef(ADfLM)
-ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledTKN + scaledInitialC : scaledrdeg)
-summary(ADfLMS)
-plot(ADfLMS)
-coef(ADfLMS)
+plot(fitted(ADfLM),xlab="Feedstock",ylab="Anaerobic Digestion Emissions")
+points(o$ADf[1], cex=2)
 
-CMLM <- lm(unlist(o$CM[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
-summary(CMLM)
-par(mfrow=c(2,2))
-plot(CMLM)
-coef(CMLM)
-CMLMS <- lm(unlist(o$CM[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
-summary(CMLMS)
-plot(CMLMS)
-coef(CMLMS)
+# ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledTKN + scaledInitialC : scaledrdeg)
+# summary(ADfLMS)
+# plot(ADfLMS)
+# coef(ADfLMS)
+# plot(fitted(ADfLMS))
+# points(o$ADf[1], cex=2)
+
+# CMLM <- lm(unlist(o$CM[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
+# summary(CMLM)
+# par(mfrow=c(2,2))
+# plot(CMLM)
+# coef(CMLM)
+# plot(fitted(CMLM))
+# points(o$CM[1], cex=2)
+
+# CMLMS <- lm(unlist(o$CM[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
+# summary(CMLMS)
+# plot(CMLMS)
+# coef(CMLMS)
 
 CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
 summary(CMbLM)
-par(mfrow=c(2,2))
-plot(CMbLM)
+#plot(CMbLM)
 coef(CMbLM)
-CMbLMS <- lm(unlist(o$CMb[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
-summary(CMbLMS)
-plot(CMbLMS)
-coef(CMbLMS)
+plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
+points(o$CMb[1], cex=2)
 
-y<-unlist(o$LA[1])
-names(y) <- o$f1$type
-LALM <- lm(y ~ npert + InitialC:rdeg)# perfect fit!
-summary(LALM)
-par(mfrow=c(2,2))
-plot(LALM)
-coef(LALM)
-# > coef(LALM)
-# (Intercept)           TKN      InitialC InitialC:fdeg 
-# 19.020000000   0.006038214  -2.566666667   2.566666667 
-LALMS <- lm(unlist(o$LA[1]) ~ scaledTKN + scaledInitialC + scaledInitialC : scaledfdeg)
-summary(LALMS)
-plot(LALMS)
-coef(LALMS)
-# > coef(LALMS)
-# (Intercept)                 scaledTKN            scaledInitialC 
-# 19.02000                  64.14935                -654.80775 
-# scaledInitialC:scaledfdeg 
-# 595.29912 
+# CMbLMS <- lm(unlist(o$CMb[1]) ~ scalednpert + scaledInitialC : scaledrdeg)
+# summary(CMbLMS)
+# plot(CMbLMS)
+# coef(CMbLMS)
+
+# y<-unlist(o$LA[1])
+# names(y) <- o$f1$type
+# LALM <- lm(y ~ npert + InitialC:rdeg)# perfect fit!
+# summary(LALM)
+# par(mfrow=c(2,2))
+# plot(LALM)
+# coef(LALM)
+# # > coef(LALM)
+# # (Intercept)           TKN      InitialC InitialC:fdeg 
+# # 19.020000000   0.006038214  -2.566666667   2.566666667 
+# LALMS <- lm(unlist(o$LA[1]) ~ scaledTKN + scaledInitialC + scaledInitialC : scaledfdeg)
+# summary(LALMS)
+# plot(LALMS)
+# coef(LALMS)
+# # > coef(LALMS)
+# # (Intercept)                 scaledTKN            scaledInitialC 
+# # 19.02000                  64.14935                -654.80775 
+# # scaledInitialC:scaledfdeg 
+# # 595.29912 
 
 y<-unlist(o$LF[1])
 names(y) <- o$f1$type
 LFLM <- lm(y ~ Lo + InitialC:rdeg) # perfect fit!
 summary(LFLM)
-par(mfrow=c(2,2))
-plot(LFLM, las = 1)
+#plot(LFLM, las = 1)
 coef(LFLM)
-plot(fitted(LFLM))
+plot(fitted(LFLM),xlab="Feedstock",ylab="Landfill Emissions")
 points(y, cex=2)
+
+mtext("Linear Model fit vs. actual", outer = TRUE, cex = 1.5)
+
+
 # > coef(LFLM)
 # (Intercept)            Lo      InitialC InitialC:fdeg 
 # 18.481100      5.756141     -3.666667      3.666667 
-LFLMS <- lm(unlist(o$LF[1]) ~ scaledLo + scaledInitialC + scaledInitialC : scaledfdeg)
-summary(LFLMS)
-plot(LFLMS)
-coef(LFLMS)
-plot(fitted(LFLMS))
-points(y, cex=2)
+# LFLMS <- lm(unlist(o$LF[1]) ~ scaledLo + scaledInitialC + scaledInitialC : scaledfdeg)
+# summary(LFLMS)
+# plot(LFLMS)
+# coef(LFLMS)
+# plot(fitted(LFLMS))
+# points(y, cex=2)
 # > coef(LFLMS)
 # (Intercept)                  scaledLo            scaledInitialC 
 # 18.4811                 1218.6494                 -935.4396 
