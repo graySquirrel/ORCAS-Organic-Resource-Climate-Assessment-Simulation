@@ -8,31 +8,31 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                                                Application = 'noDisplace',
                                                sequesterCarbon = TRUE)
 {
- # Step 0: Grinding 
- #only if high solids not implemented
-# EMgrind <- switch(TS,
-          # < '.07',= 0,
-          # > '0.7', =GlobalFactors$Dieselgrindpert*
-          #  (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-                           
-  EMgrind=GlobalFactors$Dieselgrindpert*
-    (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-  
-  
-  #Step 1: calculate Digester emissions kgCO2e/MT
+    # Step 0: Grinding 
+    #only if high solids not implemented
+    # EMgrind <- switch(TS,
+    # < '.07',= 0,
+    # > '0.7', =GlobalFactors$Dieselgrindpert*
+    #  (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+    
+    EMgrind=GlobalFactors$Dieselgrindpert*
+        (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+    
+    
+    #Step 1: calculate Digester emissions kgCO2e/MT
     # Correction from lab scale BMP to commercial AD
     CH4prod <-Feedstock$Lo *  GlobalFactors$AD_Cf
     # Deduct leaks and flared methane
     CH4LeaksM3PerT    <- CH4prod * GlobalFactors$AD_Digester_CH4Leaks
     CH4flareM3perT <- CH4prod * GlobalFactors$AD_flared
     CH4Utilized       <- CH4prod-  CH4LeaksM3PerT - CH4flareM3perT
-
+    
     if(debug) print(paste("CH4Utilized ",CH4Utilized))
     # Digester emissions inlcude leaks and incomplete combustion of methane
     # (N2O emissions are assumed small and neglected) 
     
     EMLeaks   <- CH4LeaksM3PerT * GlobalFactors$density_CH4 * 
-      GlobalFactors$GWPCH4
+        GlobalFactors$GWPCH4
     CH4ICM3PerT  <- CH4Utilized * GlobalFactors$AD_Digester_CH4IC
     EMIC <- CH4ICM3PerT * GlobalFactors$density_CH4 * GlobalFactors$GWPCH4 # +
     #    AD_Digester_N2OincompleteCombustion * CH4Utilized * 
@@ -64,7 +64,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
         GlobalFactors$GWPN2O *GlobalFactors$AD_Storage_EF3 / 1000
     if(debug) print(paste("EMN2O_Storage_Direct ",EMN2O_storage_Direct))
     EMN2O_storage_Indirect       <- GlobalFactors$IPCC_EF4 * 
-      GlobalFactors$AD_Storage_FracGasMS *
+        GlobalFactors$AD_Storage_FracGasMS *
         Feedstock$TKN * GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
     if(debug) print(paste("EMN2O_storage_Indirect ",EMN2O_storage_Indirect))
     EMN2O_Storage     <- EMN2O_storage_Direct + EMN2O_storage_Indirect
@@ -74,25 +74,25 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Mass balance to calculate N applied to field
     Nremaining      <- Feedstock$Nperton * 
-      (1 - GlobalFactors$AD_Storage_EF3 - 
-         GlobalFactors$AD_Storage_FracGasMS -
-         GlobalFactors$AD_LandApplication_OtherNFactor)
+        (1 - GlobalFactors$AD_Storage_EF3 - 
+             GlobalFactors$AD_Storage_FracGasMS -
+             GlobalFactors$AD_LandApplication_OtherNFactor)
     #EMLandApp <- LandApplicationTreatmentPathway(Feedstock, GlobalFactors, debug, 
     #Nremaining = Nremaining, 
     # Application = Application)
     
     # Step 3 Land Application
     EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$AD_xportTofield*
-      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+        (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
     if(debug) print(paste("EMspread ",EMspread))
     EMN2O_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
-      GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
+        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
     if(debug) print(paste("EMN2O_LandApp_direct ",EMN2O_LandApp_direct))
     EMN2O_LandApp_indirect       <- Nremaining * 
-      GlobalFactors$AD_LA_FracGasD *  GlobalFactors$IPCC_EF4 *
-      GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000 +
-      GlobalFactors$AD_LA_FracLeachD * GlobalFactors$IPCC_EF4 *
-    GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000 
+        GlobalFactors$AD_LA_FracGasD *  GlobalFactors$IPCC_EF4 *
+        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000 +
+        GlobalFactors$AD_LA_FracLeachD * GlobalFactors$IPCC_EF4 *
+        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000 
     if(debug) print(paste("EMN2O_LandApp_indirect ",EMN2O_LandApp_indirect))
     EMN2O_LandApp    <- EMN2O_LandApp_direct + EMN2O_LandApp_indirect
     if(debug) print(paste("EMN2O_LandApp ",EMN2O_LandApp))
@@ -101,7 +101,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     
     # Step 4: Carbon Sequestration kgCO2e/MT
     if (sequesterCarbon == TRUE) {
-      # Digestate C applied is calculated through mass balance
+        # Digestate C applied is calculated through mass balance
         BiogasM3pert<-CH4prod/GlobalFactors$CH4content
         kgCH4Cbiogas <-CH4prod* GlobalFactors$density_CH4 / GlobalFactors$CtoCH4
         CO2M3biogas <- BiogasM3pert - CH4prod
@@ -119,56 +119,57 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
     if(debug) print(paste("InitialC ",Feedstock$InitialC))
     if(debug) print(paste("EMCstorage ",EMCstorage))
     if(debug) print(paste("fdeg ",Feedstock$fdeg))
-
+    
     # Step 5: Displaced fertilizer kgCO2e/MT
-        Nremaining      <- Nremaining *(1-
-        GlobalFactors$LandApplication_EF1 -
-        GlobalFactors$AD_LA_FracGasD -
-        GlobalFactors$AD_LA_FracLeachD)
-        
-        if (Nremaining < 0) {
-          Nremaining = 0
-          }
-
+    Nremaining      <- Nremaining *(1-
+                                        GlobalFactors$LandApplication_EF1 -
+                                        GlobalFactors$AD_LA_FracGasD -
+                                        GlobalFactors$AD_LA_FracLeachD)
+    
+    #         if (Nremaining < 0) {
+    #           Nremaining = 0
+    #           }
+    Nremaining[Nremaining < 0] <- 0 # set all non pos to 0 in vector.
+    
     effectiveNapplied <- Nremaining * GlobalFactors$AD_N_Availability
     if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
     
     avoidedNfert    <- GlobalFactors$Displaced_N_Production_Factor * 
-      GlobalFactors$N_displacement * effectiveNapplied
+        GlobalFactors$N_displacement * effectiveNapplied
     
     # Limit nutrient displacement to nutrient requirements based upon ratio to N 
     
     effectiveKapplied <- Feedstock$Potassium/1000 * GlobalFactors$K_Availability
-    
     MaxK <- effectiveNapplied * GlobalFactors$K_Nratio
-   if (effectiveKapplied > MaxK) {
-     effectiveKapplied <- MaxK
-     }
-
+    for(i in 1:length(effectiveKapplied)) {
+        if (effectiveKapplied[i] > MaxK[i])effectiveKapplied[i] <- MaxK[i]
+    }
+    
     avoidedKfert   <-GlobalFactors$Displaced_K_Production_Factor * 
-     effectiveKapplied
+        effectiveKapplied
     
     if(debug) print(paste("avoidedKfert ",avoidedKfert))
     
     effectivePapplied <- Feedstock$Phosphorus/1000 * GlobalFactors$P_Availability
     if(debug) print(paste("effectivePapplied ",effectivePapplied))
     MaxP <- effectivePapplied * GlobalFactors$P_Nratio
-    if (effectivePapplied > MaxP) {
-      effectivePapplied <- MaxP
+    for(i in 1:length(effectivePapplied)) {
+        if (effectivePapplied[i] > MaxP[i])effectivePapplied[i] <- MaxP[i]
     }
-    avoidedPfert   <-GlobalFactors$Displaced_P_Production_Factor * 
-      effectivePapplied  
     
-   
+    avoidedPfert   <-GlobalFactors$Displaced_P_Production_Factor * 
+        effectivePapplied  
+    
+    
     
     avoidedInorganicFertdirectandIndirect <- 
-      GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
-      effectiveNapplied/1000
+        GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
+        effectiveNapplied/1000
     if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
                           avoidedInorganicFertdirectandIndirect))
     
     EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect +
-      avoidedPfert + avoidedKfert
+        avoidedPfert + avoidedKfert
     if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
     
     # Add together
@@ -177,9 +178,9 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
                            'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
     
     #If canned goods includes a recovery step to reclaim EMrecycle <- switch(Feedstock$type,
-#     'canned goods', =
-#       , )
-
+    #     'canned goods', =
+    #       , )
+    
     # Add together
     netEmissions <- 
         EMgrind +
@@ -187,7 +188,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
         EMStorage +
         EMNetLandapp 
     # + EMrecycle
-     
+    
     
     result <- data.frame(netEmissions,EMDigester,EMStorage)
     colnames(result) <- c("ADnetEmissions","EMDigester", "EMStorage")
