@@ -6,6 +6,8 @@ addNorms <- function(df,ts) {
     df1
 }
 
+#NOTE: removed LA pathway calcs.
+# Removed all sequesterCarbon = F cases
 getBaselineResults <- function(verbose = FALSE,
                                FSmemfile=NULL,
                                GFmemfile=NULL) {
@@ -30,53 +32,53 @@ getBaselineResults <- function(verbose = FALSE,
     
     o$AD  <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'noDisplace')
     o$ADf <- AnaerobicDigestionTreatmentPathway(f1, g1, Application = 'Fertilizer')
-    o$LA  <- LandApplicationTreatmentPathway(f1, g1, Application = 'noDisplace')
-    o$LAf <- LandApplicationTreatmentPathway(f1, g1, Application = 'Fertilizer')
+#    o$LA  <- LandApplicationTreatmentPathway(f1, g1, Application = 'noDisplace')
+#    o$LAf <- LandApplicationTreatmentPathway(f1, g1, Application = 'Fertilizer')
     o$CM  <- compostTreatmentPathway(f1, g1, Application = 'noDisplace')
     o$CMf <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer')
     o$CMp <- compostTreatmentPathway(f1, g1, Application = 'Peat')
     o$CMb <- compostTreatmentPathway(f1, g1, Application = 'Blended')
     o$LF  <- LandfillTreatmentPathway(f1, g1)
     
-    o$ADNoCS  <- AnaerobicDigestionTreatmentPathway(f1, g1, 
-                                Application = 'noDisplace', sequesterCarbon = F)
-    o$ADfNoCS <- AnaerobicDigestionTreatmentPathway(f1, g1, 
-                                Application = 'Fertilizer', sequesterCarbon = F)
-    o$LANoCS  <- LandApplicationTreatmentPathway(f1, g1, 
-                                Application = 'noDisplace', sequesterCarbon = F)
-    o$LAfNoCS <- LandApplicationTreatmentPathway(f1, g1, 
-                                Application = 'Fertilizer', sequesterCarbon = F)
-    o$CMNoCS  <- compostTreatmentPathway(f1, g1, 
-                                Application = 'noDisplace', sequesterCarbon = F)
-    o$CMfNoCS <- compostTreatmentPathway(f1, g1, 
-                                Application = 'Fertilizer', sequesterCarbon = F)
-    o$CMpNoCS <- compostTreatmentPathway(f1, g1, 
-                                Application = 'Peat', sequesterCarbon = F)
-    o$CMbNoCS <- compostTreatmentPathway(f1, g1,
-                                Application = 'Blended', sequesterCarbon = F)
-    o$LFNoCS  <- LandfillTreatmentPathway(f1, g1, 
-                                sequesterCarbon = F)
+#     o$ADNoCS  <- AnaerobicDigestionTreatmentPathway(f1, g1, 
+#                                 Application = 'noDisplace', sequesterCarbon = F)
+#     o$ADfNoCS <- AnaerobicDigestionTreatmentPathway(f1, g1, 
+#                                 Application = 'Fertilizer', sequesterCarbon = F)
+# #     o$LANoCS  <- LandApplicationTreatmentPathway(f1, g1, 
+# #                                 Application = 'noDisplace', sequesterCarbon = F)
+# #     o$LAfNoCS <- LandApplicationTreatmentPathway(f1, g1, 
+# #                                 Application = 'Fertilizer', sequesterCarbon = F)
+#     o$CMNoCS  <- compostTreatmentPathway(f1, g1, 
+#                                 Application = 'noDisplace', sequesterCarbon = F)
+#     o$CMfNoCS <- compostTreatmentPathway(f1, g1, 
+#                                 Application = 'Fertilizer', sequesterCarbon = F)
+#     o$CMpNoCS <- compostTreatmentPathway(f1, g1, 
+#                                 Application = 'Peat', sequesterCarbon = F)
+#     o$CMbNoCS <- compostTreatmentPathway(f1, g1,
+#                                 Application = 'Blended', sequesterCarbon = F)
+#     o$LFNoCS  <- LandfillTreatmentPathway(f1, g1, 
+#                                 sequesterCarbon = F)
     
-    o$LF  <- addNorms(o$LF,f1$TS)
-    o$CMb <- addNorms(o$CMb,f1$TS)
-    o$CMp <- addNorms(o$CMp,f1$TS)
-    o$CMf <- addNorms(o$CMf,f1$TS)
-    o$CM  <- addNorms(o$CM,f1$TS)
-    o$LAf <- addNorms(o$LAf,f1$TS)
-    o$LA  <- addNorms(o$LA,f1$TS)
-    o$ADf <- addNorms(o$ADf,f1$TS)
-    o$AD  <- addNorms(o$AD,f1$TS)
-    o$AF  <- addNorms(o$AF,f1$TS)
+#     o$LF  <- addNorms(o$LF,f1$TS)
+#     o$CMb <- addNorms(o$CMb,f1$TS)
+#     o$CMp <- addNorms(o$CMp,f1$TS)
+#     o$CMf <- addNorms(o$CMf,f1$TS)
+#     o$CM  <- addNorms(o$CM,f1$TS)
+# #     o$LAf <- addNorms(o$LAf,f1$TS)
+# #     o$LA  <- addNorms(o$LA,f1$TS)
+#     o$ADf <- addNorms(o$ADf,f1$TS)
+#     o$AD  <- addNorms(o$AD,f1$TS)
+#     o$AF  <- addNorms(o$AF,f1$TS)
     
-    o$LFNoCS  <- addNorms(o$LFNoCS,f1$TS)
-    o$CMbNoCS <- addNorms(o$CMbNoCS,f1$TS)
-    o$CMpNoCS <- addNorms(o$CMpNoCS,f1$TS)
-    o$CMfNoCS <- addNorms(o$CMfNoCS,f1$TS)
-    o$CMNoCS  <- addNorms(o$CMNoCS,f1$TS)
-    o$LAfNoCS <- addNorms(o$LAfNoCS,f1$TS)
-    o$LANoCS  <- addNorms(o$LANoCS,f1$TS)
-    o$ADfNoCS <- addNorms(o$ADfNoCS,f1$TS)
-    o$ADNoCS  <- addNorms(o$ADNoCS,f1$TS)
+#     o$LFNoCS  <- addNorms(o$LFNoCS,f1$TS)
+#     o$CMbNoCS <- addNorms(o$CMbNoCS,f1$TS)
+#     o$CMpNoCS <- addNorms(o$CMpNoCS,f1$TS)
+#     o$CMfNoCS <- addNorms(o$CMfNoCS,f1$TS)
+#     o$CMNoCS  <- addNorms(o$CMNoCS,f1$TS)
+#     o$LAfNoCS <- addNorms(o$LAfNoCS,f1$TS)
+#     o$LANoCS  <- addNorms(o$LANoCS,f1$TS)
+#     o$ADfNoCS <- addNorms(o$ADfNoCS,f1$TS)
+#     o$ADNoCS  <- addNorms(o$ADNoCS,f1$TS)
     
     o$f1  <- f1
     o$g1  <- g1
