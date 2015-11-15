@@ -51,8 +51,8 @@ LFstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandfillTreatmentPathwa
 CMstats <- calculateFeedstockMC(fsName=feedstockName,FUN=compostTreatmentPathway)
 CMfstats <- calculateFeedstockMC(fsName=feedstockName,FUN=compostTreatmentPathway, Application = 'Fertilizer')
 CMpstats <- calculateFeedstockMC(fsName=feedstockName,FUN=compostTreatmentPathway, Application = 'Peat')
-LAstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandApplicationTreatmentPathway)
-LAfstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
+# LAstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandApplicationTreatmentPathway)
+# LAfstats <- calculateFeedstockMC(fsName=feedstockName,FUN=LandApplicationTreatmentPathway, Application='Fertilizer')
 #####################################################################
 # Get baselines
 b <- getBaselineResults()
@@ -74,8 +74,8 @@ plotFactorSensitivity(ADfstats,feedstockName,"Bo","ADf")
 plotFactorSensitivity(LFstats,feedstockName,"Bo","LF")
 plotFactorSensitivity(CMfstats,feedstockName,"Bo","CMf")
 plotFactorSensitivity(CMpstats,feedstockName,"Bo","CMp")
-plotFactorSensitivity(LAstats,feedstockName,"Bo","LA")
-plotFactorSensitivity(LAfstats,feedstockName,"Bo","LAf")
+# plotFactorSensitivity(LAstats,feedstockName,"Bo","LA")
+# plotFactorSensitivity(LAfstats,feedstockName,"Bo","LAf")
 
 plotFactorSensitivity(ADstats,feedstockName,"Bo","AD",type="n",ylim=c(10,150))
 plotFactorSensitivity(CMstats,feedstockName,"Bo","CM",type="n",add=TRUE)
