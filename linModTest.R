@@ -101,7 +101,7 @@ points(o$ADf[1], cex=2)
 # plot(CMLMS)
 # coef(CMLMS)
 
-CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC + InitialC : rdeg)# perfect fit! doesn't simplify to InitialC:rdeg
+CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC )
 summary(CMbLM)
 #plot(CMbLM)
 coef(CMbLM)
