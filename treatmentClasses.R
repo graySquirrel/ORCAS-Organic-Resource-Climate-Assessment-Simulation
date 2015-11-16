@@ -39,6 +39,9 @@ GlobalFactors <- function()
         IPCC_EF4 = 0.01,
         DieselspreadLpertkm = 0.30,
         Dieselgrindpert = 2.65,
+        MF_N2O=0.018,
+        MF_NH3=0,
+        MF_ROL= 0.29485,
         
         #Compost
         Compost_dieseLlpert = 3,
