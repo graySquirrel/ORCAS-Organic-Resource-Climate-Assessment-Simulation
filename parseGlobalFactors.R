@@ -37,10 +37,10 @@ getGlobalFactorsFromFile <- function(GFmemfile = NULL,
                         if (doRanges) {
                             if(verbose) print(paste("ranging ",currentName," to ",
                                         numSamps,"samples between",
-                                        r[[i,"Range.Lo"]], "and", r[[i,"Range.High"]]))
+                                        r[[i,"Low"]], "and", r[[i,"High"]]))
                             g1[[r$sw.name[i]]] <- runif(n = numSamps,
-                                                        min = as.numeric(r[[i,"Range.Lo"]]),
-                                                        max = as.numeric(r[[i,"Range.High"]]))}
+                                                        min = as.numeric(r[[i,"Low"]]),
+                                                        max = as.numeric(r[[i,"High"]]))}
                         else {
                             if(verbose) print(paste("setting ",currentName, "from",
                                         currentValue, "to", as.numeric(newValue)))
