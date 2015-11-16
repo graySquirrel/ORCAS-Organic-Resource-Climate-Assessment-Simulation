@@ -60,38 +60,24 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     effectiveKapplied <- Feedstock$Potassium/1000 * GlobalFactors$K_Availability
     effectivePapplied <- Feedstock$Phosphorus/1000 * GlobalFactors$P_Availability
     
-    # Assume displacement of balanced fertilizer set to max nutrient
-    #Nutrient <- Max {effectiveNapplied, effectiveKapplied, effectivePapplied} 
-    
+    # Assume displacement of all available nutrients
     
     EM_displacedFertilizer   <- 
-        GlobalFactors$Displaced_N_Production_Factor * effectiveNapplied +
-        GlobalFactors$Displaced_P_Production_Factor * effectivePapplied +
-        GlobalFactors$Displaced_K_Production_Factor * effectiveKapplied
+        (-GlobalFactors$Displaced_N_Production_Factor) * effectiveNapplied +
+        (-GlobalFactors$Displaced_P_Production_Factor) * effectivePapplied +
+        (-GlobalFactors$Displaced_K_Production_Factor) * effectiveKapplied
     
     if(debug) print(paste("EM_displacedFertilizer ",EM_displacedFertilizer))
     
     
     # Step 4: Displaced peat kgCO2e/Mt
     Compost_mass<- 1000*(1-GlobalFactors$Compost_mass_reduction)
-    EM_displaced_Peat <-GlobalFactors$Peatdisplacementfactor * 
+    EM_displaced_Peat <- (-GlobalFactors$Peatdisplacementfactor) * 
         Compost_mass*GlobalFactors$EF_Peat_kgCO2eperton/1000
     
     
-    #Step 5 Carbon storage
-    if (sequesterCarbon == TRUE) {
-        CompostC <- Feedstock$InitialC * (1-GlobalFactors$CompostPercentCdegraded)
-        CStorage<- CompostC * (GlobalFactors$Compost_CS_factor)
-        #Assuming that the same amount is stored long term as AD degradability test
-        EMCstorage<-CStorage * -44/12
-    } else {
-        EMCstorage <- CStorage <- 0
-    }
-    if(debug) {print(paste("CStorage", (CStorage)))}
-    if(debug) {print(paste("EMCstorage", (EMCstorage)))}
-    
-    # Step 6: Land applied to displace fertilizer in agriculture
-    # Includes differences in emissions and carbon storage relative to commercial fertilizer
+    # Step 5: Land applied to displace fertilizer in agriculture
+   
     #Assumes that fertilizer spreading was similar impact to commercial fertilizer 
     # and thus not included
     # EMspread  <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$Compost_xportToField     # *(GlobalFactors$DieselprovisionkgCO2eperL + 
@@ -100,16 +86,26 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     
     # Nitrous losses relative to commercial fertilizers
     # Direct N2O emissions 
-    EMN2O_CompApp_direct         <- Nremaining * GlobalFactors$Compost_EF1 *
-        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O
+    EMN2O_CompApp_direct  <- Nremaining * 
+      (GlobalFactors$Compost_EF1-GlobalFactors$MF_N2O) *
+      GlobalFactors$N2ON_to_N2O * 
+      GlobalFactors$GWPN2O
     if(debug) print(paste("EMN2O_CompApp_direct ",EMN2O_CompApp_direct))
     # Indirect N2O
-    # NH3 volatilization
-    EMN2O_CompApp_indirectvol       <- Nremaining * GlobalFactors$Compost_FracGasC * 
-        GlobalFactors$IPCC_EF4 * GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
-    # Leaching and Runoff
-    EMN2O_CompApp_indirectLRO <-Nremaining * GlobalFactors$Compost_LRO * 
-        GlobalFactors$IPCC_EF4 * GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
+    
+    # NH3 volatilization compost vs commercial fertilizer
+    EMN2O_CompApp_indirectvol <- Nremaining * 
+      (GlobalFactors$Compost_FracGasC-GlobalFactors$MF_NH3) * 
+      GlobalFactors$IPCC_EF4 * 
+      GlobalFactors$N2ON_to_N2O * 
+      GlobalFactors$GWPN2O / 1000
+    # Leaching and Runoff versus commercial fertilizer
+    EMN2O_CompApp_indirectLRO <-Nremaining * 
+      (GlobalFactors$Compost_LRO-GlobalFactors$MF_ROL) * 
+      GlobalFactors$IPCC_EF4 * 
+      GlobalFactors$N2ON_to_N2O * 
+      GlobalFactors$GWPN2O / 1000
+    
     EMN2O_CompApp_indirect <- EMN2O_CompApp_indirectvol + EMN2O_CompApp_indirectLRO
     
     if(debug) print(paste("EMN2O_CompApp_indirect ",EMN2O_CompApp_indirect))
@@ -131,55 +127,65 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     
     effectiveNappliedLA <- NremainingLA * GlobalFactors$Compost_N_Availability
     
-    #Amount being used to displace fertilzer is N_displacement
-    avoidedNfert    <- GlobalFactors$Displaced_N_Production_Factor * 
-        GlobalFactors$N_displacement * 
-        effectiveNappliedLA
+    # N_displacement is a factor from 0 to 1 to set N fert substitution
+    EMavoidedNfertLA    <- (-GlobalFactors$Displaced_N_Production_Factor) * 
+      effectiveNappliedLA * GlobalFactors$N_displacement 
+       
     
     # Limit nutrient displacement to nutrient requirements based upon ratio to N  
     MaxK <- effectiveNapplied * GlobalFactors$K_Nratio
     for(i in 1:length(effectiveKapplied))
         if (effectiveKapplied[i] > MaxK[i]) effectiveKapplied[i] <- MaxK[i]
     
-    avoidedKfert   <-GlobalFactors$Displaced_K_Production_Factor * 
-        effectiveKapplied
+    EMavoidedKfert   <- (-GlobalFactors$Displaced_K_Production_Factor) * 
+      effectiveKapplied
     
-    if(debug) print(paste("avoidedKfert ",avoidedKfert))
+    if(debug) print(paste("EMavoidedKfert ",EMavoidedKfert))
     
     
     MaxP <- effectivePapplied * GlobalFactors$P_Nratio
     for(i in 1:length(effectivePapplied))
         if (effectivePapplied[i] > MaxP[i]) effectivePapplied[i] <- MaxP[i]
     
-    avoidedPfert   <-GlobalFactors$Displaced_P_Production_Factor * 
+    EMavoidedPfert   <- (-GlobalFactors$Displaced_P_Production_Factor)  * 
         effectivePapplied 
     
-    avoidedInorganicFertdirectandIndirect <- 
-        GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
-        effectiveNapplied
-    if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
-                          avoidedInorganicFertdirectandIndirect))
+    #avoidedInorganicFertdirectandIndirect <- 
+        #GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
+       # effectiveNapplied
+    #if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
+                         # avoidedInorganicFertdirectandIndirect))
     
-    avoidedNfertLA    <- GlobalFactors$Displaced_N_Production_Factor *
-        effectiveNappliedLA
-    EMdisplacedFertilizerLA <- avoidedNfertLA + avoidedInorganicFertdirectandIndirect +
-        avoidedPfert + avoidedKfert
+    
+    EMdisplacedFertilizerLA <- EMavoidedNfertLA + EMavoidedPfert + EMavoidedKfert
+    #+ avoidedInorganicFertdirectandIndirect +
+       
     if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizerLA))
     
+    #Step 5 Carbon storage
+    if (sequesterCarbon == TRUE) {
+      CompostC <- Feedstock$InitialC * (1-GlobalFactors$CompostPercentCdegraded)
+      CStorage<- CompostC * (GlobalFactors$Compost_CS_factor)
+      #Assuming that the same amount is stored long term as AD degradability test
+      EMCstorage<-CStorage * -44/12
+    } else {
+      EMCstorage <- CStorage <- 0
+    }
+    if(debug) {print(paste("CStorage", (CStorage)))}
+    if(debug) {print(paste("EMCstorage", (EMCstorage)))}
     
+    #avoidedInorganicFertdirectandIndirect <- 
+        #GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect * effectiveNappliedLA
     
-    avoidedInorganicFertdirectandIndirect <- 
-        GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect * effectiveNappliedLA
-    
-    EM_displacedFertilizerLA <- avoidedNfertLA + avoidedInorganicFertdirectandIndirect # + EMspread 
-    if(debug) print(paste("displacedFertilizer ",EM_displacedFertilizer))
+#     EM_displacedFertilizerLA <- avoidedNfertLA + avoidedInorganicFertdirectandIndirect # + EMspread 
+    # if(debug) print(paste("displacedFertilizer ",EM_displacedFertilizer))
     
     final <- switch(Application,
                     'noDisplace' = EMCompost,
                     'Fertilizer' = EMCompost + EM_displacedFertilizer,
                     'Peat' = EMCompost + EM_displaced_Peat,
                     'Blended' = EMCompost + 0.21*EM_displaced_Peat + 0.18*EM_displacedFertilizer,
-                    'LAFertilizer' =EMCompost + EM_displacedFertilizerLA)
+                    'LAFertilizer' =EMCompost + EMdisplacedFertilizerLA)
     result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
                          EMBio, EMCstorage,  EM_displaced_Peat, 
                          EM_displacedFertilizer)
