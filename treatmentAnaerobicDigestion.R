@@ -82,9 +82,9 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
   # Application = Application)
   
   # Step 3 Land Application
-  EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$AD_xportTofield*
-    (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-  if(debug) print(paste("EMspread ",EMspread))
+#   EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$AD_xportTofield*
+#     (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
+#   if(debug) print(paste("EMspread ",EMspread))
   
   EMN2O_LandApp_direct         <- Nremaining * 
     (GlobalFactors$LandApplication_EF1 -GlobalFactors$MF_N2O)*
@@ -104,7 +104,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
   if(debug) print(paste("EMN2O_LandApp_indirect ",EMN2O_LandApp_indirect))
   EMN2O_LandApp    <- EMN2O_LandApp_direct + EMN2O_LandApp_indirect
   if(debug) print(paste("EMN2O_LandApp ",EMN2O_LandApp))
-  EMLandApp <- EMspread + EMN2O_LandApp
+  EMLandApp <- EMN2O_LandApp
   if(debug) print(paste("EMLandApp ",EMLandApp))
   
   # Step 4: Carbon Sequestration kgCO2e/MT
