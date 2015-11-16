@@ -19,8 +19,8 @@ getGlobalFactorsFromFile <- function(GFmemfile = NULL,
         currentValue <- g1[[currentName]]
         newUse   <- r[[i,"Use"]]
         newValue <- r[[i,"Value"]]
-        newRangeLo <- r[[i,"Range.Lo"]]
-        newRangeHigh <- r[[i,"Range.High"]]
+        newRangeLo <- r[[i,"Low"]]
+        newRangeHigh <- r[[i,"High"]]
         if (length(currentValue) != 0) {
             #        print(paste("val for: ",r$sw.name[i], " is ", currentValue))
             if(newUse == "Value" && is.na(newValue)) 
