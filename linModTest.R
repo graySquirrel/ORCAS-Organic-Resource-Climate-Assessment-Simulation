@@ -43,13 +43,12 @@ AFLMS <- lm(unlist(o$AF[1]) ~ scaledTS : scaledTDN) # perfect fit!
 #summary(AFLMS)
 #plot(AFLMS)
 coef(AFLMS)
-plot(fitted(AFLMS),xlab="Feedstock",ylab="Animal Feed Emissions")
-points(o$AF[1], cex=2)
+
 
 #ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + InitialC : rdeg) # perfect fit!
 ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS) 
 summary(ADfLM)
-#plot(ADfLM)
+plot(ADfLM)
 coef(ADfLM)
 
 #ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledInitialC : scaledrdeg)
@@ -57,8 +56,7 @@ ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS)
 summary(ADfLMS)
 #plot(ADfLMS)
 coef(ADfLMS)
-plot(fitted(ADfLM),xlab="Feedstock",ylab="Anaerobic Digestion Emissions")
-points(o$ADf[1], cex=2)
+
 
 CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC )
 #summary(CMbLM)
@@ -69,8 +67,7 @@ CMbLMS <- lm(unlist(o$CMb[1]) ~ scalednpert + scaledInitialC)
 #summary(CMbLMS)
 #plot(CMbLMS)
 coef(CMbLMS)
-plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
-points(o$CMb[1], cex=2)
+
 
 y<-unlist(o$LF[1])
 names(y) <- o$f1$type
@@ -80,12 +77,28 @@ LFLM <- lm(y ~ Lo + InitialC)#:rdeg) # perfect fit!
 coef(LFLM)
 
 LFLMS <- lm(unlist(o$LF[1]) ~ scaledLo + scaledInitialC)# : scaledrdeg)
-#summary(LFLMS)
-#plot(LFLMS)
+summary(LFLMS)
+plot(LFLMS)
 coef(LFLMS)
+
+
+plot(fitted(AFLMS),xlab="Feedstock",ylab="Animal Feed Emissions")
+points(o$AF[1], cex=2)
+plot(fitted(ADfLM),xlab="Feedstock",ylab="Anaerobic Digestion Emissions")
+points(o$ADf[1], cex=2)
+plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
+points(o$CMb[1], cex=2)
 plot(fitted(LFLM),xlab="Feedstock",ylab="Landfill Emissions")
 points(y, cex=2)
+mtext("Linear Models fit vs. actual", outer = TRUE, cex = 1.5)
 
-
-mtext("Linear Model fit vs. actual", outer = TRUE, cex = 1.5)
+plot(fitted(AFLMS),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
+lines(c(-600,2500),c(-600,2500))
+plot(fitted(ADfLM),unlist(o$ADf[1]),xlab="fit",ylab="Anaerobic Digestion Emissions")
+lines(c(-600,2500),c(-600,2500))
+plot(fitted(CMbLM),unlist(o$CMb[1]),xlab="fit",ylab="Compost Emissions")
+lines(c(-600,2500),c(-600,2500))
+plot(fitted(LFLM),unlist(y),xlab="fit",ylab="Landfill Emissions")
+lines(c(-600,3500),c(-600,3500))
+mtext("Linear Models fit vs. actual", outer = TRUE, cex = 1.5)
 
