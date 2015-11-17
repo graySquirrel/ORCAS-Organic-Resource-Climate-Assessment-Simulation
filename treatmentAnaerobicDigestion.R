@@ -5,7 +5,7 @@
 #                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
 AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug = F,
-                                               Application = 'noDisplace',
+                                               Application = 'Fertilizer',
                                                sequesterCarbon = TRUE)
 {
   # Step 0: Grinding 
@@ -87,7 +87,7 @@ AnaerobicDigestionTreatmentPathway <- function(Feedstock, GlobalFactors, debug =
 #   if(debug) print(paste("EMspread ",EMspread))
   
   EMN2O_LandApp_direct         <- Nremaining * 
-    (GlobalFactors$LandApplication_EF1 -GlobalFactors$MF_N2O)*
+    (GlobalFactors$LandApplication_EF1 - GlobalFactors$MF_N2O) *
     GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
   if(debug) print(paste("EMN2O_LandApp_direct ",EMN2O_LandApp_direct))
   EMN2Ovol       <- Nremaining * 
