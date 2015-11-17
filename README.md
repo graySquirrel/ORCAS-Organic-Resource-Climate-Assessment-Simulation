@@ -63,7 +63,7 @@ Examples:
                     percentCarboTS = i$PercentCarboTS, 
                     percentLipidTS = i$PercentlipidTS,
                     percentProteinTS = i$PercentproteinTS, 
-                    fdeg = i$fdeg,TDN=i$TDN, 
+                    fdeg = i$fdeg,
                     Phosphorus=i$Phosphorus, Potassium=i$Potassium)  
     g1 <- GlobalFactors()
 ####################################
