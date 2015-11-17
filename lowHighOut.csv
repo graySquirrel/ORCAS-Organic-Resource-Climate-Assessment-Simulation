@@ -1,1 +1,1111 @@
-f1.type,pathway,factorName,nom,outNom,low,outLo,high,outHi,,,Baked goods,AD,AD_CSfactor,0.1,-160.0328486,0.02,-127.7191718,0.14,-176.189687,-48.47051518,0.12,-403.9209598Canned goods,AD,AD_CSfactor,0.1,10.44954161,0.02,13.97561508,0.14,8.68650488,-5.289110199,0.12,-44.07591833Coffee,AD,AD_CSfactor,0.1,23.06799582,0.02,39.10150175,0.14,15.05124285,-24.05025889,0.12,-200.4188241Food waste,AD,AD_CSfactor,0.1,13.76243827,0.02,35.57174887,0.14,2.857782967,-32.7139659,0.12,-272.6163825Fresh produce,AD,AD_CSfactor,0.1,9.478834262,0.02,12.00468748,0.14,8.215907653,-3.788779826,0.12,-31.57316522Post consumer,AD,AD_CSfactor,0.1,-44.4322058,0.02,-24.26311978,0.14,-54.51674881,-30.25362904,0.12,-252.1135753Prep waste,AD,AD_CSfactor,0.1,19.57484716,0.02,27.7827297,0.14,15.47090589,-12.31182381,0.12,-102.5985318Salad mix,AD,AD_CSfactor,0.1,21.47716823,0.02,23.29898499,0.14,20.56625986,-2.732725127,0.12,-22.77270939Sweet dry goods,AD,AD_CSfactor,0.1,-16.88133975,0.02,28.55517684,0.14,-39.59959804,-68.15477488,0.12,-567.9564573Unsweetened dry goods,AD,AD_CSfactor,0.1,41.92436231,0.02,96.80145748,0.14,14.48581472,-82.31564276,0.12,-685.9636896Yogurt and frozen deserts,AD,AD_CSfactor,0.1,-21.67554284,0.02,-11.09971946,0.14,-26.96345452,-15.86373506,0.12,-132.1977922Baked goods,AD,AD_Digester_CH4incompleteCombustion,0.005,-160.0328486,NA,NA,NA,NA,,,Canned goods,AD,AD_Digester_CH4incompleteCombustion,0.005,10.44954161,NA,NA,NA,NA,,,Coffee,AD,AD_Digester_CH4incompleteCombustion,0.005,23.06799582,NA,NA,NA,NA,,,Food waste,AD,AD_Digester_CH4incompleteCombustion,0.005,13.76243827,NA,NA,NA,NA,,,Fresh produce,AD,AD_Digester_CH4incompleteCombustion,0.005,9.478834262,NA,NA,NA,NA,,,Post consumer,AD,AD_Digester_CH4incompleteCombustion,0.005,-44.4322058,NA,NA,NA,NA,,,Prep waste,AD,AD_Digester_CH4incompleteCombustion,0.005,19.57484716,NA,NA,NA,NA,,,Salad mix,AD,AD_Digester_CH4incompleteCombustion,0.005,21.47716823,NA,NA,NA,NA,,,Sweet dry goods,AD,AD_Digester_CH4incompleteCombustion,0.005,-16.88133975,NA,NA,NA,NA,,,Unsweetened dry goods,AD,AD_Digester_CH4incompleteCombustion,0.005,41.92436231,NA,NA,NA,NA,,,Yogurt and frozen deserts,AD,AD_Digester_CH4incompleteCombustion,0.005,-21.67554284,NA,NA,NA,NA,,,Baked goods,AD,AD_Digester_CH4Leaks,0.03,-160.0328486,0,-398.9269219,0.1,397.3866558,,,Canned goods,AD,AD_Digester_CH4Leaks,0.03,10.44954161,0,-13.33842567,0.1,65.95479861,,,Coffee,AD,AD_Digester_CH4Leaks,0.03,23.06799582,0,-37.77127363,0.1,165.0262912,,,Food waste,AD,AD_Digester_CH4Leaks,0.03,13.76243827,0,-37.90114067,0.1,134.3107891,,,Fresh produce,AD,AD_Digester_CH4Leaks,0.03,9.478834262,0,-7.724907219,0.1,49.62089772,,,Post consumer,AD,AD_Digester_CH4Leaks,0.03,-44.4322058,0,-169.6386075,0.1,247.7160648,,,Prep waste,AD,AD_Digester_CH4Leaks,0.03,19.57484716,0,-1.069960227,0.1,67.74606441,,,Salad mix,AD,AD_Digester_CH4Leaks,0.03,21.47716823,0,14.08082053,0.1,38.73531287,,,Sweet dry goods,AD,AD_Digester_CH4Leaks,0.03,-16.88133975,0,-199.5172473,0.1,409.2691113,,,Unsweetened dry goods,AD,AD_Digester_CH4Leaks,0.03,41.92436231,0,-122.7068602,0.1,426.0638815,,,Yogurt and frozen deserts,AD,AD_Digester_CH4Leaks,0.03,-21.67554284,0,-100.3567983,0.1,161.9140533,,,Baked goods,AD,AD_Digester_conversion_KwHPerM3,4.19,-160.0328486,3.2,52.69266037,4.41,-207.3051839,,,Canned goods,AD,AD_Digester_conversion_KwHPerM3,4.19,10.44954161,3.2,31.63176425,4.41,5.742381027,,,Coffee,AD,AD_Digester_conversion_KwHPerM3,4.19,23.06799582,3.2,77.2429043,4.41,11.02912727,,,Food waste,AD,AD_Digester_conversion_KwHPerM3,4.19,13.76243827,3.2,59.7667655,4.41,3.539254437,,,Fresh produce,AD,AD_Digester_conversion_KwHPerM3,4.19,9.478834262,3.2,24.79807016,4.41,6.074559619,,,Post consumer,AD,AD_Digester_conversion_KwHPerM3,4.19,-44.4322058,3.2,67.05903027,4.41,-69.20803604,,,Prep waste,AD,AD_Digester_conversion_KwHPerM3,4.19,19.57484716,3.2,37.95821306,4.41,15.48965474,,,Salad mix,AD,AD_Digester_conversion_KwHPerM3,4.19,21.47716823,3.2,28.06331668,4.41,20.01357969,,,Sweet dry goods,AD,AD_Digester_conversion_KwHPerM3,4.19,-16.88133975,3.2,145.7485483,4.41,-53.02131487,,,Unsweetened dry goods,AD,AD_Digester_conversion_KwHPerM3,4.19,41.92436231,3.2,188.5218066,4.41,9.347152473,,,Yogurt and frozen deserts,AD,AD_Digester_conversion_KwHPerM3,4.19,-21.67554284,3.2,48.38693251,4.41,-37.2449818,,,Baked goods,AD,AD_Digester_parasiticLoad,0.12,-160.0328486,0.1,-180.4947375,0.2,-78.1852928,,,Canned goods,AD,AD_Digester_parasiticLoad,0.12,10.44954161,0.1,8.412041318,0.2,18.59954279,,,Coffee,AD,AD_Digester_parasiticLoad,0.12,23.06799582,0.1,17.85695664,0.2,43.91215252,,,Food waste,AD,AD_Digester_parasiticLoad,0.12,13.76243827,0.1,9.337320473,0.2,31.46290944,,,Fresh produce,AD,AD_Digester_parasiticLoad,0.12,9.478834262,0.1,8.005289762,0.2,15.37301226,,,Post consumer,AD,AD_Digester_parasiticLoad,0.12,-44.4322058,0.1,-55.15645463,0.2,-1.535210473,,,Prep waste,AD,AD_Digester_parasiticLoad,0.12,19.57484716,0.1,17.80656656,0.2,26.64796958,,,Salad mix,AD,AD_Digester_parasiticLoad,0.12,21.47716823,0.1,20.84365212,0.2,24.0112327,,,Sweet dry goods,AD,AD_Digester_parasiticLoad,0.12,-16.88133975,0.1,-32.52457278,0.2,45.69159237,,,Unsweetened dry goods,AD,AD_Digester_parasiticLoad,0.12,41.92436231,0.1,27.82327665,0.2,98.32870496,,,Yogurt and frozen deserts,AD,AD_Digester_parasiticLoad,0.12,-21.67554284,0.1,-28.41479379,0.2,5.281460992,,,Baked goods,AD,AD_flared,0.03,-160.0328486,0.02,-169.2587266,0.12,-76.99994599,,,Canned goods,AD,AD_flared,0.03,10.44954161,0.02,9.530871332,0.12,18.71757415,,,Coffee,AD,AD_flared,0.03,23.06799582,0.02,20.71843698,0.12,44.21402537,,,Food waste,AD,AD_flared,0.03,13.76243827,0.02,11.76723649,0.12,31.71925426,,,Fresh produce,AD,AD_flared,0.03,9.478834262,0.02,8.814440964,0.12,15.45837394,,,Post consumer,AD,AD_flared,0.03,-44.4322058,0.02,-49.26756642,0.12,-0.913960199,,,Prep waste,AD,AD_flared,0.03,19.57484716,0.02,18.77756294,0.12,26.75040517,,,Salad mix,AD,AD_flared,0.03,21.47716823,0.02,21.19152782,0.12,24.04793196,,,Sweet dry goods,AD,AD_flared,0.03,-16.88133975,0.02,-23.93457716,0.12,46.5977969,,,Unsweetened dry goods,AD,AD_flared,0.03,41.92436231,0.02,35.56644994,0.12,99.14557367,,,Yogurt and frozen deserts,AD,AD_flared,0.03,-21.67554284,0.02,-24.71414341,0.12,5.671862368,,,Baked goods,AD,AD_MCFactor,0.9,-160.0328486,0.7,-39.86195212,1,-220.1182968,,,Canned goods,AD,AD_MCFactor,0.9,10.44954161,0.7,22.41560387,1,4.466510485,,,Coffee,AD,AD_MCFactor,0.9,23.06799582,0.7,53.67197627,1,7.766005591,,,Food waste,AD,AD_MCFactor,0.9,13.76243827,0.7,39.75077071,1,0.768272047,,,Fresh produce,AD,AD_MCFactor,0.9,9.478834262,0.7,18.13283312,1,5.151834835,,,Post consumer,AD,AD_MCFactor,0.9,-44.4322058,0.7,18.55037608,1,-75.92349674,,,Prep waste,AD,AD_MCFactor,0.9,19.57484716,0.7,29.95980556,1,14.38236797,,,Salad mix,AD,AD_MCFactor,0.9,21.47716823,0.7,25.19775335,1,19.61687568,,,Sweet dry goods,AD,AD_MCFactor,0.9,-16.88133975,0.7,74.99000907,1,-62.81701416,,,Unsweetened dry goods,AD,AD_MCFactor,0.9,41.92436231,0.7,124.7388136,1,0.51713667,,,Yogurt and frozen deserts,AD,AD_MCFactor,0.9,-21.67554284,0.7,17.90349266,1,-41.46506059,,,Baked goods,AD,AD_reductionInVS,0.55,-160.0328486,0.4,-22.42582518,0.7,-297.639872,,,Canned goods,AD,AD_reductionInVS,0.55,10.44954161,0.4,25.06320237,0.7,-4.164119142,,,Coffee,AD,AD_reductionInVS,0.55,23.06799582,0.4,67.71366162,0.7,-21.57766999,,,Food waste,AD,AD_reductionInVS,0.55,13.76243827,0.4,55.19351302,0.7,-27.66863648,,,Fresh produce,AD,AD_reductionInVS,0.55,9.478834262,0.4,20.50272256,0.7,-1.545054039,,,Post consumer,AD,AD_reductionInVS,0.55,-44.4322058,0.4,25.00105823,0.7,-113.8654698,,,Prep waste,AD,AD_reductionInVS,0.55,19.57484716,0.4,41.51797194,0.7,-2.368277612,,,Salad mix,AD,AD_reductionInVS,0.55,21.47716823,0.4,26.76009061,0.7,16.19424586,,,Sweet dry goods,AD,AD_reductionInVS,0.55,-16.88133975,0.4,118.2530157,0.7,-152.0156952,,,Unsweetened dry goods,AD,AD_reductionInVS,0.55,41.92436231,0.4,180.5914074,0.7,-96.74268281,,,Yogurt and frozen deserts,AD,AD_reductionInVS,0.55,-21.67554284,0.4,24.74429366,0.7,-68.09537933,,,Baked goods,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,-160.0328486,0.004,-542.2745802,0.074,-7.136155917,,,Canned goods,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,10.44954161,0.004,-30.14396048,0.074,26.68694245,,,Coffee,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,23.06799582,0.004,-100.9477425,0.074,72.67429116,,,Food waste,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,13.76243827,0.004,-101.3238805,0.074,59.79696577,,,Fresh produce,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,9.478834262,0.004,-21.14307768,0.074,21.72759904,,,Post consumer,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,-44.4322058,0.004,-237.3023837,0.074,32.71586535,,,Prep waste,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,19.57484716,0.004,-41.37827721,0.074,43.95609691,,,Salad mix,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,21.47716823,0.004,6.802383857,0.074,27.34708199,,,Sweet dry goods,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,-16.88133975,0.004,-392.2545494,0.074,133.2679441,,,Unsweetened dry goods,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,41.92436231,0.004,-343.2618741,0.074,195.9988569,,,Yogurt and frozen deserts,AD,AD_Storage_EFresidualMethaneM3CH4PerKgVS,0.054,-21.67554284,0.004,-150.6195331,0.074,29.90205327,,,Baked goods,AD,AD_Storage_IPCC_EF3,0.005,-160.0328486,0.0025,-175.0695513,0.01,-129.9594432,,,Canned goods,AD,AD_Storage_IPCC_EF3,0.005,10.44954161,0.0025,7.864082363,0.01,15.62046011,,,Coffee,AD,AD_Storage_IPCC_EF3,0.005,23.06799582,0.0025,14.89096795,0.01,39.42205155,,,Food waste,AD,AD_Storage_IPCC_EF3,0.005,13.76243827,0.0025,8.016973267,0.01,25.25336827,,,Fresh produce,AD,AD_Storage_IPCC_EF3,0.005,9.478834262,0.0025,8.214831962,0.01,12.00683886,,,Post consumer,AD,AD_Storage_IPCC_EF3,0.005,-44.4322058,0.0025,-58.20182826,0.01,-16.89296088,,,Prep waste,AD,AD_Storage_IPCC_EF3,0.005,19.57484716,0.0025,19.1049502,0.01,20.51464108,,,Salad mix,AD,AD_Storage_IPCC_EF3,0.005,21.47716823,0.0025,20.04285394,0.01,24.34579683,,,Sweet dry goods,AD,AD_Storage_IPCC_EF3,0.005,-16.88133975,0.0025,-33.62013644,0.01,16.59625363,,,Unsweetened dry goods,AD,AD_Storage_IPCC_EF3,0.005,41.92436231,0.0025,23.72252399,0.01,78.32803894,,,Yogurt and frozen deserts,AD,AD_Storage_IPCC_EF3,0.005,-21.67554284,0.0025,-28.77734797,0.01,-7.471932576,,,Baked goods,AD,AD_Storage_IPCC_FracGasMS,0.26,-160.0328486,0.05,-154.2653462,0.5,-166.6242799,,,Canned goods,AD,AD_Storage_IPCC_FracGasMS,0.26,10.44954161,0.05,11.44122461,0.5,9.316189613,,,Coffee,AD,AD_Storage_IPCC_FracGasMS,0.26,23.06799582,0.05,26.20439007,0.5,19.48354525,,,Food waste,AD,AD_Storage_IPCC_FracGasMS,0.26,13.76243827,0.05,15.96617827,0.5,11.24387827,,,Fresh produce,AD,AD_Storage_IPCC_FracGasMS,0.26,9.478834262,0.05,9.963657062,0.5,8.924751062,,,Post consumer,AD,AD_Storage_IPCC_FracGasMS,0.26,-44.4322058,0.05,-39.15070678,0.5,-50.46820469,,,Prep waste,AD,AD_Storage_IPCC_FracGasMS,0.26,19.57484716,0.05,19.75508161,0.5,19.36886493,,,Salad mix,AD,AD_Storage_IPCC_FracGasMS,0.26,21.47716823,0.05,22.02731618,0.5,20.84842772,,,Sweet dry goods,AD,AD_Storage_IPCC_FracGasMS,0.26,-16.88133975,0.05,-10.46097938,0.5,-24.21889447,,,Unsweetened dry goods,AD,AD_Storage_IPCC_FracGasMS,0.26,41.92436231,0.05,48.90588933,0.5,33.94547428,,,Yogurt and frozen deserts,AD,AD_Storage_IPCC_FracGasMS,0.26,-21.67554284,0.05,-18.95156279,0.5,-24.78866289,,,Baked goods,AD,AD_xportTofield,10,-160.0328486,10,-160.0328486,30,-141.0128486,,,Canned goods,AD,AD_xportTofield,10,10.44954161,10,10.44954161,30,29.46954161,,,Coffee,AD,AD_xportTofield,10,23.06799582,10,23.06799582,30,42.08799582,,,Food waste,AD,AD_xportTofield,10,13.76243827,10,13.76243827,30,32.78243827,,,Fresh produce,AD,AD_xportTofield,10,9.478834262,10,9.478834262,30,28.49883426,,,Post consumer,AD,AD_xportTofield,10,-44.4322058,10,-44.4322058,30,-25.4122058,,,Prep waste,AD,AD_xportTofield,10,19.57484716,10,19.57484716,30,38.59484716,,,Salad mix,AD,AD_xportTofield,10,21.47716823,10,21.47716823,30,40.49716823,,,Sweet dry goods,AD,AD_xportTofield,10,-16.88133975,10,-16.88133975,30,2.138660249,,,Unsweetened dry goods,AD,AD_xportTofield,10,41.92436231,10,41.92436231,30,60.94436231,,,Yogurt and frozen deserts,AD,AD_xportTofield,10,-21.67554284,10,-21.67554284,30,-2.655542836,,,Baked goods,AD,DieselcombustionkgCO2eperL,2.72,-160.0328486,NA,NA,NA,NA,,,Canned goods,AD,DieselcombustionkgCO2eperL,2.72,10.44954161,NA,NA,NA,NA,,,Coffee,AD,DieselcombustionkgCO2eperL,2.72,23.06799582,NA,NA,NA,NA,,,Food waste,AD,DieselcombustionkgCO2eperL,2.72,13.76243827,NA,NA,NA,NA,,,Fresh produce,AD,DieselcombustionkgCO2eperL,2.72,9.478834262,NA,NA,NA,NA,,,Post consumer,AD,DieselcombustionkgCO2eperL,2.72,-44.4322058,NA,NA,NA,NA,,,Prep waste,AD,DieselcombustionkgCO2eperL,2.72,19.57484716,NA,NA,NA,NA,,,Salad mix,AD,DieselcombustionkgCO2eperL,2.72,21.47716823,NA,NA,NA,NA,,,Sweet dry goods,AD,DieselcombustionkgCO2eperL,2.72,-16.88133975,NA,NA,NA,NA,,,Unsweetened dry goods,AD,DieselcombustionkgCO2eperL,2.72,41.92436231,NA,NA,NA,NA,,,Yogurt and frozen deserts,AD,DieselcombustionkgCO2eperL,2.72,-21.67554284,NA,NA,NA,NA,,,Baked goods,AD,Dieselgrindpert,2.65,-160.0328486,2.5,-160.5083486,3.3,-157.9723486,,,Canned goods,AD,Dieselgrindpert,2.65,10.44954161,2.5,9.974041613,3.3,12.51004161,,,Coffee,AD,Dieselgrindpert,2.65,23.06799582,2.5,22.59249582,3.3,25.12849582,,,Food waste,AD,Dieselgrindpert,2.65,13.76243827,2.5,13.28693827,3.3,15.82293827,,,Fresh produce,AD,Dieselgrindpert,2.65,9.478834262,2.5,9.003334262,3.3,11.53933426,,,Post consumer,AD,Dieselgrindpert,2.65,-44.4322058,2.5,-44.9077058,3.3,-42.3717058,,,Prep waste,AD,Dieselgrindpert,2.65,19.57484716,2.5,19.09934716,3.3,21.63534716,,,Salad mix,AD,Dieselgrindpert,2.65,21.47716823,2.5,21.00166823,3.3,23.53766823,,,Sweet dry goods,AD,Dieselgrindpert,2.65,-16.88133975,2.5,-17.35683975,3.3,-14.82083975,,,Unsweetened dry goods,AD,Dieselgrindpert,2.65,41.92436231,2.5,41.44886231,3.3,43.98486231,,,Yogurt and frozen deserts,AD,Dieselgrindpert,2.65,-21.67554284,2.5,-22.15104284,3.3,-19.61504284,,,Baked goods,AD,DieselprovisionkgCO2eperL,0.45,-160.0328486,0.4,-160.3153486,0.5,-159.7503486,,,Canned goods,AD,DieselprovisionkgCO2eperL,0.45,10.44954161,0.4,10.16704161,0.5,10.73204161,,,Coffee,AD,DieselprovisionkgCO2eperL,0.45,23.06799582,0.4,22.78549582,0.5,23.35049582,,,Food waste,AD,DieselprovisionkgCO2eperL,0.45,13.76243827,0.4,13.47993827,0.5,14.04493827,,,Fresh produce,AD,DieselprovisionkgCO2eperL,0.45,9.478834262,0.4,9.196334262,0.5,9.761334262,,,Post consumer,AD,DieselprovisionkgCO2eperL,0.45,-44.4322058,0.4,-44.7147058,0.5,-44.1497058,,,Prep waste,AD,DieselprovisionkgCO2eperL,0.45,19.57484716,0.4,19.29234716,0.5,19.85734716,,,Salad mix,AD,DieselprovisionkgCO2eperL,0.45,21.47716823,0.4,21.19466823,0.5,21.75966823,,,Sweet dry goods,AD,DieselprovisionkgCO2eperL,0.45,-16.88133975,0.4,-17.16383975,0.5,-16.59883975,,,Unsweetened dry goods,AD,DieselprovisionkgCO2eperL,0.45,41.92436231,0.4,41.64186231,0.5,42.20686231,,,Yogurt and frozen deserts,AD,DieselprovisionkgCO2eperL,0.45,-21.67554284,0.4,-21.95804284,0.5,-21.39304284,,,Baked goods,AD,DieselspreadLpertkm,0.3,-160.0328486,0.3,-160.0328486,0.6,-150.5228486,,,Canned goods,AD,DieselspreadLpertkm,0.3,10.44954161,0.3,10.44954161,0.6,19.95954161,,,Coffee,AD,DieselspreadLpertkm,0.3,23.06799582,0.3,23.06799582,0.6,32.57799582,,,Food waste,AD,DieselspreadLpertkm,0.3,13.76243827,0.3,13.76243827,0.6,23.27243827,,,Fresh produce,AD,DieselspreadLpertkm,0.3,9.478834262,0.3,9.478834262,0.6,18.98883426,,,Post consumer,AD,DieselspreadLpertkm,0.3,-44.4322058,0.3,-44.4322058,0.6,-34.9222058,,,Prep waste,AD,DieselspreadLpertkm,0.3,19.57484716,0.3,19.57484716,0.6,29.08484716,,,Salad mix,AD,DieselspreadLpertkm,0.3,21.47716823,0.3,21.47716823,0.6,30.98716823,,,Sweet dry goods,AD,DieselspreadLpertkm,0.3,-16.88133975,0.3,-16.88133975,0.6,-7.371339751,,,Unsweetened dry goods,AD,DieselspreadLpertkm,0.3,41.92436231,0.3,41.92436231,0.6,51.43436231,,,Yogurt and frozen deserts,AD,DieselspreadLpertkm,0.3,-21.67554284,0.3,-21.67554284,0.6,-12.16554284,,,Baked goods,AD,EF_Peat_kgCO2eperton,-388,-160.0328486,-1197,-160.0328486,-550,-160.0328486,,,Canned goods,AD,EF_Peat_kgCO2eperton,-388,10.44954161,-1197,10.44954161,-550,10.44954161,,,Coffee,AD,EF_Peat_kgCO2eperton,-388,23.06799582,-1197,23.06799582,-550,23.06799582,,,Food waste,AD,EF_Peat_kgCO2eperton,-388,13.76243827,-1197,13.76243827,-550,13.76243827,,,Fresh produce,AD,EF_Peat_kgCO2eperton,-388,9.478834262,-1197,9.478834262,-550,9.478834262,,,Post consumer,AD,EF_Peat_kgCO2eperton,-388,-44.4322058,-1197,-44.4322058,-550,-44.4322058,,,Prep waste,AD,EF_Peat_kgCO2eperton,-388,19.57484716,-1197,19.57484716,-550,19.57484716,,,Salad mix,AD,EF_Peat_kgCO2eperton,-388,21.47716823,-1197,21.47716823,-550,21.47716823,,,Sweet dry goods,AD,EF_Peat_kgCO2eperton,-388,-16.88133975,-1197,-16.88133975,-550,-16.88133975,,,Unsweetened dry goods,AD,EF_Peat_kgCO2eperton,-388,41.92436231,-1197,41.92436231,-550,41.92436231,,,Yogurt and frozen deserts,AD,EF_Peat_kgCO2eperton,-388,-21.67554284,-1197,-21.67554284,-550,-21.67554284,,,Baked goods,AD,EFGrid,-692.15,-160.0328486,-918.79,-454.8377759,-537.18,41.54639424,,,Canned goods,AD,EFGrid,-692.15,10.44954161,-918.79,-18.90577001,-537.18,30.52187061,,,Coffee,AD,EFGrid,-692.15,23.06799582,-918.79,-52.01011794,-537.18,74.4042793,,,Food waste,AD,EFGrid,-692.15,13.76243827,-918.79,-49.99250309,-537.18,57.35625782,,,Fresh produce,AD,EFGrid,-692.15,9.478834262,-918.79,-11.75127701,-537.18,23.99538184,,,Post consumer,AD,EFGrid,-692.15,-44.4322058,-918.79,-198.9419584,-537.18,61.21717804,,,Prep waste,AD,EFGrid,-692.15,19.57484716,-918.79,-5.901678307,-537.18,36.99497226,,,Salad mix,AD,EFGrid,-692.15,21.47716823,-918.79,12.34977668,-537.18,27.71821955,,,Sweet dry goods,AD,EFGrid,-692.15,-16.88133975,-918.79,-242.2614202,-537.18,137.227163,,,Unsweetened dry goods,AD,EFGrid,-692.15,41.92436231,-918.79,-161.2372102,-537.18,180.8404799,,,Yogurt and frozen deserts,AD,EFGrid,-692.15,-21.67554284,-918.79,-118.7713874,-537.18,44.71584012,,,Baked goods,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,-160.0328486,-13,-160.0328486,-4.7,-160.0328486,,,Canned goods,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,10.44954161,-13,10.44954161,-4.7,10.44954161,,,Coffee,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,23.06799582,-13,23.06799582,-4.7,23.06799582,,,Food waste,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,13.76243827,-13,13.76243827,-4.7,13.76243827,,,Fresh produce,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,9.478834262,-13,9.478834262,-4.7,9.478834262,,,Post consumer,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,-44.4322058,-13,-44.4322058,-4.7,-44.4322058,,,Prep waste,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,19.57484716,-13,19.57484716,-4.7,19.57484716,,,Salad mix,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,21.47716823,-13,21.47716823,-4.7,21.47716823,,,Sweet dry goods,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,-16.88133975,-13,-16.88133975,-4.7,-16.88133975,,,Unsweetened dry goods,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,41.92436231,-13,41.92436231,-4.7,41.92436231,,,Yogurt and frozen deserts,AD,LA_DisplacedFertilizer_Production_Factor,-6.8,-21.67554284,-13,-21.67554284,-4.7,-21.67554284,,,Baked goods,AD,N_availabilityfactor,0.4,-160.0328486,0.2,-160.0328486,0.6,-160.0328486,,,Canned goods,AD,N_availabilityfactor,0.4,10.44954161,0.2,10.44954161,0.6,10.44954161,,,Coffee,AD,N_availabilityfactor,0.4,23.06799582,0.2,23.06799582,0.6,23.06799582,,,Food waste,AD,N_availabilityfactor,0.4,13.76243827,0.2,13.76243827,0.6,13.76243827,,,Fresh produce,AD,N_availabilityfactor,0.4,9.478834262,0.2,9.478834262,0.6,9.478834262,,,Post consumer,AD,N_availabilityfactor,0.4,-44.4322058,0.2,-44.4322058,0.6,-44.4322058,,,Prep waste,AD,N_availabilityfactor,0.4,19.57484716,0.2,19.57484716,0.6,19.57484716,,,Salad mix,AD,N_availabilityfactor,0.4,21.47716823,0.2,21.47716823,0.6,21.47716823,,,Sweet dry goods,AD,N_availabilityfactor,0.4,-16.88133975,0.2,-16.88133975,0.6,-16.88133975,,,Unsweetened dry goods,AD,N_availabilityfactor,0.4,41.92436231,0.2,41.92436231,0.6,41.92436231,,,Yogurt and frozen deserts,AD,N_availabilityfactor,0.4,-21.67554284,0.2,-21.67554284,0.6,-21.67554284,,,Baked goods,AF,AF_loss,0.1,-560.898595,0.05,-592.0596281,0.5,-311.6103306,,,Canned goods,AF,AF_loss,0.1,-50.56921488,0.05,-53.3786157,0.5,-28.09400826,,,Coffee,AF,AF_loss,0.1,-40.3177686,0.05,-42.55764463,0.5,-22.39876033,,,Food waste,AF,AF_loss,0.1,-165.1239669,0.05,-174.2975207,0.5,-91.73553719,,,Fresh produce,AF,AF_loss,0.1,-37.08409091,0.05,-39.14431818,0.5,-20.60227273,,,Post consumer,AF,AF_loss,0.1,-256.492562,0.05,-270.7421488,0.5,-142.4958678,,,Prep waste,AF,AF_loss,0.1,-63.95113636,0.05,-67.50397727,0.5,-35.52840909,,,Salad mix,AF,AF_loss,0.1,-13.33376033,0.05,-14.07452479,0.5,-7.407644628,,,Sweet dry goods,AF,AF_loss,0.1,-510.2330579,0.05,-538.5793388,0.5,-283.4628099,,,Unsweetened dry goods,AF,AF_loss,0.1,-470.4381818,0.05,-496.5736364,0.5,-261.3545455,,,Yogurt and frozen deserts,AF,AF_loss,0.1,-197.7153099,0.05,-208.6994938,0.5,-109.8418388,,,Baked goods,AF,DieselcombustionkgCO2eperL,2.72,-560.898595,NA,-560.898595,NA,-560.898595,,,Canned goods,AF,DieselcombustionkgCO2eperL,2.72,-50.56921488,NA,-50.56921488,NA,-50.56921488,,,Coffee,AF,DieselcombustionkgCO2eperL,2.72,-40.3177686,NA,-40.3177686,NA,-40.3177686,,,Food waste,AF,DieselcombustionkgCO2eperL,2.72,-165.1239669,NA,-165.1239669,NA,-165.1239669,,,Fresh produce,AF,DieselcombustionkgCO2eperL,2.72,-37.08409091,NA,-37.08409091,NA,-37.08409091,,,Post consumer,AF,DieselcombustionkgCO2eperL,2.72,-256.492562,NA,-256.492562,NA,-256.492562,,,Prep waste,AF,DieselcombustionkgCO2eperL,2.72,-63.95113636,NA,-63.95113636,NA,-63.95113636,,,Salad mix,AF,DieselcombustionkgCO2eperL,2.72,-13.33376033,NA,-13.33376033,NA,-13.33376033,,,Sweet dry goods,AF,DieselcombustionkgCO2eperL,2.72,-510.2330579,NA,-510.2330579,NA,-510.2330579,,,Unsweetened dry goods,AF,DieselcombustionkgCO2eperL,2.72,-470.4381818,NA,-470.4381818,NA,-470.4381818,,,Yogurt and frozen deserts,AF,DieselcombustionkgCO2eperL,2.72,-197.7153099,NA,-197.7153099,NA,-197.7153099,,,Baked goods,AF,Dieselgrindpert,2.65,-560.898595,2.5,-560.898595,3.3,-560.898595,,,Canned goods,AF,Dieselgrindpert,2.65,-50.56921488,2.5,-50.56921488,3.3,-50.56921488,,,Coffee,AF,Dieselgrindpert,2.65,-40.3177686,2.5,-40.3177686,3.3,-40.3177686,,,Food waste,AF,Dieselgrindpert,2.65,-165.1239669,2.5,-165.1239669,3.3,-165.1239669,,,Fresh produce,AF,Dieselgrindpert,2.65,-37.08409091,2.5,-37.08409091,3.3,-37.08409091,,,Post consumer,AF,Dieselgrindpert,2.65,-256.492562,2.5,-256.492562,3.3,-256.492562,,,Prep waste,AF,Dieselgrindpert,2.65,-63.95113636,2.5,-63.95113636,3.3,-63.95113636,,,Salad mix,AF,Dieselgrindpert,2.65,-13.33376033,2.5,-13.33376033,3.3,-13.33376033,,,Sweet dry goods,AF,Dieselgrindpert,2.65,-510.2330579,2.5,-510.2330579,3.3,-510.2330579,,,Unsweetened dry goods,AF,Dieselgrindpert,2.65,-470.4381818,2.5,-470.4381818,3.3,-470.4381818,,,Yogurt and frozen deserts,AF,Dieselgrindpert,2.65,-197.7153099,2.5,-197.7153099,3.3,-197.7153099,,,Baked goods,AF,DieselprovisionkgCO2eperL,0.45,-560.898595,0.4,-560.898595,0.5,-560.898595,,,Canned goods,AF,DieselprovisionkgCO2eperL,0.45,-50.56921488,0.4,-50.56921488,0.5,-50.56921488,,,Coffee,AF,DieselprovisionkgCO2eperL,0.45,-40.3177686,0.4,-40.3177686,0.5,-40.3177686,,,Food waste,AF,DieselprovisionkgCO2eperL,0.45,-165.1239669,0.4,-165.1239669,0.5,-165.1239669,,,Fresh produce,AF,DieselprovisionkgCO2eperL,0.45,-37.08409091,0.4,-37.08409091,0.5,-37.08409091,,,Post consumer,AF,DieselprovisionkgCO2eperL,0.45,-256.492562,0.4,-256.492562,0.5,-256.492562,,,Prep waste,AF,DieselprovisionkgCO2eperL,0.45,-63.95113636,0.4,-63.95113636,0.5,-63.95113636,,,Salad mix,AF,DieselprovisionkgCO2eperL,0.45,-13.33376033,0.4,-13.33376033,0.5,-13.33376033,,,Sweet dry goods,AF,DieselprovisionkgCO2eperL,0.45,-510.2330579,0.4,-510.2330579,0.5,-510.2330579,,,Unsweetened dry goods,AF,DieselprovisionkgCO2eperL,0.45,-470.4381818,0.4,-470.4381818,0.5,-470.4381818,,,Yogurt and frozen deserts,AF,DieselprovisionkgCO2eperL,0.45,-197.7153099,0.4,-197.7153099,0.5,-197.7153099,,,Baked goods,AF,DieselspreadLpertkm,0.3,-560.898595,0.3,-560.898595,0.6,-560.898595,,,Canned goods,AF,DieselspreadLpertkm,0.3,-50.56921488,0.3,-50.56921488,0.6,-50.56921488,,,Coffee,AF,DieselspreadLpertkm,0.3,-40.3177686,0.3,-40.3177686,0.6,-40.3177686,,,Food waste,AF,DieselspreadLpertkm,0.3,-165.1239669,0.3,-165.1239669,0.6,-165.1239669,,,Fresh produce,AF,DieselspreadLpertkm,0.3,-37.08409091,0.3,-37.08409091,0.6,-37.08409091,,,Post consumer,AF,DieselspreadLpertkm,0.3,-256.492562,0.3,-256.492562,0.6,-256.492562,,,Prep waste,AF,DieselspreadLpertkm,0.3,-63.95113636,0.3,-63.95113636,0.6,-63.95113636,,,Salad mix,AF,DieselspreadLpertkm,0.3,-13.33376033,0.3,-13.33376033,0.6,-13.33376033,,,Sweet dry goods,AF,DieselspreadLpertkm,0.3,-510.2330579,0.3,-510.2330579,0.6,-510.2330579,,,Unsweetened dry goods,AF,DieselspreadLpertkm,0.3,-470.4381818,0.3,-470.4381818,0.6,-470.4381818,,,Yogurt and frozen deserts,AF,DieselspreadLpertkm,0.3,-197.7153099,0.3,-197.7153099,0.6,-197.7153099,,,Baked goods,AF,EF_Peat_kgCO2eperton,-388,-560.898595,-1197,-560.898595,-550,-560.898595,,,Canned goods,AF,EF_Peat_kgCO2eperton,-388,-50.56921488,-1197,-50.56921488,-550,-50.56921488,,,Coffee,AF,EF_Peat_kgCO2eperton,-388,-40.3177686,-1197,-40.3177686,-550,-40.3177686,,,Food waste,AF,EF_Peat_kgCO2eperton,-388,-165.1239669,-1197,-165.1239669,-550,-165.1239669,,,Fresh produce,AF,EF_Peat_kgCO2eperton,-388,-37.08409091,-1197,-37.08409091,-550,-37.08409091,,,Post consumer,AF,EF_Peat_kgCO2eperton,-388,-256.492562,-1197,-256.492562,-550,-256.492562,,,Prep waste,AF,EF_Peat_kgCO2eperton,-388,-63.95113636,-1197,-63.95113636,-550,-63.95113636,,,Salad mix,AF,EF_Peat_kgCO2eperton,-388,-13.33376033,-1197,-13.33376033,-550,-13.33376033,,,Sweet dry goods,AF,EF_Peat_kgCO2eperton,-388,-510.2330579,-1197,-510.2330579,-550,-510.2330579,,,Unsweetened dry goods,AF,EF_Peat_kgCO2eperton,-388,-470.4381818,-1197,-470.4381818,-550,-470.4381818,,,Yogurt and frozen deserts,AF,EF_Peat_kgCO2eperton,-388,-197.7153099,-1197,-197.7153099,-550,-197.7153099,,,Baked goods,AF,EFGrid,-692.15,-560.898595,-918.79,-560.898595,-537.18,-560.898595,,,Canned goods,AF,EFGrid,-692.15,-50.56921488,-918.79,-50.56921488,-537.18,-50.56921488,,,Coffee,AF,EFGrid,-692.15,-40.3177686,-918.79,-40.3177686,-537.18,-40.3177686,,,Food waste,AF,EFGrid,-692.15,-165.1239669,-918.79,-165.1239669,-537.18,-165.1239669,,,Fresh produce,AF,EFGrid,-692.15,-37.08409091,-918.79,-37.08409091,-537.18,-37.08409091,,,Post consumer,AF,EFGrid,-692.15,-256.492562,-918.79,-256.492562,-537.18,-256.492562,,,Prep waste,AF,EFGrid,-692.15,-63.95113636,-918.79,-63.95113636,-537.18,-63.95113636,,,Salad mix,AF,EFGrid,-692.15,-13.33376033,-918.79,-13.33376033,-537.18,-13.33376033,,,Sweet dry goods,AF,EFGrid,-692.15,-510.2330579,-918.79,-510.2330579,-537.18,-510.2330579,,,Unsweetened dry goods,AF,EFGrid,-692.15,-470.4381818,-918.79,-470.4381818,-537.18,-470.4381818,,,Yogurt and frozen deserts,AF,EFGrid,-692.15,-197.7153099,-918.79,-197.7153099,-537.18,-197.7153099,,,Baked goods,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-560.898595,-13,-560.898595,-4.7,-560.898595,,,Canned goods,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-50.56921488,-13,-50.56921488,-4.7,-50.56921488,,,Coffee,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-40.3177686,-13,-40.3177686,-4.7,-40.3177686,,,Food waste,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-165.1239669,-13,-165.1239669,-4.7,-165.1239669,,,Fresh produce,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-37.08409091,-13,-37.08409091,-4.7,-37.08409091,,,Post consumer,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-256.492562,-13,-256.492562,-4.7,-256.492562,,,Prep waste,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-63.95113636,-13,-63.95113636,-4.7,-63.95113636,,,Salad mix,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-13.33376033,-13,-13.33376033,-4.7,-13.33376033,,,Sweet dry goods,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-510.2330579,-13,-510.2330579,-4.7,-510.2330579,,,Unsweetened dry goods,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-470.4381818,-13,-470.4381818,-4.7,-470.4381818,,,Yogurt and frozen deserts,AF,LA_DisplacedFertilizer_Production_Factor,-6.8,-197.7153099,-13,-197.7153099,-4.7,-197.7153099,,,Baked goods,AF,N_availabilityfactor,0.4,-560.898595,0.2,-560.898595,0.6,-560.898595,,,Canned goods,AF,N_availabilityfactor,0.4,-50.56921488,0.2,-50.56921488,0.6,-50.56921488,,,Coffee,AF,N_availabilityfactor,0.4,-40.3177686,0.2,-40.3177686,0.6,-40.3177686,,,Food waste,AF,N_availabilityfactor,0.4,-165.1239669,0.2,-165.1239669,0.6,-165.1239669,,,Fresh produce,AF,N_availabilityfactor,0.4,-37.08409091,0.2,-37.08409091,0.6,-37.08409091,,,Post consumer,AF,N_availabilityfactor,0.4,-256.492562,0.2,-256.492562,0.6,-256.492562,,,Prep waste,AF,N_availabilityfactor,0.4,-63.95113636,0.2,-63.95113636,0.6,-63.95113636,,,Salad mix,AF,N_availabilityfactor,0.4,-13.33376033,0.2,-13.33376033,0.6,-13.33376033,,,Sweet dry goods,AF,N_availabilityfactor,0.4,-510.2330579,0.2,-510.2330579,0.6,-510.2330579,,,Unsweetened dry goods,AF,N_availabilityfactor,0.4,-470.4381818,0.2,-470.4381818,0.6,-470.4381818,,,Yogurt and frozen deserts,AF,N_availabilityfactor,0.4,-197.7153099,0.2,-197.7153099,0.6,-197.7153099,,,Baked goods,CM,Compost_CS_factor,0.1,179.4354392,0.02,233.0792571,0.14,152.6135302,,,Canned goods,CM,Compost_CS_factor,0.1,4.6771182,0.02,10.15719588,0.14,1.93707936,,,Coffee,CM,Compost_CS_factor,0.1,60.33355828,0.02,77.36693279,0.14,51.81687102,,,Food waste,CM,Compost_CS_factor,0.1,49.56551453,0.02,67.50589853,0.14,40.59532253,,,Fresh produce,CM,Compost_CS_factor,0.1,-5.740214698,0.02,-1.782678346,0.14,-7.718982874,,,Post consumer,CM,Compost_CS_factor,0.1,117.943682,0.02,147.3904605,0.14,103.2202927,,,Prep waste,CM,Compost_CS_factor,0.1,-3.016238102,0.02,3.992571706,0.14,-6.520643006,,,Salad mix,CM,Compost_CS_factor,0.1,-9.240308082,0.02,-7.224457938,0.14,-10.24823315,,,Sweet dry goods,CM,Compost_CS_factor,0.1,180.184894,0.02,230.1970186,0.14,155.1788316,,,Unsweetened dry goods,CM,Compost_CS_factor,0.1,190.3492567,0.02,241.4426277,0.14,164.8025713,,,Yogurt and frozen deserts,CM,Compost_CS_factor,0.1,56.06160628,0.02,73.7122054,0.14,47.23630672,,,Baked goods,CM,Compost_degradedC_CH4,0.02,179.4354392,0.008,66.29575047,0.036,330.2883574,,,Canned goods,CM,Compost_degradedC_CH4,0.02,4.6771182,0.008,-6.880863816,0.036,20.08776089,,,Coffee,CM,Compost_degradedC_CH4,0.02,60.33355828,0.008,24.40862294,0.036,108.2334721,,,Food waste,CM,Compost_degradedC_CH4,0.02,49.56551453,0.008,11.72761373,0.036,100.0160489,,,Fresh produce,CM,Compost_degradedC_CH4,0.02,-5.740214698,0.008,-14.08701864,0.036,5.388857225,,,Post consumer,CM,Compost_degradedC_CH4,0.02,117.943682,0.008,55.83774892,0.036,200.7515927,,,Prep waste,CM,Compost_degradedC_CH4,0.02,-3.016238102,0.008,-17.79845515,0.036,16.69338463,,,Salad mix,CM,Compost_degradedC_CH4,0.02,-9.240308082,0.008,-13.49191929,0.036,-3.571493132,,,Sweet dry goods,CM,Compost_degradedC_CH4,0.02,180.184894,0.008,74.70477657,0.036,320.8250505,,,Unsweetened dry goods,CM,Compost_degradedC_CH4,0.02,190.3492567,0.008,82.58869257,0.036,334.030009,,,Yogurt and frozen deserts,CM,Compost_degradedC_CH4,0.02,56.06160628,0.008,18.83488814,0.036,105.6972305,,,Baked goods,CM,Compost_dieseLlpert,3,179.4354392,0.4,171.1934392,6,188.9454392,,,Canned goods,CM,Compost_dieseLlpert,3,4.6771182,0.4,-3.5648818,6,14.1871182,,,Coffee,CM,Compost_dieseLlpert,3,60.33355828,0.4,52.09155828,6,69.84355828,,,Food waste,CM,Compost_dieseLlpert,3,49.56551453,0.4,41.32351453,6,59.07551453,,,Fresh produce,CM,Compost_dieseLlpert,3,-5.740214698,0.4,-13.9822147,6,3.769785302,,,Post consumer,CM,Compost_dieseLlpert,3,117.943682,0.4,109.701682,6,127.453682,,,Prep waste,CM,Compost_dieseLlpert,3,-3.016238102,0.4,-11.2582381,6,6.493761898,,,Salad mix,CM,Compost_dieseLlpert,3,-9.240308082,0.4,-17.48230808,6,0.269691918,,,Sweet dry goods,CM,Compost_dieseLlpert,3,180.184894,0.4,171.942894,6,189.694894,,,Unsweetened dry goods,CM,Compost_dieseLlpert,3,190.3492567,0.4,182.1072567,6,199.8592567,,,Yogurt and frozen deserts,CM,Compost_dieseLlpert,3,56.06160628,0.4,47.81960628,6,65.57160628,,,Baked goods,CM,Compost_EF1,0.015,179.4354392,NA,NA,NA,NA,,,Canned goods,CM,Compost_EF1,0.015,4.6771182,NA,NA,NA,NA,,,Coffee,CM,Compost_EF1,0.015,60.33355828,NA,NA,NA,NA,,,Food waste,CM,Compost_EF1,0.015,49.56551453,NA,NA,NA,NA,,,Fresh produce,CM,Compost_EF1,0.015,-5.740214698,NA,NA,NA,NA,,,Post consumer,CM,Compost_EF1,0.015,117.943682,NA,NA,NA,NA,,,Prep waste,CM,Compost_EF1,0.015,-3.016238102,NA,NA,NA,NA,,,Salad mix,CM,Compost_EF1,0.015,-9.240308082,NA,NA,NA,NA,,,Sweet dry goods,CM,Compost_EF1,0.015,180.184894,NA,NA,NA,NA,,,Unsweetened dry goods,CM,Compost_EF1,0.015,190.3492567,NA,NA,NA,NA,,,Yogurt and frozen deserts,CM,Compost_EF1,0.015,56.06160628,NA,NA,NA,NA,,,Baked goods,CM,Compost_FracGasC,0.016,179.4354392,NA,NA,NA,NA,,,Canned goods,CM,Compost_FracGasC,0.016,4.6771182,NA,NA,NA,NA,,,Coffee,CM,Compost_FracGasC,0.016,60.33355828,NA,NA,NA,NA,,,Food waste,CM,Compost_FracGasC,0.016,49.56551453,NA,NA,NA,NA,,,Fresh produce,CM,Compost_FracGasC,0.016,-5.740214698,NA,NA,NA,NA,,,Post consumer,CM,Compost_FracGasC,0.016,117.943682,NA,NA,NA,NA,,,Prep waste,CM,Compost_FracGasC,0.016,-3.016238102,NA,NA,NA,NA,,,Salad mix,CM,Compost_FracGasC,0.016,-9.240308082,NA,NA,NA,NA,,,Sweet dry goods,CM,Compost_FracGasC,0.016,180.184894,NA,NA,NA,NA,,,Unsweetened dry goods,CM,Compost_FracGasC,0.016,190.3492567,NA,NA,NA,NA,,,Yogurt and frozen deserts,CM,Compost_FracGasC,0.016,56.06160628,NA,NA,NA,NA,,,Baked goods,CM,Compost_mass_reduction,0.4,179.4354392,NA,NA,NA,NA,,,Canned goods,CM,Compost_mass_reduction,0.4,4.6771182,NA,NA,NA,NA,,,Coffee,CM,Compost_mass_reduction,0.4,60.33355828,NA,NA,NA,NA,,,Food waste,CM,Compost_mass_reduction,0.4,49.56551453,NA,NA,NA,NA,,,Fresh produce,CM,Compost_mass_reduction,0.4,-5.740214698,NA,NA,NA,NA,,,Post consumer,CM,Compost_mass_reduction,0.4,117.943682,NA,NA,NA,NA,,,Prep waste,CM,Compost_mass_reduction,0.4,-3.016238102,NA,NA,NA,NA,,,Salad mix,CM,Compost_mass_reduction,0.4,-9.240308082,NA,NA,NA,NA,,,Sweet dry goods,CM,Compost_mass_reduction,0.4,180.184894,NA,NA,NA,NA,,,Unsweetened dry goods,CM,Compost_mass_reduction,0.4,190.3492567,NA,NA,NA,NA,,,Yogurt and frozen deserts,CM,Compost_mass_reduction,0.4,56.06160628,NA,NA,NA,NA,,,Baked goods,CM,Compost_N_loss,0.38,179.4354392,0.26,188.8764156,0.51,169.2077147,,,Canned goods,CM,Compost_N_loss,0.38,4.6771182,0.26,6.300430189,0.51,2.918530213,,,Coffee,CM,Compost_N_loss,0.38,60.33355828,0.26,65.46760453,0.51,54.77167484,,,Food waste,CM,Compost_N_loss,0.38,49.56551453,0.26,53.17287451,0.51,45.65754123,,,Fresh produce,CM,Compost_N_loss,0.38,-5.740214698,0.26,-4.946595504,0.51,-6.599968826,,,Post consumer,CM,Compost_N_loss,0.38,117.943682,0.26,126.5891066,0.51,108.5778052,,,Prep waste,CM,Compost_N_loss,0.38,-3.016238102,0.26,-2.72120759,0.51,-3.335854491,,,Salad mix,CM,Compost_N_loss,0.38,-9.240308082,0.26,-8.339756431,0.51,-10.2159057,,,Sweet dry goods,CM,Compost_N_loss,0.38,180.184894,0.26,190.6945507,0.51,168.7994324,,,Unsweetened dry goods,CM,Compost_N_loss,0.38,190.3492567,0.26,201.777502,0.51,177.9686577,,,Yogurt and frozen deserts,CM,Compost_N_loss,0.38,56.06160628,0.26,60.52056088,0.51,51.23107213,,,Baked goods,CM,Compost_N2OperN,0.005,179.4354392,0.001,155.0227306,0.018,258.776742,,,Canned goods,CM,Compost_N2OperN,0.005,4.6771182,0.001,0.4795182,0.018,18.3193182,,,Coffee,CM,Compost_N2OperN,0.005,60.33355828,0.001,47.05781542,0.018,103.4797226,,,Food waste,CM,Compost_N2OperN,0.005,49.56551453,0.001,40.23751453,0.018,79.88151453,,,Fresh produce,CM,Compost_N2OperN,0.005,-5.740214698,0.001,-7.792374698,0.018,0.929305302,,,Post consumer,CM,Compost_N2OperN,0.005,117.943682,0.001,95.58813052,0.018,190.5992241,,,Prep waste,CM,Compost_N2OperN,0.005,-3.016238102,0.001,-3.779135245,0.018,-0.536822388,,,Salad mix,CM,Compost_N2OperN,0.005,-9.240308082,0.001,-11.56897665,0.018,-1.672135225,,,Sweet dry goods,CM,Compost_N2OperN,0.005,180.184894,0.001,153.0087654,0.018,268.5073118,,,Unsweetened dry goods,CM,Compost_N2OperN,0.005,190.3492567,0.001,160.7978196,0.018,286.3914275,,,Yogurt and frozen deserts,CM,Compost_N2OperN,0.005,56.06160628,0.001,44.531532,0.018,93.53434771,,,Baked goods,CM,Compost_xportToField,10,179.4354392,10,179.4354392,20,181.1472392,,,Canned goods,CM,Compost_xportToField,10,4.6771182,10,4.6771182,20,6.3889182,,,Coffee,CM,Compost_xportToField,10,60.33355828,10,60.33355828,20,62.04535828,,,Food waste,CM,Compost_xportToField,10,49.56551453,10,49.56551453,20,51.27731453,,,Fresh produce,CM,Compost_xportToField,10,-5.740214698,10,-5.740214698,20,-4.028414698,,,Post consumer,CM,Compost_xportToField,10,117.943682,10,117.943682,20,119.655482,,,Prep waste,CM,Compost_xportToField,10,-3.016238102,10,-3.016238102,20,-1.304438102,,,Salad mix,CM,Compost_xportToField,10,-9.240308082,10,-9.240308082,20,-7.528508082,,,Sweet dry goods,CM,Compost_xportToField,10,180.184894,10,180.184894,20,181.896694,,,Unsweetened dry goods,CM,Compost_xportToField,10,190.3492567,10,190.3492567,20,192.0610567,,,Yogurt and frozen deserts,CM,Compost_xportToField,10,56.06160628,10,56.06160628,20,57.77340628,,,Baked goods,CM,CompostPercentCdegraded,0.58,179.4354392,0.4,92.17715093,0.83,300.6275062,,,Canned goods,CM,CompostPercentCdegraded,0.58,4.6771182,0.4,-4.23690426,0.83,17.05770495,,,Coffee,CM,CompostPercentCdegraded,0.58,60.33355828,0.4,32.62667311,0.83,98.81534323,,,Food waste,CM,CompostPercentCdegraded,0.58,49.56551453,0.4,20.38326653,0.83,90.09641453,,,Fresh produce,CM,CompostPercentCdegraded,0.58,-5.740214698,0.4,-12.17763584,0.83,3.200648002,,,Post consumer,CM,CompostPercentCdegraded,0.58,117.943682,0.4,70.04486353,0.83,184.4698187,,,Prep waste,CM,CompostPercentCdegraded,0.58,-3.016238102,0.4,-14.41693198,0.83,12.81805895,,,Salad mix,CM,CompostPercentCdegraded,0.58,-9.240308082,0.4,-12.51933705,0.83,-4.686101182,,,Sweet dry goods,CM,CompostPercentCdegraded,0.58,180.184894,0.4,98.83400293,0.83,293.1722426,,,Unsweetened dry goods,CM,CompostPercentCdegraded,0.58,190.3492567,0.4,107.2395852,0.83,305.7793561,,,Yogurt and frozen deserts,CM,CompostPercentCdegraded,0.58,56.06160628,0.4,27.35072914,0.83,95.93782453,,,Baked goods,CM,DieselcombustionkgCO2eperL,2.72,179.4354392,NA,NA,NA,NA,,,Canned goods,CM,DieselcombustionkgCO2eperL,2.72,4.6771182,NA,NA,NA,NA,,,Coffee,CM,DieselcombustionkgCO2eperL,2.72,60.33355828,NA,NA,NA,NA,,,Food waste,CM,DieselcombustionkgCO2eperL,2.72,49.56551453,NA,NA,NA,NA,,,Fresh produce,CM,DieselcombustionkgCO2eperL,2.72,-5.740214698,NA,NA,NA,NA,,,Post consumer,CM,DieselcombustionkgCO2eperL,2.72,117.943682,NA,NA,NA,NA,,,Prep waste,CM,DieselcombustionkgCO2eperL,2.72,-3.016238102,NA,NA,NA,NA,,,Salad mix,CM,DieselcombustionkgCO2eperL,2.72,-9.240308082,NA,NA,NA,NA,,,Sweet dry goods,CM,DieselcombustionkgCO2eperL,2.72,180.184894,NA,NA,NA,NA,,,Unsweetened dry goods,CM,DieselcombustionkgCO2eperL,2.72,190.3492567,NA,NA,NA,NA,,,Yogurt and frozen deserts,CM,DieselcombustionkgCO2eperL,2.72,56.06160628,NA,NA,NA,NA,,,Baked goods,CM,Dieselgrindpert,2.65,179.4354392,2.5,179.4354392,3.3,179.4354392,,,Canned goods,CM,Dieselgrindpert,2.65,4.6771182,2.5,4.6771182,3.3,4.6771182,,,Coffee,CM,Dieselgrindpert,2.65,60.33355828,2.5,60.33355828,3.3,60.33355828,,,Food waste,CM,Dieselgrindpert,2.65,49.56551453,2.5,49.56551453,3.3,49.56551453,,,Fresh produce,CM,Dieselgrindpert,2.65,-5.740214698,2.5,-5.740214698,3.3,-5.740214698,,,Post consumer,CM,Dieselgrindpert,2.65,117.943682,2.5,117.943682,3.3,117.943682,,,Prep waste,CM,Dieselgrindpert,2.65,-3.016238102,2.5,-3.016238102,3.3,-3.016238102,,,Salad mix,CM,Dieselgrindpert,2.65,-9.240308082,2.5,-9.240308082,3.3,-9.240308082,,,Sweet dry goods,CM,Dieselgrindpert,2.65,180.184894,2.5,180.184894,3.3,180.184894,,,Unsweetened dry goods,CM,Dieselgrindpert,2.65,190.3492567,2.5,190.3492567,3.3,190.3492567,,,Yogurt and frozen deserts,CM,Dieselgrindpert,2.65,56.06160628,2.5,56.06160628,3.3,56.06160628,,,Baked goods,CM,DieselprovisionkgCO2eperL,0.45,179.4354392,0.4,179.2584392,0.5,179.6124392,,,Canned goods,CM,DieselprovisionkgCO2eperL,0.45,4.6771182,0.4,4.5001182,0.5,4.8541182,,,Coffee,CM,DieselprovisionkgCO2eperL,0.45,60.33355828,0.4,60.15655828,0.5,60.51055828,,,Food waste,CM,DieselprovisionkgCO2eperL,0.45,49.56551453,0.4,49.38851453,0.5,49.74251453,,,Fresh produce,CM,DieselprovisionkgCO2eperL,0.45,-5.740214698,0.4,-5.917214698,0.5,-5.563214698,,,Post consumer,CM,DieselprovisionkgCO2eperL,0.45,117.943682,0.4,117.766682,0.5,118.120682,,,Prep waste,CM,DieselprovisionkgCO2eperL,0.45,-3.016238102,0.4,-3.193238102,0.5,-2.839238102,,,Salad mix,CM,DieselprovisionkgCO2eperL,0.45,-9.240308082,0.4,-9.417308082,0.5,-9.063308082,,,Sweet dry goods,CM,DieselprovisionkgCO2eperL,0.45,180.184894,0.4,180.007894,0.5,180.361894,,,Unsweetened dry goods,CM,DieselprovisionkgCO2eperL,0.45,190.3492567,0.4,190.1722567,0.5,190.5262567,,,Yogurt and frozen deserts,CM,DieselprovisionkgCO2eperL,0.45,56.06160628,0.4,55.88460628,0.5,56.23860628,,,Baked goods,CM,DieselspreadLpertkm,0.3,179.4354392,0.3,179.4354392,0.6,181.1472392,,,Canned goods,CM,DieselspreadLpertkm,0.3,4.6771182,0.3,4.6771182,0.6,6.3889182,,,Coffee,CM,DieselspreadLpertkm,0.3,60.33355828,0.3,60.33355828,0.6,62.04535828,,,Food waste,CM,DieselspreadLpertkm,0.3,49.56551453,0.3,49.56551453,0.6,51.27731453,,,Fresh produce,CM,DieselspreadLpertkm,0.3,-5.740214698,0.3,-5.740214698,0.6,-4.028414698,,,Post consumer,CM,DieselspreadLpertkm,0.3,117.943682,0.3,117.943682,0.6,119.655482,,,Prep waste,CM,DieselspreadLpertkm,0.3,-3.016238102,0.3,-3.016238102,0.6,-1.304438102,,,Salad mix,CM,DieselspreadLpertkm,0.3,-9.240308082,0.3,-9.240308082,0.6,-7.528508082,,,Sweet dry goods,CM,DieselspreadLpertkm,0.3,180.184894,0.3,180.184894,0.6,181.896694,,,Unsweetened dry goods,CM,DieselspreadLpertkm,0.3,190.3492567,0.3,190.3492567,0.6,192.0610567,,,Yogurt and frozen deserts,CM,DieselspreadLpertkm,0.3,56.06160628,0.3,56.06160628,0.6,57.77340628,,,Baked goods,CM,EF_Peat_kgCO2eperton,-388,179.4354392,-1197,111.4794392,-550,165.8274392,,,Canned goods,CM,EF_Peat_kgCO2eperton,-388,4.6771182,-1197,-63.2788818,-550,-8.9308818,,,Coffee,CM,EF_Peat_kgCO2eperton,-388,60.33355828,-1197,-7.622441723,-550,46.72555828,,,Food waste,CM,EF_Peat_kgCO2eperton,-388,49.56551453,-1197,-18.39048547,-550,35.95751453,,,Fresh produce,CM,EF_Peat_kgCO2eperton,-388,-5.740214698,-1197,-73.6962147,-550,-19.3482147,,,Post consumer,CM,EF_Peat_kgCO2eperton,-388,117.943682,-1197,49.98768195,-550,104.335682,,,Prep waste,CM,EF_Peat_kgCO2eperton,-388,-3.016238102,-1197,-70.9722381,-550,-16.6242381,,,Salad mix,CM,EF_Peat_kgCO2eperton,-388,-9.240308082,-1197,-77.19630808,-550,-22.84830808,,,Sweet dry goods,CM,EF_Peat_kgCO2eperton,-388,180.184894,-1197,112.228894,-550,166.576894,,,Unsweetened dry goods,CM,EF_Peat_kgCO2eperton,-388,190.3492567,-1197,122.3932567,-550,176.7412567,,,Yogurt and frozen deserts,CM,EF_Peat_kgCO2eperton,-388,56.06160628,-1197,-11.89439372,-550,42.45360628,,,Baked goods,CM,EFGrid,-692.15,179.4354392,-918.79,179.4354392,-537.18,179.4354392,,,Canned goods,CM,EFGrid,-692.15,4.6771182,-918.79,4.6771182,-537.18,4.6771182,,,Coffee,CM,EFGrid,-692.15,60.33355828,-918.79,60.33355828,-537.18,60.33355828,,,Food waste,CM,EFGrid,-692.15,49.56551453,-918.79,49.56551453,-537.18,49.56551453,,,Fresh produce,CM,EFGrid,-692.15,-5.740214698,-918.79,-5.740214698,-537.18,-5.740214698,,,Post consumer,CM,EFGrid,-692.15,117.943682,-918.79,117.943682,-537.18,117.943682,,,Prep waste,CM,EFGrid,-692.15,-3.016238102,-918.79,-3.016238102,-537.18,-3.016238102,,,Salad mix,CM,EFGrid,-692.15,-9.240308082,-918.79,-9.240308082,-537.18,-9.240308082,,,Sweet dry goods,CM,EFGrid,-692.15,180.184894,-918.79,180.184894,-537.18,180.184894,,,Unsweetened dry goods,CM,EFGrid,-692.15,190.3492567,-918.79,190.3492567,-537.18,190.3492567,,,Yogurt and frozen deserts,CM,EFGrid,-692.15,56.06160628,-918.79,56.06160628,-537.18,56.06160628,,,Baked goods,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,179.4354392,-13,175.3791274,-4.7,180.8093512,,,Canned goods,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,4.6771182,-13,3.97966284,-4.7,4.91335308,,,Coffee,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,60.33355828,-13,58.12771732,-4.7,61.08069796,,,Food waste,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,49.56551453,-13,48.01561373,-4.7,50.09048093,,,Fresh produce,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,-5.740214698,-13,-6.081192874,-4.7,-5.62472209,,,Post consumer,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,117.943682,-13,114.2291786,-4.7,119.2018202,,,Prep waste,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,-3.016238102,-13,-3.142997846,-4.7,-2.97330335,,,Salad mix,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,-9.240308082,-13,-9.627229746,-4.7,-9.10925397,,,Sweet dry goods,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,180.184894,-13,175.669424,-4.7,181.7143273,,,Unsweetened dry goods,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,190.3492567,-13,185.4391157,-4.7,192.012369,,,Yogurt and frozen deserts,CM,LA_DisplacedFertilizer_Production_Factor,-6.8,56.06160628,-13,54.14581819,-4.7,56.71050225,,,Baked goods,CM,N_availabilityfactor,0.4,179.4354392,0.2,183.4263266,0.6,175.4445517,,,Canned goods,CM,N_availabilityfactor,0.4,4.6771182,0.2,5.36332428,0.6,3.99091212,,,Coffee,CM,N_availabilityfactor,0.4,60.33355828,0.2,62.50382116,0.6,58.1632954,,,Food waste,CM,N_availabilityfactor,0.4,49.56551453,0.2,51.09041693,0.6,48.04061213,,,Fresh produce,CM,N_availabilityfactor,0.4,-5.740214698,0.2,-5.40473617,0.6,-6.075693226,,,Post consumer,CM,N_availabilityfactor,0.4,117.943682,0.2,121.5982739,0.6,114.28909,,,Prep waste,CM,N_availabilityfactor,0.4,-3.016238102,0.2,-2.89152287,0.6,-3.140953334,,,Salad mix,CM,N_availabilityfactor,0.4,-9.240308082,0.2,-8.85962709,0.6,-9.620989074,,,Sweet dry goods,CM,N_availabilityfactor,0.4,180.184894,0.2,184.6275337,0.6,175.7422542,,,Unsweetened dry goods,CM,N_availabilityfactor,0.4,190.3492567,0.2,195.180202,0.6,185.5183115,,,Yogurt and frozen deserts,CM,N_availabilityfactor,0.4,56.06160628,0.2,57.94649457,0.6,54.17671799,,,Baked goods,LA,DieselcombustionkgCO2eperL,2.72,40.46129617,NA,NA,NA,NA,,,Canned goods,LA,DieselcombustionkgCO2eperL,2.72,31.9529343,NA,NA,NA,NA,,,Coffee,LA,DieselcombustionkgCO2eperL,2.72,-3.827825943,NA,NA,NA,NA,,,Food waste,LA,DieselcombustionkgCO2eperL,2.72,-3.2297,NA,NA,NA,NA,,,Fresh produce,LA,DieselcombustionkgCO2eperL,2.72,24.81010652,NA,NA,NA,NA,,,Post consumer,LA,DieselcombustionkgCO2eperL,2.72,26.44192745,NA,NA,NA,NA,,,Prep waste,LA,DieselcombustionkgCO2eperL,2.72,-42.4619211,NA,NA,NA,NA,,,Salad mix,LA,DieselcombustionkgCO2eperL,2.72,23.26173577,NA,NA,NA,NA,,,Sweet dry goods,LA,DieselcombustionkgCO2eperL,2.72,-70.01200127,NA,NA,NA,NA,,,Unsweetened dry goods,LA,DieselcombustionkgCO2eperL,2.72,-150.6117996,NA,NA,NA,NA,,,Yogurt and frozen deserts,LA,DieselcombustionkgCO2eperL,2.72,57.13931114,NA,NA,NA,NA,,,Baked goods,LA,Dieselgrindpert,2.65,40.46129617,2.5,40.46129617,3.3,40.46129617,,,Canned goods,LA,Dieselgrindpert,2.65,31.9529343,2.5,31.9529343,3.3,31.9529343,,,Coffee,LA,Dieselgrindpert,2.65,-3.827825943,2.5,-3.827825943,3.3,-3.827825943,,,Food waste,LA,Dieselgrindpert,2.65,-3.2297,2.5,-3.2297,3.3,-3.2297,,,Fresh produce,LA,Dieselgrindpert,2.65,24.81010652,2.5,24.81010652,3.3,24.81010652,,,Post consumer,LA,Dieselgrindpert,2.65,26.44192745,2.5,26.44192745,3.3,26.44192745,,,Prep waste,LA,Dieselgrindpert,2.65,-42.4619211,2.5,-42.4619211,3.3,-42.4619211,,,Salad mix,LA,Dieselgrindpert,2.65,23.26173577,2.5,23.26173577,3.3,23.26173577,,,Sweet dry goods,LA,Dieselgrindpert,2.65,-70.01200127,2.5,-70.01200127,3.3,-70.01200127,,,Unsweetened dry goods,LA,Dieselgrindpert,2.65,-150.6117996,2.5,-150.6117996,3.3,-150.6117996,,,Yogurt and frozen deserts,LA,Dieselgrindpert,2.65,57.13931114,2.5,57.13931114,3.3,57.13931114,,,Baked goods,LA,DieselprovisionkgCO2eperL,0.45,40.46129617,0.4,40.16129617,0.5,40.76129617,,,Canned goods,LA,DieselprovisionkgCO2eperL,0.45,31.9529343,0.4,31.6529343,0.5,32.2529343,,,Coffee,LA,DieselprovisionkgCO2eperL,0.45,-3.827825943,0.4,-4.127825943,0.5,-3.527825943,,,Food waste,LA,DieselprovisionkgCO2eperL,0.45,-3.2297,0.4,-3.5297,0.5,-2.9297,,,Fresh produce,LA,DieselprovisionkgCO2eperL,0.45,24.81010652,0.4,24.51010652,0.5,25.11010652,,,Post consumer,LA,DieselprovisionkgCO2eperL,0.45,26.44192745,0.4,26.14192745,0.5,26.74192745,,,Prep waste,LA,DieselprovisionkgCO2eperL,0.45,-42.4619211,0.4,-42.7619211,0.5,-42.1619211,,,Salad mix,LA,DieselprovisionkgCO2eperL,0.45,23.26173577,0.4,22.96173577,0.5,23.56173577,,,Sweet dry goods,LA,DieselprovisionkgCO2eperL,0.45,-70.01200127,0.4,-70.31200127,0.5,-69.71200127,,,Unsweetened dry goods,LA,DieselprovisionkgCO2eperL,0.45,-150.6117996,0.4,-150.9117996,0.5,-150.3117996,,,Yogurt and frozen deserts,LA,DieselprovisionkgCO2eperL,0.45,57.13931114,0.4,56.83931114,0.5,57.43931114,,,Baked goods,LA,DieselspreadLpertkm,0.3,40.46129617,0.3,40.46129617,0.6,59.48129617,,,Baked goods,LA,DieselspreadLpertkm,0.3,40.46129617,0.3,40.46129617,0.6,59.48129617,,,Canned goods,LA,DieselspreadLpertkm,0.3,31.9529343,0.3,31.9529343,0.6,50.9729343,,,Canned goods,LA,DieselspreadLpertkm,0.3,31.9529343,0.3,31.9529343,0.6,50.9729343,,,Coffee,LA,DieselspreadLpertkm,0.3,-3.827825943,0.3,-3.827825943,0.6,15.19217406,,,Coffee,LA,DieselspreadLpertkm,0.3,-3.827825943,0.3,-3.827825943,0.6,15.19217406,,,Food waste,LA,DieselspreadLpertkm,0.3,-3.2297,0.3,-3.2297,0.6,15.7903,,,Food waste,LA,DieselspreadLpertkm,0.3,-3.2297,0.3,-3.2297,0.6,15.7903,,,Fresh produce,LA,DieselspreadLpertkm,0.3,24.81010652,0.3,24.81010652,0.6,43.83010652,,,Fresh produce,LA,DieselspreadLpertkm,0.3,24.81010652,0.3,24.81010652,0.6,43.83010652,,,Post consumer,LA,DieselspreadLpertkm,0.3,26.44192745,0.3,26.44192745,0.6,45.46192745,,,Post consumer,LA,DieselspreadLpertkm,0.3,26.44192745,0.3,26.44192745,0.6,45.46192745,,,Prep waste,LA,DieselspreadLpertkm,0.3,-42.4619211,0.3,-42.4619211,0.6,-23.4419211,,,Prep waste,LA,DieselspreadLpertkm,0.3,-42.4619211,0.3,-42.4619211,0.6,-23.4419211,,,Salad mix,LA,DieselspreadLpertkm,0.3,23.26173577,0.3,23.26173577,0.6,42.28173577,,,Salad mix,LA,DieselspreadLpertkm,0.3,23.26173577,0.3,23.26173577,0.6,42.28173577,,,Sweet dry goods,LA,DieselspreadLpertkm,0.3,-70.01200127,0.3,-70.01200127,0.6,-50.99200127,,,Sweet dry goods,LA,DieselspreadLpertkm,0.3,-70.01200127,0.3,-70.01200127,0.6,-50.99200127,,,Unsweetened dry goods,LA,DieselspreadLpertkm,0.3,-150.6117996,0.3,-150.6117996,0.6,-131.5917996,,,Unsweetened dry goods,LA,DieselspreadLpertkm,0.3,-150.6117996,0.3,-150.6117996,0.6,-131.5917996,,,Yogurt and frozen deserts,LA,DieselspreadLpertkm,0.3,57.13931114,0.3,57.13931114,0.6,76.15931114,,,Yogurt and frozen deserts,LA,DieselspreadLpertkm,0.3,57.13931114,0.3,57.13931114,0.6,76.15931114,,,Baked goods,LA,EF_Peat_kgCO2eperton,-388,40.46129617,-1197,40.46129617,-550,40.46129617,,,Canned goods,LA,EF_Peat_kgCO2eperton,-388,31.9529343,-1197,31.9529343,-550,31.9529343,,,Coffee,LA,EF_Peat_kgCO2eperton,-388,-3.827825943,-1197,-3.827825943,-550,-3.827825943,,,Food waste,LA,EF_Peat_kgCO2eperton,-388,-3.2297,-1197,-3.2297,-550,-3.2297,,,Fresh produce,LA,EF_Peat_kgCO2eperton,-388,24.81010652,-1197,24.81010652,-550,24.81010652,,,Post consumer,LA,EF_Peat_kgCO2eperton,-388,26.44192745,-1197,26.44192745,-550,26.44192745,,,Prep waste,LA,EF_Peat_kgCO2eperton,-388,-42.4619211,-1197,-42.4619211,-550,-42.4619211,,,Salad mix,LA,EF_Peat_kgCO2eperton,-388,23.26173577,-1197,23.26173577,-550,23.26173577,,,Sweet dry goods,LA,EF_Peat_kgCO2eperton,-388,-70.01200127,-1197,-70.01200127,-550,-70.01200127,,,Unsweetened dry goods,LA,EF_Peat_kgCO2eperton,-388,-150.6117996,-1197,-150.6117996,-550,-150.6117996,,,Yogurt and frozen deserts,LA,EF_Peat_kgCO2eperton,-388,57.13931114,-1197,57.13931114,-550,57.13931114,,,Baked goods,LA,EFGrid,-692.15,40.46129617,-918.79,40.46129617,-537.18,40.46129617,,,Canned goods,LA,EFGrid,-692.15,31.9529343,-918.79,31.9529343,-537.18,31.9529343,,,Coffee,LA,EFGrid,-692.15,-3.827825943,-918.79,-3.827825943,-537.18,-3.827825943,,,Food waste,LA,EFGrid,-692.15,-3.2297,-918.79,-3.2297,-537.18,-3.2297,,,Fresh produce,LA,EFGrid,-692.15,24.81010652,-918.79,24.81010652,-537.18,24.81010652,,,Post consumer,LA,EFGrid,-692.15,26.44192745,-918.79,26.44192745,-537.18,26.44192745,,,Prep waste,LA,EFGrid,-692.15,-42.4619211,-918.79,-42.4619211,-537.18,-42.4619211,,,Salad mix,LA,EFGrid,-692.15,23.26173577,-918.79,23.26173577,-537.18,23.26173577,,,Sweet dry goods,LA,EFGrid,-692.15,-70.01200127,-918.79,-70.01200127,-537.18,-70.01200127,,,Unsweetened dry goods,LA,EFGrid,-692.15,-150.6117996,-918.79,-150.6117996,-537.18,-150.6117996,,,Yogurt and frozen deserts,LA,EFGrid,-692.15,57.13931114,-918.79,57.13931114,-537.18,57.13931114,,,Baked goods,LA,IPCC_EF4,0.01,40.46129617,NA,NA,NA,NA,,,Canned goods,LA,IPCC_EF4,0.01,31.9529343,NA,NA,NA,NA,,,Coffee,LA,IPCC_EF4,0.01,-3.827825943,NA,NA,NA,NA,,,Food waste,LA,IPCC_EF4,0.01,-3.2297,NA,NA,NA,NA,,,Fresh produce,LA,IPCC_EF4,0.01,24.81010652,NA,NA,NA,NA,,,Post consumer,LA,IPCC_EF4,0.01,26.44192745,NA,NA,NA,NA,,,Prep waste,LA,IPCC_EF4,0.01,-42.4619211,NA,NA,NA,NA,,,Salad mix,LA,IPCC_EF4,0.01,23.26173577,NA,NA,NA,NA,,,Sweet dry goods,LA,IPCC_EF4,0.01,-70.01200127,NA,NA,NA,NA,,,Unsweetened dry goods,LA,IPCC_EF4,0.01,-150.6117996,NA,NA,NA,NA,,,Yogurt and frozen deserts,LA,IPCC_EF4,0.01,57.13931114,NA,NA,NA,NA,,,Baked goods,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,40.46129617,-13,40.46129617,-4.7,40.46129617,,,Canned goods,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,31.9529343,-13,31.9529343,-4.7,31.9529343,,,Coffee,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,-3.827825943,-13,-3.827825943,-4.7,-3.827825943,,,Food waste,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,-3.2297,-13,-3.2297,-4.7,-3.2297,,,Fresh produce,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,24.81010652,-13,24.81010652,-4.7,24.81010652,,,Post consumer,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,26.44192745,-13,26.44192745,-4.7,26.44192745,,,Prep waste,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,-42.4619211,-13,-42.4619211,-4.7,-42.4619211,,,Salad mix,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,23.26173577,-13,23.26173577,-4.7,23.26173577,,,Sweet dry goods,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,-70.01200127,-13,-70.01200127,-4.7,-70.01200127,,,Unsweetened dry goods,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,-150.6117996,-13,-150.6117996,-4.7,-150.6117996,,,Yogurt and frozen deserts,LA,LA_DisplacedFertilizer_Production_Factor,-6.8,57.13931114,-13,57.13931114,-4.7,57.13931114,,,Baked goods,LA,LA_xportToField,20,40.46129617,10,30.95129617,20,40.46129617,,,Canned goods,LA,LA_xportToField,20,31.9529343,10,22.4429343,20,31.9529343,,,Coffee,LA,LA_xportToField,20,-3.827825943,10,-13.33782594,20,-3.827825943,,,Food waste,LA,LA_xportToField,20,-3.2297,10,-12.7397,20,-3.2297,,,Fresh produce,LA,LA_xportToField,20,24.81010652,10,15.30010652,20,24.81010652,,,Post consumer,LA,LA_xportToField,20,26.44192745,10,16.93192745,20,26.44192745,,,Prep waste,LA,LA_xportToField,20,-42.4619211,10,-51.9719211,20,-42.4619211,,,Salad mix,LA,LA_xportToField,20,23.26173577,10,13.75173577,20,23.26173577,,,Sweet dry goods,LA,LA_xportToField,20,-70.01200127,10,-79.52200127,20,-70.01200127,,,Unsweetened dry goods,LA,LA_xportToField,20,-150.6117996,10,-160.1217996,20,-150.6117996,,,Yogurt and frozen deserts,LA,LA_xportToField,20,57.13931114,10,47.62931114,20,57.13931114,,,Baked goods,LA,LandApplication_EF1,0.0125,40.46129617,0.005,-5.3125324,0.05,269.330439,,,Canned goods,LA,LandApplication_EF1,0.0125,31.9529343,0.005,24.0824343,0.05,71.3054343,,,Coffee,LA,LandApplication_EF1,0.0125,-3.827825943,0.005,-28.7198438,0.05,120.6322633,,,Food waste,LA,LandApplication_EF1,0.0125,-3.2297,0.005,-20.7197,0.05,84.2203,,,Fresh produce,LA,LandApplication_EF1,0.0125,24.81010652,0.005,20.96230652,0.05,44.04910652,,,Post consumer,LA,LandApplication_EF1,0.0125,26.44192745,0.005,-15.47473148,0.05,236.0252221,,,Prep waste,LA,LandApplication_EF1,0.0125,-42.4619211,0.005,-43.89235324,0.05,-35.30976038,,,Salad mix,LA,LandApplication_EF1,0.0125,23.26173577,0.005,18.8954822,0.05,45.09300363,,,Sweet dry goods,LA,LandApplication_EF1,0.0125,-70.01200127,0.005,-120.9672423,0.05,184.7642041,,,Unsweetened dry goods,LA,LandApplication_EF1,0.0125,-150.6117996,0.005,-206.0207443,0.05,126.4329236,,,Yogurt and frozen deserts,LA,LandApplication_EF1,0.0125,57.13931114,0.005,35.52042185,0.05,165.2337576,,,Baked goods,LA,LandApplication_FracGasM,0.2,40.46129617,0.05,31.30653046,0.5,58.7708276,,,Canned goods,LA,LandApplication_FracGasM,0.2,31.9529343,0.05,30.3788343,0.5,35.1011343,,,Coffee,LA,LandApplication_FracGasM,0.2,-3.827825943,0.05,-8.806229514,0.5,6.1289812,,,Food waste,LA,LandApplication_FracGasM,0.2,-3.2297,0.05,-6.7277,0.5,3.7663,,,Fresh produce,LA,LandApplication_FracGasM,0.2,24.81010652,0.05,24.04054652,0.5,26.34922652,,,Post consumer,LA,LandApplication_FracGasM,0.2,26.44192745,0.05,18.05859566,0.5,43.20859102,,,Prep waste,LA,LandApplication_FracGasM,0.2,-42.4619211,0.05,-42.74800753,0.5,-41.88974824,,,Salad mix,LA,LandApplication_FracGasM,0.2,23.26173577,0.05,22.38848506,0.5,25.0082372,,,Sweet dry goods,LA,LandApplication_FracGasM,0.2,-70.01200127,0.05,-80.20304948,0.5,-49.62990484,,,Unsweetened dry goods,LA,LandApplication_FracGasM,0.2,-150.6117996,0.05,-161.6935886,0.5,-128.4482218,,,Yogurt and frozen deserts,LA,LandApplication_FracGasM,0.2,57.13931114,0.05,52.81553328,0.5,65.78686685,,,Baked goods,LA,N_availabilityfactor,0.4,40.46129617,0.2,40.46129617,0.6,40.46129617,,,Canned goods,LA,N_availabilityfactor,0.4,31.9529343,0.2,31.9529343,0.6,31.9529343,,,Coffee,LA,N_availabilityfactor,0.4,-3.827825943,0.2,-3.827825943,0.6,-3.827825943,,,Food waste,LA,N_availabilityfactor,0.4,-3.2297,0.2,-3.2297,0.6,-3.2297,,,Fresh produce,LA,N_availabilityfactor,0.4,24.81010652,0.2,24.81010652,0.6,24.81010652,,,Post consumer,LA,N_availabilityfactor,0.4,26.44192745,0.2,26.44192745,0.6,26.44192745,,,Prep waste,LA,N_availabilityfactor,0.4,-42.4619211,0.2,-42.4619211,0.6,-42.4619211,,,Salad mix,LA,N_availabilityfactor,0.4,23.26173577,0.2,23.26173577,0.6,23.26173577,,,Sweet dry goods,LA,N_availabilityfactor,0.4,-70.01200127,0.2,-70.01200127,0.6,-70.01200127,,,Unsweetened dry goods,LA,N_availabilityfactor,0.4,-150.6117996,0.2,-150.6117996,0.6,-150.6117996,,,Yogurt and frozen deserts,LA,N_availabilityfactor,0.4,57.13931114,0.2,57.13931114,0.6,57.13931114,,,Baked goods,LF,BMP_Correctionfactor,1,2745.091786,0.7,1898.370821,1,2745.091786,,,Canned goods,LF,BMP_Correctionfactor,1,296.261012,0.7,211.9484531,1,296.261012,,,Coffee,LF,BMP_Correctionfactor,1,635.8747617,0.7,420.239923,1,635.8747617,,,Food waste,LF,BMP_Correctionfactor,1,548.7671154,0.7,365.6540108,1,548.7671154,,,Fresh produce,LF,BMP_Correctionfactor,1,219.3782488,0.7,158.4024012,1,219.3782488,,,Post consumer,LF,BMP_Correctionfactor,1,1392.5594,0.7,948.7857903,1,1392.5594,,,Prep waste,LF,BMP_Correctionfactor,1,170.6062095,0.7,97.43406667,1,170.6062095,,,Salad mix,LF,BMP_Correctionfactor,1,99.86536123,0.7,73.65021666,1,99.86536123,,,Sweet dry goods,LF,BMP_Correctionfactor,1,1908.302669,0.7,1260.979569,1,1908.302669,,,Unsweetened dry goods,LF,BMP_Correctionfactor,1,1568.143858,0.7,984.6354193,1,1568.143858,,,Yogurt and frozen deserts,LF,BMP_Correctionfactor,1,942.804078,0.7,663.9312383,1,942.804078,,,Baked goods,LF,DieselcombustionkgCO2eperL,2.72,2745.091786,NA,NA,NA,NA,,,Canned goods,LF,DieselcombustionkgCO2eperL,2.72,296.261012,NA,NA,NA,NA,,,Coffee,LF,DieselcombustionkgCO2eperL,2.72,635.8747617,NA,NA,NA,NA,,,Food waste,LF,DieselcombustionkgCO2eperL,2.72,548.7671154,NA,NA,NA,NA,,,Fresh produce,LF,DieselcombustionkgCO2eperL,2.72,219.3782488,NA,NA,NA,NA,,,Post consumer,LF,DieselcombustionkgCO2eperL,2.72,1392.5594,NA,NA,NA,NA,,,Prep waste,LF,DieselcombustionkgCO2eperL,2.72,170.6062095,NA,NA,NA,NA,,,Salad mix,LF,DieselcombustionkgCO2eperL,2.72,99.86536123,NA,NA,NA,NA,,,Sweet dry goods,LF,DieselcombustionkgCO2eperL,2.72,1908.302669,NA,NA,NA,NA,,,Unsweetened dry goods,LF,DieselcombustionkgCO2eperL,2.72,1568.143858,NA,NA,NA,NA,,,Yogurt and frozen deserts,LF,DieselcombustionkgCO2eperL,2.72,942.804078,NA,NA,NA,NA,,,Baked goods,LF,Dieselgrindpert,2.65,2745.091786,2.5,2745.091786,3.3,2745.091786,,,Canned goods,LF,Dieselgrindpert,2.65,296.261012,2.5,296.261012,3.3,296.261012,,,Coffee,LF,Dieselgrindpert,2.65,635.8747617,2.5,635.8747617,3.3,635.8747617,,,Food waste,LF,Dieselgrindpert,2.65,548.7671154,2.5,548.7671154,3.3,548.7671154,,,Fresh produce,LF,Dieselgrindpert,2.65,219.3782488,2.5,219.3782488,3.3,219.3782488,,,Post consumer,LF,Dieselgrindpert,2.65,1392.5594,2.5,1392.5594,3.3,1392.5594,,,Prep waste,LF,Dieselgrindpert,2.65,170.6062095,2.5,170.6062095,3.3,170.6062095,,,Salad mix,LF,Dieselgrindpert,2.65,99.86536123,2.5,99.86536123,3.3,99.86536123,,,Sweet dry goods,LF,Dieselgrindpert,2.65,1908.302669,2.5,1908.302669,3.3,1908.302669,,,Unsweetened dry goods,LF,Dieselgrindpert,2.65,1568.143858,2.5,1568.143858,3.3,1568.143858,,,Yogurt and frozen deserts,LF,Dieselgrindpert,2.65,942.804078,2.5,942.804078,3.3,942.804078,,,Baked goods,LF,DieselprovisionkgCO2eperL,0.45,2745.091786,0.4,2744.800286,0.5,2745.383286,,,Canned goods,LF,DieselprovisionkgCO2eperL,0.45,296.261012,0.4,295.969512,0.5,296.552512,,,Coffee,LF,DieselprovisionkgCO2eperL,0.45,635.8747617,0.4,635.5832617,0.5,636.1662617,,,Food waste,LF,DieselprovisionkgCO2eperL,0.45,548.7671154,0.4,548.4756154,0.5,549.0586154,,,Fresh produce,LF,DieselprovisionkgCO2eperL,0.45,219.3782488,0.4,219.0867488,0.5,219.6697488,,,Post consumer,LF,DieselprovisionkgCO2eperL,0.45,1392.5594,0.4,1392.2679,0.5,1392.8509,,,Prep waste,LF,DieselprovisionkgCO2eperL,0.45,170.6062095,0.4,170.3147095,0.5,170.8977095,,,Salad mix,LF,DieselprovisionkgCO2eperL,0.45,99.86536123,0.4,99.57386123,0.5,100.1568612,,,Sweet dry goods,LF,DieselprovisionkgCO2eperL,0.45,1908.302669,0.4,1908.011169,0.5,1908.594169,,,Unsweetened dry goods,LF,DieselprovisionkgCO2eperL,0.45,1568.143858,0.4,1567.852358,0.5,1568.435358,,,Yogurt and frozen deserts,LF,DieselprovisionkgCO2eperL,0.45,942.804078,0.4,942.512578,0.5,943.095578,,,Baked goods,LF,DieselspreadLpertkm,0.3,2745.091786,0.3,2745.091786,0.6,2745.091786,,,Canned goods,LF,DieselspreadLpertkm,0.3,296.261012,0.3,296.261012,0.6,296.261012,,,Coffee,LF,DieselspreadLpertkm,0.3,635.8747617,0.3,635.8747617,0.6,635.8747617,,,Food waste,LF,DieselspreadLpertkm,0.3,548.7671154,0.3,548.7671154,0.6,548.7671154,,,Fresh produce,LF,DieselspreadLpertkm,0.3,219.3782488,0.3,219.3782488,0.6,219.3782488,,,Post consumer,LF,DieselspreadLpertkm,0.3,1392.5594,0.3,1392.5594,0.6,1392.5594,,,Prep waste,LF,DieselspreadLpertkm,0.3,170.6062095,0.3,170.6062095,0.6,170.6062095,,,Salad mix,LF,DieselspreadLpertkm,0.3,99.86536123,0.3,99.86536123,0.6,99.86536123,,,Sweet dry goods,LF,DieselspreadLpertkm,0.3,1908.302669,0.3,1908.302669,0.6,1908.302669,,,Unsweetened dry goods,LF,DieselspreadLpertkm,0.3,1568.143858,0.3,1568.143858,0.6,1568.143858,,,Yogurt and frozen deserts,LF,DieselspreadLpertkm,0.3,942.804078,0.3,942.804078,0.6,942.804078,,,Baked goods,LF,EF_Peat_kgCO2eperton,-388,2745.091786,-1197,2745.091786,-550,2745.091786,,,Canned goods,LF,EF_Peat_kgCO2eperton,-388,296.261012,-1197,296.261012,-550,296.261012,,,Coffee,LF,EF_Peat_kgCO2eperton,-388,635.8747617,-1197,635.8747617,-550,635.8747617,,,Food waste,LF,EF_Peat_kgCO2eperton,-388,548.7671154,-1197,548.7671154,-550,548.7671154,,,Fresh produce,LF,EF_Peat_kgCO2eperton,-388,219.3782488,-1197,219.3782488,-550,219.3782488,,,Post consumer,LF,EF_Peat_kgCO2eperton,-388,1392.5594,-1197,1392.5594,-550,1392.5594,,,Prep waste,LF,EF_Peat_kgCO2eperton,-388,170.6062095,-1197,170.6062095,-550,170.6062095,,,Salad mix,LF,EF_Peat_kgCO2eperton,-388,99.86536123,-1197,99.86536123,-550,99.86536123,,,Sweet dry goods,LF,EF_Peat_kgCO2eperton,-388,1908.302669,-1197,1908.302669,-550,1908.302669,,,Unsweetened dry goods,LF,EF_Peat_kgCO2eperton,-388,1568.143858,-1197,1568.143858,-550,1568.143858,,,Yogurt and frozen deserts,LF,EF_Peat_kgCO2eperton,-388,942.804078,-1197,942.804078,-550,942.804078,,,Baked goods,LF,EFGrid,-692.15,2745.091786,-918.79,2639.663993,-537.18,2817.180319,,,Canned goods,LF,EFGrid,-692.15,296.261012,-918.79,285.7629998,-537.18,303.4392548,,,Coffee,LF,EFGrid,-692.15,635.8747617,-918.79,609.0254146,-537.18,654.2335834,,,Food waste,LF,EFGrid,-692.15,548.7671154,-918.79,525.9671479,-537.18,564.3570861,,,Fresh produce,LF,EFGrid,-692.15,219.3782488,-918.79,211.7859613,-537.18,224.5696396,,,Post consumer,LF,EFGrid,-692.15,1392.5594,-918.79,1337.303803,-537.18,1430.341609,,,Prep waste,LF,EFGrid,-692.15,170.6062095,-918.79,161.4953242,-537.18,176.8359742,,,Salad mix,LF,EFGrid,-692.15,99.86536123,-918.79,96.60123414,-537.18,102.0972787,,,Sweet dry goods,LF,EFGrid,-692.15,1908.302669,-918.79,1827.702508,-537.18,1963.414771,,,Unsweetened dry goods,LF,EFGrid,-692.15,1568.143858,-918.79,1495.489454,-537.18,1617.822877,,,Yogurt and frozen deserts,LF,EFGrid,-692.15,942.804078,-918.79,908.0807757,-537.18,966.5468867,,,Baked goods,LF,Heating_value,11700,2745.091786,8979,2647.521103,13648,2791.047415,,,Canned goods,LF,Heating_value,11700,296.261012,8979,286.5453745,13648,300.8370611,,,Coffee,LF,Heating_value,11700,635.8747617,8979,611.0263885,13648,647.5783041,,,Food waste,LF,Heating_value,11700,548.7671154,8979,527.6663378,13648,558.7055464,,,Fresh produce,LF,Heating_value,11700,219.3782488,8979,212.3517839,13648,222.687702,,,Post consumer,LF,Heating_value,11700,1392.5594,8979,1341.421781,13648,1416.645134,,,Prep waste,LF,Heating_value,11700,170.6062095,8979,162.1743219,13648,174.5776145,,,Salad mix,LF,Heating_value,11700,99.86536123,8979,96.84449641,13648,101.2881835,,,Sweet dry goods,LF,Heating_value,11700,1908.302669,8979,1833.709314,13648,1943.436015,,,Unsweetened dry goods,LF,Heating_value,11700,1568.143858,8979,1500.904095,13648,1599.813674,,,Yogurt and frozen deserts,LF,Heating_value,11700,942.804078,8979,910.6685638,13648,957.9398516,,,Baked goods,LF,k,0.144,2745.091786,0.1,2179.033397,0.229,3428.955478,,,Canned goods,LF,k,0.144,296.261012,0.1,239.8955348,0.229,364.3569966,,,Coffee,LF,k,0.144,635.8747617,0.1,491.7163973,0.229,810.0346597,,,Food waste,LF,k,0.144,548.7671154,0.1,426.3505067,0.229,696.6604697,,,Fresh produce,LF,k,0.144,219.3782488,0.1,178.6140638,0.229,268.6260765,,,Post consumer,LF,k,0.144,1392.5594,0.1,1095.883417,0.229,1750.978138,,,Prep waste,LF,k,0.144,170.6062095,0.1,121.6884349,0.229,229.7045119,,,Salad mix,LF,k,0.144,99.86536123,0.1,82.33974993,0.229,121.038317,,,Sweet dry goods,LF,k,0.144,1908.302669,0.1,1475.54774,0.229,2431.120436,,,Unsweetened dry goods,LF,k,0.144,1568.143858,0.1,1178.050946,0.229,2039.420998,,,Yogurt and frozen deserts,LF,k,0.144,942.804078,0.1,756.369211,0.229,1168.038857,,,Baked goods,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,2745.091786,-13,2745.091786,-4.7,2745.091786,,,Canned goods,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,296.261012,-13,296.261012,-4.7,296.261012,,,Coffee,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,635.8747617,-13,635.8747617,-4.7,635.8747617,,,Food waste,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,548.7671154,-13,548.7671154,-4.7,548.7671154,,,Fresh produce,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,219.3782488,-13,219.3782488,-4.7,219.3782488,,,Post consumer,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,1392.5594,-13,1392.5594,-4.7,1392.5594,,,Prep waste,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,170.6062095,-13,170.6062095,-4.7,170.6062095,,,Salad mix,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,99.86536123,-13,99.86536123,-4.7,99.86536123,,,Sweet dry goods,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,1908.302669,-13,1908.302669,-4.7,1908.302669,,,Unsweetened dry goods,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,1568.143858,-13,1568.143858,-4.7,1568.143858,,,Yogurt and frozen deserts,LF,LA_DisplacedFertilizer_Production_Factor,-6.8,942.804078,-13,942.804078,-4.7,942.804078,,,Baked goods,LF,Landfill_CF,0.85,2745.091786,0.8,2764.031345,0.9,2726.152228,,,Canned goods,LF,Landfill_CF,0.85,296.261012,0.8,298.1469257,0.9,294.3750983,,,Coffee,LF,Landfill_CF,0.85,635.8747617,0.8,640.6981083,0.9,631.0514151,,,Food waste,LF,Landfill_CF,0.85,548.7671154,0.8,552.8630118,0.9,544.6712189,,,Fresh produce,LF,Landfill_CF,0.85,219.3782488,0.8,220.7421641,0.9,218.0143336,,,Post consumer,LF,Landfill_CF,0.85,1392.5594,0.8,1402.485783,0.9,1382.633018,,,Prep waste,LF,Landfill_CF,0.85,170.6062095,0.8,172.242933,0.9,168.969486,,,Salad mix,LF,Landfill_CF,0.85,99.86536123,0.8,100.4517448,0.9,99.27897765,,,Sweet dry goods,LF,Landfill_CF,0.85,1908.302669,0.8,1922.782072,0.9,1893.823266,,,Unsweetened dry goods,LF,Landfill_CF,0.85,1568.143858,0.8,1581.195846,0.9,1555.091869,,,Yogurt and frozen deserts,LF,Landfill_CF,0.85,942.804078,0.8,949.04194,0.9,936.566216,,,Baked goods,LF,Landfill_Oxidation_Factor,0.1,2745.091786,0.1,2745.091786,0.2,2431.491429,,,Canned goods,LF,Landfill_Oxidation_Factor,0.1,296.261012,0.1,296.261012,0.2,265.0341383,,,Coffee,LF,Landfill_Oxidation_Factor,0.1,635.8747617,0.1,635.8747617,0.2,556.0100067,,,Food waste,LF,Landfill_Oxidation_Factor,0.1,548.7671154,0.1,548.7671154,0.2,480.947447,,,Fresh produce,LF,Landfill_Oxidation_Factor,0.1,219.3782488,0.1,219.3782488,0.2,196.7946016,,,Post consumer,LF,Landfill_Oxidation_Factor,0.1,1392.5594,0.1,1392.5594,0.2,1228.198804,,,Prep waste,LF,Landfill_Oxidation_Factor,0.1,170.6062095,0.1,170.6062095,0.2,143.5054158,,,Salad mix,LF,Landfill_Oxidation_Factor,0.1,99.86536123,0.1,99.86536123,0.2,90.15604842,,,Sweet dry goods,LF,Landfill_Oxidation_Factor,0.1,1908.302669,0.1,1908.302669,0.2,1668.553373,,,Unsweetened dry goods,LF,Landfill_Oxidation_Factor,0.1,1568.143858,0.1,1568.143858,0.2,1352.029621,,,Yogurt and frozen deserts,LF,Landfill_Oxidation_Factor,0.1,942.804078,0.1,942.804078,0.2,839.5178411,,,Baked goods,LF,LCEMax,0.95,2745.091786,0.85,2827.726508,0.95,2745.091786,,,Canned goods,LF,LCEMax,0.95,296.261012,0.85,304.4893956,0.95,296.261012,,,Coffee,LF,LCEMax,0.95,635.8747617,0.85,656.9193865,0.95,635.8747617,,,Food waste,LF,LCEMax,0.95,548.7671154,0.85,566.6378203,0.95,548.7671154,,,Fresh produce,LF,LCEMax,0.95,219.3782488,0.85,225.3291139,0.95,219.3782488,,,Post consumer,LF,LCEMax,0.95,1392.5594,0.85,1435.868956,0.95,1392.5594,,,Prep waste,LF,LCEMax,0.95,170.6062095,0.85,177.7473574,0.95,170.6062095,,,Salad mix,LF,LCEMax,0.95,99.86536123,0.85,102.423797,0.95,99.86536123,,,Sweet dry goods,LF,LCEMax,0.95,1908.302669,0.85,1971.477394,0.95,1908.302669,,,Unsweetened dry goods,LF,LCEMax,0.95,1568.143858,0.85,1625.090668,0.95,1568.143858,,,Yogurt and frozen deserts,LF,LCEMax,0.95,942.804078,0.85,970.02034,0.95,942.804078,,,Baked goods,LF,LFDieseluseLpert,5.83,2745.091786,4,2739.290686,10,2758.310686,,,Canned goods,LF,LFDieseluseLpert,5.83,296.261012,4,290.459912,10,309.479912,,,Coffee,LF,LFDieseluseLpert,5.83,635.8747617,4,630.0736617,10,649.0936617,,,Food waste,LF,LFDieseluseLpert,5.83,548.7671154,4,542.9660154,10,561.9860154,,,Fresh produce,LF,LFDieseluseLpert,5.83,219.3782488,4,213.5771488,10,232.5971488,,,Post consumer,LF,LFDieseluseLpert,5.83,1392.5594,4,1386.7583,10,1405.7783,,,Prep waste,LF,LFDieseluseLpert,5.83,170.6062095,4,164.8051095,10,183.8251095,,,Salad mix,LF,LFDieseluseLpert,5.83,99.86536123,4,94.06426123,10,113.0842612,,,Sweet dry goods,LF,LFDieseluseLpert,5.83,1908.302669,4,1902.501569,10,1921.521569,,,Unsweetened dry goods,LF,LFDieseluseLpert,5.83,1568.143858,4,1562.342758,10,1581.362758,,,Yogurt and frozen deserts,LF,LFDieseluseLpert,5.83,942.804078,4,937.002978,10,956.022978,,,Baked goods,LF,N_availabilityfactor,0.4,2745.091786,0.2,2745.091786,0.6,2745.091786,,,Canned goods,LF,N_availabilityfactor,0.4,296.261012,0.2,296.261012,0.6,296.261012,,,Coffee,LF,N_availabilityfactor,0.4,635.8747617,0.2,635.8747617,0.6,635.8747617,,,Food waste,LF,N_availabilityfactor,0.4,548.7671154,0.2,548.7671154,0.6,548.7671154,,,Fresh produce,LF,N_availabilityfactor,0.4,219.3782488,0.2,219.3782488,0.6,219.3782488,,,Post consumer,LF,N_availabilityfactor,0.4,1392.5594,0.2,1392.5594,0.6,1392.5594,,,Prep waste,LF,N_availabilityfactor,0.4,170.6062095,0.2,170.6062095,0.6,170.6062095,,,Salad mix,LF,N_availabilityfactor,0.4,99.86536123,0.2,99.86536123,0.6,99.86536123,,,Sweet dry goods,LF,N_availabilityfactor,0.4,1908.302669,0.2,1908.302669,0.6,1908.302669,,,Unsweetened dry goods,LF,N_availabilityfactor,0.4,1568.143858,0.2,1568.143858,0.6,1568.143858,,,Yogurt and frozen deserts,LF,N_availabilityfactor,0.4,942.804078,0.2,942.804078,0.6,942.804078,,,
+"f1.type","pathway","factorName","nom","outNom","low","outLo","high","outHi"
+"Apple Pomace","AD","MF_N2O",0.018,57.4284629171269,"0.012",57.4406109714127,"0.024",57.4163148628412
+"Apple Pomace","CM","MF_N2O",0.018,107.942128055714,"0.012",107.942128055714,"0.024",107.942128055714
+"Apple Pomace","AF","MF_N2O",0.018,-434.461797520661,"0.012",-434.461797520661,"0.024",-434.461797520661
+"Apple Pomace","LF","MF_N2O",0.018,178.194832623862,"0.012",178.194832623862,"0.024",178.194832623862
+"Apple Pomace","AD","MF_ROL",0.29485,57.4284629171269,"0.065",57.4294200781984,"0.5247",57.4275057560555
+"Apple Pomace","CM","MF_ROL",0.29485,107.942128055714,"0.065",107.942128055714,"0.5247",107.942128055714
+"Apple Pomace","AF","MF_ROL",0.29485,-434.461797520661,"0.065",-434.461797520661,"0.5247",-434.461797520661
+"Apple Pomace","LF","MF_ROL",0.29485,178.194832623862,"0.065",178.194832623862,"0.5247",178.194832623862
+"Apple Pomace","AD","EFGrid",692.15,57.4284629171269,"537.18",115.824778929544,"918.79",-27.9747832663546
+"Apple Pomace","CM","EFGrid",692.15,107.942128055714,"537.18",107.938563745714,"918.79",107.947340775714
+"Apple Pomace","AF","EFGrid",692.15,-434.461797520661,"537.18",-434.461797520661,"918.79",-434.461797520661
+"Apple Pomace","LF","EFGrid",692.15,178.194832623862,"537.18",160.88446398026,"918.79",203.51084184749
+"Apple Pomace","AD","Displaced_N_Production_Factor",8.85,57.4284629171269,"4.7",63.1532673596269,"13",51.7036584746269
+"Apple Pomace","CM","Displaced_N_Production_Factor",8.85,107.942128055714,"4.7",108.521202455714,"13",107.363053655714
+"Apple Pomace","AF","Displaced_N_Production_Factor",8.85,-434.461797520661,"4.7",-434.461797520661,"13",-434.461797520661
+"Apple Pomace","LF","Displaced_N_Production_Factor",8.85,178.194832623862,"4.7",178.194832623862,"13",178.194832623862
+"Apple Pomace","AD","Displaced_P_Production_Factor",1.8,57.4284629171269,"0.52",57.5759189171269,"3.09",57.2798549171269
+"Apple Pomace","CM","Displaced_P_Production_Factor",1.8,107.942128055714,"0.52",108.015856055714,"3.09",107.867824055714
+"Apple Pomace","AF","Displaced_P_Production_Factor",1.8,-434.461797520661,"0.52",-434.461797520661,"3.09",-434.461797520661
+"Apple Pomace","LF","Displaced_P_Production_Factor",1.8,178.194832623862,"0.52",178.194832623862,"3.09",178.194832623862
+"Apple Pomace","AD","Displaced_K_Production_Factor",0.96,57.4284629171269,"0.38",57.4364638486369,"1.53",57.4205999327119
+"Apple Pomace","CM","Displaced_K_Production_Factor",0.96,107.942128055714,"0.38",108.213254855714,"1.53",107.675675855714
+"Apple Pomace","AF","Displaced_K_Production_Factor",0.96,-434.461797520661,"0.38",-434.461797520661,"1.53",-434.461797520661
+"Apple Pomace","LF","Displaced_K_Production_Factor",0.96,178.194832623862,"0.38",178.194832623862,"1.53",178.194832623862
+"Apple Pomace","AD","EF_Peat_kgCO2eperton",970,57.4284629171269,"388",57.4284629171269,"1197",57.4284629171269
+"Apple Pomace","CM","EF_Peat_kgCO2eperton",970,107.942128055714,"388",156.830128055714,"1197",88.8741280557142
+"Apple Pomace","AF","EF_Peat_kgCO2eperton",970,-434.461797520661,"388",-434.461797520661,"1197",-434.461797520661
+"Apple Pomace","LF","EF_Peat_kgCO2eperton",970,178.194832623862,"388",178.194832623862,"1197",178.194832623862
+"Apple Pomace","AD","IPCC_EF4",0.01,57.4284629171269,"0.002",51.5366789091269,"0.05",86.8873829571269
+"Apple Pomace","LF","LFDieseluseLpert",5.83,178.194832623862,"1",162.883732623862,"6",178.733732623861
+"Apple Pomace","LF","Landfill_OX_Max",0.35,178.194832623862,"0.1",214.032112603762,"0.55",149.525008639941
+"Apple Pomace","LF","Landfill_CF",0.85,178.194832623862,"0.8",173.646942270636,"0.9",182.742722977087
+"Apple Pomace","LF","LCEMax",0.95,178.194832623862,"0.85",192.725747073833,"0.95",178.194832623862
+"Apple Pomace","LF","BMP_Correctionfactor",1,178.194832623862,"0.7",-103.552228263297,"1",178.194832623862
+"Apple Pomace","LF","k",0.144,178.194832623862,"0.10",40.4194972727624,"0.229",345.95523264073
+"Apple Pomace","AD","AD_Cf",0.9,57.4284629171269,"0.7",94.2746310452149,"1",39.0053788530829
+"Apple Pomace","AD","AD_Digester_CH4Leaks",0.025,57.4284629171269,"0",-1.17859102818115,"0.1",233.249624753051
+"Apple Pomace","AD","AD_flared",0.05,57.4284629171269,"0.03",51.9964165608805,"0.16",87.3047178764821
+"Apple Pomace","AD","AD_Digester_CE",4.19,57.4284629171269,"3.2",119.053786390643," 4.41 ",43.7339465896789
+"Apple Pomace","AD","AD_Digester_parasiticLoad",0.12,57.4284629171269,"0.1",51.5007745481179,"0.2",81.1392163931629
+"Apple Pomace","AD","AD_reductionInVS",0.55,57.4284629171269,"0.4",171.594091117127,"0.7",-56.7371652828731
+"Apple Pomace","AD","AD_Storage_residualCH4",0.054,57.4284629171269,"0.004",-259.698282082873,"0.074",184.279160917127
+"Apple Pomace","AD","AD_Storage_EF3",0.005,57.4284629171269,"0.0025",50.3064108460641,"0.01",71.6725670592526
+"Apple Pomace","AD","AD_Storage_FracGasMS",0.26,57.4284629171269,"0.15",52.4318575046469,"0.45",66.058963175047
+"Apple Pomace","AD","IPCC_EF4",0.01,57.4284629171269,"0.002",51.5366789091269,"0.05",86.8873829571269
+"Apple Pomace","AD","LandApplication_EF1",0.0125,57.4284629171269,"0.018",57.5935930998955,"0.03",57.9538771350269
+"Apple Pomace","CM","LandApplication_EF1",0.0125,107.942128055714,"0.018",107.942128055714,"0.03",107.942128055714
+"Apple Pomace","AF","LandApplication_EF1",0.0125,-434.461797520661,"0.018",-434.461797520661,"0.03",-434.461797520661
+"Apple Pomace","LF","LandApplication_EF1",0.0125,178.194832623862,"0.018",178.194832623862,"0.03",178.194832623862
+"Apple Pomace","AD","AD_LA_FracGasD",0.075,57.4284629171269,"0.06",57.0081743075698,"0.12",58.6893287457984
+"Apple Pomace","AD","AD_LA_FracLeachD",0.476,57.4284629171269,"0.152",48.3554396714355,"0.8",66.5014861628184
+"Apple Pomace","AD","AD_N_Availability",0.65,57.4284629171269,"0.4",62.1290632358269,"1",50.8476224709469
+"Apple Pomace","AD","N_displacement",1,57.4284629171269,"0",69.6367808246269,"1",57.4284629171269
+"Apple Pomace","CM","N_displacement",1,107.942128055714,"0",107.942128055714,"1",107.942128055714
+"Apple Pomace","AF","N_displacement",1,-434.461797520661,"0",-434.461797520661,"1",-434.461797520661
+"Apple Pomace","LF","N_displacement",1,178.194832623862,"0",178.194832623862,"1",178.194832623862
+"Apple Pomace","AD","K_Nratio",0.01,57.4284629171269,"0",57.4417058382469,"1",56.1174137262469
+"Apple Pomace","CM","K_Nratio",0.01,107.942128055714,"0",107.942128055714,"1",107.942128055714
+"Apple Pomace","AF","K_Nratio",0.01,-434.461797520661,"0",-434.461797520661,"1",-434.461797520661
+"Apple Pomace","LF","K_Nratio",0.01,178.194832623862,"0",178.194832623862,"1",178.194832623862
+"Apple Pomace","AD","P_Nratio",0.36,57.4284629171269,"0",57.6358229171269,"1",57.0598229171269
+"Apple Pomace","CM","P_Nratio",0.36,107.942128055714,"0",107.942128055714,"1",107.942128055714
+"Apple Pomace","AF","P_Nratio",0.36,-434.461797520661,"0",-434.461797520661,"1",-434.461797520661
+"Apple Pomace","LF","P_Nratio",0.36,178.194832623862,"0",178.194832623862,"1",178.194832623862
+"Apple Pomace","AD","AD_CSfactor",0.1,57.4284629171269,"0.02",137.273203717127,"0.16",-2.45509268287304
+"Apple Pomace","CM","Compost_dieseLlpert",3,107.942128055714,"0.13",98.8442280557142,"6",117.452128055714
+"Apple Pomace","CM","Compost_electpert",0.023,107.942128055714,"0.023",107.942128055714,"65",152.915958605714
+"Apple Pomace","CM","CompostPercentCdegraded",0.58,107.942128055714,"0.4",57.8190861357143,"0.83",177.557464055714
+"Apple Pomace","CM","Compost_degradedC_CH4",0.02,107.942128055714,"0.008",11.0375803437143,"0.036",237.148191671714
+"Apple Pomace","CM","Compost_N2OperN",0.005,107.942128055714,"0.001",96.6719051985714,"0.018",144.570352341429
+"Apple Pomace","CM","Compost_N_loss",0.43,107.942128055714,"0.23",104.67711777,"0.57",110.227635255714
+"Apple Pomace","CM","Compost_xportToField",20,107.942128055714,"10",107.942128055714,"30",107.942128055714
+"Apple Pomace","CM","Compost_CS_factor",0.1,107.942128055714,"0.02",107.942128055714,"0.14",107.942128055714
+"Apple Pomace","AF","AF_loss",0.1,-434.461797520661,"0.05",-458.598564049587,"0.5",-241.367665289256
+"Baked goods","AD","MF_N2O",0.018,-282.777495929707,"0.012",-282.751313299764,"0.024",-282.80367855965
+"Baked goods","CM","MF_N2O",0.018,156.804925520857,"0.012",156.804925520857,"0.024",156.804925520857
+"Baked goods","AF","MF_N2O",0.018,-528.000947107438,"0.012",-528.000947107438,"0.024",-528.000947107438
+"Baked goods","LF","MF_N2O",0.018,3114.93825416085,"0.012",3114.93825416085,"0.024",3114.93825416085
+"Baked goods","AD","MF_ROL",0.29485,-282.777495929707,"0.065",-282.776538768635,"0.5247",-282.778453090778
+"Baked goods","CM","MF_ROL",0.29485,156.804925520857,"0.065",156.804925520857,"0.5247",156.804925520857
+"Baked goods","AF","MF_ROL",0.29485,-528.000947107438,"0.065",-528.000947107438,"0.5247",-528.000947107438
+"Baked goods","LF","MF_ROL",0.29485,3114.93825416085,"0.065",3114.93825416085,"0.5247",3114.93825416085
+"Baked goods","AD","EFGrid",692.15,-282.777495929707,"537.18",-84.2849676918545,"918.79",-573.068175414942
+"Baked goods","CM","EFGrid",692.15,156.804925520857,"537.18",156.801361210857,"918.79",156.810138240857
+"Baked goods","AF","EFGrid",692.15,-528.000947107438,"537.18",-528.000947107438,"918.79",-528.000947107438
+"Baked goods","LF","EFGrid",692.15,3114.93825416085,"537.18",3056.09928842768,"918.79",3200.98886520663
+"Baked goods","AD","Displaced_N_Production_Factor",8.85,-282.777495929707,"4.7",-270.438858590107,"13",-295.116133269307
+"Baked goods","CM","Displaced_N_Production_Factor",8.85,156.804925520857,"4.7",158.053001168857,"13",155.556849872857
+"Baked goods","AF","Displaced_N_Production_Factor",8.85,-528.000947107438,"4.7",-528.000947107438,"13",-528.000947107438
+"Baked goods","LF","Displaced_N_Production_Factor",8.85,3114.93825416085,"4.7",3114.93825416085,"13",3114.93825416085
+"Baked goods","AD","Displaced_P_Production_Factor",1.8,-282.777495929707,"0.52",-282.224535929707,"3.09",-283.334775929707
+"Baked goods","CM","Displaced_P_Production_Factor",1.8,156.804925520857,"0.52",157.081405520857,"3.09",156.526285520857
+"Baked goods","AF","Displaced_P_Production_Factor",1.8,-528.000947107438,"0.52",-528.000947107438,"3.09",-528.000947107438
+"Baked goods","LF","Displaced_P_Production_Factor",1.8,3114.93825416085,"0.52",3114.93825416085,"3.09",3114.93825416085
+"Baked goods","AD","Displaced_K_Production_Factor",0.96,-282.777495929707,"0.38",-282.760251569088,"1.53",-282.794442973764
+"Baked goods","CM","Displaced_K_Production_Factor",0.96,156.804925520857,"0.38",156.951085520857,"1.53",156.661285520857
+"Baked goods","AF","Displaced_K_Production_Factor",0.96,-528.000947107438,"0.38",-528.000947107438,"1.53",-528.000947107438
+"Baked goods","LF","Displaced_K_Production_Factor",0.96,3114.93825416085,"0.38",3114.93825416085,"1.53",3114.93825416085
+"Baked goods","AD","EF_Peat_kgCO2eperton",970,-282.777495929707,"388",-282.777495929707,"1197",-282.777495929707
+"Baked goods","CM","EF_Peat_kgCO2eperton",970,156.804925520857,"388",205.692925520857,"1197",137.736925520857
+"Baked goods","AF","EF_Peat_kgCO2eperton",970,-528.000947107438,"388",-528.000947107438,"1197",-528.000947107438
+"Baked goods","LF","EF_Peat_kgCO2eperton",970,3114.93825416085,"388",3114.93825416085,"1197",3114.93825416085
+"Baked goods","AD","IPCC_EF4",0.01,-282.777495929707,"0.002",-295.47532613813,"0.05",-219.288344887593
+"Baked goods","LF","LFDieseluseLpert",5.83,3114.93825416085,"1",3099.62715416085,"6",3115.47715416085
+"Baked goods","LF","Landfill_OX_Max",0.35,3114.93825416085,"0.1",3236.75128611419,"0.55",3017.48782859817
+"Baked goods","LF","Landfill_CF",0.85,3114.93825416085,"0.8",3099.47970615641,"0.9",3130.39680216528
+"Baked goods","LF","LCEMax",0.95,3114.93825416085,"0.85",3164.32969087698,"0.95",3114.93825416085
+"Baked goods","LF","BMP_Correctionfactor",1,3114.93825416085,"0.7",2157.26334831259,"1",3114.93825416085
+"Baked goods","LF","k",0.144,3114.93825416085,"0.10",2646.63174940047,"0.229",3685.16576526722
+"Baked goods","AD","AD_Cf",0.9,-282.777495929707,"0.7",-157.53519355457,"1",-345.398647117275
+"Baked goods","AD","AD_Digester_CH4Leaks",0.025,-282.777495929707,"0",-481.98633485206,"0.1",314.849020837353
+"Baked goods","AD","AD_flared",0.05,-282.777495929707,"0.03",-301.241342425217,"0.16",-181.226340204401
+"Baked goods","AD","AD_Digester_CE",4.19,-282.777495929707,"3.2",-73.3093805586492," 4.41 ",-329.325966012164
+"Baked goods","AD","AD_Digester_parasiticLoad",0.12,-282.777495929707,"0.1",-302.926058909614,"0.2",-202.183244010081
+"Baked goods","AD","AD_reductionInVS",0.55,-282.777495929707,"0.4",-145.170472533007,"0.7",-420.384519326407
+"Baked goods","AD","AD_Storage_residualCH4",0.054,-282.777495929707,"0.004",-665.019227587207,"0.074",-129.880803266707
+"Baked goods","AD","AD_Storage_EF3",0.005,-282.777495929707,"0.0025",-298.127612864045,"0.01",-252.077262061031
+"Baked goods","AD","AD_Storage_FracGasMS",0.26,-282.777495929707,"0.15",-293.546650183428,"0.45",-264.17622949146
+"Baked goods","AD","IPCC_EF4",0.01,-282.777495929707,"0.002",-295.47532613813,"0.05",-219.288344887593
+"Baked goods","AD","LandApplication_EF1",0.0125,-282.777495929707,"0.018",-282.42159181814,"0.03",-281.645073756539
+"Baked goods","CM","LandApplication_EF1",0.0125,156.804925520857,"0.018",156.804925520857,"0.03",156.804925520857
+"Baked goods","AF","LandApplication_EF1",0.0125,-528.000947107438,"0.018",-528.000947107438,"0.03",-528.000947107438
+"Baked goods","LF","LandApplication_EF1",0.0125,3114.93825416085,"0.018",3114.93825416085,"0.03",3114.93825416085
+"Baked goods","AD","AD_LA_FracGasD",0.075,-282.777495929707,"0.06",-283.683341497599,"0.12",-280.059959226029
+"Baked goods","AD","AD_LA_FracLeachD",0.476,-282.777495929707,"0.152",-302.330970804589,"0.8",-263.224021054825
+"Baked goods","AD","AD_N_Availability",0.65,-282.777495929707,"0.4",-272.646319713403,"1",-296.961142632532
+"Baked goods","AD","N_displacement",1,-282.777495929707,"0",-256.464980157307,"1",-282.777495929707
+"Baked goods","CM","N_displacement",1,156.804925520857,"0",156.804925520857,"1",156.804925520857
+"Baked goods","AF","N_displacement",1,-528.000947107438,"0",-528.000947107438,"1",-528.000947107438
+"Baked goods","LF","N_displacement",1,3114.93825416085,"0",3114.93825416085,"1",3114.93825416085
+"Baked goods","AD","K_Nratio",0.01,-282.777495929707,"0",-282.748953539716,"1",-284.092953539716
+"Baked goods","CM","K_Nratio",0.01,156.804925520857,"0",156.804925520857,"1",156.804925520857
+"Baked goods","AF","K_Nratio",0.01,-528.000947107438,"0",-528.000947107438,"1",-528.000947107438
+"Baked goods","LF","K_Nratio",0.01,3114.93825416085,"0",3114.93825416085,"1",3114.93825416085
+"Baked goods","AD","P_Nratio",0.36,-282.777495929707,"0",-281.999895929707,"1",-284.159895929707
+"Baked goods","CM","P_Nratio",0.36,156.804925520857,"0",156.804925520857,"1",156.804925520857
+"Baked goods","AF","P_Nratio",0.36,-528.000947107438,"0",-528.000947107438,"1",-528.000947107438
+"Baked goods","LF","P_Nratio",0.36,3114.93825416085,"0",3114.93825416085,"1",3114.93825416085
+"Baked goods","AD","AD_CSfactor",0.1,-282.777495929707,"0.02",-249.652974301194,"0.16",-307.620887151091
+"Baked goods","CM","Compost_dieseLlpert",3,156.804925520857,"0.13",147.707025520857,"6",166.314925520857
+"Baked goods","CM","Compost_electpert",0.023,156.804925520857,"0.023",156.804925520857,"65",201.778756070857
+"Baked goods","CM","CompostPercentCdegraded",0.58,156.804925520857,"0.4",98.2843968808572,"0.83",238.083437520857
+"Baked goods","CM","Compost_degradedC_CH4",0.02,156.804925520857,"0.008",43.6652368168571,"0.036",307.657843792857
+"Baked goods","CM","Compost_N2OperN",0.005,156.804925520857,"0.001",132.514280492286,"0.018",235.749521863714
+"Baked goods","CM","Compost_N_loss",0.43,156.804925520857,"0.23",149.767868058,"0.57",161.730865744857
+"Baked goods","CM","Compost_xportToField",20,156.804925520857,"10",156.804925520857,"30",156.804925520857
+"Baked goods","CM","Compost_CS_factor",0.1,156.804925520857,"0.02",156.804925520857,"0.14",156.804925520857
+"Baked goods","AF","AF_loss",0.1,-528.000947107438,"0.05",-557.334333057851,"0.5",-293.333859504132
+"Brewers spent grains","AD","MF_N2O",0.018,-64.3782688346803,"0.012",-64.3769647053231,"0.024",-64.3795729640374
+"Brewers spent grains","CM","MF_N2O",0.018,-20.4652763908571,"0.012",-20.4652763908571,"0.024",-20.4652763908571
+"Brewers spent grains","AF","MF_N2O",0.018,-139.129257644628,"0.012",-139.129257644628,"0.024",-139.129257644628
+"Brewers spent grains","LF","MF_N2O",0.018,723.652468603246,"0.012",723.652468603246,"0.024",723.652468603246
+"Brewers spent grains","AD","MF_ROL",0.29485,-64.3782688346803,"0.065",-64.3773116736088,"0.5247",-64.3792259957517
+"Brewers spent grains","CM","MF_ROL",0.29485,-20.4652763908571,"0.065",-20.4652763908571,"0.5247",-20.4652763908571
+"Brewers spent grains","AF","MF_ROL",0.29485,-139.129257644628,"0.065",-139.129257644628,"0.5247",-139.129257644628
+"Brewers spent grains","LF","MF_ROL",0.29485,723.652468603246,"0.065",723.652468603246,"0.5247",723.652468603246
+"Brewers spent grains","AD","EFGrid",692.15,-64.3782688346803,"537.18",-18.4289645120702,"918.79",-131.578051577639
+"Brewers spent grains","CM","EFGrid",692.15,-20.4652763908571,"537.18",-20.4688407008571,"918.79",-20.4600636708571
+"Brewers spent grains","AF","EFGrid",692.15,-139.129257644628,"537.18",-139.129257644628,"918.79",-139.129257644628
+"Brewers spent grains","LF","EFGrid",692.15,723.652468603246,"537.18",710.031756697854,"918.79",743.572441154309
+"Brewers spent grains","AD","Displaced_N_Production_Factor",8.85,-64.3782688346803,"4.7",-63.7636942401178,"13",-64.9928434292428
+"Brewers spent grains","CM","Displaced_N_Production_Factor",8.85,-20.4652763908571,"4.7",-20.4031110508571,"13",-20.5274417308571
+"Brewers spent grains","AF","Displaced_N_Production_Factor",8.85,-139.129257644628,"4.7",-139.129257644628,"13",-139.129257644628
+"Brewers spent grains","LF","Displaced_N_Production_Factor",8.85,723.652468603246,"4.7",723.652468603246,"13",723.652468603246
+"Brewers spent grains","AD","Displaced_P_Production_Factor",1.8,-64.3782688346803,"0.52",-63.7792288346803,"3.09",-64.9819888346803
+"Brewers spent grains","CM","Displaced_P_Production_Factor",1.8,-20.4652763908571,"0.52",-20.1657563908571,"3.09",-20.7671363908571
+"Brewers spent grains","AF","Displaced_P_Production_Factor",1.8,-139.129257644628,"0.52",-139.129257644628,"3.09",-139.129257644628
+"Brewers spent grains","LF","Displaced_P_Production_Factor",1.8,723.652468603246,"0.52",723.652468603246,"3.09",723.652468603246
+"Brewers spent grains","AD","Displaced_K_Production_Factor",0.96,-64.3782688346803,"0.38",-64.3774099111505,"1.53",-64.3791129491836
+"Brewers spent grains","CM","Displaced_K_Production_Factor",0.96,-20.4652763908571,"0.38",-20.4443963908571,"1.53",-20.4857963908571
+"Brewers spent grains","AF","Displaced_K_Production_Factor",0.96,-139.129257644628,"0.38",-139.129257644628,"1.53",-139.129257644628
+"Brewers spent grains","LF","Displaced_K_Production_Factor",0.96,723.652468603246,"0.38",723.652468603246,"1.53",723.652468603246
+"Brewers spent grains","AD","EF_Peat_kgCO2eperton",970,-64.3782688346803,"388",-64.3782688346803,"1197",-64.3782688346803
+"Brewers spent grains","CM","EF_Peat_kgCO2eperton",970,-20.4652763908571,"388",28.4227236091429,"1197",-39.5332763908571
+"Brewers spent grains","AF","EF_Peat_kgCO2eperton",970,-139.129257644628,"388",-139.129257644628,"1197",-139.129257644628
+"Brewers spent grains","LF","EF_Peat_kgCO2eperton",970,723.652468603246,"388",723.652468603246,"1197",723.652468603246
+"Brewers spent grains","AD","IPCC_EF4",0.01,-64.3782688346803,"0.002",-65.0113078787588,"0.05",-61.2130736142874
+"Brewers spent grains","LF","LFDieseluseLpert",5.83,723.652468603246,"1",708.341368603246,"6",724.191368603246
+"Brewers spent grains","LF","Landfill_OX_Max",0.35,723.652468603246,"0.1",751.851132428904,"0.55",701.09353754272
+"Brewers spent grains","LF","Landfill_CF",0.85,723.652468603246,"0.8",720.073948379097,"0.9",727.230988827395
+"Brewers spent grains","LF","LCEMax",0.95,723.652468603246,"0.85",735.08615921492,"0.95",723.652468603246
+"Brewers spent grains","LF","BMP_Correctionfactor",1,723.652468603246,"0.7",501.959006982272,"1",723.652468603246
+"Brewers spent grains","LF","k",0.144,723.652468603246,"0.10",615.243561252803,"0.229",855.65520781746
+"Brewers spent grains","AD","AD_Cf",0.9,-64.3782688346803,"0.7",-35.3857585523608,"1",-78.87452397584
+"Brewers spent grains","AD","AD_Digester_CH4Leaks",0.025,-64.3782688346803,"0",-110.493392888259,"0.1",73.9671033260556
+"Brewers spent grains","AD","AD_flared",0.05,-64.3782688346803,"0.03",-68.6524896787592,"0.16",-40.8700541922463
+"Brewers spent grains","AD","AD_Digester_CE",4.19,-64.3782688346803,"3.2",-15.888210974493," 4.41 ",-75.1538372480552
+"Brewers spent grains","AD","AD_Digester_parasiticLoad",0.12,-64.3782688346803,"0.1",-69.0424869805523,"0.2",-45.7213962511923
+"Brewers spent grains","AD","AD_reductionInVS",0.55,-64.3782688346803,"0.4",-31.1147934021553,"0.7",-97.6417442672053
+"Brewers spent grains","AD","AD_Storage_residualCH4",0.054,-64.3782688346803,"0.004",-156.776811702805,"0.074",-27.4188516874303
+"Brewers spent grains","AD","AD_Storage_EF3",0.005,-64.3782688346803,"0.0025",-65.1428420717208,"0.01",-62.8491223605991
+"Brewers spent grains","AD","AD_Storage_FracGasMS",0.26,-64.3782688346803,"0.15",-64.9146691216083,"0.45",-63.4517592481683
+"Brewers spent grains","AD","IPCC_EF4",0.01,-64.3782688346803,"0.002",-65.0113078787588,"0.05",-61.2130736142874
+"Brewers spent grains","AD","LandApplication_EF1",0.0125,-64.3782688346803,"0.018",-64.360541623883,"0.03",-64.3218640730528
+"Brewers spent grains","CM","LandApplication_EF1",0.0125,-20.4652763908571,"0.018",-20.4652763908571,"0.03",-20.4652763908571
+"Brewers spent grains","AF","LandApplication_EF1",0.0125,-139.129257644628,"0.018",-139.129257644628,"0.03",-139.129257644628
+"Brewers spent grains","LF","LandApplication_EF1",0.0125,723.652468603246,"0.018",723.652468603246,"0.03",723.652468603246
+"Brewers spent grains","AD","AD_LA_FracGasD",0.075,-64.3782688346803,"0.06",-64.4233880530592,"0.12",-64.2429111795435
+"Brewers spent grains","AD","AD_LA_FracLeachD",0.476,-64.3782688346803,"0.152",-65.3534889503837,"0.8",-63.4030487189768
+"Brewers spent grains","AD","AD_N_Availability",0.65,-64.3782688346803,"0.4",-63.8736455651728,"1",-65.0847414119908
+"Brewers spent grains","AD","N_displacement",1,-64.3782688346803,"0",-63.0676700004928,"1",-64.3782688346803
+"Brewers spent grains","CM","N_displacement",1,-20.4652763908571,"0",-20.4652763908571,"1",-20.4652763908571
+"Brewers spent grains","AF","N_displacement",1,-139.129257644628,"0",-139.129257644628,"1",-139.129257644628
+"Brewers spent grains","LF","N_displacement",1,723.652468603246,"0",723.652468603246,"1",723.652468603246
+"Brewers spent grains","AD","K_Nratio",0.01,-64.3782688346803,"0",-64.3768471681483,"1",-64.5190138213483
+"Brewers spent grains","CM","K_Nratio",0.01,-20.4652763908571,"0",-20.4652763908571,"1",-20.4652763908571
+"Brewers spent grains","AF","K_Nratio",0.01,-139.129257644628,"0",-139.129257644628,"1",-139.129257644628
+"Brewers spent grains","LF","K_Nratio",0.01,723.652468603246,"0",723.652468603246,"1",723.652468603246
+"Brewers spent grains","AD","P_Nratio",0.36,-64.3782688346803,"0",-63.5358688346803,"1",-65.8758688346803
+"Brewers spent grains","CM","P_Nratio",0.36,-20.4652763908571,"0",-20.4652763908571,"1",-20.4652763908571
+"Brewers spent grains","AF","P_Nratio",0.36,-139.129257644628,"0",-139.129257644628,"1",-139.129257644628
+"Brewers spent grains","LF","P_Nratio",0.36,723.652468603246,"0",723.652468603246,"1",723.652468603246
+"Brewers spent grains","AD","AD_CSfactor",0.1,-64.3782688346803,"0.02",-52.5031297173259,"0.16",-73.2846231726961
+"Brewers spent grains","CM","Compost_dieseLlpert",3,-20.4652763908571,"0.13",-29.5631763908571,"6",-10.9552763908571
+"Brewers spent grains","CM","Compost_electpert",0.023,-20.4652763908571,"0.023",-20.4652763908571,"65",24.5085541591429
+"Brewers spent grains","CM","CompostPercentCdegraded",0.58,-20.4652763908571,"0.4",-35.9549543428571,"0.83",1.04816520914285
+"Brewers spent grains","CM","Compost_degradedC_CH4",0.02,-20.4652763908571,"0.008",-50.4119870980571,"0.036",19.4636712187428
+"Brewers spent grains","CM","Compost_N2OperN",0.005,-20.4652763908571,"0.001",-21.6751679622857,"0.018",-16.5331287837143
+"Brewers spent grains","CM","Compost_N_loss",0.43,-20.4652763908571,"0.23",-20.815784848,"0.57",-20.2199204708571
+"Brewers spent grains","CM","Compost_xportToField",20,-20.4652763908571,"10",-20.4652763908571,"30",-20.4652763908571
+"Brewers spent grains","CM","Compost_CS_factor",0.1,-20.4652763908571,"0.02",-20.4652763908571,"0.14",-20.4652763908571
+"Brewers spent grains","AF","AF_loss",0.1,-139.129257644628,"0.05",-146.858660847107,"0.5",-77.2940320247934
+"Canned goods","AD","MF_N2O",0.018,-16.9440028074014,"0.012",-16.9395008814014,"0.024",-16.9485047334014
+"Canned goods","CM","MF_N2O",0.018,-46.02978323,"0.012",-46.02978323,"0.024",-46.02978323
+"Canned goods","AF","MF_N2O",0.018,-50.8365092975207,"0.012",-50.8365092975207,"0.024",-50.8365092975207
+"Canned goods","LF","MF_N2O",0.018,332.860413414689,"0.012",332.860413414689,"0.024",332.860413414689
+"Canned goods","AD","MF_ROL",0.29485,-16.9440028074014,"0.065",-16.94304564633,"0.5247",-16.9449599684728
+"Canned goods","CM","MF_ROL",0.29485,-46.02978323,"0.065",-46.02978323,"0.5247",-46.02978323
+"Canned goods","AF","MF_ROL",0.29485,-50.8365092975207,"0.065",-50.8365092975207,"0.5247",-50.8365092975207
+"Canned goods","LF","MF_ROL",0.29485,332.860413414689,"0.065",332.860413414689,"0.5247",332.860413414689
+"Canned goods","AD","EFGrid",692.15,-16.9440028074014,"537.18",2.80677606170579,"918.79",-45.829054900674
+"Canned goods","CM","EFGrid",692.15,-46.02978323,"537.18",-46.03334754,"918.79",-46.02457051
+"Canned goods","AF","EFGrid",692.15,-50.8365092975207,"537.18",-50.8365092975207,"918.79",-50.8365092975207
+"Canned goods","LF","EFGrid",692.15,332.860413414689,"537.18",327.00570738923,"918.79",341.422784025839
+"Canned goods","AD","Displaced_N_Production_Factor",8.85,-16.9440028074014,"4.7",-14.8224576316514,"13",-19.0655479831514
+"Canned goods","CM","Displaced_N_Production_Factor",8.85,-46.02978323,"4.7",-45.81518507,"13",-46.24438139
+"Canned goods","AF","Displaced_N_Production_Factor",8.85,-50.8365092975207,"4.7",-50.8365092975207,"13",-50.8365092975207
+"Canned goods","LF","Displaced_N_Production_Factor",8.85,332.860413414689,"4.7",332.860413414689,"13",332.860413414689
+"Canned goods","AD","Displaced_P_Production_Factor",1.8,-16.9440028074014,"0.52",-16.7735068074014,"3.09",-17.1158308074014
+"Canned goods","CM","Displaced_P_Production_Factor",1.8,-46.02978323,"0.52",-45.94453523,"3.09",-46.11569723
+"Canned goods","AF","Displaced_P_Production_Factor",1.8,-50.8365092975207,"0.52",-50.8365092975207,"3.09",-50.8365092975207
+"Canned goods","LF","Displaced_P_Production_Factor",1.8,332.860413414689,"0.52",332.860413414689,"3.09",332.860413414689
+"Canned goods","AD","Displaced_K_Production_Factor",0.96,-16.9440028074014,"0.38",-16.9410377563124,"1.53",-16.9469167369199
+"Canned goods","CM","Displaced_K_Production_Factor",0.96,-46.02978323,"0.38",-45.88571123,"1.53",-46.17137123
+"Canned goods","AF","Displaced_K_Production_Factor",0.96,-50.8365092975207,"0.38",-50.8365092975207,"1.53",-50.8365092975207
+"Canned goods","LF","Displaced_K_Production_Factor",0.96,332.860413414689,"0.38",332.860413414689,"1.53",332.860413414689
+"Canned goods","AD","EF_Peat_kgCO2eperton",970,-16.9440028074014,"388",-16.9440028074014,"1197",-16.9440028074014
+"Canned goods","CM","EF_Peat_kgCO2eperton",970,-46.02978323,"388",2.85821677,"1197",-65.09778323
+"Canned goods","AF","EF_Peat_kgCO2eperton",970,-50.8365092975207,"388",-50.8365092975207,"1197",-50.8365092975207
+"Canned goods","LF","EF_Peat_kgCO2eperton",970,332.860413414689,"388",332.860413414689,"1197",332.860413414689
+"Canned goods","AD","IPCC_EF4",0.01,-16.9440028074014,"0.002",-19.1278084882871,"0.05",-6.02497440297282
+"Canned goods","LF","LFDieseluseLpert",5.83,332.860413414689,"1",317.549313414689,"6",333.399313414689
+"Canned goods","LF","Landfill_OX_Max",0.35,332.860413414689,"0.1",344.98128405322,"0.55",323.163716903864
+"Canned goods","LF","Landfill_CF",0.85,332.860413414689,"0.8",331.322227740983,"0.9",334.398599088394
+"Canned goods","LF","LCEMax",0.95,332.860413414689,"0.85",337.775053543807,"0.95",332.860413414689
+"Canned goods","LF","BMP_Correctionfactor",1,332.860413414689,"0.7",237.568034090282,"1",332.860413414689
+"Canned goods","LF","k",0.144,332.860413414689,"0.10",286.262094069372,"0.229",389.600269453237
+"Canned goods","AD","AD_Cf",0.9,-16.9440028074014,"0.7",-4.48190641904238,"1",-23.1750510015809
+"Canned goods","AD","AD_Digester_CH4Leaks",0.025,-16.9440028074014,"0",-36.7660573766911,"0.1",42.5221609004678
+"Canned goods","AD","AD_flared",0.05,-16.9440028074014,"0.03",-18.7812273742071,"0.16",-6.83926768996996
+"Canned goods","AD","AD_Digester_CE",4.19,-16.9440028074014,"3.2",3.89888968608762," 4.41 ",-21.5757566948434
+"Canned goods","AD","AD_Digester_parasiticLoad",0.12,-16.9440028074014,"0.1",-18.9488632194243,"0.2",-8.92456115930966
+"Canned goods","AD","AD_reductionInVS",0.55,-16.9440028074014,"0.4",-2.33034205252638,"0.7",-31.5576635622764
+"Canned goods","AD","AD_Storage_residualCH4",0.054,-16.9440028074014,"0.004",-57.5375049042764,"0.074",-0.706601968651398
+"Canned goods","AD","AD_Storage_EF3",0.005,-16.9440028074014,"0.0025",-19.5833515160894,"0.01",-11.6653053900254
+"Canned goods","AD","AD_Storage_FracGasMS",0.26,-16.9440028074014,"0.15",-18.7956859896734,"0.45",-13.7456409471134
+"Canned goods","AD","IPCC_EF4",0.01,-16.9440028074014,"0.002",-19.1278084882871,"0.05",-6.02497440297282
+"Canned goods","AD","LandApplication_EF1",0.0125,-16.9440028074014,"0.018",-16.8828075043754,"0.03",-16.7492904795914
+"Canned goods","CM","LandApplication_EF1",0.0125,-46.02978323,"0.018",-46.02978323,"0.03",-46.02978323
+"Canned goods","AF","LandApplication_EF1",0.0125,-50.8365092975207,"0.018",-50.8365092975207,"0.03",-50.8365092975207
+"Canned goods","LF","LandApplication_EF1",0.0125,332.860413414689,"0.018",332.860413414689,"0.03",332.860413414689
+"Canned goods","AD","AD_LA_FracGasD",0.075,-16.9440028074014,"0.06",-17.0997568215314,"0.12",-16.4767407650114
+"Canned goods","AD","AD_LA_FracLeachD",0.476,-16.9440028074014,"0.152",-20.3072077011408,"0.8",-13.580797913662
+"Canned goods","AD","AD_N_Availability",0.65,-16.9440028074014,"0.4",-15.2020156304714,"1",-19.3827848551034
+"Canned goods","AD","N_displacement",1,-16.9440028074014,"0",-12.4197438181514,"1",-16.9440028074014
+"Canned goods","CM","N_displacement",1,-46.02978323,"0",-46.02978323,"1",-46.02978323
+"Canned goods","AF","N_displacement",1,-50.8365092975207,"0",-50.8365092975207,"1",-50.8365092975207
+"Canned goods","LF","N_displacement",1,332.860413414689,"0",332.860413414689,"1",332.860413414689
+"Canned goods","AD","K_Nratio",0.01,-16.9440028074014,"0",-16.9390951366334,"1",-17.4298622134334
+"Canned goods","CM","K_Nratio",0.01,-46.02978323,"0",-46.02978323,"1",-46.02978323
+"Canned goods","AF","K_Nratio",0.01,-50.8365092975207,"0",-50.8365092975207,"1",-50.8365092975207
+"Canned goods","LF","K_Nratio",0.01,332.860413414689,"0",332.860413414689,"1",332.860413414689
+"Canned goods","AD","P_Nratio",0.36,-16.9440028074014,"0",-16.7042428074014,"1",-17.3702428074014
+"Canned goods","CM","P_Nratio",0.36,-46.02978323,"0",-46.02978323,"1",-46.02978323
+"Canned goods","AF","P_Nratio",0.36,-50.8365092975207,"0",-50.8365092975207,"1",-50.8365092975207
+"Canned goods","LF","P_Nratio",0.36,332.860413414689,"0",332.860413414689,"1",332.860413414689
+"Canned goods","AD","AD_CSfactor",0.1,-16.9440028074014,"0.02",-13.3306563201943,"0.16",-19.6540126728067
+"Canned goods","CM","Compost_dieseLlpert",3,-46.02978323,"0.13",-55.12768323,"6",-36.51978323
+"Canned goods","CM","Compost_electpert",0.023,-46.02978323,"0.023",-46.02978323,"65",-1.05595268000001
+"Canned goods","CM","CompostPercentCdegraded",0.58,-46.02978323,"0.4",-52.00804979,"0.83",-37.72663523
+"Canned goods","CM","Compost_degradedC_CH4",0.02,-46.02978323,"0.008",-57.587765246,"0.036",-30.619140542
+"Canned goods","CM","Compost_N2OperN",0.005,-46.02978323,"0.001",-50.20639523,"0.018",-32.45579423
+"Canned goods","CM","Compost_N_loss",0.43,-46.02978323,"0.23",-47.23975763,"0.57",-45.18280115
+"Canned goods","CM","Compost_xportToField",20,-46.02978323,"10",-46.02978323,"30",-46.02978323
+"Canned goods","CM","Compost_CS_factor",0.1,-46.02978323,"0.02",-46.02978323,"0.14",-46.02978323
+"Canned goods","AF","AF_loss",0.1,-50.8365092975207,"0.05",-53.6607598140496,"0.5",-28.2425051652893
+"Coffee grounds and filter paper","AD","MF_N2O",0.018,-42.7347440085526,"0.012",-42.7205064889297,"0.024",-42.7489815281755
+"Coffee grounds and filter paper","CM","MF_N2O",0.018,9.00669851765713,"0.012",9.00669851765713,"0.024",9.00669851765713
+"Coffee grounds and filter paper","AF","MF_N2O",0.018,-159.900270247934,"0.012",-159.900270247934,"0.024",-159.900270247934
+"Coffee grounds and filter paper","LF","MF_N2O",0.018,730.098537207301,"0.012",730.098537207301,"0.024",730.098537207301
+"Coffee grounds and filter paper","AD","MF_ROL",0.29485,-42.7347440085526,"0.065",-42.7337868474812,"0.5247",-42.735701169624
+"Coffee grounds and filter paper","CM","MF_ROL",0.29485,9.00669851765713,"0.065",9.00669851765713,"0.5247",9.00669851765713
+"Coffee grounds and filter paper","AF","MF_ROL",0.29485,-159.900270247934,"0.065",-159.900270247934,"0.5247",-159.900270247934
+"Coffee grounds and filter paper","LF","MF_ROL",0.29485,730.098537207301,"0.065",730.098537207301,"0.5247",730.098537207301
+"Coffee grounds and filter paper","AD","EFGrid",692.15,-42.7347440085526,"537.18",7.81760798713447,"918.79",-116.666376300625
+"Coffee grounds and filter paper","CM","EFGrid",692.15,9.00669851765713,"537.18",9.00313420765713,"918.79",9.01191123765713
+"Coffee grounds and filter paper","AF","EFGrid",692.15,-159.900270247934,"537.18",-159.900270247934,"918.79",-159.900270247934
+"Coffee grounds and filter paper","LF","EFGrid",692.15,730.098537207301,"537.18",715.113347924807,"918.79",752.014026005033
+"Coffee grounds and filter paper","AD","Displaced_N_Production_Factor",8.85,-42.7347440085526,"4.7",-36.0252732019426,"13",-49.4442148151626
+"Coffee grounds and filter paper","CM","Displaced_N_Production_Factor",8.85,9.00669851765713,"4.7",9.68537371445713,"13",8.32802332085713
+"Coffee grounds and filter paper","AF","Displaced_N_Production_Factor",8.85,-159.900270247934,"4.7",-159.900270247934,"13",-159.900270247934
+"Coffee grounds and filter paper","LF","Displaced_N_Production_Factor",8.85,730.098537207301,"4.7",730.098537207301,"13",730.098537207301
+"Coffee grounds and filter paper","AD","Displaced_P_Production_Factor",1.8,-42.7347440085526,"0.52",-41.5044080085526,"3.09",-43.9746920085526
+"Coffee grounds and filter paper","CM","Displaced_P_Production_Factor",1.8,9.00669851765713,"0.52",9.62186651765713,"3.09",8.38672451765713
+"Coffee grounds and filter paper","AF","Displaced_P_Production_Factor",1.8,-159.900270247934,"0.52",-159.900270247934,"3.09",-159.900270247934
+"Coffee grounds and filter paper","LF","Displaced_P_Production_Factor",1.8,730.098537207301,"0.52",730.098537207301,"3.09",730.098537207301
+"Coffee grounds and filter paper","AD","Displaced_K_Production_Factor",0.96,-42.7347440085526,"0.38",-42.7253669168229,"1.53",-42.743959426287
+"Coffee grounds and filter paper","CM","Displaced_K_Production_Factor",0.96,9.00669851765713,"0.38",9.15651251765713,"1.53",8.85946751765713
+"Coffee grounds and filter paper","AF","Displaced_K_Production_Factor",0.96,-159.900270247934,"0.38",-159.900270247934,"1.53",-159.900270247934
+"Coffee grounds and filter paper","LF","Displaced_K_Production_Factor",0.96,730.098537207301,"0.38",730.098537207301,"1.53",730.098537207301
+"Coffee grounds and filter paper","AD","EF_Peat_kgCO2eperton",970,-42.7347440085526,"388",-42.7347440085526,"1197",-42.7347440085526
+"Coffee grounds and filter paper","CM","EF_Peat_kgCO2eperton",970,9.00669851765713,"388",57.8946985176571,"1197",-10.0613014823429
+"Coffee grounds and filter paper","AF","EF_Peat_kgCO2eperton",970,-159.900270247934,"388",-159.900270247934,"1197",-159.900270247934
+"Coffee grounds and filter paper","LF","EF_Peat_kgCO2eperton",970,730.098537207301,"388",730.098537207301,"1197",730.098537207301
+"Coffee grounds and filter paper","AD","IPCC_EF4",0.01,-42.7347440085526,"0.002",-49.6398110659435,"0.05",-8.2094087215983
+"Coffee grounds and filter paper","LF","LFDieseluseLpert",5.83,730.098537207301,"1",714.787437207301,"6",730.637437207301
+"Coffee grounds and filter paper","LF","Landfill_OX_Max",0.35,730.098537207301,"0.1",761.122048891269,"0.55",705.279727860127
+"Coffee grounds and filter paper","LF","Landfill_CF",0.85,730.098537207301,"0.8",726.161532792072,"0.9",734.035541622531
+"Coffee grounds and filter paper","LF","LCEMax",0.95,730.098537207301,"0.85",742.677616715295,"0.95",730.098537207301
+"Coffee grounds and filter paper","LF","BMP_Correctionfactor",1,730.098537207301,"0.7",486.196565845111,"1",730.098537207301
+"Coffee grounds and filter paper","LF","k",0.144,730.098537207301,"0.10",610.829587989483,"0.229",875.32486947776
+"Coffee grounds and filter paper","AD","AD_Cf",0.9,-42.7347440085526,"0.7",-10.8378609841626,"1",-58.6831855207476
+"Coffee grounds and filter paper","AD","AD_Digester_CH4Leaks",0.025,-42.7347440085526,"0",-93.4695270014295,"0.1",109.469604970078
+"Coffee grounds and filter paper","AD","AD_flared",0.05,-42.7347440085526,"0.03",-47.4371420057048,"0.16",-16.8715550242154
+"Coffee grounds and filter paper","AD","AD_Digester_CE",4.19,-42.7347440085526,"3.2",10.6128857189605," 4.41 ",-54.5897728368888
+"Coffee grounds and filter paper","AD","AD_Digester_parasiticLoad",0.12,-42.7347440085526,"0.1",-47.8662079332147,"0.2",-22.2088883099043
+"Coffee grounds and filter paper","AD","AD_reductionInVS",0.55,-42.7347440085526,"0.4",1.9109217967724,"0.7",-87.3804098138775
+"Coffee grounds and filter paper","AD","AD_Storage_residualCH4",0.054,-42.7347440085526,"0.004",-166.750482356678,"0.074",6.87155133069739
+"Coffee grounds and filter paper","AD","AD_Storage_EF3",0.005,-42.7347440085526,"0.0025",-51.0817890358383,"0.01",-26.0406539539813
+"Coffee grounds and filter paper","AD","AD_Storage_FracGasMS",0.26,-42.7347440085526,"0.15",-48.5907655519792,"0.45",-32.6197977062703
+"Coffee grounds and filter paper","AD","IPCC_EF4",0.01,-42.7347440085526,"0.002",-49.6398110659435,"0.05",-8.2094087215983
+"Coffee grounds and filter paper","AD","LandApplication_EF1",0.0125,-42.7347440085526,"0.018",-42.5412114343478,"0.03",-42.1189585451738
+"Coffee grounds and filter paper","CM","LandApplication_EF1",0.0125,9.00669851765713,"0.018",9.00669851765713,"0.03",9.00669851765713
+"Coffee grounds and filter paper","AF","LandApplication_EF1",0.0125,-159.900270247934,"0.018",-159.900270247934,"0.03",-159.900270247934
+"Coffee grounds and filter paper","LF","LandApplication_EF1",0.0125,730.098537207301,"0.018",730.098537207301,"0.03",730.098537207301
+"Coffee grounds and filter paper","AD","AD_LA_FracGasD",0.075,-42.7347440085526,"0.06",-43.2273222589536,"0.12",-41.2570092573497
+"Coffee grounds and filter paper","AD","AD_LA_FracLeachD",0.476,-42.7347440085526,"0.152",-53.3680951851887,"0.8",-32.1013928319165
+"Coffee grounds and filter paper","AD","AD_N_Availability",0.65,-42.7347440085526,"0.4",-37.2256404350362,"1",-50.4474890114756
+"Coffee grounds and filter paper","AD","N_displacement",1,-42.7347440085526,"0",-28.4265954209626,"1",-42.7347440085526
+"Coffee grounds and filter paper","CM","N_displacement",1,9.00669851765713,"0",9.00669851765713,"1",9.00669851765713
+"Coffee grounds and filter paper","AF","N_displacement",1,-159.900270247934,"0",-159.900270247934,"1",-159.900270247934
+"Coffee grounds and filter paper","LF","N_displacement",1,730.098537207301,"0",730.098537207301,"1",730.098537207301
+"Coffee grounds and filter paper","AD","K_Nratio",0.01,-42.7347440085526,"0",-42.719223305,"1",-44.096823305
+"Coffee grounds and filter paper","CM","K_Nratio",0.01,9.00669851765713,"0",9.00669851765713,"1",9.00669851765713
+"Coffee grounds and filter paper","AF","K_Nratio",0.01,-159.900270247934,"0",-159.900270247934,"1",-159.900270247934
+"Coffee grounds and filter paper","LF","K_Nratio",0.01,730.098537207301,"0",730.098537207301,"1",730.098537207301
+"Coffee grounds and filter paper","AD","P_Nratio",0.36,-42.7347440085526,"0",-41.0045840085526,"1",-45.8105840085526
+"Coffee grounds and filter paper","CM","P_Nratio",0.36,9.00669851765713,"0",9.00669851765713,"1",9.00669851765713
+"Coffee grounds and filter paper","AF","P_Nratio",0.36,-159.900270247934,"0",-159.900270247934,"1",-159.900270247934
+"Coffee grounds and filter paper","LF","P_Nratio",0.36,730.098537207301,"0",730.098537207301,"1",730.098537207301
+"Coffee grounds and filter paper","AD","AD_CSfactor",0.1,-42.7347440085526,"0.02",-26.4957359654118,"0.16",-54.9140000409082
+"Coffee grounds and filter paper","CM","Compost_dieseLlpert",3,9.00669851765713,"0.13",-0.0912014823428824,"6",18.5166985176571
+"Coffee grounds and filter paper","CM","Compost_electpert",0.023,9.00669851765713,"0.023",9.00669851765713,"65",53.9805290676571
+"Coffee grounds and filter paper","CM","CompostPercentCdegraded",0.58,9.00669851765713,"0.4",-9.57516458634286,"0.83",34.8148417176571
+"Coffee grounds and filter paper","CM","Compost_degradedC_CH4",0.02,9.00669851765713,"0.008",-26.9182368167429,"0.036",56.9066122968571
+"Coffee grounds and filter paper","CM","Compost_N2OperN",0.005,9.00669851765713,"0.001",-4.2020026709143,"0.018",51.9349773805143
+"Coffee grounds and filter paper","CM","Compost_N_loss",0.43,9.00669851765713,"0.23",5.18010646279998,"0.57",11.6853129560571
+"Coffee grounds and filter paper","CM","Compost_xportToField",20,9.00669851765713,"10",9.00669851765713,"30",9.00669851765713
+"Coffee grounds and filter paper","CM","Compost_CS_factor",0.1,9.00669851765713,"0.02",9.00669851765713,"0.14",9.00669851765713
+"Coffee grounds and filter paper","AF","AF_loss",0.1,-159.900270247934,"0.05",-168.783618595041,"0.5",-88.8334834710744
+"Dry goods","AD","MF_N2O",0.018,-93.1124943232308,"0.012",-93.0808007641908,"0.024",-93.1441878822708
+"Dry goods","CM","MF_N2O",0.018,156.1875509764,"0.012",156.1875509764,"0.024",156.1875509764
+"Dry goods","AF","MF_N2O",0.018,-470.756045454545,"0.012",-470.756045454545,"0.024",-470.756045454545
+"Dry goods","LF","MF_N2O",0.018,1824.37670272473,"0.012",1824.37670272473,"0.024",1824.37670272473
+"Dry goods","AD","MF_ROL",0.29485,-93.1124943232308,"0.065",-93.1115371621594,"0.5247",-93.1134514843022
+"Dry goods","CM","MF_ROL",0.29485,156.1875509764,"0.065",156.1875509764,"0.5247",156.1875509764
+"Dry goods","AF","MF_ROL",0.29485,-470.756045454545,"0.065",-470.756045454545,"0.5247",-470.756045454545
+"Dry goods","LF","MF_ROL",0.29485,1824.37670272473,"0.065",1824.37670272473,"0.5247",1824.37670272473
+"Dry goods","AD","EFGrid",692.15,-93.1124943232308,"537.18",43.7608391635118,"918.79",-293.286542858014
+"Dry goods","CM","EFGrid",692.15,156.1875509764,"537.18",156.1839866664,"918.79",156.1927636964
+"Dry goods","AF","EFGrid",692.15,-470.756045454545,"537.18",-470.756045454545,"918.79",-470.756045454545
+"Dry goods","LF","EFGrid",692.15,1824.37670272473,"537.18",1783.80346074779,"918.79",1883.71412004199
+"Dry goods","AD","Displaced_N_Production_Factor",8.85,-93.1124943232308,"4.7",-78.1768162859508,"13",-108.048172360511
+"Dry goods","CM","Displaced_N_Production_Factor",8.85,156.1875509764,"4.7",157.6983220228,"13",154.67677993
+"Dry goods","AF","Displaced_N_Production_Factor",8.85,-470.756045454545,"4.7",-470.756045454545,"13",-470.756045454545
+"Dry goods","LF","Displaced_N_Production_Factor",8.85,1824.37670272473,"4.7",1824.37670272473,"13",1824.37670272473
+"Dry goods","AD","Displaced_P_Production_Factor",1.8,-93.1124943232308,"0.52",-92.3613903232308,"3.09",-93.8694663232308
+"Dry goods","CM","Displaced_P_Production_Factor",1.8,156.1875509764,"0.52",156.5631029764,"3.09",155.8090649764
+"Dry goods","AF","Displaced_P_Production_Factor",1.8,-470.756045454545,"0.52",-470.756045454545,"3.09",-470.756045454545
+"Dry goods","LF","Displaced_P_Production_Factor",1.8,1824.37670272473,"0.52",1824.37670272473,"3.09",1824.37670272473
+"Dry goods","AD","Displaced_K_Production_Factor",0.96,-93.1124943232308,"0.38",-93.0916203635642,"1.53",-93.133008387041
+"Dry goods","CM","Displaced_K_Production_Factor",0.96,156.1875509764,"0.38",156.3973949764,"1.53",155.9813249764
+"Dry goods","AF","Displaced_K_Production_Factor",0.96,-470.756045454545,"0.38",-470.756045454545,"1.53",-470.756045454545
+"Dry goods","LF","Displaced_K_Production_Factor",0.96,1824.37670272473,"0.38",1824.37670272473,"1.53",1824.37670272473
+"Dry goods","AD","EF_Peat_kgCO2eperton",970,-93.1124943232308,"388",-93.1124943232308,"1197",-93.1124943232308
+"Dry goods","CM","EF_Peat_kgCO2eperton",970,156.1875509764,"388",205.0755509764,"1197",137.1195509764
+"Dry goods","AF","EF_Peat_kgCO2eperton",970,-470.756045454545,"388",-470.756045454545,"1197",-470.756045454545
+"Dry goods","LF","EF_Peat_kgCO2eperton",970,1824.37670272473,"388",1824.37670272473,"1197",1824.37670272473
+"Dry goods","AD","IPCC_EF4",0.01,-93.1124943232308,"0.002",-108.482841247421,"0.05",-16.2607597022822
+"Dry goods","LF","LFDieseluseLpert",5.83,1824.37670272473,"1",1809.06560272473,"6",1824.91560272473
+"Dry goods","LF","Landfill_OX_Max",0.35,1824.37670272473,"0.1",1908.37460377218,"0.55",1757.17838188677
+"Dry goods","LF","Landfill_CF",0.85,1824.37670272473,"0.8",1813.71704205631,"0.9",1835.03636339315
+"Dry goods","LF","LCEMax",0.95,1824.37670272473,"0.85",1858.43526729164,"0.95",1824.37670272473
+"Dry goods","LF","BMP_Correctionfactor",1,1824.37670272473,"0.7",1163.99841078731,"1",1824.37670272473
+"Dry goods","LF","k",0.144,1824.37670272473,"0.10",1501.44932117982,"0.229",2217.58515738985
+"Dry goods","AD","AD_Cf",0.9,-93.1124943232308,"0.7",-6.74989129820395,"1",-136.293795835744
+"Dry goods","AD","AD_Digester_CH4Leaks",0.025,-93.1124943232308,"0",-230.479769985381,"0.1",318.989332663218
+"Dry goods","AD","AD_flared",0.05,-93.1124943232308,"0.03",-105.844501120986,"0.16",-23.0864569355767
+"Dry goods","AD","AD_Digester_CE",4.19,-93.1124943232308,"3.2",51.3292106847604," 4.41 ",-125.210650991673
+"Dry goods","AD","AD_Digester_parasiticLoad",0.12,-93.1124943232308,"0.1",-107.006221228269,"0.2",-37.5375867030762
+"Dry goods","AD","AD_reductionInVS",0.55,-93.1124943232308,"0.4",45.5545507933694,"0.7",-231.779539439831
+"Dry goods","AD","AD_Storage_residualCH4",0.054,-93.1124943232308,"0.004",-478.298730758231,"0.074",60.9620002507693
+"Dry goods","AD","AD_Storage_EF3",0.005,-93.1124943232308,"0.0025",-111.693509232394,"0.01",-55.9504645049038
+"Dry goods","AD","AD_Storage_FracGasMS",0.26,-93.1124943232308,"0.15",-106.148343926426,"0.45",-70.5960268268033
+"Dry goods","AD","IPCC_EF4",0.01,-93.1124943232308,"0.002",-108.482841247421,"0.05",-16.2607597022822
+"Dry goods","AD","LandApplication_EF1",0.0125,-93.1124943232308,"0.018",-92.6816793899278,"0.03",-91.7417195354484
+"Dry goods","CM","LandApplication_EF1",0.0125,156.1875509764,"0.018",156.1875509764,"0.03",156.1875509764
+"Dry goods","AF","LandApplication_EF1",0.0125,-470.756045454545,"0.018",-470.756045454545,"0.03",-470.756045454545
+"Dry goods","LF","LandApplication_EF1",0.0125,1824.37670272473,"0.018",1824.37670272473,"0.03",1824.37670272473
+"Dry goods","AD","AD_LA_FracGasD",0.075,-93.1124943232308,"0.06",-94.209002582706,"0.12",-89.8229695448052
+"Dry goods","AD","AD_LA_FracLeachD",0.476,-93.1124943232308,"0.152",-116.781307434585,"0.8",-69.4436812118767
+"Dry goods","AD","AD_N_Availability",0.65,-93.1124943232308,"0.4",-80.8489045976436,"1",-110.281519939053
+"Dry goods","AD","N_displacement",1,-93.1124943232308,"0",-61.2617110389108,"1",-93.1124943232308
+"Dry goods","CM","N_displacement",1,156.1875509764,"0",156.1875509764,"1",156.1875509764
+"Dry goods","AF","N_displacement",1,-470.756045454545,"0",-470.756045454545,"1",-470.756045454545
+"Dry goods","LF","N_displacement",1,1824.37670272473,"0",1824.37670272473,"1",1824.37670272473
+"Dry goods","AD","K_Nratio",0.01,-93.1124943232308,"0",-93.0779443210241,"1",-95.0075443210241
+"Dry goods","CM","K_Nratio",0.01,156.1875509764,"0",156.1875509764,"1",156.1875509764
+"Dry goods","AF","K_Nratio",0.01,-470.756045454545,"0",-470.756045454545,"1",-470.756045454545
+"Dry goods","LF","K_Nratio",0.01,1824.37670272473,"0",1824.37670272473,"1",1824.37670272473
+"Dry goods","AD","P_Nratio",0.36,-93.1124943232308,"0",-92.0562543232308,"1",-94.9902543232308
+"Dry goods","CM","P_Nratio",0.36,156.1875509764,"0",156.1875509764,"1",156.1875509764
+"Dry goods","AF","P_Nratio",0.36,-470.756045454545,"0",-470.756045454545,"1",-470.756045454545
+"Dry goods","LF","P_Nratio",0.36,1824.37670272473,"0",1824.37670272473,"1",1824.37670272473
+"Dry goods","AD","AD_CSfactor",0.1,-93.1124943232308,"0.02",-37.7154684611564,"0.16",-134.660263719787
+"Dry goods","CM","Compost_dieseLlpert",3,156.1875509764,"0.13",147.0896509764,"6",165.6975509764
+"Dry goods","CM","Compost_electpert",0.023,156.1875509764,"0.023",156.1875509764,"65",201.1613815264
+"Dry goods","CM","CompostPercentCdegraded",0.58,156.1875509764,"0.4",100.4493281284,"0.83",233.6017493764
+"Dry goods","CM","Compost_degradedC_CH4",0.02,156.1875509764,"0.008",48.4269868036,"0.036",299.8683032068
+"Dry goods","CM","Compost_N2OperN",0.005,156.1875509764,"0.001",126.7842024964,"0.018",251.7484335364
+"Dry goods","CM","Compost_N_loss",0.43,156.1875509764,"0.23",147.6693312004,"0.57",162.1503048196
+"Dry goods","CM","Compost_xportToField",20,156.1875509764,"10",156.1875509764,"30",156.1875509764
+"Dry goods","CM","Compost_CS_factor",0.1,156.1875509764,"0.02",156.1875509764,"0.14",156.1875509764
+"Dry goods","AF","AF_loss",0.1,-470.756045454545,"0.05",-496.909159090909,"0.5",-261.531136363636
+"Fresh produce","AD","MF_N2O",0.018,-9.40075553368097,"0.012",-9.39855459208097,"0.024",-9.40295647528097
+"Fresh produce","CM","MF_N2O",0.018,-55.11801631,"0.012",-55.11801631,"0.024",-55.11801631
+"Fresh produce","AF","MF_N2O",0.018,-36.2152636363636,"0.012",-36.2152636363636,"0.024",-36.2152636363636
+"Fresh produce","LF","MF_N2O",0.018,245.888381603697,"0.012",245.888381603697,"0.024",245.888381603697
+"Fresh produce","AD","MF_ROL",0.29485,-9.40075553368097,"0.065",-9.39979837260954,"0.5247",-9.40171269475239
+"Fresh produce","CM","MF_ROL",0.29485,-55.11801631,"0.065",-55.11801631,"0.5247",-55.11801631
+"Fresh produce","AF","MF_ROL",0.29485,-36.2152636363636,"0.065",-36.2152636363636,"0.5247",-36.2152636363636
+"Fresh produce","LF","MF_ROL",0.29485,245.888381603697,"0.065",245.888381603697,"0.5247",245.888381603697
+"Fresh produce","AD","EFGrid",692.15,-9.40075553368097,"537.18",4.88579311170699,"918.79",-30.294498741984
+"Fresh produce","CM","EFGrid",692.15,-55.11801631,"537.18",-55.12158062,"918.79",-55.11280359
+"Fresh produce","AF","EFGrid",692.15,-36.2152636363636,"537.18",-36.2152636363636,"918.79",-36.2152636363636
+"Fresh produce","LF","EFGrid",692.15,245.888381603697,"537.18",241.653432542119,"918.79",252.081895543919
+"Fresh produce","AD","Displaced_N_Production_Factor",8.85,-9.40075553368097,"4.7",-8.36355566998096,"13",-10.437955397381
+"Fresh produce","CM","Displaced_N_Production_Factor",8.85,-55.11801631,"4.7",-55.013101654,"13",-55.222930966
+"Fresh produce","AF","Displaced_N_Production_Factor",8.85,-36.2152636363636,"4.7",-36.2152636363636,"13",-36.2152636363636
+"Fresh produce","LF","Displaced_N_Production_Factor",8.85,245.888381603697,"4.7",245.888381603697,"13",245.888381603697
+"Fresh produce","AD","Displaced_P_Production_Factor",1.8,-9.40075553368097,"0.52",-9.24869153368097,"3.09",-9.55400753368097
+"Fresh produce","CM","Displaced_P_Production_Factor",1.8,-55.11801631,"0.52",-55.04198431,"3.09",-55.19464231
+"Fresh produce","AF","Displaced_P_Production_Factor",1.8,-36.2152636363636,"0.52",-36.2152636363636,"3.09",-36.2152636363636
+"Fresh produce","LF","Displaced_P_Production_Factor",1.8,245.888381603697,"0.52",245.888381603697,"3.09",245.888381603697
+"Fresh produce","AD","Displaced_K_Production_Factor",0.96,-9.40075553368097,"0.38",-9.39930595314857,"1.53",-9.40218012144557
+"Fresh produce","CM","Displaced_K_Production_Factor",0.96,-55.11801631,"0.38",-54.87633031,"1.53",-55.35553531
+"Fresh produce","AF","Displaced_K_Production_Factor",0.96,-36.2152636363636,"0.38",-36.2152636363636,"1.53",-36.2152636363636
+"Fresh produce","LF","Displaced_K_Production_Factor",0.96,245.888381603697,"0.38",245.888381603697,"1.53",245.888381603697
+"Fresh produce","AD","EF_Peat_kgCO2eperton",970,-9.40075553368097,"388",-9.40075553368097,"1197",-9.40075553368097
+"Fresh produce","CM","EF_Peat_kgCO2eperton",970,-55.11801631,"388",-6.23001631,"1197",-74.18601631
+"Fresh produce","AF","EF_Peat_kgCO2eperton",970,-36.2152636363636,"388",-36.2152636363636,"1197",-36.2152636363636
+"Fresh produce","LF","EF_Peat_kgCO2eperton",970,245.888381603697,"388",245.888381603697,"1197",245.888381603697
+"Fresh produce","AD","IPCC_EF4",0.01,-9.40075553368097,"0.002",-10.4687023161267,"0.05",-4.06102162145239
+"Fresh produce","LF","LFDieseluseLpert",5.83,245.888381603697,"1",230.577281603697,"6",246.427281603697
+"Fresh produce","LF","Landfill_OX_Max",0.35,245.888381603697,"0.1",254.655904603648,"0.55",238.874363203737
+"Fresh produce","LF","Landfill_CF",0.85,245.888381603697,"0.8",244.775748800775,"0.9",247.00101440662
+"Fresh produce","LF","LCEMax",0.95,245.888381603697,"0.85",249.443342435599,"0.95",245.888381603697
+"Fresh produce","LF","BMP_Correctionfactor",1,245.888381603697,"0.7",176.959494202588,"1",245.888381603697
+"Fresh produce","LF","k",0.144,245.888381603697,"0.10",212.181905492951,"0.229",286.930647268215
+"Fresh produce","AD","AD_Cf",0.9,-9.40075553368097,"0.7",-0.386409949857793,"1",-13.9079283255926
+"Fresh produce","AD","AD_Digester_CH4Leaks",0.025,-9.40075553368097,"0",-23.7388608171458,"0.1",33.6135603167137
+"Fresh produce","AD","AD_flared",0.05,-9.40075553368097,"0.03",-10.72969543626,"0.16",-2.09158606949619
+"Fresh produce","AD","AD_Digester_CE",4.19,-9.40075553368097,"3.2",5.67576370093911," 4.41 ",-12.7510931413743
+"Fresh produce","AD","AD_Digester_parasiticLoad",0.12,-9.40075553368097,"0.1",-10.8509533204821,"0.2",-3.59996438647637
+"Fresh produce","AD","AD_reductionInVS",0.55,-9.40075553368097,"0.4",1.62313276674404,"0.7",-20.424643834106
+"Fresh produce","AD","AD_Storage_residualCH4",0.054,-9.40075553368097,"0.004",-40.022667479306,"0.074",2.84800924456903
+"Fresh produce","AD","AD_Storage_EF3",0.005,-9.40075553368097,"0.0025",-10.6911037912618,"0.01",-6.82005901851937
+"Fresh produce","AD","AD_Storage_FracGasMS",0.26,-9.40075553368097,"0.15",-10.3060228672362,"0.45",-7.83711195754017
+"Fresh produce","AD","IPCC_EF4",0.01,-9.40075553368097,"0.002",-10.4687023161267,"0.05",-4.06102162145239
+"Fresh produce","AD","LandApplication_EF1",0.0125,-9.40075553368097,"0.018",-9.37083782997937,"0.03",-9.30556284008497
+"Fresh produce","CM","LandApplication_EF1",0.0125,-55.11801631,"0.018",-55.11801631,"0.03",-55.11801631
+"Fresh produce","AF","LandApplication_EF1",0.0125,-36.2152636363636,"0.018",-36.2152636363636,"0.03",-36.2152636363636
+"Fresh produce","LF","LandApplication_EF1",0.0125,245.888381603697,"0.018",245.888381603697,"0.03",245.888381603697
+"Fresh produce","AD","AD_LA_FracGasD",0.075,-9.40075553368097,"0.06",-9.47690194058896,"0.12",-9.17231631295697
+"Fresh produce","AD","AD_LA_FracLeachD",0.476,-9.40075553368097,"0.152",-11.0456786430012,"0.8",-7.75583242436074
+"Fresh produce","AD","AD_N_Availability",0.65,-9.40075553368097,"0.4",-8.54911735829297,"1",-10.5930489792242
+"Fresh produce","AD","N_displacement",1,-9.40075553368097,"0",-7.18889558338097,"1",-9.40075553368097
+"Fresh produce","CM","N_displacement",1,-55.11801631,"0",-55.11801631,"1",-55.11801631
+"Fresh produce","AF","N_displacement",1,-36.2152636363636,"0",-36.2152636363636,"1",-36.2152636363636
+"Fresh produce","LF","N_displacement",1,245.888381603697,"0",245.888381603697,"1",245.888381603697
+"Fresh produce","AD","K_Nratio",0.01,-9.40075553368097,"0",-9.39835622797217,"1",-9.63828679885217
+"Fresh produce","CM","K_Nratio",0.01,-55.11801631,"0",-55.11801631,"1",-55.11801631
+"Fresh produce","AF","K_Nratio",0.01,-36.2152636363636,"0",-36.2152636363636,"1",-36.2152636363636
+"Fresh produce","LF","K_Nratio",0.01,245.888381603697,"0",245.888381603697,"1",245.888381603697
+"Fresh produce","AD","P_Nratio",0.36,-9.40075553368097,"0",-9.18691553368097,"1",-9.78091553368097
+"Fresh produce","CM","P_Nratio",0.36,-55.11801631,"0",-55.11801631,"1",-55.11801631
+"Fresh produce","AF","P_Nratio",0.36,-36.2152636363636,"0",-36.2152636363636,"1",-36.2152636363636
+"Fresh produce","LF","P_Nratio",0.36,245.888381603697,"0",245.888381603697,"1",245.888381603697
+"Fresh produce","AD","AD_CSfactor",0.1,-9.40075553368097,"0.02",-6.81295943376948,"0.16",-11.3416026086146
+"Fresh produce","CM","Compost_dieseLlpert",3,-55.11801631,"0.13",-64.21591631,"6",-45.60801631
+"Fresh produce","CM","Compost_electpert",0.023,-55.11801631,"0.023",-55.11801631,"65",-10.14418576
+"Fresh produce","CM","CompostPercentCdegraded",0.58,-55.11801631,"0.4",-59.435328694,"0.83",-49.12174911
+"Fresh produce","CM","Compost_degradedC_CH4",0.02,-55.11801631,"0.008",-63.4648202524,"0.036",-43.9889443868
+"Fresh produce","CM","Compost_N2OperN",0.005,-55.11801631,"0.001",-57.15991551,"0.018",-48.48184391
+"Fresh produce","CM","Compost_N_loss",0.43,-55.11801631,"0.23",-55.70955935,"0.57",-54.703936182
+"Fresh produce","CM","Compost_xportToField",20,-55.11801631,"10",-55.11801631,"30",-55.11801631
+"Fresh produce","CM","Compost_CS_factor",0.1,-55.11801631,"0.02",-55.11801631,"0.14",-55.11801631
+"Fresh produce","AF","AF_loss",0.1,-36.2152636363636,"0.05",-38.2272227272727,"0.5",-20.1195909090909
+"MSWFW","AD","MF_N2O",0.018,-31.6155251193562,"0.012",-31.5996254600705,"0.024",-31.6314247786419
+"MSWFW","CM","MF_N2O",0.018,14.7137664357143,"0.012",14.7137664357143,"0.024",14.7137664357143
+"MSWFW","AF","MF_N2O",0.018,-175.237809917355,"0.012",-175.237809917355,"0.024",-175.237809917355
+"MSWFW","LF","MF_N2O",0.018,623.188702655189,"0.012",623.188702655189,"0.024",623.188702655189
+"MSWFW","AD","MF_ROL",0.29485,-31.6155251193562,"0.065",-31.6145679582848,"0.5247",-31.6164822804276
+"MSWFW","CM","MF_ROL",0.29485,14.7137664357143,"0.065",14.7137664357143,"0.5247",14.7137664357143
+"MSWFW","AF","MF_ROL",0.29485,-175.237809917355,"0.065",-175.237809917355,"0.5247",-175.237809917355
+"MSWFW","LF","MF_ROL",0.29485,623.188702655189,"0.065",623.188702655189,"0.5247",623.188702655189
+"MSWFW","AD","EFGrid",692.15,-31.6155251193562,"537.18",11.2969192216745,"918.79",-94.3739711763428
+"MSWFW","CM","EFGrid",692.15,14.7137664357143,"537.18",14.7102021257143,"918.79",14.7189791557143
+"MSWFW","AF","EFGrid",692.15,-175.237809917355,"537.18",-175.237809917355,"918.79",-175.237809917355
+"MSWFW","LF","EFGrid",692.15,623.188702655189,"537.18",610.468204485694,"918.79",641.792133674965
+"MSWFW","AD","Displaced_N_Production_Factor",8.85,-31.6155251193562,"4.7",-24.1227663637312,"13",-39.1082838749812
+"MSWFW","CM","Displaced_N_Production_Factor",8.85,14.7137664357143,"4.7",15.4716726357143,"13",13.9558602357143
+"MSWFW","AF","Displaced_N_Production_Factor",8.85,-175.237809917355,"4.7",-175.237809917355,"13",-175.237809917355
+"MSWFW","LF","Displaced_N_Production_Factor",8.85,623.188702655189,"4.7",623.188702655189,"13",623.188702655189
+"MSWFW","AD","Displaced_P_Production_Factor",1.8,-31.6155251193562,"0.52",-30.7400051193562,"3.09",-32.4978851193562
+"MSWFW","CM","Displaced_P_Production_Factor",1.8,14.7137664357143,"0.52",15.1515264357143,"3.09",14.2725864357143
+"MSWFW","AF","Displaced_P_Production_Factor",1.8,-175.237809917355,"0.52",-175.237809917355,"3.09",-175.237809917355
+"MSWFW","LF","Displaced_P_Production_Factor",1.8,623.188702655189,"0.52",623.188702655189,"3.09",623.188702655189
+"MSWFW","AD","Displaced_K_Production_Factor",0.96,-31.6155251193562,"0.38",-31.6050533119387,"1.53",-31.62581637837
+"MSWFW","CM","Displaced_K_Production_Factor",0.96,14.7137664357143,"0.38",15.0582864357143,"1.53",14.3751864357143
+"MSWFW","AF","Displaced_K_Production_Factor",0.96,-175.237809917355,"0.38",-175.237809917355,"1.53",-175.237809917355
+"MSWFW","LF","Displaced_K_Production_Factor",0.96,623.188702655189,"0.38",623.188702655189,"1.53",623.188702655189
+"MSWFW","AD","EF_Peat_kgCO2eperton",970,-31.6155251193562,"388",-31.6155251193562,"1197",-31.6155251193562
+"MSWFW","CM","EF_Peat_kgCO2eperton",970,14.7137664357143,"388",63.6017664357143,"1197",-4.35423356428571
+"MSWFW","AF","EF_Peat_kgCO2eperton",970,-175.237809917355,"388",-175.237809917355,"1197",-175.237809917355
+"MSWFW","LF","EF_Peat_kgCO2eperton",970,623.188702655189,"388",623.188702655189,"1197",623.188702655189
+"MSWFW","AD","IPCC_EF4",0.01,-31.6155251193562,"0.002",-39.3266442878562,"0.05",6.9400707231438
+"MSWFW","LF","LFDieseluseLpert",5.83,623.188702655189,"1",607.87760265519,"6",623.727602655189
+"MSWFW","LF","Landfill_OX_Max",0.35,623.188702655189,"0.1",649.523673548634,"0.55",602.120725940434
+"MSWFW","LF","Landfill_CF",0.85,623.188702655189,"0.8",619.846692319976,"0.9",626.530712990403
+"MSWFW","LF","LCEMax",0.95,623.188702655189,"0.85",633.866723121859,"0.95",623.188702655189
+"MSWFW","LF","BMP_Correctionfactor",1,623.188702655189,"0.7",416.147301858633,"1",623.188702655189
+"MSWFW","LF","k",0.144,623.188702655189,"0.10",521.94470622631,"0.229",746.467178421061
+"MSWFW","AD","AD_Cf",0.9,-31.6155251193562,"0.7",-4.53917429885857,"1",-45.1537005296049
+"MSWFW","AD","AD_Digester_CH4Leaks",0.025,-31.6155251193562,"0",-74.6828299110669,"0.1",97.5863892557762
+"MSWFW","AD","AD_flared",0.05,-31.6155251193562,"0.03",-35.6072561537378,"0.16",-9.66100443025705
+"MSWFW","AD","AD_Digester_CE",4.19,-31.6155251193562,"3.2",13.6697504619489," 4.41 ",-41.6789196929795
+"MSWFW","AD","AD_Digester_parasiticLoad",0.12,-31.6155251193562,"0.1",-35.9714779358316,"0.2",-14.1917138534546
+"MSWFW","AD","AD_reductionInVS",0.55,-31.6155251193562,"0.4",9.8155496306438,"0.7",-73.0465998693562
+"MSWFW","AD","AD_Storage_residualCH4",0.054,-31.6155251193562,"0.004",-146.701843869356,"0.074",14.4190023806438
+"MSWFW","AD","AD_Storage_EF3",0.005,-31.6155251193562,"0.0025",-40.9370344476591,"0.01",-12.9725064627505
+"MSWFW","AD","AD_Storage_FracGasMS",0.26,-31.6155251193562,"0.15",-38.1551998503962,"0.45",-20.3197233111962
+"MSWFW","AD","IPCC_EF4",0.01,-31.6155251193562,"0.002",-39.3266442878562,"0.05",6.9400707231438
+"MSWFW","AD","LandApplication_EF1",0.0125,-31.6155251193562,"0.018",-31.3993988507326,"0.03",-30.9278506282812
+"MSWFW","CM","LandApplication_EF1",0.0125,14.7137664357143,"0.018",14.7137664357143,"0.03",14.7137664357143
+"MSWFW","AF","LandApplication_EF1",0.0125,-175.237809917355,"0.018",-175.237809917355,"0.03",-175.237809917355
+"MSWFW","LF","LandApplication_EF1",0.0125,623.188702655189,"0.018",623.188702655189,"0.03",623.188702655189
+"MSWFW","AD","AD_LA_FracGasD",0.075,-31.6155251193562,"0.06",-32.1656087406883,"0.12",-29.9652742553598
+"MSWFW","AD","AD_LA_FracLeachD",0.476,-31.6155251193562,"0.152",-43.4900947526876,"0.8",-19.7409554860248
+"MSWFW","AD","AD_N_Availability",0.65,-31.6155251193562,"0.4",-25.4632688198812,"1",-40.2286839386212
+"MSWFW","AD","N_displacement",1,-31.6155251193562,"0",-15.6369913874812,"1",-31.6155251193562
+"MSWFW","CM","N_displacement",1,14.7137664357143,"0",14.7137664357143,"1",14.7137664357143
+"MSWFW","AF","N_displacement",1,-175.237809917355,"0",-175.237809917355,"1",-175.237809917355
+"MSWFW","LF","N_displacement",1,623.188702655189,"0",623.188702655189,"1",623.188702655189
+"MSWFW","AD","K_Nratio",0.01,-31.6155251193562,"0",-31.5981924725962,"1",-33.3314571485962
+"MSWFW","CM","K_Nratio",0.01,14.7137664357143,"0",14.7137664357143,"1",14.7137664357143
+"MSWFW","AF","K_Nratio",0.01,-175.237809917355,"0",-175.237809917355,"1",-175.237809917355
+"MSWFW","LF","K_Nratio",0.01,623.188702655189,"0",623.188702655189,"1",623.188702655189
+"MSWFW","AD","P_Nratio",0.36,-31.6155251193562,"0",-30.3843251193562,"1",-33.8043251193562
+"MSWFW","CM","P_Nratio",0.36,14.7137664357143,"0",14.7137664357143,"1",14.7137664357143
+"MSWFW","AF","P_Nratio",0.36,-175.237809917355,"0",-175.237809917355,"1",-175.237809917355
+"MSWFW","LF","P_Nratio",0.36,623.188702655189,"0",623.188702655189,"1",623.188702655189
+"MSWFW","AD","AD_CSfactor",0.1,-31.6155251193562,"0.02",-9.62448903869917,"0.16",-48.108802179849
+"MSWFW","CM","Compost_dieseLlpert",3,14.7137664357143,"0.13",5.61586643571428,"6",24.2237664357143
+"MSWFW","CM","Compost_electpert",0.023,14.7137664357143,"0.023",14.7137664357143,"65",59.6875969857143
+"MSWFW","CM","CompostPercentCdegraded",0.58,14.7137664357143,"0.4",-4.85756156428572,"0.83",41.8961664357143
+"MSWFW","CM","Compost_degradedC_CH4",0.02,14.7137664357143,"0.008",-23.1241343642857,"0.036",65.1643008357142
+"MSWFW","CM","Compost_N2OperN",0.005,14.7137664357143,"0.001",-0.036966421428561,"0.018",62.6536482214285
+"MSWFW","CM","Compost_N_loss",0.43,14.7137664357143,"0.23",10.44044415,"0.57",17.7050920357143
+"MSWFW","CM","Compost_xportToField",20,14.7137664357143,"10",14.7137664357143,"30",14.7137664357143
+"MSWFW","CM","Compost_CS_factor",0.1,14.7137664357143,"0.02",14.7137664357143,"0.14",14.7137664357143
+"MSWFW","AF","AF_loss",0.1,-175.237809917355,"0.05",-184.973243801653,"0.5",-97.3543388429752
+"Post consumer","AD","MF_N2O",0.018,-148.824377568461,"0.012",-148.800401596849,"0.024",-148.848353540072
+"Post consumer","CM","MF_N2O",0.018,67.9970362838285,"0.012",67.9970362838285,"0.024",67.9970362838285
+"Post consumer","AF","MF_N2O",0.018,-301.474945041322,"0.012",-301.474945041322,"0.024",-301.474945041322
+"Post consumer","LF","MF_N2O",0.018,1586.74468166574,"0.012",1586.74468166574,"0.024",1586.74468166574
+"Post consumer","AD","MF_ROL",0.29485,-148.824377568461,"0.065",-148.823420407389,"0.5247",-148.825334729532
+"Post consumer","CM","MF_ROL",0.29485,67.9970362838285,"0.065",67.9970362838285,"0.5247",67.9970362838285
+"Post consumer","AF","MF_ROL",0.29485,-301.474945041322,"0.065",-301.474945041322,"0.5247",-301.474945041322
+"Post consumer","LF","MF_ROL",0.29485,1586.74468166574,"0.065",1586.74468166574,"0.5247",1586.74468166574
+"Post consumer","AD","EFGrid",692.15,-148.824377568461,"537.18",-44.7712762069715,"918.79",-300.999604338596
+"Post consumer","CM","EFGrid",692.15,67.9970362838285,"537.18",67.9934719738285,"918.79",68.0022490038286
+"Post consumer","AF","EFGrid",692.15,-301.474945041322,"537.18",-301.474945041322,"918.79",-301.474945041322
+"Post consumer","LF","EFGrid",692.15,1586.74468166574,"537.18",1555.90031225904,"918.79",1631.85385042314
+"Post consumer","AD","Displaced_N_Production_Factor",8.85,-148.824377568461,"4.7",-137.525634118181,"13",-160.123121018741
+"Post consumer","CM","Displaced_N_Production_Factor",8.85,67.9970362838285,"4.7",69.1399247702286,"13",66.8541477974286
+"Post consumer","AF","Displaced_N_Production_Factor",8.85,-301.474945041322,"4.7",-301.474945041322,"13",-301.474945041322
+"Post consumer","LF","Displaced_N_Production_Factor",8.85,1586.74468166574,"4.7",1586.74468166574,"13",1586.74468166574
+"Post consumer","AD","Displaced_P_Production_Factor",1.8,-148.824377568461,"0.52",-148.271417568461,"3.09",-149.381657568461
+"Post consumer","CM","Displaced_P_Production_Factor",1.8,67.9970362838285,"0.52",68.2735162838286,"3.09",67.7183962838286
+"Post consumer","AF","Displaced_P_Production_Factor",1.8,-301.474945041322,"0.52",-301.474945041322,"3.09",-301.474945041322
+"Post consumer","LF","Displaced_P_Production_Factor",1.8,1586.74468166574,"0.52",1586.74468166574,"3.09",1586.74468166574
+"Post consumer","AD","Displaced_K_Production_Factor",0.96,-148.824377568461,"0.38",-148.808586553518,"1.53",-148.839896324525
+"Post consumer","CM","Displaced_K_Production_Factor",0.96,67.9970362838285,"0.38",68.3311162838285,"1.53",67.6687162838286
+"Post consumer","AF","Displaced_K_Production_Factor",0.96,-301.474945041322,"0.38",-301.474945041322,"1.53",-301.474945041322
+"Post consumer","LF","Displaced_K_Production_Factor",0.96,1586.74468166574,"0.38",1586.74468166574,"1.53",1586.74468166574
+"Post consumer","AD","EF_Peat_kgCO2eperton",970,-148.824377568461,"388",-148.824377568461,"1197",-148.824377568461
+"Post consumer","CM","EF_Peat_kgCO2eperton",970,67.9970362838285,"388",116.885036283829,"1197",48.9290362838286
+"Post consumer","AF","EF_Peat_kgCO2eperton",970,-301.474945041322,"388",-301.474945041322,"1197",-301.474945041322
+"Post consumer","LF","EF_Peat_kgCO2eperton",970,1586.74468166574,"388",1586.74468166574,"1197",1586.74468166574
+"Post consumer","AD","IPCC_EF4",0.01,-148.824377568461,"0.002",-160.452092162479,"0.05",-90.6858045983691
+"Post consumer","LF","LFDieseluseLpert",5.83,1586.74468166574,"1",1571.43358166574,"6",1587.28358166574
+"Post consumer","LF","Landfill_OX_Max",0.35,1586.74468166574,"0.1",1650.60110927799,"0.55",1535.65953957595
+"Post consumer","LF","Landfill_CF",0.85,1586.74468166574,"0.8",1578.6410523922,"0.9",1594.84831093928
+"Post consumer","LF","LCEMax",0.95,1586.74468166574,"0.85",1612.63649843405,"0.95",1586.74468166574
+"Post consumer","LF","BMP_Correctionfactor",1,1586.74468166574,"0.7",1084.71548724602,"1",1586.74468166574
+"Post consumer","LF","k",0.144,1586.74468166574,"0.10",1341.25058352173,"0.229",1885.6674750777
+"Post consumer","AD","AD_Cf",0.9,-148.824377568461,"0.7",-83.170269076425,"1",-181.651431814478
+"Post consumer","AD","AD_Digester_CH4Leaks",0.025,-148.824377568461,"0",-253.252980964824,"0.1",164.46143262063
+"Post consumer","AD","AD_flared",0.05,-148.824377568461,"0.03",-158.50343454847,"0.16",-95.5895641784092
+"Post consumer","AD","AD_Digester_CE",4.19,-148.824377568461,"3.2",-39.0176899606179," 4.41 ",-173.225863703537
+"Post consumer","AD","AD_Digester_parasiticLoad",0.12,-148.824377568461,"0.1",-159.386591091805,"0.2",-106.575523475085
+"Post consumer","AD","AD_reductionInVS",0.55,-148.824377568461,"0.4",-79.3911135339106,"0.7",-218.257641603011
+"Post consumer","AD","AD_Storage_residualCH4",0.054,-148.824377568461,"0.004",-341.694555442211,"0.074",-71.6763064189605
+"Post consumer","AD","AD_Storage_EF3",0.005,-148.824377568461,"0.0025",-162.880794691302,"0.01",-120.711543322778
+"Post consumer","AD","AD_Storage_FracGasMS",0.26,-148.824377568461,"0.15",-158.685913144903,"0.45",-131.790816118241
+"Post consumer","AD","IPCC_EF4",0.01,-148.824377568461,"0.002",-160.452092162479,"0.05",-90.6858045983691
+"Post consumer","AD","LandApplication_EF1",0.0125,-148.824377568461,"0.018",-148.498468868916,"0.03",-147.787395342638
+"Post consumer","CM","LandApplication_EF1",0.0125,67.9970362838285,"0.018",67.9970362838285,"0.03",67.9970362838285
+"Post consumer","AF","LandApplication_EF1",0.0125,-301.474945041322,"0.018",-301.474945041322,"0.03",-301.474945041322
+"Post consumer","LF","LandApplication_EF1",0.0125,1586.74468166574,"0.018",1586.74468166574,"0.03",1586.74468166574
+"Post consumer","AD","AD_LA_FracGasD",0.075,-148.824377568461,"0.06",-149.65387894657,"0.12",-146.335873434132
+"Post consumer","AD","AD_LA_FracLeachD",0.476,-148.824377568461,"0.152",-166.730009539527,"0.8",-130.918745597394
+"Post consumer","AD","AD_N_Availability",0.65,-148.824377568461,"0.4",-139.547051574753,"1",-161.812633959651
+"Post consumer","AD","N_displacement",1,-148.824377568461,"0",-124.729466837141,"1",-148.824377568461
+"Post consumer","CM","N_displacement",1,67.9970362838285,"0",67.9970362838285,"1",67.9970362838285
+"Post consumer","AF","N_displacement",1,-301.474945041322,"0",-301.474945041322,"1",-301.474945041322
+"Post consumer","LF","N_displacement",1,1586.74468166574,"0",1586.74468166574,"1",1586.74468166574
+"Post consumer","AD","K_Nratio",0.01,-148.824377568461,"0",-148.798240716142,"1",-151.411925948014
+"Post consumer","CM","K_Nratio",0.01,67.9970362838285,"0",67.9970362838285,"1",67.9970362838285
+"Post consumer","AF","K_Nratio",0.01,-301.474945041322,"0",-301.474945041322,"1",-301.474945041322
+"Post consumer","LF","K_Nratio",0.01,1586.74468166574,"0",1586.74468166574,"1",1586.74468166574
+"Post consumer","AD","P_Nratio",0.36,-148.824377568461,"0",-148.046777568461,"1",-150.206777568461
+"Post consumer","CM","P_Nratio",0.36,67.9970362838285,"0",67.9970362838285,"1",67.9970362838285
+"Post consumer","AF","P_Nratio",0.36,-301.474945041322,"0",-301.474945041322,"1",-301.474945041322
+"Post consumer","LF","P_Nratio",0.36,1586.74468166574,"0",1586.74468166574,"1",1586.74468166574
+"Post consumer","AD","AD_CSfactor",0.1,-148.824377568461,"0.02",-128.240215324917,"0.16",-164.262499251119
+"Post consumer","CM","Compost_dieseLlpert",3,67.9970362838285,"0.13",58.8991362838285,"6",77.5070362838285
+"Post consumer","CM","Compost_electpert",0.023,67.9970362838285,"0.023",67.9970362838285,"65",112.970866833829
+"Post consumer","CM","CompostPercentCdegraded",0.58,67.9970362838285,"0.4",35.8732778198286,"0.83",112.613367483829
+"Post consumer","CM","Compost_degradedC_CH4",0.02,67.9970362838285,"0.008",5.89110325342857,"0.036",150.804946991029
+"Post consumer","CM","Compost_N2OperN",0.005,67.9970362838285,"0.001",45.7535940895429,"0.018",140.288223415257
+"Post consumer","CM","Compost_N_loss",0.43,67.9970362838285,"0.23",61.5530583364,"0.57",72.5078208470286
+"Post consumer","CM","Compost_xportToField",20,67.9970362838285,"10",67.9970362838285,"30",67.9970362838285
+"Post consumer","CM","Compost_CS_factor",0.1,67.9970362838285,"0.02",67.9970362838285,"0.14",67.9970362838285
+"Post consumer","AF","AF_loss",0.1,-301.474945041322,"0.05",-318.223553099174,"0.5",-167.486080578512
+"Prep waste","AD","MF_N2O",0.018,4.63487411525349,"0.012",4.63569160784778,"0.024",4.6340566226592
+"Prep waste","CM","MF_N2O",0.018,-46.5663374949143,"0.012",-46.5663374949143,"0.024",-46.5663374949143
+"Prep waste","AF","MF_N2O",0.018,-65.8795090909091,"0.012",-65.8795090909091,"0.024",-65.8795090909091
+"Prep waste","LF","MF_N2O",0.018,202.702307320597,"0.012",202.702307320597,"0.024",202.702307320597
+"Prep waste","AD","MF_ROL",0.29485,4.63487411525349,"0.065",4.63583127632492,"0.5247",4.63391695418206
+"Prep waste","CM","MF_ROL",0.29485,-46.5663374949143,"0.065",-46.5663374949143,"0.5247",-46.5663374949143
+"Prep waste","AF","MF_ROL",0.29485,-65.8795090909091,"0.065",-65.8795090909091,"0.5247",-65.8795090909091
+"Prep waste","LF","MF_ROL",0.29485,202.702307320597,"0.065",202.702307320597,"0.5247",202.702307320597
+"Prep waste","AD","EFGrid",692.15,4.63487411525349,"537.18",21.7966209705441,"918.79",-20.4637792194762
+"Prep waste","CM","EFGrid",692.15,-46.5663374949143,"537.18",-46.5699018049143,"918.79",-46.5611247749143
+"Prep waste","AF","EFGrid",692.15,-65.8795090909091,"537.18",-65.8795090909091,"918.79",-65.8795090909091
+"Prep waste","LF","EFGrid",692.15,202.702307320597,"537.18",197.61506578005,"918.79",210.142279074804
+"Prep waste","AD","Displaced_N_Production_Factor",8.85,4.63487411525349,"4.7",5.02011977891349,"13",4.24962845159349
+"Prep waste","CM","Displaced_N_Production_Factor",8.85,-46.5663374949143,"4.7",-46.5273691941143,"13",-46.6053057957143
+"Prep waste","AF","Displaced_N_Production_Factor",8.85,-65.8795090909091,"4.7",-65.8795090909091,"13",-65.8795090909091
+"Prep waste","LF","Displaced_N_Production_Factor",8.85,202.702307320597,"4.7",202.702307320597,"13",202.702307320597
+"Prep waste","AD","Displaced_P_Production_Factor",1.8,4.63487411525349,"0.52",5.08507571525349,"3.09",4.18115531525349
+"Prep waste","CM","Displaced_P_Production_Factor",1.8,-46.5663374949143,"0.52",-46.3412366949143,"3.09",-46.7931968949143
+"Prep waste","AF","Displaced_P_Production_Factor",1.8,-65.8795090909091,"0.52",-65.8795090909091,"3.09",-65.8795090909091
+"Prep waste","LF","Displaced_P_Production_Factor",1.8,202.702307320597,"0.52",202.702307320597,"3.09",202.702307320597
+"Prep waste","AD","Displaced_K_Production_Factor",0.96,4.63487411525349,"0.38",4.63541253087981,"1.53",4.63434498265521
+"Prep waste","CM","Displaced_K_Production_Factor",0.96,-46.5663374949143,"0.38",-46.4410574949143,"1.53",-46.6894574949143
+"Prep waste","AF","Displaced_K_Production_Factor",0.96,-65.8795090909091,"0.38",-65.8795090909091,"1.53",-65.8795090909091
+"Prep waste","LF","Displaced_K_Production_Factor",0.96,202.702307320597,"0.38",202.702307320597,"1.53",202.702307320597
+"Prep waste","AD","EF_Peat_kgCO2eperton",970,4.63487411525349,"388",4.63487411525349,"1197",4.63487411525349
+"Prep waste","CM","EF_Peat_kgCO2eperton",970,-46.5663374949143,"388",2.32166250508571,"1197",-65.6343374949143
+"Prep waste","AF","EF_Peat_kgCO2eperton",970,-65.8795090909091,"388",-65.8795090909091,"1197",-65.8795090909091
+"Prep waste","LF","EF_Peat_kgCO2eperton",970,202.702307320597,"388",202.702307320597,"1197",202.702307320597
+"Prep waste","AD","IPCC_EF4",0.01,4.63487411525349,"0.002",4.23782883199406,"0.05",6.62010053155063
+"Prep waste","LF","LFDieseluseLpert",5.83,202.702307320597,"1",187.391207320597,"6",203.241207320597
+"Prep waste","LF","Landfill_OX_Max",0.35,202.702307320597,"0.1",213.23431291606,"0.55",194.276702844226
+"Prep waste","LF","Landfill_CF",0.85,202.702307320597,"0.8",201.365754806718,"0.9",204.038859834476
+"Prep waste","LF","LCEMax",0.95,202.702307320597,"0.85",206.97271155831,"0.95",202.702307320597
+"Prep waste","LF","BMP_Correctionfactor",1,202.702307320597,"0.7",119.901335164418,"1",202.702307320597
+"Prep waste","LF","k",0.144,202.702307320597,"0.10",162.212331417056,"0.229",252.004415981349
+"Prep waste","AD","AD_Cf",0.9,4.63487411525349,"0.7",15.4633758629882,"1",-0.779376758613839
+"Prep waste","AD","AD_Digester_CH4Leaks",0.025,4.63487411525349,"0",-12.5888052608543,"0.1",56.3059122435768
+"Prep waste","AD","AD_flared",0.05,4.63487411525349,"0.03",3.03848223922688,"0.16",13.4150294333998
+"Prep waste","AD","AD_Digester_CE",4.19,4.63487411525349,"3.2",22.7455748160135," 4.41 ",0.61027395952906
+"Prep waste","AD","AD_Digester_parasiticLoad",0.12,4.63487411525349,"0.1",2.89282094867441,"0.2",11.6030867815698
+"Prep waste","AD","AD_reductionInVS",0.55,4.63487411525349,"0.4",26.5779988902535,"0.7",-17.3082506597465
+"Prep waste","AD","AD_Storage_residualCH4",0.054,4.63487411525349,"0.004",-56.3182502597465,"0.074",29.0161238652535
+"Prep waste","AD","AD_Storage_EF3",0.005,4.63487411525349,"0.0025",4.1556019052949,"0.01",5.59341853517065
+"Prep waste","AD","AD_Storage_FracGasMS",0.26,4.63487411525349,"0.15",4.29863196279013,"0.45",5.21565601496292
+"Prep waste","AD","IPCC_EF4",0.01,4.63487411525349,"0.002",4.23782883199406,"0.05",6.62010053155063
+"Prep waste","AD","LandApplication_EF1",0.0125,4.63487411525349,"0.018",4.6459864051998,"0.03",4.67023140144629
+"Prep waste","CM","LandApplication_EF1",0.0125,-46.5663374949143,"0.018",-46.5663374949143,"0.03",-46.5663374949143
+"Prep waste","AF","LandApplication_EF1",0.0125,-65.8795090909091,"0.018",-65.8795090909091,"0.03",-65.8795090909091
+"Prep waste","LF","LandApplication_EF1",0.0125,202.702307320597,"0.018",202.702307320597,"0.03",202.702307320597
+"Prep waste","AD","AD_LA_FracGasD",0.075,4.63487411525349,"0.06",4.60659116411623,"0.12",4.71972296866526
+"Prep waste","AD","AD_LA_FracLeachD",0.476,4.63487411525349,"0.152",4.02305458811822,"0.8",5.24669364238876
+"Prep waste","AD","AD_N_Availability",0.65,4.63487411525349,"0.4",4.95119686611189,"1",4.19202226405173
+"Prep waste","AD","N_displacement",1,4.63487411525349,"0",5.45642209679349,"1",4.63487411525349
+"Prep waste","CM","N_displacement",1,-46.5663374949143,"0",-46.5663374949143,"1",-46.5663374949143
+"Prep waste","AF","N_displacement",1,-65.8795090909091,"0",-65.8795090909091,"1",-65.8795090909091
+"Prep waste","LF","N_displacement",1,202.702307320597,"0",202.702307320597,"1",202.702307320597
+"Prep waste","AD","K_Nratio",0.01,4.63487411525349,"0",4.63576528594533,"1",4.54664821676133
+"Prep waste","CM","K_Nratio",0.01,-46.5663374949143,"0",-46.5663374949143,"1",-46.5663374949143
+"Prep waste","AF","K_Nratio",0.01,-65.8795090909091,"0",-65.8795090909091,"1",-65.8795090909091
+"Prep waste","LF","K_Nratio",0.01,202.702307320597,"0",202.702307320597,"1",202.702307320597
+"Prep waste","AD","P_Nratio",0.36,4.63487411525349,"0",5.26797011525349,"1",3.50937011525349
+"Prep waste","CM","P_Nratio",0.36,-46.5663374949143,"0",-46.5663374949143,"1",-46.5663374949143
+"Prep waste","AF","P_Nratio",0.36,-65.8795090909091,"0",-65.8795090909091,"1",-65.8795090909091
+"Prep waste","LF","P_Nratio",0.36,202.702307320597,"0",202.702307320597,"1",202.702307320597
+"Prep waste","AD","AD_CSfactor",0.1,4.63487411525349,"0.02",12.9089747589737,"0.16",-1.57070136753668
+"Prep waste","CM","Compost_dieseLlpert",3,-46.5663374949143,"0.13",-55.6642374949143,"6",-37.0563374949143
+"Prep waste","CM","Compost_electpert",0.023,-46.5663374949143,"0.023",-46.5663374949143,"65",-1.59250694491429
+"Prep waste","CM","CompostPercentCdegraded",0.58,-46.5663374949143,"0.4",-54.2123118309143,"0.83",-35.9469286949143
+"Prep waste","CM","Compost_degradedC_CH4",0.02,-46.5663374949143,"0.008",-61.3485545445143,"0.036",-26.8567147621143
+"Prep waste","CM","Compost_N2OperN",0.005,-46.5663374949143,"0.001",-47.3247571977714,"0.018",-44.1014734606286
+"Prep waste","CM","Compost_N_loss",0.43,-46.5663374949143,"0.23",-46.7860534812,"0.57",-46.4125363045143
+"Prep waste","CM","Compost_xportToField",20,-46.5663374949143,"10",-46.5663374949143,"30",-46.5663374949143
+"Prep waste","CM","Compost_CS_factor",0.1,-46.5663374949143,"0.02",-46.5663374949143,"0.14",-46.5663374949143
+"Prep waste","AF","AF_loss",0.1,-65.8795090909091,"0.05",-69.5394818181818,"0.5",-36.5997272727273
+"Refrigerated and frozen goods","AD","MF_N2O",0.018,-81.7133523124122,"0.012",-81.7009870223322,"0.024",-81.7257176024922
+"Refrigerated and frozen goods","CM","MF_N2O",0.018,8.75463128680001,"0.012",8.75463128680001,"0.024",8.75463128680001
+"Refrigerated and frozen goods","AF","MF_N2O",0.018,-167.03754731405,"0.012",-167.03754731405,"0.024",-167.03754731405
+"Refrigerated and frozen goods","LF","MF_N2O",0.018,1064.40994043046,"0.012",1064.40994043046,"0.024",1064.40994043046
+"Refrigerated and frozen goods","AD","MF_ROL",0.29485,-81.7133523124122,"0.065",-81.7123951513408,"0.5247",-81.7143094734836
+"Refrigerated and frozen goods","CM","MF_ROL",0.29485,8.75463128680001,"0.065",8.75463128680001,"0.5247",8.75463128680001
+"Refrigerated and frozen goods","AF","MF_ROL",0.29485,-167.03754731405,"0.065",-167.03754731405,"0.5247",-167.03754731405
+"Refrigerated and frozen goods","LF","MF_ROL",0.29485,1064.40994043046,"0.065",1064.40994043046,"0.5247",1064.40994043046
+"Refrigerated and frozen goods","AD","EFGrid",692.15,-81.7133523124122,"537.18",-16.3513686566814,"918.79",-177.303724485961
+"Refrigerated and frozen goods","CM","EFGrid",692.15,8.75463128680001,"537.18",8.7510669768,"918.79",8.75984400680001
+"Refrigerated and frozen goods","AF","EFGrid",692.15,-167.03754731405,"537.18",-167.03754731405,"918.79",-167.03754731405
+"Refrigerated and frozen goods","LF","EFGrid",692.15,1064.40994043046,"537.18",1045.03474504798,"918.79",1092.74571046005
+"Refrigerated and frozen goods","AD","Displaced_N_Production_Factor",8.85,-81.7133523124122,"4.7",-75.8861748963522,"13",-87.5405297284722
+"Refrigerated and frozen goods","CM","Displaced_N_Production_Factor",8.85,8.75463128680001,"4.7",9.34406089960001,"13",8.16520167400001
+"Refrigerated and frozen goods","AF","Displaced_N_Production_Factor",8.85,-167.03754731405,"4.7",-167.03754731405,"13",-167.03754731405
+"Refrigerated and frozen goods","LF","Displaced_N_Production_Factor",8.85,1064.40994043046,"4.7",1064.40994043046,"13",1064.40994043046
+"Refrigerated and frozen goods","AD","Displaced_P_Production_Factor",1.8,-81.7133523124122,"0.52",-81.2064723124122,"3.09",-82.2241923124122
+"Refrigerated and frozen goods","CM","Displaced_P_Production_Factor",1.8,8.75463128680001,"0.52",9.00807128680001,"3.09",8.4992112868
+"Refrigerated and frozen goods","AF","Displaced_P_Production_Factor",1.8,-167.03754731405,"0.52",-167.03754731405,"3.09",-167.03754731405
+"Refrigerated and frozen goods","LF","Displaced_P_Production_Factor",1.8,1064.40994043046,"0.52",1064.40994043046,"3.09",1064.40994043046
+"Refrigerated and frozen goods","AD","Displaced_K_Production_Factor",0.96,-81.7133523124122,"0.38",-81.7052083054211,"1.53",-81.7213559054897
+"Refrigerated and frozen goods","CM","Displaced_K_Production_Factor",0.96,8.75463128680001,"0.38",8.9112312868,"1.53",8.60073128680001
+"Refrigerated and frozen goods","AF","Displaced_K_Production_Factor",0.96,-167.03754731405,"0.38",-167.03754731405,"1.53",-167.03754731405
+"Refrigerated and frozen goods","LF","Displaced_K_Production_Factor",0.96,1064.40994043046,"0.38",1064.40994043046,"1.53",1064.40994043046
+"Refrigerated and frozen goods","AD","EF_Peat_kgCO2eperton",970,-81.7133523124122,"388",-81.7133523124122,"1197",-81.7133523124122
+"Refrigerated and frozen goods","CM","EF_Peat_kgCO2eperton",970,8.75463128680001,"388",57.6426312868,"1197",-10.3133687132
+"Refrigerated and frozen goods","AF","EF_Peat_kgCO2eperton",970,-167.03754731405,"388",-167.03754731405,"1197",-167.03754731405
+"Refrigerated and frozen goods","LF","EF_Peat_kgCO2eperton",970,1064.40994043046,"388",1064.40994043046,"1197",1064.40994043046
+"Refrigerated and frozen goods","AD","IPCC_EF4",0.01,-81.7133523124122,"0.002",-87.7104844897059,"0.05",-51.7276914259436
+"Refrigerated and frozen goods","LF","LFDieseluseLpert",5.83,1064.40994043046,"1",1049.09884043046,"6",1064.94884043046
+"Refrigerated and frozen goods","LF","Landfill_OX_Max",0.35,1064.40994043046,"0.1",1104.521986331,"0.55",1032.32030371004
+"Refrigerated and frozen goods","LF","Landfill_CF",0.85,1064.40994043046,"0.8",1059.31956563914,"0.9",1069.50031522178
+"Refrigerated and frozen goods","LF","LCEMax",0.95,1064.40994043046,"0.85",1080.67414094236,"0.95",1064.40994043046
+"Refrigerated and frozen goods","LF","BMP_Correctionfactor",1,1064.40994043046,"0.7",749.055341951325,"1",1064.40994043046
+"Refrigerated and frozen goods","LF","k",0.144,1064.40994043046,"0.10",910.200397221153,"0.229",1252.18124644316
+"Refrigerated and frozen goods","AD","AD_Cf",0.9,-81.7133523124122,"0.7",-40.4720754063089,"1",-102.333990765464
+"Refrigerated and frozen goods","AD","AD_Digester_CH4Leaks",0.025,-81.7133523124122,"0",-147.311211281277,"0.1",115.080224594181
+"Refrigerated and frozen goods","AD","AD_flared",0.05,-81.7133523124122,"0.03",-87.7933475826387,"0.16",-48.2733783261662
+"Refrigerated and frozen goods","AD","AD_Digester_CE",4.19,-81.7133523124122,"3.2",-12.7371966111071," 4.41 ",-97.0413869127022
+"Refrigerated and frozen goods","AD","AD_Digester_parasiticLoad",0.12,-81.7133523124122,"0.1",-88.3481110908435,"0.2",-55.1743171986869
+"Refrigerated and frozen goods","AD","AD_reductionInVS",0.55,-81.7133523124122,"0.4",-35.2935158172372,"0.7",-128.133188807587
+"Refrigerated and frozen goods","AD","AD_Storage_residualCH4",0.054,-81.7133523124122,"0.004",-210.657342576787,"0.074",-30.1357562066622
+"Refrigerated and frozen goods","AD","AD_Storage_EF3",0.005,-81.7133523124122,"0.0025",-88.9627634322753,"0.01",-67.2145300726861
+"Refrigerated and frozen goods","AD","AD_Storage_FracGasMS",0.26,-81.7133523124122,"0.15",-86.799308786386,"0.45",-72.9285184028212
+"Refrigerated and frozen goods","AD","IPCC_EF4",0.01,-81.7133523124122,"0.002",-87.7104844897059,"0.05",-51.7276914259436
+"Refrigerated and frozen goods","AD","LandApplication_EF1",0.0125,-81.7133523124122,"0.018",-81.5452692134341,"0.03",-81.1785424520274
+"Refrigerated and frozen goods","CM","LandApplication_EF1",0.0125,8.75463128680001,"0.018",8.75463128680001,"0.03",8.75463128680001
+"Refrigerated and frozen goods","AF","LandApplication_EF1",0.0125,-167.03754731405,"0.018",-167.03754731405,"0.03",-167.03754731405
+"Refrigerated and frozen goods","LF","LandApplication_EF1",0.0125,1064.40994043046,"0.018",1064.40994043046,"0.03",1064.40994043046
+"Refrigerated and frozen goods","AD","AD_LA_FracGasD",0.075,-81.7133523124122,"0.06",-82.1411566712226,"0.12",-80.429939235981
+"Refrigerated and frozen goods","AD","AD_LA_FracLeachD",0.476,-81.7133523124122,"0.152",-90.9485984346451,"0.8",-72.4781061901793
+"Refrigerated and frozen goods","AD","AD_N_Availability",0.65,-81.7133523124122,"0.4",-76.9286941997778,"1",-88.4118736701004
+"Refrigerated and frozen goods","AD","N_displacement",1,-81.7133523124122,"0",-69.2867209552722,"1",-81.7133523124122
+"Refrigerated and frozen goods","CM","N_displacement",1,8.75463128680001,"0",8.75463128680001,"1",8.75463128680001
+"Refrigerated and frozen goods","AF","N_displacement",1,-167.03754731405,"0",-167.03754731405,"1",-167.03754731405
+"Refrigerated and frozen goods","LF","N_displacement",1,1064.40994043046,"0",1064.40994043046,"1",1064.40994043046
+"Refrigerated and frozen goods","AD","K_Nratio",0.01,-81.7133523124122,"0",-81.6998725767028,"1",-83.0478461476468
+"Refrigerated and frozen goods","CM","K_Nratio",0.01,8.75463128680001,"0",8.75463128680001,"1",8.75463128680001
+"Refrigerated and frozen goods","AF","K_Nratio",0.01,-167.03754731405,"0",-167.03754731405,"1",-167.03754731405
+"Refrigerated and frozen goods","LF","K_Nratio",0.01,1064.40994043046,"0",1064.40994043046,"1",1064.40994043046
+"Refrigerated and frozen goods","AD","P_Nratio",0.36,-81.7133523124122,"0",-81.0005523124122,"1",-82.9805523124122
+"Refrigerated and frozen goods","CM","P_Nratio",0.36,8.75463128680001,"0",8.75463128680001,"1",8.75463128680001
+"Refrigerated and frozen goods","AF","P_Nratio",0.36,-167.03754731405,"0",-167.03754731405,"1",-167.03754731405
+"Refrigerated and frozen goods","LF","P_Nratio",0.36,1064.40994043046,"0",1064.40994043046,"1",1064.40994043046
+"Refrigerated and frozen goods","AD","AD_CSfactor",0.1,-81.7133523124122,"0.02",-70.8645924939777,"0.16",-89.8499221762381
+"Refrigerated and frozen goods","CM","Compost_dieseLlpert",3,8.75463128680001,"0.13",-0.343268713200004,"6",18.2646312868
+"Refrigerated and frozen goods","CM","Compost_electpert",0.023,8.75463128680001,"0.023",8.75463128680001,"65",53.7284618368
+"Refrigerated and frozen goods","CM","CompostPercentCdegraded",0.58,8.75463128680001,"0.4",-10.5005677532,"0.83",35.4979632868
+"Refrigerated and frozen goods","CM","Compost_degradedC_CH4",0.02,8.75463128680001,"0.008",-28.4720868572,"0.036",58.3902554788
+"Refrigerated and frozen goods","CM","Compost_N2OperN",0.005,8.75463128680001,"0.001",-2.71712967319999,"0.018",46.0378544068
+"Refrigerated and frozen goods","CM","Compost_N_loss",0.43,8.75463128680001,"0.23",5.43123493480001,"0.57",11.0810087332
+"Refrigerated and frozen goods","CM","Compost_xportToField",20,8.75463128680001,"10",8.75463128680001,"30",8.75463128680001
+"Refrigerated and frozen goods","CM","Compost_CS_factor",0.1,8.75463128680001,"0.02",8.75463128680001,"0.14",8.75463128680001
+"Refrigerated and frozen goods","AF","AF_loss",0.1,-167.03754731405,"0.05",-176.317411053719,"0.5",-92.7986373966942
+"Salad ","AD","MF_N2O",0.018,2.51148919630115,"0.012",2.51398740793543,"0.024",2.50899098466686
+"Salad ","CM","MF_N2O",0.018,-61.4675263845143,"0.012",-61.4675263845143,"0.024",-61.4675263845143
+"Salad ","AF","MF_N2O",0.018,-18.6489632231405,"0.012",-18.6489632231405,"0.024",-18.6489632231405
+"Salad ","LF","MF_N2O",0.018,111.349003695402,"0.012",111.349003695402,"0.024",111.349003695402
+"Salad ","AD","MF_ROL",0.29485,2.51148919630115,"0.065",2.51244635737258,"0.5247",2.51053203522972
+"Salad ","CM","MF_ROL",0.29485,-61.4675263845143,"0.065",-61.4675263845143,"0.5247",-61.4675263845143
+"Salad ","AF","MF_ROL",0.29485,-18.6489632231405,"0.065",-18.6489632231405,"0.5247",-18.6489632231405
+"Salad ","LF","MF_ROL",0.29485,111.349003695402,"0.065",111.349003695402,"0.5247",111.349003695402
+"Salad ","AD","EFGrid",692.15,2.51148919630115,"537.18",8.65901948614214,"918.79",-6.47913005187308
+"Salad ","CM","EFGrid",692.15,-61.4675263845143,"537.18",-61.4710906945143,"918.79",-61.4623136645143
+"Salad ","AF","EFGrid",692.15,-18.6489632231405,"537.18",-18.6489632231405,"918.79",-18.6489632231405
+"Salad ","LF","EFGrid",692.15,111.349003695402,"537.18",109.526696693326,"918.79",114.014085059217
+"Salad ","AD","Displaced_N_Production_Factor",8.85,2.51148919630115,"4.7",3.68877839224115,"13",1.33420000036115
+"Salad ","CM","Displaced_N_Production_Factor",8.85,-61.4675263845143,"4.7",-61.3484414373143,"13",-61.5866113317143
+"Salad ","AF","Displaced_N_Production_Factor",8.85,-18.6489632231405,"4.7",-18.6489632231405,"13",-18.6489632231405
+"Salad ","LF","Displaced_N_Production_Factor",8.85,111.349003695402,"4.7",111.349003695402,"13",111.349003695402
+"Salad ","AD","Displaced_P_Production_Factor",1.8,2.51148919630115,"0.52",2.64972919630115,"3.09",2.37216919630115
+"Salad ","CM","Displaced_P_Production_Factor",1.8,-61.4675263845143,"0.52",-61.3984063845143,"3.09",-61.5371863845143
+"Salad ","AF","Displaced_P_Production_Factor",1.8,-18.6489632231405,"0.52",-18.6489632231405,"3.09",-18.6489632231405
+"Salad ","LF","Displaced_P_Production_Factor",1.8,111.349003695402,"0.52",111.349003695402,"3.09",111.349003695402
+"Salad ","AD","Displaced_K_Production_Factor",0.96,2.51148919630115,"0.38",2.51313456433403,"1.53",2.50987219668263
+"Salad ","CM","Displaced_K_Production_Factor",0.96,-61.4675263845143,"0.38",-61.2274063845143,"1.53",-61.7035063845143
+"Salad ","AF","Displaced_K_Production_Factor",0.96,-18.6489632231405,"0.38",-18.6489632231405,"1.53",-18.6489632231405
+"Salad ","LF","Displaced_K_Production_Factor",0.96,111.349003695402,"0.38",111.349003695402,"1.53",111.349003695402
+"Salad ","AD","EF_Peat_kgCO2eperton",970,2.51148919630115,"388",2.51148919630115,"1197",2.51148919630115
+"Salad ","CM","EF_Peat_kgCO2eperton",970,-61.4675263845143,"388",-12.5795263845143,"1197",-80.5355263845143
+"Salad ","AF","EF_Peat_kgCO2eperton",970,-18.6489632231405,"388",-18.6489632231405,"1197",-18.6489632231405
+"Salad ","LF","EF_Peat_kgCO2eperton",970,111.349003695402,"388",111.349003695402,"1197",111.349003695402
+"Salad ","AD","IPCC_EF4",0.01,2.51148919630115,"0.002",1.29938176113772,"0.05",8.57202637211829
+"Salad ","LF","LFDieseluseLpert",5.83,111.349003695402,"1",96.0379036954018,"6",111.887903695402
+"Salad ","LF","Landfill_OX_Max",0.35,111.349003695402,"0.1",115.121686275842,"0.55",108.330857631049
+"Salad ","LF","Landfill_CF",0.85,111.349003695402,"0.8",110.870235587917,"0.9",111.827771802886
+"Salad ","LF","LCEMax",0.95,111.349003695402,"0.85",112.878710410142,"0.95",111.349003695402
+"Salad ","LF","BMP_Correctionfactor",1,111.349003695402,"0.7",81.6887663867812,"1",111.349003695402
+"Salad ","LF","k",0.144,111.349003695402,"0.10",96.8450400021478,"0.229",129.009572220311
+"Salad ","AD","AD_Cf",0.9,2.51148919630115,"0.7",6.39038002537042,"1",0.572043781766503
+"Salad ","AD","AD_Digester_CH4Leaks",0.025,2.51148919630115,"0",-3.65822601742085,"0.1",21.0206348374672
+"Salad ","AD","AD_flared",0.05,2.51148919630115,"0.03",1.93964371372405,"0.16",5.65663935047518
+"Salad ","AD","AD_Digester_CE",4.19,2.51148919630115,"3.2",8.99894540148599," 4.41 ",1.06983226181563
+"Salad ","AD","AD_Digester_parasiticLoad",0.12,2.51148919630115,"0.1",1.88746620503107,"0.2",5.00758116138145
+"Salad ","AD","AD_reductionInVS",0.55,2.51148919630115,"0.4",7.79441157220115,"0.7",-2.77143317959885
+"Salad ","AD","AD_Storage_residualCH4",0.054,2.51148919630115,"0.004",-12.1632951811989,"0.074",8.38140294730114
+"Salad ","AD","AD_Storage_EF3",0.005,2.51148919630115,"0.0025",1.04686013509904,"0.01",5.44074731870535
+"Salad ","AD","AD_Storage_FracGasMS",0.26,2.51148919630115,"0.15",1.48395198912291,"0.45",4.28632619051811
+"Salad ","AD","IPCC_EF4",0.01,2.51148919630115,"0.002",1.29938176113772,"0.05",8.57202637211829
+"Salad ","AD","LandApplication_EF1",0.0125,2.51148919630115,"0.018",2.5454477327105,"0.03",2.61953908487635
+"Salad ","CM","LandApplication_EF1",0.0125,-61.4675263845143,"0.018",-61.4675263845143,"0.03",-61.4675263845143
+"Salad ","AF","LandApplication_EF1",0.0125,-18.6489632231405,"0.018",-18.6489632231405,"0.03",-18.6489632231405
+"Salad ","LF","LandApplication_EF1",0.0125,111.349003695402,"0.018",111.349003695402,"0.03",111.349003695402
+"Salad ","AD","AD_LA_FracGasD",0.075,2.51148919630115,"0.06",2.42505807988869,"0.12",2.77078254553852
+"Salad ","AD","AD_LA_FracLeachD",0.476,2.51148919630115,"0.152",0.644576887503161,"0.8",4.37840150509914
+"Salad ","AD","AD_N_Availability",0.65,2.51148919630115,"0.4",3.47815382654675,"1",1.15815871395731
+"Salad ","AD","N_displacement",1,2.51148919630115,"0",5.02209386716115,"1",2.51148919630115
+"Salad ","CM","N_displacement",1,-61.4675263845143,"0",-61.4675263845143,"1",-61.4675263845143
+"Salad ","AF","N_displacement",1,-18.6489632231405,"0",-18.6489632231405,"1",-18.6489632231405
+"Salad ","LF","N_displacement",1,111.349003695402,"0",111.349003695402,"1",111.349003695402
+"Salad ","AD","K_Nratio",0.01,2.51148919630115,"0",2.51421256407971,"1",2.24187578622371
+"Salad ","CM","K_Nratio",0.01,-61.4675263845143,"0",-61.4675263845143,"1",-61.4675263845143
+"Salad ","AF","K_Nratio",0.01,-18.6489632231405,"0",-18.6489632231405,"1",-18.6489632231405
+"Salad ","LF","K_Nratio",0.01,111.349003695402,"0",111.349003695402,"1",111.349003695402
+"Salad ","AD","P_Nratio",0.36,2.51148919630115,"0",2.70588919630115,"1",2.16588919630115
+"Salad ","CM","P_Nratio",0.36,-61.4675263845143,"0",-61.4675263845143,"1",-61.4675263845143
+"Salad ","AF","P_Nratio",0.36,-18.6489632231405,"0",-18.6489632231405,"1",-18.6489632231405
+"Salad ","LF","P_Nratio",0.36,111.349003695402,"0",111.349003695402,"1",111.349003695402
+"Salad ","AD","AD_CSfactor",0.1,2.51148919630115,"0.02",4.35746831503846,"0.16",1.12700485724816
+"Salad ","CM","Compost_dieseLlpert",3,-61.4675263845143,"0.13",-70.5654263845143,"6",-51.9575263845143
+"Salad ","CM","Compost_electpert",0.023,-61.4675263845143,"0.023",-61.4675263845143,"65",-16.4936958345143
+"Salad ","CM","CompostPercentCdegraded",0.58,-61.4675263845143,"0.4",-63.6666356325143,"0.83",-58.4132079845143
+"Salad ","CM","Compost_degradedC_CH4",0.02,-61.4675263845143,"0.008",-65.7191375973143,"0.036",-55.7987114341143
+"Salad ","CM","Compost_N2OperN",0.005,-61.4675263845143,"0.001",-63.7852145673714,"0.018",-53.9350397902286
+"Salad ","CM","Compost_N_loss",0.43,-61.4675263845143,"0.23",-62.1389661468,"0.57",-60.9975185509143
+"Salad ","CM","Compost_xportToField",20,-61.4675263845143,"10",-61.4675263845143,"30",-61.4675263845143
+"Salad ","CM","Compost_CS_factor",0.1,-61.4675263845143,"0.02",-61.4675263845143,"0.14",-61.4675263845143
+"Salad ","AF","AF_loss",0.1,-18.6489632231405,"0.05",-19.6850167355372,"0.5",-10.3605351239669
+"Sweet Cereals","AD","MF_N2O",0.018,-143.601107693272,"0.012",-143.571960938084,"0.024",-143.630254448461
+"Sweet Cereals","CM","MF_N2O",0.018,148.849378576171,"0.012",148.849378576171,"0.024",148.849378576171
+"Sweet Cereals","AF","MF_N2O",0.018,-464.375861776859,"0.012",-464.375861776859,"0.024",-464.375861776859
+"Sweet Cereals","LF","MF_N2O",0.018,2188.22760913462,"0.012",2188.22760913462,"0.024",2188.22760913462
+"Sweet Cereals","AD","MF_ROL",0.29485,-143.601107693272,"0.065",-143.600150532201,"0.5247",-143.602064854344
+"Sweet Cereals","CM","MF_ROL",0.29485,148.849378576171,"0.065",148.849378576171,"0.5247",148.849378576171
+"Sweet Cereals","AF","MF_ROL",0.29485,-464.375861776859,"0.065",-464.375861776859,"0.5247",-464.375861776859
+"Sweet Cereals","LF","MF_ROL",0.29485,2188.22760913462,"0.065",2188.22760913462,"0.5247",2188.22760913462
+"Sweet Cereals","AD","EFGrid",692.15,-143.601107693272,"537.18",7.97193703958538,"918.79",-365.273140075377
+"Sweet Cereals","CM","EFGrid",692.15,148.849378576171,"537.18",148.845814266171,"918.79",148.854591296171
+"Sweet Cereals","AF","EFGrid",692.15,-464.375861776859,"537.18",-464.375861776859,"918.79",-464.375861776859
+"Sweet Cereals","LF","EFGrid",692.15,2188.22760913462,"537.18",2143.2969446694,"918.79",2253.93765491379
+"Sweet Cereals","AD","Displaced_N_Production_Factor",8.85,-143.601107693272,"4.7",-129.865618069702,"13",-157.336597316842
+"Sweet Cereals","CM","Displaced_N_Production_Factor",8.85,148.849378576171,"4.7",150.238748377771,"13",147.460008774571
+"Sweet Cereals","AF","Displaced_N_Production_Factor",8.85,-464.375861776859,"4.7",-464.375861776859,"13",-464.375861776859
+"Sweet Cereals","LF","Displaced_N_Production_Factor",8.85,2188.22760913462,"4.7",2188.22760913462,"13",2188.22760913462
+"Sweet Cereals","AD","Displaced_P_Production_Factor",1.8,-143.601107693272,"0.52",-143.260115693272,"3.09",-143.944763693272
+"Sweet Cereals","CM","Displaced_P_Production_Factor",1.8,148.849378576171,"0.52",149.019874576171,"3.09",148.677550576171
+"Sweet Cereals","AF","Displaced_P_Production_Factor",1.8,-464.375861776859,"0.52",-464.375861776859,"3.09",-464.375861776859
+"Sweet Cereals","LF","Displaced_P_Production_Factor",1.8,2188.22760913462,"0.52",2188.22760913462,"3.09",2188.22760913462
+"Sweet Cereals","AD","Displaced_K_Production_Factor",0.96,-143.601107693272,"0.38",-143.581911105365,"1.53",-143.619973305526
+"Sweet Cereals","CM","Displaced_K_Production_Factor",0.96,148.849378576171,"0.38",148.971526576171,"1.53",148.729336576171
+"Sweet Cereals","AF","Displaced_K_Production_Factor",0.96,-464.375861776859,"0.38",-464.375861776859,"1.53",-464.375861776859
+"Sweet Cereals","LF","Displaced_K_Production_Factor",0.96,2188.22760913462,"0.38",2188.22760913462,"1.53",2188.22760913462
+"Sweet Cereals","AD","EF_Peat_kgCO2eperton",970,-143.601107693272,"388",-143.601107693272,"1197",-143.601107693272
+"Sweet Cereals","CM","EF_Peat_kgCO2eperton",970,148.849378576171,"388",197.737378576171,"1197",129.781378576171
+"Sweet Cereals","AF","EF_Peat_kgCO2eperton",970,-464.375861776859,"388",-464.375861776859,"1197",-464.375861776859
+"Sweet Cereals","LF","EF_Peat_kgCO2eperton",970,2188.22760913462,"388",2188.22760913462,"1197",2188.22760913462
+"Sweet Cereals","AD","IPCC_EF4",0.01,-143.601107693272,"0.002",-157.736385948505,"0.05",-72.9247164171064
+"Sweet Cereals","LF","LFDieseluseLpert",5.83,2188.22760913462,"1",2172.91650913462,"6",2188.76650913462
+"Sweet Cereals","LF","Landfill_OX_Max",0.35,2188.22760913462,"0.1",2281.24658725547,"0.55",2113.81242663794
+"Sweet Cereals","LF","Landfill_CF",0.85,2188.22760913462,"0.8",2176.42313866421,"0.9",2200.03207960504
+"Sweet Cereals","LF","LCEMax",0.95,2188.22760913462,"0.85",2225.94394290928,"0.95",2188.22760913462
+"Sweet Cereals","LF","BMP_Correctionfactor",1,2188.22760913462,"0.7",1456.92702753423,"1",2188.22760913462
+"Sweet Cereals","LF","k",0.144,2188.22760913462,"0.10",1830.61897053803,"0.229",2623.66525918693
+"Sweet Cereals","AD","AD_Cf",0.9,-143.601107693272,"0.7",-47.9634669776224,"1",-191.419928051097
+"Sweet Cereals","AD","AD_Digester_CH4Leaks",0.025,-143.601107693272,"0",-295.721142241759,"0.1",312.758995952186
+"Sweet Cereals","AD","AD_flared",0.05,-143.601107693272,"0.03",-157.700486927593,"0.16",-66.054521904509
+"Sweet Cereals","AD","AD_Digester_CE",4.19,-143.601107693272,"3.2",16.3531248569787," 4.41 ",-179.146492704439
+"Sweet Cereals","AD","AD_Digester_parasiticLoad",0.12,-143.601107693272,"0.1",-158.986971659883,"0.2",-82.0576518268304
+"Sweet Cereals","AD","AD_reductionInVS",0.55,-143.601107693272,"0.4",-8.46675221702216,"0.7",-278.735463169522
+"Sweet Cereals","AD","AD_Storage_residualCH4",0.054,-143.601107693272,"0.004",-518.974317349522,"0.074",6.54817616922792
+"Sweet Cereals","AD","AD_Storage_EF3",0.005,-143.601107693272,"0.0025",-160.689005332949,"0.01",-109.425312413918
+"Sweet Cereals","AD","AD_Storage_FracGasMS",0.26,-143.601107693272,"0.15",-155.589433667639,"0.45",-122.893999192093
+"Sweet Cereals","AD","IPCC_EF4",0.01,-143.601107693272,"0.002",-157.736385948505,"0.05",-72.9247164171064
+"Sweet Cereals","AD","LandApplication_EF1",0.0125,-143.601107693272,"0.018",-143.20491181711,"0.03",-142.340484450937
+"Sweet Cereals","CM","LandApplication_EF1",0.0125,148.849378576171,"0.018",148.849378576171,"0.03",148.849378576171
+"Sweet Cereals","AF","LandApplication_EF1",0.0125,-464.375861776859,"0.018",-464.375861776859,"0.03",-464.375861776859
+"Sweet Cereals","LF","LandApplication_EF1",0.0125,2188.22760913462,"0.018",2188.22760913462,"0.03",2188.22760913462
+"Sweet Cereals","AD","AD_LA_FracGasD",0.075,-143.601107693272,"0.06",-144.609503681897,"0.12",-140.575919727399
+"Sweet Cereals","AD","AD_LA_FracLeachD",0.476,-143.601107693272,"0.152",-165.368071028331,"0.8",-121.834144358213
+"Sweet Cereals","AD","AD_N_Availability",0.65,-143.601107693272,"0.4",-132.322984999205,"1",-159.390479464966
+"Sweet Cereals","AD","N_displacement",1,-143.601107693272,"0",-114.309762351442,"1",-143.601107693272
+"Sweet Cereals","CM","N_displacement",1,148.849378576171,"0",148.849378576171,"1",148.849378576171
+"Sweet Cereals","AF","N_displacement",1,-464.375861776859,"0",-464.375861776859,"1",-464.375861776859
+"Sweet Cereals","LF","N_displacement",1,2188.22760913462,"0",2188.22760913462,"1",2188.22760913462
+"Sweet Cereals","AD","K_Nratio",0.01,-143.601107693272,"0",-143.569334030529,"1",-144.692534030529
+"Sweet Cereals","CM","K_Nratio",0.01,148.849378576171,"0",148.849378576171,"1",148.849378576171
+"Sweet Cereals","AF","K_Nratio",0.01,-464.375861776859,"0",-464.375861776859,"1",-464.375861776859
+"Sweet Cereals","LF","K_Nratio",0.01,2188.22760913462,"0",2188.22760913462,"1",2188.22760913462
+"Sweet Cereals","AD","P_Nratio",0.36,-143.601107693272,"0",-143.121587693272,"1",-144.453587693272
+"Sweet Cereals","CM","P_Nratio",0.36,148.849378576171,"0",148.849378576171,"1",148.849378576171
+"Sweet Cereals","AF","P_Nratio",0.36,-464.375861776859,"0",-464.375861776859,"1",-464.375861776859
+"Sweet Cereals","LF","P_Nratio",0.36,2188.22760913462,"0",2188.22760913462,"1",2188.22760913462
+"Sweet Cereals","AD","AD_CSfactor",0.1,-143.601107693272,"0.02",-97.4638269653252,"0.16",-178.204068239232
+"Sweet Cereals","CM","Compost_dieseLlpert",3,148.849378576171,"0.13",139.751478576171,"6",158.359378576171
+"Sweet Cereals","CM","Compost_electpert",0.023,148.849378576171,"0.023",148.849378576171,"65",193.823209126171
+"Sweet Cereals","CM","CompostPercentCdegraded",0.58,148.849378576171,"0.4",94.2906971681714,"0.83",224.625324976171
+"Sweet Cereals","CM","Compost_degradedC_CH4",0.02,148.849378576171,"0.008",43.3692611873714,"0.036",289.489535094571
+"Sweet Cereals","CM","Compost_N2OperN",0.005,148.849378576171,"0.001",121.808799170457,"0.018",236.731261644743
+"Sweet Cereals","CM","Compost_N_loss",0.43,148.849378576171,"0.23",141.0156586036,"0.57",154.332982556971
+"Sweet Cereals","CM","Compost_xportToField",20,148.849378576171,"10",148.849378576171,"30",148.849378576171
+"Sweet Cereals","CM","Compost_CS_factor",0.1,148.849378576171,"0.02",148.849378576171,"0.14",148.849378576171
+"Sweet Cereals","AF","AF_loss",0.1,-464.375861776859,"0.05",-490.174520764463,"0.5",-257.986589876033
+"Tomato Pomace","AD","MF_N2O",0.018,22.7322363870785,"0.012",22.7341457753756,"0.024",22.7303269987813
+"Tomato Pomace","CM","MF_N2O",0.018,-23.0025574304571,"0.012",-23.0025574304571,"0.024",-23.0025574304571
+"Tomato Pomace","AF","MF_N2O",0.018,-128.598545454545,"0.012",-128.598545454545,"0.024",-128.598545454545
+"Tomato Pomace","LF","MF_N2O",0.018,411.815965285854,"0.012",411.815965285854,"0.024",411.815965285854
+"Tomato Pomace","AD","MF_ROL",0.29485,22.7322363870785,"0.065",22.7331935481499,"0.5247",22.7312792260071
+"Tomato Pomace","CM","MF_ROL",0.29485,-23.0025574304571,"0.065",-23.0025574304571,"0.5247",-23.0025574304571
+"Tomato Pomace","AF","MF_ROL",0.29485,-128.598545454545,"0.065",-128.598545454545,"0.5247",-128.598545454545
+"Tomato Pomace","LF","MF_ROL",0.29485,411.815965285854,"0.065",411.815965285854,"0.5247",411.815965285854
+"Tomato Pomace","AD","EFGrid",692.15,22.7322363870785,"537.18",55.186659740904,"918.79",-24.7315986062171
+"Tomato Pomace","CM","EFGrid",692.15,-23.0025574304571,"537.18",-23.0061217404571,"918.79",-22.9973447104571
+"Tomato Pomace","AF","EFGrid",692.15,-128.598545454545,"537.18",-128.598545454545,"918.79",-128.598545454545
+"Tomato Pomace","LF","EFGrid",692.15,411.815965285854,"537.18",402.19552908829,"918.79",425.885628187163
+"Tomato Pomace","AD","Displaced_N_Production_Factor",8.85,22.7322363870785,"4.7",23.6320409441585,"13",21.8324318299985
+"Tomato Pomace","CM","Displaced_N_Production_Factor",8.85,-23.0025574304571,"4.7",-22.9115405600571,"13",-23.0935743008571
+"Tomato Pomace","AF","Displaced_N_Production_Factor",8.85,-128.598545454545,"4.7",-128.598545454545,"13",-128.598545454545
+"Tomato Pomace","LF","Displaced_N_Production_Factor",8.85,411.815965285854,"4.7",411.815965285854,"13",411.815965285854
+"Tomato Pomace","AD","Displaced_P_Production_Factor",1.8,22.7322363870785,"0.52",22.7861499870785,"3.09",22.6779015870785
+"Tomato Pomace","CM","Displaced_P_Production_Factor",1.8,-23.0025574304571,"0.52",-22.9756006304571,"3.09",-23.0297248304571
+"Tomato Pomace","AF","Displaced_P_Production_Factor",1.8,-128.598545454545,"0.52",-128.598545454545,"3.09",-128.598545454545
+"Tomato Pomace","LF","Displaced_P_Production_Factor",1.8,411.815965285854,"0.52",411.815965285854,"3.09",411.815965285854
+"Tomato Pomace","AD","Displaced_K_Production_Factor",0.96,22.7322363870785,"0.38",22.7334939452546,"1.53",22.7310005109398
+"Tomato Pomace","CM","Displaced_K_Production_Factor",0.96,-23.0025574304571,"0.38",-22.9911778304571,"1.53",-23.0137408304571
+"Tomato Pomace","AF","Displaced_K_Production_Factor",0.96,-128.598545454545,"0.38",-128.598545454545,"1.53",-128.598545454545
+"Tomato Pomace","LF","Displaced_K_Production_Factor",0.96,411.815965285854,"0.38",411.815965285854,"1.53",411.815965285854
+"Tomato Pomace","AD","EF_Peat_kgCO2eperton",970,22.7322363870785,"388",22.7322363870785,"1197",22.7322363870785
+"Tomato Pomace","CM","EF_Peat_kgCO2eperton",970,-23.0025574304571,"388",25.8854425695429,"1197",-42.0705574304571
+"Tomato Pomace","AF","EF_Peat_kgCO2eperton",970,-128.598545454545,"388",-128.598545454545,"1197",-128.598545454545
+"Tomato Pomace","LF","EF_Peat_kgCO2eperton",970,411.815965285854,"388",411.815965285854,"1197",411.815965285854
+"Tomato Pomace","AD","IPCC_EF4",0.01,22.7322363870785,"0.002",21.8056779371059,"0.05",27.3650286369413
+"Tomato Pomace","LF","LFDieseluseLpert",5.83,411.815965285854,"1",396.504865285854,"6",412.354865285854
+"Tomato Pomace","LF","Landfill_OX_Max",0.35,411.815965285854,"0.1",431.732945255446,"0.55",395.88238131018
+"Tomato Pomace","LF","Landfill_CF",0.85,411.815965285854,"0.8",409.288422985772,"0.9",414.343507585936
+"Tomato Pomace","LF","LCEMax",0.95,411.815965285854,"0.85",419.89168789098,"0.95",411.815965285854
+"Tomato Pomace","LF","BMP_Correctionfactor",1,411.815965285854,"0.7",255.231800100098,"1",411.815965285854
+"Tomato Pomace","LF","k",0.144,411.815965285854,"0.10",335.245740200951,"0.229",505.050734461993
+"Tomato Pomace","AD","AD_Cf",0.9,22.7322363870785,"0.7",43.2099175329394,"1",12.4933958141481
+"Tomato Pomace","AD","AD_Digester_CH4Leaks",0.025,22.7322363870785,"0",-9.83930699345055,"0.1",120.446866528666
+"Tomato Pomace","AD","AD_flared",0.05,22.7322363870785,"0.03",19.7133142330553,"0.16",39.3363082342062
+"Tomato Pomace","AD","AD_Digester_CE",4.19,22.7322363870785,"3.2",56.9812177252277," 4.41 ",15.1213516452675
+"Tomato Pomace","AD","AD_Digester_parasiticLoad",0.12,22.7322363870785,"0.1",19.4378554916045,"0.2",35.9097599689743
+"Tomato Pomace","AD","AD_reductionInVS",0.55,22.7322363870785,"0.4",70.7554554750785,"0.7",-25.2909827009215
+"Tomato Pomace","AD","AD_Storage_residualCH4",0.054,22.7322363870785,"0.004",-110.665594412922,"0.074",76.0913687070785
+"Tomato Pomace","AD","AD_Storage_EF3",0.005,22.7322363870785,"0.0025",21.6128173792032,"0.01",24.971074402829
+"Tomato Pomace","AD","AD_Storage_FracGasMS",0.26,22.7322363870785,"0.15",21.9468875834228,"0.45",24.0887479570292
+"Tomato Pomace","AD","IPCC_EF4",0.01,22.7322363870785,"0.002",21.8056779371059,"0.05",27.3650286369413
+"Tomato Pomace","AD","LandApplication_EF1",0.0125,22.7322363870785,"0.018",22.7581909663936,"0.03",22.8148191394449
+"Tomato Pomace","CM","LandApplication_EF1",0.0125,-23.0025574304571,"0.018",-23.0025574304571,"0.03",-23.0025574304571
+"Tomato Pomace","AF","LandApplication_EF1",0.0125,-128.598545454545,"0.018",-128.598545454545,"0.03",-128.598545454545
+"Tomato Pomace","LF","LandApplication_EF1",0.0125,411.815965285854,"0.018",411.815965285854,"0.03",411.815965285854
+"Tomato Pomace","AD","AD_LA_FracGasD",0.075,22.7322363870785,"0.06",22.6661769067998,"0.12",22.9304148279144
+"Tomato Pomace","AD","AD_LA_FracLeachD",0.476,22.7322363870785,"0.152",21.3050334541691,"0.8",24.1594393199878
+"Tomato Pomace","AD","AD_N_Availability",0.65,22.7322363870785,"0.4",23.4710601548177,"1",21.6978831122436
+"Tomato Pomace","AD","N_displacement",1,22.7322363870785,"0",24.6510967075985,"1",22.7322363870785
+"Tomato Pomace","CM","N_displacement",1,-23.0025574304571,"0",-23.0025574304571,"1",-23.0025574304571
+"Tomato Pomace","AF","N_displacement",1,-128.598545454545,"0",-128.598545454545,"1",-128.598545454545
+"Tomato Pomace","LF","N_displacement",1,411.815965285854,"0",411.815965285854,"1",411.815965285854
+"Tomato Pomace","AD","K_Nratio",0.01,22.7322363870785,"0",22.7343178626804,"1",22.6296778626804
+"Tomato Pomace","CM","K_Nratio",0.01,-23.0025574304571,"0",-23.0025574304571,"1",-23.0025574304571
+"Tomato Pomace","AF","K_Nratio",0.01,-128.598545454545,"0",-128.598545454545,"1",-128.598545454545
+"Tomato Pomace","LF","K_Nratio",0.01,411.815965285854,"0",411.815965285854,"1",411.815965285854
+"Tomato Pomace","AD","P_Nratio",0.36,22.7322363870785,"0",22.8080523870785,"1",22.5974523870785
+"Tomato Pomace","CM","P_Nratio",0.36,-23.0025574304571,"0",-23.0025574304571,"1",-23.0025574304571
+"Tomato Pomace","AF","P_Nratio",0.36,-128.598545454545,"0",-128.598545454545,"1",-128.598545454545
+"Tomato Pomace","LF","P_Nratio",0.36,411.815965285854,"0",411.815965285854,"1",411.815965285854
+"Tomato Pomace","AD","AD_CSfactor",0.1,22.7322363870785,"0.02",37.8478669765185,"0.16",11.3955134449985
+"Tomato Pomace","CM","Compost_dieseLlpert",3,-23.0025574304571,"0.13",-32.1004574304571,"6",-13.4925574304571
+"Tomato Pomace","CM","Compost_electpert",0.023,-23.0025574304571,"0.023",-23.0025574304571,"65",21.9712731195429
+"Tomato Pomace","CM","CompostPercentCdegraded",0.58,-23.0025574304571,"0.4",-37.2880947104571,"0.83",-3.16153343045714
+"Tomato Pomace","CM","Compost_degradedC_CH4",0.02,-23.0025574304571,"0.008",-50.6212628384571,"0.036",13.8223831135429
+"Tomato Pomace","CM","Compost_N2OperN",0.005,-23.0025574304571,"0.001",-24.7739712818857,"0.018",-17.2454624133143
+"Tomato Pomace","CM","Compost_N_loss",0.43,-23.0025574304571,"0.23",-23.5157402236,"0.57",-22.6433294752571
+"Tomato Pomace","CM","Compost_xportToField",20,-23.0025574304571,"10",-23.0025574304571,"30",-23.0025574304571
+"Tomato Pomace","CM","Compost_CS_factor",0.1,-23.0025574304571,"0.02",-23.0025574304571,"0.14",-23.0025574304571
+"Tomato Pomace","AF","AF_loss",0.1,-128.598545454545,"0.05",-135.742909090909,"0.5",-71.4436363636364
+"Whey","AD","MF_N2O",0.018,-6.94837074632562,"0.012",-6.94733458875419,"0.024",-6.94940690389705
+"Whey","CM","MF_N2O",0.018,-60.1139787985714,"0.012",-60.1139787985714,"0.024",-60.1139787985714
+"Whey","AF","MF_N2O",0.018,-28.1116673553719,"0.012",-28.1116673553719,"0.024",-28.1116673553719
+"Whey","LF","MF_N2O",0.018,177.732393623424,"0.012",177.732393623424,"0.024",177.732393623424
+"Whey","AD","MF_ROL",0.29485,-6.94837074632562,"0.065",-6.94741358525419,"0.5247",-6.94932790739705
+"Whey","CM","MF_ROL",0.29485,-60.1139787985714,"0.065",-60.1139787985714,"0.5247",-60.1139787985714
+"Whey","AF","MF_ROL",0.29485,-28.1116673553719,"0.065",-28.1116673553719,"0.5247",-28.1116673553719
+"Whey","LF","MF_ROL",0.29485,177.732393623424,"0.065",177.732393623424,"0.5247",177.732393623424
+"Whey","AD","EFGrid",692.15,-6.94837074632562,"537.18",4.98371197111688,"918.79",-24.3987626097906
+"Whey","CM","EFGrid",692.15,-60.1139787985714,"537.18",-60.1175431085714,"918.79",-60.1087660785714
+"Whey","AF","EFGrid",692.15,-28.1116673553719,"537.18",-28.1116673553719,"918.79",-28.1116673553719
+"Whey","LF","EFGrid",692.15,177.732393623424,"537.18",174.195376828033,"918.79",182.905197950115
+"Whey","AD","Displaced_N_Production_Factor",8.85,-6.94837074632562,"4.7",-6.46007860270062,"13",-7.43666288995062
+"Whey","CM","Displaced_N_Production_Factor",8.85,-60.1139787985714,"4.7",-60.0645871585714,"13",-60.1633704385714
+"Whey","AF","Displaced_N_Production_Factor",8.85,-28.1116673553719,"4.7",-28.1116673553719,"13",-28.1116673553719
+"Whey","LF","Displaced_N_Production_Factor",8.85,177.732393623424,"4.7",177.732393623424,"13",177.732393623424
+"Whey","AD","Displaced_P_Production_Factor",1.8,-6.94837074632562,"0.52",-6.62581074632562,"3.09",-7.27345074632562
+"Whey","CM","Displaced_P_Production_Factor",1.8,-60.1139787985714,"0.52",-59.9526987985714,"3.09",-60.2765187985714
+"Whey","AF","Displaced_P_Production_Factor",1.8,-28.1116673553719,"0.52",-28.1116673553719,"3.09",-28.1116673553719
+"Whey","LF","Displaced_P_Production_Factor",1.8,177.732393623424,"0.52",177.732393623424,"3.09",177.732393623424
+"Whey","AD","Displaced_K_Production_Factor",0.96,-6.94837074632562,"0.38",-6.94768831393212,"1.53",-6.94904141264337
+"Whey","CM","Displaced_K_Production_Factor",0.96,-60.1139787985714,"0.38",-59.9573787985714,"1.53",-60.2678787985714
+"Whey","AF","Displaced_K_Production_Factor",0.96,-28.1116673553719,"0.38",-28.1116673553719,"1.53",-28.1116673553719
+"Whey","LF","Displaced_K_Production_Factor",0.96,177.732393623424,"0.38",177.732393623424,"1.53",177.732393623424
+"Whey","AD","EF_Peat_kgCO2eperton",970,-6.94837074632562,"388",-6.94837074632562,"1197",-6.94837074632562
+"Whey","CM","EF_Peat_kgCO2eperton",970,-60.1139787985714,"388",-11.2259787985714,"1197",-79.1819787985714
+"Whey","AF","EF_Peat_kgCO2eperton",970,-28.1116673553719,"388",-28.1116673553719,"1197",-28.1116673553719
+"Whey","LF","EF_Peat_kgCO2eperton",970,177.732393623424,"388",177.732393623424,"1197",177.732393623424
+"Whey","AD","IPCC_EF4",0.01,-6.94837074632562,"0.002",-7.4514572789399,"0.05",-4.43293808325419
+"Whey","LF","LFDieseluseLpert",5.83,177.732393623424,"1",162.421293623424,"6",178.271293623424
+"Whey","LF","Landfill_OX_Max",0.35,177.732393623424,"0.1",185.055002621522,"0.55",171.874306424945
+"Whey","LF","Landfill_CF",0.85,177.732393623424,"0.8",176.803126032759,"0.9",178.661661214088
+"Whey","LF","LCEMax",0.95,177.732393623424,"0.85",180.701486282287,"0.95",177.732393623424
+"Whey","LF","BMP_Correctionfactor",1,177.732393623424,"0.7",120.163192936397,"1",177.732393623424
+"Whey","LF","k",0.144,177.732393623424,"0.10",149.580845544892,"0.229",212.010771206128
+"Whey","AD","AD_Cf",0.9,-6.94837074632562,"0.7",0.580383735920424,"1",-10.7127479874486
+"Whey","AD","AD_Digester_CH4Leaks",0.025,-6.94837074632562,"0",-18.9235134137558,"0.1",28.977057255965
+"Whey","AD","AD_flared",0.05,-6.94837074632562,"0.03",-8.05829737994977,"0.16",-0.843774261392755
+"Whey","AD","AD_Digester_CE",4.19,-6.94837074632562,"3.2",5.64349304554085," 4.41 ",-9.74656270007372
+"Whey","AD","AD_Digester_parasiticLoad",0.12,-6.94837074632562,"0.1",-8.15957160233849,"0.2",-2.10356732227414
+"Whey","AD","AD_reductionInVS",0.55,-6.94837074632562,"0.4",2.13807774004938,"0.7",-16.0348192327006
+"Whey","AD","AD_Storage_residualCH4",0.054,-6.94837074632562,"0.004",-32.1885054307006,"0.074",3.14768312742439
+"Whey","AD","AD_Storage_EF3",0.005,-6.94837074632562,"0.0025",-7.55583989356333,"0.01",-5.73343245185019
+"Whey","AD","AD_Storage_FracGasMS",0.26,-6.94837074632562,"0.15",-7.37455179621362,"0.45",-6.21223984197362
+"Whey","AD","IPCC_EF4",0.01,-6.94837074632562,"0.002",-7.4514572789399,"0.05",-4.43293808325419
+"Whey","AD","LandApplication_EF1",0.0125,-6.94837074632562,"0.018",-6.93428611308947,"0.03",-6.90355600421062
+"Whey","CM","LandApplication_EF1",0.0125,-60.1139787985714,"0.018",-60.1139787985714,"0.03",-60.1139787985714
+"Whey","AF","LandApplication_EF1",0.0125,-28.1116673553719,"0.018",-28.1116673553719,"0.03",-28.1116673553719
+"Whey","LF","LandApplication_EF1",0.0125,177.732393623424,"0.018",177.732393623424,"0.03",177.732393623424
+"Whey","AD","AD_LA_FracGasD",0.075,-6.94837074632562,"0.06",-6.9842188924349,"0.12",-6.84082630799776
+"Whey","AD","AD_LA_FracLeachD",0.476,-6.94837074632562,"0.152",-7.72348040576905,"0.8",-6.17326108688219
+"Whey","AD","AD_N_Availability",0.65,-6.94837074632562,"0.4",-6.54743718973062,"1",-7.50967772555862
+"Whey","AD","N_displacement",1,-6.94837074632562,"0",-5.90707304245062,"1",-6.94837074632562
+"Whey","CM","N_displacement",1,-60.1139787985714,"0",-60.1139787985714,"1",-60.1139787985714
+"Whey","AF","N_displacement",1,-28.1116673553719,"0",-28.1116673553719,"1",-28.1116673553719
+"Whey","LF","N_displacement",1,177.732393623424,"0",177.732393623424,"1",177.732393623424
+"Whey","AD","K_Nratio",0.01,-6.94837074632562,"0",-6.94724120305362,"1",-7.06019553025362
+"Whey","CM","K_Nratio",0.01,-60.1139787985714,"0",-60.1139787985714,"1",-60.1139787985714
+"Whey","AF","K_Nratio",0.01,-28.1116673553719,"0",-28.1116673553719,"1",-28.1116673553719
+"Whey","LF","K_Nratio",0.01,177.732393623424,"0",177.732393623424,"1",177.732393623424
+"Whey","AD","P_Nratio",0.36,-6.94837074632562,"0",-6.49477074632562,"1",-7.75477074632562
+"Whey","CM","P_Nratio",0.36,-60.1139787985714,"0",-60.1139787985714,"1",-60.1139787985714
+"Whey","AF","P_Nratio",0.36,-28.1116673553719,"0",-28.1116673553719,"1",-28.1116673553719
+"Whey","LF","P_Nratio",0.36,177.732393623424,"0",177.732393623424,"1",177.732393623424
+"Whey","AD","AD_CSfactor",0.1,-6.94837074632562,"0.02",-5.39937402531362,"0.16",-8.11011828708462
+"Whey","CM","Compost_dieseLlpert",3,-60.1139787985714,"0.13",-69.2118787985714,"6",-50.6039787985714
+"Whey","CM","Compost_electpert",0.023,-60.1139787985714,"0.023",-60.1139787985714,"65",-15.1401482485714
+"Whey","CM","CompostPercentCdegraded",0.58,-60.1139787985714,"0.4",-63.4379394385714,"0.83",-55.4973667985714
+"Whey","CM","Compost_degradedC_CH4",0.02,-60.1139787985714,"0.008",-66.5403027025714,"0.036",-51.5455469265714
+"Whey","CM","Compost_N2OperN",0.005,-60.1139787985714,"0.001",-61.0752625128572,"0.018",-56.9898067271429
+"Whey","CM","Compost_N_loss",0.43,-60.1139787985714,"0.23",-60.39246497,"0.57",-59.9190384785714
+"Whey","CM","Compost_xportToField",20,-60.1139787985714,"10",-60.1139787985714,"30",-60.1139787985714
+"Whey","CM","Compost_CS_factor",0.1,-60.1139787985714,"0.02",-60.1139787985714,"0.14",-60.1139787985714
+"Whey","AF","AF_loss",0.1,-28.1116673553719,"0.05",-29.6734266528926,"0.5",-15.6175929752066
