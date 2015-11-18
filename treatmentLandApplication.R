@@ -8,61 +8,86 @@
 #                           'Fertilizer' = Fertilizer displacement
 ################# Treatment Functions
 LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors, 
-                                            debug = F, Nremaining = Feedstock$TKN,
-                                            Application = 'noDisplace',
-                                            sequesterCarbon = TRUE)
+                                            debug = F, 
+                                            Nremaining = Feedstock$TKN/1000)
 {
-    # Step 1: Calculate Land Application  kgCO2e/MT
-    EMspread           <- GlobalFactors$DieselspreadLpertkm * GlobalFactors$LA_xportToField*
-      (GlobalFactors$DieselprovisionkgCO2eperL+GlobalFactors$DieselcombustionkgCO2eperL)
-    if(debug) print(paste("EMspread ",EMspread))
-    EMN2O_LandApp_direct         <- Nremaining * GlobalFactors$LandApplication_EF1 *
-        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
-    if(debug) print(paste("EMN2O_LandApp_direct ",EMN2O_LandApp_direct))
-    EMN2O_LandApp_indirect       <- Nremaining * 
-        GlobalFactors$LandApplication_FracGasM * 
-        GlobalFactors$IPCC_EF4 *
-        GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
-    if(debug) print(paste("EMN2O_LandApp_indirect ",EMN2O_LandApp_indirect))
-    EMN2O_LandApp    <- EMN2O_LandApp_direct + EMN2O_LandApp_indirect
-    if(debug) print(paste("EMN2O_LandApp ",EMN2O_LandApp))
-    EMLandApp <- EMspread + EMN2O_LandApp
-    if(debug) print(paste("EMLandApp ",EMLandApp))
+  EMN2O_LandApp_direct         <- Nremaining * 
+    (GlobalFactors$LandApplication_EF1 - GlobalFactors$MF_N2O) *
+    GlobalFactors$N2ON_to_N2O * GlobalFactors$GWPN2O / 1000
+  if(debug) print(paste("EMN2O_LandApp_direct ",EMN2O_LandApp_direct))
+  EMN2Ovol       <- Nremaining * 
+    (GlobalFactors$AD_LA_FracGasD -GlobalFactors$MF_NH3) *  
+    GlobalFactors$IPCC_EF4 *
+    GlobalFactors$N2ON_to_N2O * 
+    GlobalFactors$GWPN2O / 1000
+  EMN2OLRO <- (GlobalFactors$AD_LA_FracLeachD-GlobalFactors$MF_ROL) *
+    GlobalFactors$IPCC_EF4 *
+    GlobalFactors$N2ON_to_N2O * 
+    GlobalFactors$GWPN2O / 1000 
+  EMN2O_LandApp_indirect <-EMN2Ovol + EMN2OLRO
+  
+  if(debug) print(paste("EMN2O_LandApp_indirect ",EMN2O_LandApp_indirect))
+  EMN2O_LandApp    <- EMN2O_LandApp_direct + EMN2O_LandApp_indirect
+  if(debug) print(paste("EMN2O_LandApp ",EMN2O_LandApp))
+  EMLandApp <- EMN2O_LandApp
+  if(debug) print(paste("EMLandApp ",EMLandApp))
+  
+  # Step 2: Carbon Sequestration kgCO2e/MT
+  
+    CStorage <-Feedstock$InitialC * GlobalFactors$AD_CSfactor
+    EMCstorage<-CStorage*(-GlobalFactors$CtoCO2)
     
-    # Step 4: Carbon Sequestration kgCO2e/MT
-    if (sequesterCarbon == TRUE) {
-        CStorage<-Feedstock$InitialC*(1-Feedstock$fdeg)*(GlobalFactors$LA_CSfactor)
-        EMCstorage<-CStorage*(-44/12)
-    } else {
-        EMCstorage <- CStorage <- 0
-    }
-    if(debug) print(paste("EMCstorage ",EMCstorage))
-    
-    # Step 5: Displaced fertilizer kgCO2e/MT
-    Nremaining      <- Nremaining - 
-        Nremaining * GlobalFactors$LandApplication_EF1 -
-        Nremaining * 0.02 - Nremaining * 0.2
-    effectiveNapplied <- Nremaining * GlobalFactors$Compost_N_Availability
-    if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
-    
-    avoidedNfert    <- GlobalFactors$LA_DisplacedFertilizer_Production_Factor *
-        effectiveNapplied/1000
-    if(debug) print(paste("avoidedNfert ",avoidedNfert))
-    
-    avoidedInorganicFertdirectandIndirect <- 
-        GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect *
-        effectiveNapplied/1000
-    if(debug) print(paste("avoidedInorganicFertdirectandIndirect ",
-                          avoidedInorganicFertdirectandIndirect))
-    
-    EMdisplacedFertilizer <- avoidedNfert + avoidedInorganicFertdirectandIndirect
-    if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
-    
-    # Add together
-    EMNetLandapp <- switch(Application,
-                    'noDisplace' = EMLandApp + EMCstorage,
-                    'Fertilizer' = EMLandApp + EMCstorage + EMdisplacedFertilizer)
-    result <- data.frame(EMNetLandapp, Application, EMLandApp, EMCstorage, 
-                         EMdisplacedFertilizer)
-    result
-}
+  
+  if(debug) print(paste("InitialC ",Feedstock$InitialC))
+  if(debug) print(paste("EMCstorage ",EMCstorage))
+  if(debug) print(paste("fdeg ",Feedstock$fdeg))
+  
+  # Step 5: Displaced fertilizer kgCO2e/MT
+  
+  effectiveNapplied <- Nremaining * GlobalFactors$Compost_N_Availability
+  if(debug) print(paste("effectiveNapplied ",effectiveNapplied))
+  
+  EMavoidedNfert    <- (-GlobalFactors$Displaced_N_Production_Factor) * 
+    GlobalFactors$N_displacement * effectiveNapplied
+  
+  # Limit nutrient displacement to nutrient requirements based upon ratio to N 
+  
+  effectiveKapplied <- Feedstock$Potassium/1000 * GlobalFactors$K_Availability
+  MaxK <- effectiveNapplied * GlobalFactors$K_Nratio
+  
+  for(i in 1:length(effectiveKapplied)) {
+    if (effectiveKapplied[i] > MaxK[i])effectiveKapplied[i] <- MaxK[i]
+  }
+  
+  EMavoidedKfert   <- (-GlobalFactors$Displaced_K_Production_Factor) * 
+    effectiveKapplied
+  
+  if(debug) print(paste("EMavoidedKfert ",EMavoidedKfert))
+  
+  effectivePapplied <- Feedstock$Phosphorus/1000 * GlobalFactors$P_Availability
+  if(debug) print(paste("effectivePapplied ",effectivePapplied))
+  MaxP <- effectivePapplied * GlobalFactors$P_Nratio
+  for(i in 1:length(effectivePapplied)) {
+    if (effectivePapplied[i] > MaxP[i])effectivePapplied[i] <- MaxP[i]
+  }
+  EMavoidedPfert   <-(-GlobalFactors$Displaced_P_Production_Factor) * 
+    effectivePapplied  
+  
+  (-GlobalFactors$LA_DisplacedFertilizer_Direct_Indirect) *
+    effectiveNapplied/1000
+  
+  EMdisplacedFertilizer <- EMavoidedNfert + EMavoidedPfert + EMavoidedKfert
+  if(debug) print(paste("displacedFertilizer ",EMdisplacedFertilizer))
+  
+  # Add together
+  EMNetLandapp <-   EMLandApp + EMCstorage + EMdisplacedFertilizer
+  
+
+  
+  result <- data.frame(EMNetLandapp,EMLandApp,EMCstorage,EMdisplacedFertilizer)
+  colnames(result) <- c("EMNetLandapp","EMLandApp","EMCstorage",
+                        "EMdisplacedFertilizer")
+  result
+  }
+   
+  
