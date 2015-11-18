@@ -159,6 +159,10 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
     #                           'high' = 9% CF and 91% NFE
     #                           'low' = 60% CF and 40% NFE
     
+    Carbodigestability <- switch (fdeg,
+                                  '<.60', = 'low',
+                                  '> .95, = 'high')
+      
     CarboDigest <- switch(Carbodigestability,
                           'high' = 0.78,
                           'med' = 0.73,
