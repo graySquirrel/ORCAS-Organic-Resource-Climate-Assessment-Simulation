@@ -154,19 +154,17 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
                    percentLipidTS*lipidPercentC)*TS*1000
     proteinDigest <- 0.85
     lipidDigest <- 0.8
-    # Carbodigestability enumeration:  'med' = 35% CF and 65% NFE
-    #                           'high' = 9% CF and 91% NFE
-    #                           'low' = 60% CF and 40% NFE
+  
     
-    # Not sure why we dont just calculate CarboDigest directly, but...
-    if (fdeg < 0.6) Carb <- 'low'
-    else if (fdeg > 0.95) Carbodigestability <- 'high'
-    else Carbodigestability <- 'med'
+    # CarboDigest is set based on fdeg 
+    if (fdeg < 0.6) CarboDigest <- 0.68
+    else if (fdeg > 0.95) CarboDigest <- 0.78
+    else CarboDigest <- 0.73
       
-    CarboDigest <- switch(fdeg,
-                          'high' = 0.78,
-                          'med' = 0.73,
-                          'low' = 0.68)
+    #CarboDigest <- switch(fdeg,
+      #                    'high' = 0.78,
+       #                   'med' = 0.73,
+       #                   'low' = 0.68)
     
     #if Carbodigestability = "high" CarboDigest =0.78
     # if Carbodigestability = "low" CarboDigest =0.68
