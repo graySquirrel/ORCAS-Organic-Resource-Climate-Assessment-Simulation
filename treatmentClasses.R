@@ -159,11 +159,11 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
     #                           'low' = 60% CF and 40% NFE
     
     # Not sure why we dont just calculate CarboDigest directly, but...
-    if (fdeg < 0.6) Carbodigestability <- 'low'
+    if (fdeg < 0.6) Carb <- 'low'
     else if (fdeg > 0.95) Carbodigestability <- 'high'
     else Carbodigestability <- 'med'
       
-    CarboDigest <- switch(Carbodigestability,
+    CarboDigest <- switch(fdeg,
                           'high' = 0.78,
                           'med' = 0.73,
                           'low' = 0.68)
