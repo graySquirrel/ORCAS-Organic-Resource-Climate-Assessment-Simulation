@@ -38,9 +38,11 @@ LandApplicationTreatmentPathway <- function(Feedstock, GlobalFactors,
     EMCstorage<-CStorage*(-GlobalFactors$CtoCO2)
     
   
-  if(debug) print(paste("InitialC ",Feedstock$InitialC))
-  if(debug) print(paste("EMCstorage ",EMCstorage))
-  if(debug) print(paste("fdeg ",Feedstock$fdeg))
+    if(debug) print(paste("InitialC ",Feedstock$InitialC))
+    if(debug) print(paste("CStorage ",CStorage))
+    if(debug) print(paste("GlobalFactors$CtoCO2 ",GlobalFactors$CtoCO2))
+    if(debug) print(paste("EMCstorage ",EMCstorage))
+    if(debug) print(paste("fdeg ",Feedstock$fdeg))
   
   # Step 5: Displaced fertilizer kgCO2e/MT
   

@@ -130,8 +130,7 @@ GlobalFactors <- function()
 ########### FeedStock stuff
 Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
                       percentCarboTS=0,percentProteinTS=0,percentLipidTS=0,
-                      fdeg=0,Phosphorus=0, Potassium=0, 
-                      Carbodigestability = 'med')
+                      fdeg=0,Phosphorus=0, Potassium=0)
     
 {
     if(missing(percentCarboTS)) percentCarboTS=0
@@ -159,9 +158,10 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
     #                           'high' = 9% CF and 91% NFE
     #                           'low' = 60% CF and 40% NFE
     
-    Carbodigestability <- switch (fdeg,
-                                  '<.60', = 'low',
-                                  '> .95, = 'high')
+    # Not sure why we dont just calculate CarboDigest directly, but...
+    if (fdeg < 0.6) Carbodigestability <- 'low'
+    else if (fdeg > 0.95) Carbodigestability <- 'high'
+    else Carbodigestability <- 'med'
       
     CarboDigest <- switch(Carbodigestability,
                           'high' = 0.78,
