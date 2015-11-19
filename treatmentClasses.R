@@ -143,6 +143,10 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
         !all(is.finite(TS)) || !all(is.finite(VS)) ||
         !all(is.finite(Bo)) || !all(is.finite(TKN)))
         stop("invalid input")
+    
+    fdeg <- Bo/(percentLipidTS * 1014 + percentProteinTS * 496 + percentCarboTS * 415)
+    if (fdeg > 0.99) fdeg <- 0.99
+    #print(paste("fdeg ISSSSS", fdeg))
     #if (length(Bo) != length(TKN))
     #    stop("lengths differ")
     # Carbon content
