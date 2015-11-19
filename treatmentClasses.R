@@ -144,8 +144,9 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
         !all(is.finite(Bo)) || !all(is.finite(TKN)))
         stop("invalid input")
     
-    fdeg <- Bo/(percentLipidTS * 1014 + percentProteinTS * 496 + percentCarboTS * 415)
-    if (fdeg > 0.99) fdeg <- 0.99
+    # comment out fdeg.  it is being passed in because there are special cases.
+#     fdeg <- Bo/(percentLipidTS * 1014 + percentProteinTS * 496 + percentCarboTS * 415)
+#     if (fdeg > 0.99) fdeg <- 0.99
     #print(paste("fdeg ISSSSS", fdeg))
     #if (length(Bo) != length(TKN))
     #    stop("lengths differ")
@@ -161,19 +162,10 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
   
     
     # CarboDigest is set based on fdeg 
-    if (fdeg < 0.6) CarboDigest <- 0.68
-    else if (fdeg > 0.95) CarboDigest <- 0.78
-    else CarboDigest <- 0.73
+    if (fdeg < 0.6) CarboDigest <- 0.6
+    else if (fdeg > 0.95) CarboDigest <- 0.9
+    else CarboDigest <- 0.74
       
-    #CarboDigest <- switch(fdeg,
-      #                    'high' = 0.78,
-       #                   'med' = 0.73,
-       #                   'low' = 0.68)
-    
-    #if Carbodigestability = "high" CarboDigest =0.78
-    # if Carbodigestability = "low" CarboDigest =0.68
-    # if Carbodigestabiity = "me" CarboDigest =0.73
-    
     TDN <- proteinDigest * percentProteinTS + 
         lipidDigest * 2.25 * percentLipidTS + 
         CarboDigest * percentCarboTS
