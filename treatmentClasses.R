@@ -162,9 +162,12 @@ Feedstock <- function(type="dontKnow",TS=0,VS=0,Bo=0,TKN=0,
   
     
     # CarboDigest is set based on fdeg 
-    if (fdeg < 0.6) CarboDigest <- 0.6
-    else if (fdeg > 0.95) CarboDigest <- 0.9
-    else CarboDigest <- 0.74
+    CarboDigest <- 0
+    for(i in 1:length(fdeg)) {
+        if (fdeg[i] < 0.6) CarboDigest[i] <- 0.6
+        else if (fdeg[i] > 0.95) CarboDigest[i] <- 0.9
+        else CarboDigest[i] <- 0.6
+    }
       
     TDN <- proteinDigest * percentProteinTS + 
         lipidDigest * 2.25 * percentLipidTS + 
