@@ -201,13 +201,15 @@ createPathwaysPlot <- function(doRanges = FALSE,s = NULL) {
     y3f <- massageDataforPlot(s$CMfstats$confDat, s$b$CMf$final,"CMf")
     y3p <- massageDataforPlot(s$CMpstats$confDat, s$b$CMp$final,"CMp")
     y3b <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CMb")
+    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"CM")
 #     y4 <- massageDataforPlot(s$LAstats$confDat, s$b$LA$EMNetLandapp,"LA")
 #     y4f <- massageDataforPlot(s$LAfstats$confDat, s$b$LAf$EMNetLandapp,"LAf")
     y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
     
     #y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
     #y <- rbind(y1,y2,y3,y4)
-    y <- rbind(y1,y2,y5,y3)
+    y <- rbind(y1,y2,y5,y3Special)
+    #y <- rbind(y1,y5,y3Special)
     #y <- rbind(y1f,y2,y3f,y4f)
     #y <- rbind(y1,y3,y4)
     
