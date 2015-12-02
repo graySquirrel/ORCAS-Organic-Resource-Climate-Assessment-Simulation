@@ -72,8 +72,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     
     # Step 4: Displaced peat kgCO2e/Mt
     Compost_mass<- 1000*(1-GlobalFactors$Compost_mass_reduction)
-    EM_displaced_Peat <- (-GlobalFactors$Peatdisplacementfactor) * 
-        Compost_mass*GlobalFactors$EF_Peat_kgCO2eperton/1000
+    EM_displaced_Peat <- (GlobalFactors$Peat_substitution) * 
+        Compost_mass*(-GlobalFactors$EF_Peat_kgCO2eperton)/1000
     
     
     # Step 5: Land applied to displace fertilizer in agriculture
@@ -183,7 +183,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     final <- switch(Application,
                     'noDisplace' = EMCompost,
                     'Fertilizer' = EMCompost + EM_displacedFertilizer,
-                    'Peat' = EMCompost + EM_displaced_Peat,
+                    'Peat' = EMCompost + EM_displaced_Peat *
+                        GlobalFactors$Compost_Peat_Displacement,
                     'Blended' = EMCompost + 0.21*EM_displaced_Peat + 0.18*EM_displacedFertilizer,
                     'LAFertilizer' =EMCompost + EMdisplacedFertilizerLA)
     result <- data.frame(final, Application, EMCompost, EMCompostoperation, 

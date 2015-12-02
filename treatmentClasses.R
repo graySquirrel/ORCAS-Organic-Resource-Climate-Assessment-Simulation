@@ -59,10 +59,11 @@ GlobalFactors <- function()
         #Compost_NAvailabiltiy_Factor = 0.4,
         Compost_N_Availability = 0.2,
         Compost_FracGasC =0.016,
-        Peatdisplacementfactor = 1,
         EF_Peat_kgCO2eperton = -970,
         Compost_EF1 = 0.015, # Boldrin
         Compost_LRO = 0.077,
+        Peat_substitution = 1,
+        Compost_Peat_Displacement = 1,
         
         #Anaerobic Digestion
         AD_Cf = 0.90,
