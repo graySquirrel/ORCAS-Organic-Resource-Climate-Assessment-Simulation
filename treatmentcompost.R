@@ -191,7 +191,7 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
                         GlobalFactors$Compost_Peat_Displacement,
                     'Blended' = EMCompost + 0.21*EM_displaced_Peat + 
                       0.18*EM_displacedFertilizer,
-                    'LAFertilizer' =EMCompost + EMdisplacedFertilizerLA)
+                    'LAFertilizer' =EMCompost + EMdisplacedFertilizerLA + EMCstorage)
     result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
                          EMBio, EMCstorage,  EM_displaced_Peat, 
                          EM_displacedFertilizer, EMdisplacedFertilizerLA)
