@@ -109,6 +109,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     EMN2O_CompApp_indirect <- EMN2O_CompApp_indirectvol + EMN2O_CompApp_indirectLRO
     
     if(debug) print(paste("EMN2O_CompApp_indirect ",EMN2O_CompApp_indirect))
+    if(debug) print(paste("EMN2O_CompApp_indirectvol ",EMN2O_CompApp_indirectvol))
+    if(debug) print(paste("EMN2O_CompApp_indirectLRO ",EMN2O_CompApp_indirectLRO))
     EMN2O_CompApp    <- EMN2O_CompApp_direct  + EMN2O_CompApp_indirect
     if(debug) print(paste("EMN2O_CompApp ",EMN2O_CompApp))
     
@@ -126,11 +128,13 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
     NremainingLA[NremainingLA < 0] <- 0 # how to do the if with vectors
     
     effectiveNappliedLA <- NremainingLA * GlobalFactors$Compost_N_Availability
+    if(debug) print(paste("effectiveNappliedLA ",effectiveNappliedLA))
     
     # N_displacement is a factor from 0 to 1 to set N fert substitution
     EMavoidedNfertLA    <- (-GlobalFactors$Displaced_N_Production_Factor) * 
       effectiveNappliedLA * GlobalFactors$N_displacement 
-       
+    if(debug) print(paste("EMavoidedNfertLA ",EMavoidedNfertLA))
+    
     
     # Limit nutrient displacement to nutrient requirements based upon ratio to N  
     MaxK <- effectiveNapplied * GlobalFactors$K_Nratio
@@ -185,7 +189,8 @@ compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Ble
                     'Fertilizer' = EMCompost + EM_displacedFertilizer,
                     'Peat' = EMCompost + EM_displaced_Peat *
                         GlobalFactors$Compost_Peat_Displacement,
-                    'Blended' = EMCompost + 0.21*EM_displaced_Peat + 0.18*EM_displacedFertilizer,
+                    'Blended' = EMCompost + 0.21*EM_displaced_Peat + 
+                      0.18*EM_displacedFertilizer,
                     'LAFertilizer' =EMCompost + EMdisplacedFertilizerLA)
     result <- data.frame(final, Application, EMCompost, EMCompostoperation, 
                          EMBio, EMCstorage,  EM_displaced_Peat, 

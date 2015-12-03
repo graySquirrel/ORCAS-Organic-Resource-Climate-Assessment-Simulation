@@ -1,3 +1,4 @@
+
 source("treatmentClasses.R")
 source("treatmentAnaerobicDigestion.R")
 source("treatmentLandApplication.R")
@@ -32,6 +33,7 @@ scalednpert <- (npert - min(npert))/(max(npert)-min(npert))
 scaledTDN <- (TDN - min(TDN))/(max(TDN)-min(TDN))
 scaledTVS <- (TVS - min(TVS))/(max(TVS)-min(TVS))
 scaledInitialC <- (InitialC - min(InitialC))/(max(InitialC)-min(InitialC))
+scaledrdeg <- (rdeg - min(rdeg))/(max(rdeg)-min(rdeg))
 
 # scaledTKN<-scale(o$f1$TKN, center = FALSE)
 # scaledTDN<-scale(o$f1$TDN, center = FALSE)
@@ -57,48 +59,50 @@ AFLMS <- lm(unlist(o$AF[1]) ~ scaledTS_TDN) # perfect fit!
 #plot(AFLMS)
 coef(AFLMS)
 
-AFLM <- lm(unlist(o$AF[1]) ~ TS ) 
-summary(AFLM)
-#plot(AFLM)
-coef(AFLM)
-# plot(fitted(AFLM),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
-# lines(c(-600,2500),c(-600,2500))
+# AFLM <- lm(unlist(o$AF[1]) ~ TS ) 
+# summary(AFLM)
+# #plot(AFLM)
+# coef(AFLM)
+# # plot(fitted(AFLM),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
+# # lines(c(-600,2500),c(-600,2500))
+# 
+# AFLM <- lm(unlist(o$AF[1]) ~ TS:percentProteinTS + 
+#              TS:percentLipidTS + TS:percentCarboTS ) 
+# summary(AFLM)
+# #plot(AFLM)
+# coef(AFLM)
+# # plot(fitted(AFLM),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
+# # lines(c(-600,2500),c(-600,2500))
 
-AFLM <- lm(unlist(o$AF[1]) ~ TS:percentProteinTS + 
-             TS:percentLipidTS + TS:percentCarboTS ) 
-summary(AFLM)
-#plot(AFLM)
-coef(AFLM)
-# plot(fitted(AFLM),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
-# lines(c(-600,2500),c(-600,2500))
-
-
-ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS) 
+# Good Fit 
+# ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + InitialC:rdeg)
+# Perfect Fit
+ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + InitialC:fdeg + TKN + InitialC) 
 summary(ADfLM)
 #plot(ADfLM)
 coef(ADfLM)
-plot(fitted(ADfLM),unlist(o$ADf[1]),xlab="fit",ylab="AD Emissions")
+#plot(fitted(ADfLM),unlist(o$ADf[1]),xlab="fit",ylab="AD Emissions")
 lines(c(-600,2500),c(-600,2500))
 
-ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS) 
+# ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS) 
+# summary(ADfLMS)
+# #plot(ADfLMS)
+# coef(ADfLMS)
+# plot(fitted(ADfLMS),unlist(o$ADf[1]),xlab="fit",ylab="AD emission")
+# lines(c(-600,2500),c(-600,2500))
+
+ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledInitialC : scaledrdeg)
+#ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS)
 summary(ADfLMS)
 #plot(ADfLMS)
 coef(ADfLMS)
-plot(fitted(ADfLMS),unlist(o$ADf[1]),xlab="fit",ylab="AD emission")
-lines(c(-600,2500),c(-600,2500))
 
-#ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS + scaledInitialC : scaledrdeg)
-ADfLMS <- lm(unlist(o$ADf[1]) ~ scaledLo + scaledTVS)
-summary(ADfLMS)
-#plot(ADfLMS)
-coef(ADfLMS)
-
-
+# Perfect Fit
 CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC )
-#summary(CMbLM)
+summary(CMbLM)
 #plot(CMbLM)
 coef(CMbLM)
-plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
+#plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
 points(o$CMb[1], cex=2)
 
 CMbLMS <- lm(unlist(o$CMb[1]) ~ scalednpert + scaledInitialC)
@@ -109,10 +113,13 @@ coef(CMbLMS)
 
 y<-unlist(o$LF[1])
 names(y) <- o$f1$type
-LFLM <- lm(y ~ Lo + InitialC)#:rdeg) # perfect fit!
+# Good Fit
+#LFLM <- lm(y ~ Lo + InitialC)
+# perfect fit
+LFLM <- lm(y ~ Lo + InitialC:rdeg) 
 summary(LFLM)
 #plot(LFLM, las = 1)
-plot(fitted(LFLM),unlist(o$LF[1]),xlab="fit",ylab="LF emission")
+#plot(fitted(LFLM),unlist(o$LF[1]),xlab="fit",ylab="LF emission")
 lines(c(-600,3500),c(-600,3500))
 coef(LFLM)
 # 
@@ -127,15 +134,15 @@ summary(LFLMS)
 coef(LFLMS)
 
 
-plot(fitted(AFLM),xlab="Feedstock",ylab="Animal Feed Emissions")
-points(o$AF[1], cex=2)
-plot(fitted(ADfLM),xlab="Feedstock",ylab="Anaerobic Digestion Emissions")
-points(o$ADf[1], cex=2)
-plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
-points(o$CMb[1], cex=2)
-plot(fitted(LFLM),xlab="Feedstock",ylab="Landfill Emissions")
-points(y, cex=2)
-mtext("Linear Models fit vs. actual", outer = TRUE, cex = 1.5)
+# plot(fitted(AFLM),xlab="Feedstock",ylab="Animal Feed Emissions")
+# points(o$AF[1], cex=2)
+# plot(fitted(ADfLM),xlab="Feedstock",ylab="Anaerobic Digestion Emissions")
+# points(o$ADf[1], cex=2)
+# plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
+# points(o$CMb[1], cex=2)
+# plot(fitted(LFLM),xlab="Feedstock",ylab="Landfill Emissions")
+# points(y, cex=2)
+# mtext("Linear Models fit vs. actual", outer = TRUE, cex = 1.5)
 
 plot(fitted(AFLM),unlist(o$AF[1]),xlab="fit",ylab="Animal Feed Emissions")
 lines(c(-600,2500),c(-600,2500))

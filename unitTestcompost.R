@@ -25,8 +25,8 @@ res <- rbind(res,compostTreatmentPathway(f1, g1, Application = 'Peat', debug = T
 print(res)
 res <- rbind(res,compostTreatmentPathway(f1, g1, Application = 'Blended', debug = T))
 print(res)
-
-barplot(res$final, xlab = "displacement", ylab = "Compost Emissions", 
-        names.arg = res$Application)
+par(mar=c(7, 4.1, 4.1, 2.1))
+barplot(res$final, ylab = "Compost Emissions", 
+        names.arg = res$Application, las=3)
 #plot(res$final, xaxt = "n", xlab = "Displacement Option", ylab = "Compost Emissions")
 #axis(1, at=1:5, labels=res$Application) # only for plot, not barplot
