@@ -33,7 +33,15 @@ source("baselineFuncs.R")
 AllStats <- calcAllStats()
 print(createPathwaysPlot(FALSE,s=AllStats))
 print(createPathwaysPlot(TRUE,s=AllStats))
-print(createPathwaysCMPlot(TRUE,s=AllStats))
+
+r <- read.csv(file="GlobalFactorsCompostsensitivity.csv",stringsAsFactors = FALSE)
+All2 <- calcAllStats(GFmemfile = r)
+print(createPathwaysCMPlot(TRUE,s=All2))
+
+r <- read.csv(file="GlobalFactorsADsensitivity.csv",stringsAsFactors = FALSE)
+All3 <- calcAllStats(GFmemfile = r)
+print(createPathwaysPlot(TRUE,s=All3))
+
 stop()
 #####################################################################
 # sensitivity analysis...  start slow
