@@ -7,7 +7,7 @@
 #                           'Fertilizer' = Fertilizer displacement
 #                           'Peat' = Peat displacement
 #                           'Blended' = 21% peat, 18% fertilizer, 61% no displacement
-#  'LAFertilizer' = LA Fertilizer displacement
+#                           'LAFertilizer' = LA Fertilizer displacement
 
 ################# Treatment Functions
 compostTreatmentPathway <- function(Feedstock, GlobalFactors, Application = 'Blended', 
