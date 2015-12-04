@@ -35,6 +35,7 @@ getBaselineResults <- function(verbose = FALSE,
 #    o$LA  <- LandApplicationTreatmentPathway(f1, g1, Application = 'noDisplace')
 #    o$LAf <- LandApplicationTreatmentPathway(f1, g1, Application = 'Fertilizer')
     o$CM  <- compostTreatmentPathway(f1, g1, Application = 'noDisplace')
+    o$CMLA  <- compostTreatmentPathway(f1, g1, Application = 'LAFertilizer')
     o$CMf <- compostTreatmentPathway(f1, g1, Application = 'Fertilizer')
     o$CMp <- compostTreatmentPathway(f1, g1, Application = 'Peat')
     o$CMb <- compostTreatmentPathway(f1, g1, Application = 'Blended')
@@ -176,13 +177,15 @@ calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
     o$LFstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                   FUN=LandfillTreatmentPathway)
     o$CMstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
-                                  FUN=compostTreatmentPathway)
+                                  FUN=compostTreatmentPathway, Application =  'noDisplace')
     o$CMfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                    FUN=compostTreatmentPathway, Application = 'Fertilizer')
     o$CMpstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                    FUN=compostTreatmentPathway, Application = 'Peat')
     o$CMbstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
                                    FUN=compostTreatmentPathway, Application = 'Blended')
+    o$CMLAstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
+                                     FUN=compostTreatmentPathway, Application = 'LAFertilizer')
 #     o$LAstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
 #                                   FUN=LandApplicationTreatmentPathway)
 #     o$LAfstats <- calculatePathwayMC(FSmemfile=FSmemfile,GFmemfile=GFmemfile,
@@ -205,6 +208,7 @@ createPathwaysPlot <- function(doRanges = FALSE,s = NULL) {
 #     y4 <- massageDataforPlot(s$LAstats$confDat, s$b$LA$EMNetLandapp,"LA")
 #     y4f <- massageDataforPlot(s$LAfstats$confDat, s$b$LAf$EMNetLandapp,"LAf")
     y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
+    
     
     #y <- rbind(y1,y1f,y2,y3,y3f,y3p,y4,y4f)
     #y <- rbind(y1,y2,y3,y4)
@@ -230,4 +234,39 @@ createPathwaysPlot <- function(doRanges = FALSE,s = NULL) {
             theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
     }
     myplot
+}
+
+
+# This is used for sensitivity analysis of compost
+#NOTE: Compost_Peat_Displacement must be changed to a value in the GlobalFactors.csv file
+# s is the AllStats object...  
+createPathwaysCMPlot <- function(doRanges = FALSE,s = NULL) {
+
+  y3 <- massageDataforPlot(s$CMstats$confDat, s$b$CM$final,"CM")
+  y3f <- massageDataforPlot(s$CMfstats$confDat, s$b$CMf$final,"CMf")
+  y3p <- massageDataforPlot(s$CMpstats$confDat, s$b$CMp$final,"CMp")
+  y3b <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CMb")
+  y3la <- massageDataforPlot(s$CMLAstats$confDat, s$b$CMLA$final,"CMLA")
+  
+  
+  y <- rbind(y3,y3f, y3p, y3b, y3la) 
+ 
+  
+  # order by emissions
+  y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y3$Emissions)]) 
+  
+  if(!doRanges) {
+    # Plot Nominals without ranges.
+    myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
+      geom_bar(position=position_dodge(), stat="identity") +
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
+  } else {
+    # Plot Nominal values
+    myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
+      geom_bar(position=position_dodge(), stat="identity") +
+      geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, 
+                    position=position_dodge(0.9)) +
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
+  }
+  myplot
 }
