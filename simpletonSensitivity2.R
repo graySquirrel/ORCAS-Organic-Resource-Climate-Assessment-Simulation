@@ -32,11 +32,8 @@ doFUNif <- function(FUN,f2,g2,applic2) {
 singleValueSensitivityByRange <- function(pathway,
                                           factorName,
                                           FUN,
-                                          f1) {
-  applic <- NULL
-  if (pathway == "CM") {
-    applic <- "Peat"
-  }
+                                          f1,
+                                          applic=NULL) {
   print(paste("FACTORNAME",factorName))
   g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
   nom <- as.numeric(g1[[factorName]])
@@ -47,9 +44,26 @@ singleValueSensitivityByRange <- function(pathway,
   high <- GFmemfile[GFmemfile$sw.name==factorName,"High"][[1]]# elim multiple entries 
   g1[[factorName]] <- as.numeric(high)
   outHi <- doFUNif(FUN,f1,g1,applic)
+  pathway<-paste(pathway,applic)
   foo <- data.frame(f1$type, pathway, factorName, nom, outNom, low, outLo, high, outHi)
   #if (!is.null(applic)) {print (foo)}
   foo
+}
+##############################################################################
+specialCaseSomePathways <- function(pw,gf,FUN,f1) {
+    res<-NULL
+    if(pw == "CM") {
+        r1 <- singleValueSensitivityByRange(pw,gf,FUN,f1,applic='Peat')
+        r2 <- singleValueSensitivityByRange(pw,gf,FUN,f1,applic='noDisplace')
+        r3 <- singleValueSensitivityByRange(pw,gf,FUN,f1,applic='Fertilizer')
+        r4 <- singleValueSensitivityByRange(pw,gf,FUN,f1,applic='Blended')
+        r5 <- singleValueSensitivityByRange(pw,gf,FUN,f1,applic='LAFertilizer')
+        res <- do.call("rbind",list(r1,r2,r3,r4,r5))
+        #res <- rbind(r1,r2,r3,r4,r5)
+    }
+    else
+        res <- singleValueSensitivityByRange(pw,gf,FUN,f1)
+    res
 }
 ##############################################################################
 fl <- NULL
@@ -68,19 +82,19 @@ for (i in 1:length(GFmemfile[,1])){
     if (length(val) != 0) { # meaning if the factor exists in globalFactors
       if (GFmemfile[i,1] == "All") {
         ifelse(is.null(o),
-               o <- singleValueSensitivityByRange("AD",gf,
+               o <- specialCaseSomePathways("AD",gf,
                                                   AnaerobicDigestionTreatmentPathway,f1),
-               o <- rbind(o,singleValueSensitivityByRange("AD",gf,
+               o <- rbind(o,specialCaseSomePathways("AD",gf,
                                                           AnaerobicDigestionTreatmentPathway,f1)))
-        o <- rbind(o,singleValueSensitivityByRange("CM",gf,compostTreatmentPathway,f1))
-        o <- rbind(o,singleValueSensitivityByRange("AF",gf,AnimalFeedTreatmentPathway,f1))
-        o <- rbind(o,singleValueSensitivityByRange("LF",gf,LandfillTreatmentPathway,f1))
+        o <- rbind(o,specialCaseSomePathways("CM",gf,compostTreatmentPathway,f1))
+        o <- rbind(o,specialCaseSomePathways("AF",gf,AnimalFeedTreatmentPathway,f1))
+        o <- rbind(o,specialCaseSomePathways("LF",gf,LandfillTreatmentPathway,f1))
         #                o <- rbind(o,singleValueSensitivityByRange("LA",gf,LandApplicationTreatmentPathway,f1))
       } else {
         FUN <- fl[[GFmemfile[i,1]]]
         ifelse(is.null(o),
-               o <- singleValueSensitivityByRange(pw,gf,FUN,f1),
-               o <- rbind(o,singleValueSensitivityByRange(pw,gf,FUN,f1)))
+               o <- specialCaseSomePathways(pw,gf,FUN,f1),
+               o <- rbind(o,specialCaseSomePathways(pw,gf,FUN,f1)))
       }
     }
   }
