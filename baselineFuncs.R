@@ -199,13 +199,15 @@ calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
 makePathwaysPlot <- function(doRanges = FALSE,y = NULL,title=NULL) {
     if(!doRanges) {
         # Plot Nominals without ranges.
-        myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
+        myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) +
+            ylab("Emissions (kg CO2e/t)") + 
             geom_bar(position=position_dodge(), stat="identity") +
             theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16)) +
             ggtitle(title)
     } else {
         # Plot Nominal values
-        myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) + 
+        myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) +
+            ylab("Emissions (kg CO2e/t)") + 
             geom_bar(position=position_dodge(), stat="identity") +
             geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, 
                           position=position_dodge(0.9)) +
