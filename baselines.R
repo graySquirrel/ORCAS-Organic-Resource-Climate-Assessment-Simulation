@@ -8,7 +8,7 @@ source("treatmentAnimalFeed.R")
 source("parseGlobalFactors.R")
 source("baselineFuncs.R") #includes sourcing of all other important scripts.
 
-o <- getBaselineResults(verbose = TRUE)
+o <- getBaselineResults(verbose = FALSE)
 result <- data.frame(
                      o$AF[[1]],o$AD[[1]],o$ADf[[1]],
                      #o$LA[[1]],o$LAf[[1]],

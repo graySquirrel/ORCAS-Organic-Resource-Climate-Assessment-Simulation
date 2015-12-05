@@ -49,7 +49,7 @@ scaledrdeg <- (rdeg - min(rdeg))/(max(rdeg)-min(rdeg))
 par(mfrow=c(2,2),oma = c(0, 0, 2, 0))
 
 AFLM <- lm(unlist(o$AF[1]) ~ TS : TDN) # perfect fit!
-summary(AFLM)
+print(summary(AFLM))
 #plot(AFLM)
 coef(AFLM)
 
@@ -79,7 +79,7 @@ coef(AFLMS)
 # ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + InitialC:rdeg)
 # Perfect Fit
 ADfLM <- lm(unlist(o$ADf[1]) ~ Lo + TVS + TKN + InitialC) 
-summary(ADfLM)
+print(summary(ADfLM))
 #plot(ADfLM)
 coef(ADfLM)
 #plot(fitted(ADfLM),unlist(o$ADf[1]),xlab="fit",ylab="AD Emissions")
@@ -100,7 +100,7 @@ coef(ADfLMS)
 
 # Perfect Fit
 CMbLM <- lm(unlist(o$CMb[1]) ~ npert + InitialC )
-summary(CMbLM)
+print(summary(CMbLM))
 #plot(CMbLM)
 coef(CMbLM)
 #plot(fitted(CMbLM),xlab="Feedstock",ylab="Compost Emissions")
@@ -118,7 +118,8 @@ names(y) <- o$f1$type
 #LFLM <- lm(y ~ Lo + InitialC)
 # perfect fit
 LFLM <- lm(y ~ Lo + InitialC:rdeg) 
-summary(LFLM)
+print("landfill")
+print(summary(LFLM))
 #plot(LFLM, las = 1)
 #plot(fitted(LFLM),unlist(o$LF[1]),xlab="fit",ylab="LF emission")
 #lines(c(-600,3500),c(-600,3500))

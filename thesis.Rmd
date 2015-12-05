@@ -1,0 +1,44 @@
+---
+title: "Thesis"
+author: "Ebner"
+date: "December 5, 2015"
+output: word_document
+---
+
+This file encapsulates all the inputs and outputs for chapter 4 of my thesis
+parts:
+1) baselines
+2) monte carlo simulations
+3) linear modeling
+4) hi-low sensitivity analysis
+
+code and data files are all tagged as 'thesis' to recreate these data
+to see the tags do
+git tag 
+to see the thesis tag do
+git show thesis
+you can check out the 'thesis' tagged version to recreate the data outputs
+
+```{r, fig.width=10,fig.height=10}
+#Part 1: Baselines
+# first setwd() to the working directory.  all file sourcing assumes you are there
+source("baselines.R")
+# this sources all necessary files, reads input, and writes output
+# input files: Feedstock.csv, GlobalFactors.csv
+# output files: baselinesOutput.csv, allPathwaysBreakdowns.csv
+
+# Part 2:monte carlo
+source("doMonteCarloAnalyses.R")
+# input files: Feedstock.csv, GlobalFactors.csv GlobalFactorsADsensitivity.csv
+#               GlobalFactorsCompostsensitivity.csv
+
+# Part 3: linear modeling
+source("linModPerfectFit.R")
+source("linModTSfit.R")
+
+# Part 4: hi-low sensitivity analysis
+source("simpletonSensitivity2.R")
+# input files: Feedstock.csv, GlobalFactors.csv
+# output files: lowHighOut.csv
+```
+

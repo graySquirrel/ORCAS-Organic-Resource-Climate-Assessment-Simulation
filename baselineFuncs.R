@@ -92,7 +92,7 @@ calculatePathwayMC <- function(FSmemfile=NULL,
                                FUN=NULL,
                                Application=NULL) {
     stocks <- FSmemfile # just lazy don't want to rename stocks
-    g1 <- getGlobalFactorsFromFile(GFmemfile=GFmemfile,verbose = TRUE)
+    g1 <- getGlobalFactorsFromFile(GFmemfile=GFmemfile,verbose = FALSE)
     outRanges <- NULL
     for(i in 1:length(stocks$Feedstock)) {
         #print(i)

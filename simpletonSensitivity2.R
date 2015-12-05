@@ -34,7 +34,7 @@ singleValueSensitivityByRange <- function(pathway,
                                           FUN,
                                           f1,
                                           applic=NULL) {
-  print(paste("FACTORNAME",factorName))
+  #print(paste("FACTORNAME",factorName))
   g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
   nom <- as.numeric(g1[[factorName]])
   outNom <- doFUNif(FUN,f1,g1,applic)
