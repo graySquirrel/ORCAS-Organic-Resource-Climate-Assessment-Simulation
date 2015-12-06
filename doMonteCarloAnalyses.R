@@ -14,9 +14,9 @@ source("baselineFuncs.R")
 
 #################################################################################
 makeYforPlot1 <- function(s=NULL) {
-    y1 <- massageDataforPlot(s$ADstats$confDat, s$b$AD$ADnetEmissions,"AD")
+    y1 <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"AD")
     y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"LF")
-    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"CM")
+    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"CMb")
     y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
     y <- rbind(y1,y2,y5,y3Special)
     # order by LF
@@ -37,11 +37,11 @@ makeYforPlot2 <- function(s=NULL) {
 }
 #################################################################################
 makeYforPlot3 <- function(s=NULL) {
-    y1 <- massageDataforPlot(s$ADstats$confDat, s$b$AD$ADnetEmissions,"AD")
+    y1 <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"AD")
     y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"LF")
-    y3 <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CM")
+    y3 <- massageDataforPlot(s$CMbstats$confDat, s$b$CMb$final,"CMb")
     y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
-    y <- rbind(y1,y2,y5,y3)
+    y <- rbind(y1,y5,y3)
     # order by LF
     y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) 
     y
@@ -49,20 +49,16 @@ makeYforPlot3 <- function(s=NULL) {
 #################################################################################
 AllStats <- calcAllStats()
 y <- makeYforPlot1(AllStats)
-print(makePathwaysPlot(FALSE,y=y,title="nominal emissions"))
-print(makePathwaysPlot(TRUE,y=y,title="nominal emissions with 95% bars"))
-
-r <- read.csv(file="GlobalFactorsCompostsensitivity.csv",stringsAsFactors = FALSE)
-All2 <- calcAllStats(GFmemfile = r)
-y2 <- makeYforPlot2(All2)
-print(makePathwaysPlot(TRUE,y=y2,title="compost emissions comparison"))
-y4 <- makeYforPlot3(All2)
-print(makePathwaysPlot(TRUE,y=y4,title="nominal emissions with Compost Blended case"))
+print(makePathwaysPlot(FALSE,y=y,title=""))
+print(makePathwaysPlot(TRUE,y=y,title=""))
 
 r <- read.csv(file="GlobalFactorsADsensitivity.csv",stringsAsFactors = FALSE)
-All3 <- calcAllStats(GFmemfile = r)
-y3 <- makeYforPlot1(All3)
-print(makePathwaysPlot(TRUE,y=y3,title="nominal emissions with AD sensitivity factors"))
+All2 <- calcAllStats(GFmemfile = r)
+y2 <- makeYforPlot2(All2)
+print(makePathwaysPlot(TRUE,y=y2,title=""))
+y4 <- makeYforPlot3(All2)
+print(makePathwaysPlot(TRUE,y=y4,title="emission control"))
+
 
 # stop()
 # #####################################################################

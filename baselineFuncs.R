@@ -114,8 +114,8 @@ calculatePathwayMC <- function(FSmemfile=NULL,
     }
     colnames(outRanges) <- stocks$Feedstock
     bpstats <- boxplot(outRanges,plot=FALSE)
-    confDat <- apply(outRanges,2,function(x) quantile(x,probs=c(.025,.5,.975)))
-    #confDat <- apply(outRanges,2,function(x) quantile(x,probs=c(0,.5,1)))
+    #confDat <- apply(outRanges,2,function(x) quantile(x,probs=c(.025,.5,.975)))
+    confDat <- apply(outRanges,2,function(x) quantile(x,probs=c(0,.5,1)))
     o<-NULL
     o$confDat <- confDat
     o$bpstats <- bpstats
