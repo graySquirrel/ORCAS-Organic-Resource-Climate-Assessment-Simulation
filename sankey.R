@@ -7,7 +7,7 @@ f <- read.csv("sankeyinput.csv",stringsAsFactors = FALSE)
 # convert f data frame 2d matrix to key value pair plus value
 sin <- gather(f,To,Tons,-From)
 sin$To <- as.character(sin$To)
-
+sin <- sin[sin$Tons > 0,]
 nodeIDs <- c(f$From,colnames(f)[-1])
 x1 <- rep(1,length(f$From))
 x2 <- rep(2,length(colnames(f)[-1]))
