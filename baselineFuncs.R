@@ -196,14 +196,20 @@ calcAllStats <- function(FSmemfile=NULL, GFmemfile=NULL) {
 }
 # Now do the dirty work of plotting
 # y is the list of things to plot.
-makePathwaysPlot <- function(doRanges = FALSE,y = NULL,title=NULL) {
+makePathwaysPlot <- function(doRanges = FALSE,y = NULL,title=NULL,angle=90) {
     if(!doRanges) {
         # Plot Nominals without ranges.
         myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) +
             ylab("Emissions (kg CO2e/t)") + 
             geom_bar(position=position_dodge(), stat="identity") +
-            theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16)) +
             ggtitle(title)
+        if(angle == 90) {
+            myplot <- myplot + 
+                theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16))
+        } else {
+            myplot <- myplot + 
+                theme(axis.text.x=element_text(angle=angle,hjust=0.5,vjust=0.5,size=16))
+        }
     } else {
         # Plot Nominal values
         myplot <- ggplot(y, aes(x=feedstock, y=Emissions,fill=treatment)) +
@@ -211,7 +217,7 @@ makePathwaysPlot <- function(doRanges = FALSE,y = NULL,title=NULL) {
             geom_bar(position=position_dodge(), stat="identity") +
             geom_errorbar(aes(ymin=lo, ymax=hi), width=.3, 
                           position=position_dodge(0.9)) +
-            theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=16)) +
+            theme(axis.text.x=element_text(angle=angle,hjust=1,vjust=0.5,size=16)) +
             ggtitle(title)
     }
     myplot
