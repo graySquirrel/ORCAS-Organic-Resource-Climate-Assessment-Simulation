@@ -5,7 +5,7 @@
 # plotting can be done in R or another application
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
-source("treatmentLandApplication.R") 
+#source("treatmentLandApplication.R") 
 source("treatmentLandfill.R")
 source("treatmentcompost.R")
 source("treatmentAnimalFeed.R")
