@@ -1,35 +1,35 @@
 library(shiny)
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
-source("treatmentLandApplication.R") 
+#source("treatmentLandApplication.R") 
 source("treatmentLandfill.R")
 source("treatmentcompost.R")
 source("treatmentAnimalFeed.R")
 source("parseGlobalFactors.R")
 source("baselineFuncs.R")
 
-df <- data.frame(c("AD_Digester_CH4Leaks","AD_MCFactor","AD_Digester_parasiticLoad"),
-                 c("CH4 Leaks","utilization factor","parastic load"),
-                 c("AD","AD","AD"),
-                 c("ADstats","ADstats","ADstats"),
-                 c("Food waste","Food waste","Food waste"),
-                 stringsAsFactors = FALSE)
-colnames(df) <- c("p","n1","n2","s","f")
-
+#################################################################################
+makeYforPlot1 <- function(s=NULL) {
+    y1 <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"AD")
+    y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"LF")
+    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"CMb")
+    y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
+    y <- rbind(y1,y2,y5,y3Special)
+    # order by LF
+    y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) 
+    y
+}
 
 ui <- fluidPage(
     # *Input() functions,
     titlePanel("Waste Treatment Simulator"),
     fluidRow(
         column(2,
-               #actionButton("reset","Reset data"),
-               checkboxInput(inputId = "ranges", label = "show uncertainty"),
-               textInput(inputId = "filename", label = "feedstock file", 
-                         value = "Feedstock.csv")
+               selectInput(inputId = "select", label = h3("Loading..."), 
+                           choices = list("Please Wait..."), 
+                           selected = 1)
         ),
         column(10,
-               # submitButton(text = "Calculate")
-               # *Output() functions
                textOutput(outputId = "args"),
                plotOutput(outputId = "pathwaysChart", height = 600, width = 800),
                uiOutput(outputId = "sensitivitiesChart") # to plot multiple charts
@@ -37,21 +37,19 @@ ui <- fluidPage(
     )
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
     AllStats <- calcAllStats(FSmemfile=NULL, GFmemfile=NULL)
+    y = makeYforPlot1(AllStats)
+    
+    updateSelectInput(session, inputId="select", label = "Select feedstock", 
+                      choices = as.character(unique(y$feedstock)))
+    
     output$pathwaysChart <- renderPlot({
-        createPathwaysPlot(s=AllStats,
-                           doRanges = input$ranges)
-    }, height = 600, width = 800)
-    output$sensitivitiesChart <- renderUI({ 
-        plot_output_list <- lapply(1:dim(df)[1], function(i){plotOutput(df[[i,1]])})
-        do.call(tagList, plot_output_list)
-        }) 
-    for(i in 1:dim(df)[1]) {
-        output[[df[[i,1]]]] <- renderPlot({
-            plotFS(AllStats[[df[i,4]]],df[[i,5]],df[[i,1]],df[[i,2]],df[[i,3]])
-        },width=400)
-    }
+                makePathwaysPlot(doRanges = FALSE,#input$ranges,
+                                 y[y$feedstock == input$select,],
+                                 title = "Emissions",
+                                 angle=0)
+            }, height = 600, width = 800)
 }
 
 shinyApp(ui = ui, server = server)
