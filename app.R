@@ -10,46 +10,102 @@ source("baselineFuncs.R")
 
 #################################################################################
 makeYforPlot1 <- function(s=NULL) {
-    y1 <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"AD")
-    y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"LF")
-    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"CMb")
-    y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"AF")
+    y1 <- massageDataforPlot(s$ADfstats$confDat, s$b$ADf$ADnetEmissions,"Anaerobic Digestion")
+    y2 <- massageDataforPlot(s$LFstats$confDat, s$b$LF$LandfillNetEmissions,"Landfill")
+    y3Special <- massageDataforPlot(s$CMpstats$confDat, s$b$CMb$final,"Compost")
+    y5 <- massageDataforPlot(s$AFstats$confDat,s$b$AF$EMAnimalFeed,"Animal Feed")
     y <- rbind(y1,y2,y5,y3Special)
     # order by LF
     y$feedstock <- factor(y$feedstock, levels=y$feedstock[order(y2$Emissions)]) 
     y
 }
 
+AllStats <- calcAllStats(FSmemfile=NULL, GFmemfile=NULL)
+y = makeYforPlot1(AllStats)
+
 ui <- fluidPage(
     # *Input() functions,
     titlePanel("Waste Treatment Simulator"),
     fluidRow(
         column(2,
-               selectInput(inputId = "select", label = h3("Loading..."), 
-                           choices = list("Please Wait..."), 
-                           selected = 1)
+               selectizeInput(inputId = "select", label = h3("Loading..."), 
+                              choices = list("Please Wait..."), 
+                              selected = 1, width='400px',
+                              multiple = TRUE, 
+                              options = list(
+                                  placeholder = 'select one or more feedstocks',
+                                  onInitialize = I('function() { this.setValue(""); }')
+                              )
+               ),
+               checkboxInput("checkbox", label = "Include Custom Input", value = FALSE),
+               htmlOutput("slider1"),
+               htmlOutput("slider2"),
+               htmlOutput("slider3"),
+               verbatimTextOutput("value")
         ),
         column(10,
-               textOutput(outputId = "args"),
-               plotOutput(outputId = "pathwaysChart", height = 600, width = 800),
-               uiOutput(outputId = "sensitivitiesChart") # to plot multiple charts
+               plotOutput(outputId = "pathwaysChart", height = 600, width = 800)
         )
     )
 )
 
 server <- function(input, output, session) {
-    AllStats <- calcAllStats(FSmemfile=NULL, GFmemfile=NULL)
-    y = makeYforPlot1(AllStats)
+    output$slider1 <- renderUI({
+        if (input$checkbox == TRUE) {
+            sliderInput("slider1", label = "TS", min = 0.001, 
+                        max = 1, value = 0.3)
+        } 
+    })
+    output$slider2 <- renderUI({
+        if (input$checkbox == TRUE) {
+            sliderInput("slider2", label = "Bo", min = 200, 
+                        max = 500, value = 334)
+        } 
+    })
+    output$slider3 <- renderUI({
+        if (input$checkbox == TRUE) {
+            sliderInput("slider3", label = "TKN", min = 500, 
+                        max = 20000, value = 8900)
+        } 
+    })
+    output$value <- renderPrint({ 
+        if (input$checkbox == TRUE) {
+            paste(input$slider1,input$slider2,input$slider3,str(input$select))
+            }
+        })
     
-    updateSelectInput(session, inputId="select", label = "Select feedstock", 
+    updateSelectInput(session, inputId="select", label = "Feedstock", 
                       choices = as.character(unique(y$feedstock)))
     
     output$pathwaysChart <- renderPlot({
-                makePathwaysPlot(doRanges = FALSE,#input$ranges,
-                                 y[y$feedstock == input$select,],
-                                 title = "Emissions",
-                                 angle=0)
-            }, height = 600, width = 800)
+        # if checkbox, calculate custom emission, then bind to a new y, then plot
+        z <- y
+        theInput <- input$select
+        if (input$checkbox == TRUE) {
+            #update theInput and z
+            i <- read.csv(file="Feedstock.csv",sep = ",",stringsAsFactors=FALSE)
+            j <- i[i$Feedstock == "MSWFW",]
+            if (!is.null(input$slider1)) {
+                j$TS <- input$slider1
+                j$Bo <- input$slider2
+                j$TKN <- input$slider3
+            }
+            j$Feedstock <- "Custom"
+            o <- calcAllStats(FSmemfile=j, GFmemfile=NULL)
+            df <- makeYforPlot1(o)
+            theInput <- c("Custom", theInput)
+            #lo<-c(input$slider1,input$slider2,input$slider3,4)
+            #tr <- c("Anaerobic Digestion","Landfill","Animal Feed","Compost")
+            #nm<-rep("Custom",4)
+            #df <- data.frame(nm,lo,lo,lo,lo,tr)
+            #colnames(df) <- c("feedstock","lo","Median","hi","Emissions","treatment")
+            z <- rbind(y,df)
+        }
+        makePathwaysPlot(doRanges = FALSE,
+                         z[z$feedstock %in% theInput,],
+                         title = "Emissions",
+                         angle=0)
+    }, height = 600, width = 800)
 }
 
 shinyApp(ui = ui, server = server)
