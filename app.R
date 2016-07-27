@@ -40,8 +40,8 @@ ui <- fluidPage(
                checkboxInput("checkbox", label = "Include Custom Input", value = FALSE),
                htmlOutput("slider1"),
                htmlOutput("slider2"),
-               htmlOutput("slider3"),
-               verbatimTextOutput("value")
+               htmlOutput("slider3")#,
+               #verbatimTextOutput("value")
         ),
         column(10,
                plotOutput(outputId = "pathwaysChart", height = 600, width = 800)
@@ -68,17 +68,16 @@ server <- function(input, output, session) {
                         max = 20000, value = 8900)
         } 
     })
-    output$value <- renderPrint({ 
-        if (input$checkbox == TRUE) {
-            paste(input$slider1,input$slider2,input$slider3,str(input$select))
-            }
-        })
+#     output$value <- renderPrint({ 
+#         if (input$checkbox == TRUE) {
+#             paste(input$slider1,input$slider2,input$slider3,str(input$select))
+#             }
+#         })
     
     updateSelectInput(session, inputId="select", label = "Feedstock", 
                       choices = as.character(unique(y$feedstock)))
     
     output$pathwaysChart <- renderPlot({
-        # if checkbox, calculate custom emission, then bind to a new y, then plot
         z <- y
         theInput <- input$select
         if (input$checkbox == TRUE) {
@@ -94,11 +93,6 @@ server <- function(input, output, session) {
             o <- calcAllStats(FSmemfile=j, GFmemfile=NULL)
             df <- makeYforPlot1(o)
             theInput <- c("Custom", theInput)
-            #lo<-c(input$slider1,input$slider2,input$slider3,4)
-            #tr <- c("Anaerobic Digestion","Landfill","Animal Feed","Compost")
-            #nm<-rep("Custom",4)
-            #df <- data.frame(nm,lo,lo,lo,lo,tr)
-            #colnames(df) <- c("feedstock","lo","Median","hi","Emissions","treatment")
             z <- rbind(y,df)
         }
         makePathwaysPlot(doRanges = FALSE,
