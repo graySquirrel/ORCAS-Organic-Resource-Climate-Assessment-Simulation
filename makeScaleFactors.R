@@ -3,7 +3,7 @@
 
 source("treatmentClasses.R") 
 source("treatmentAnaerobicDigestion.R") 
-source("treatmentLandApplication.R") 
+#source("treatmentLandApplication.R") 
 source("treatmentLandfill.R")
 source("treatmentcompost.R")
 source("treatmentAnimalFeed.R")
@@ -14,7 +14,7 @@ f1 <- Feedstock(type=i$Feedstock,TS=i$TS,VS=i$VS,Bo=i$Bo,TKN=i$TKN,
                 percentCarboTS = i$PercentCarboTS, 
                 percentLipidTS = i$PercentlipidTS,
                 percentProteinTS = i$PercentproteinTS, 
-                fdeg = i$fdeg,TDN=i$TDN, 
+                fdeg = i$fdeg,
                 Phosphorus=i$Phosphorus, Potassium=i$Potassium)
 g1 <- getGlobalFactorsFromFile(doRanges = FALSE)
 LFs <- LandfillTreatmentPathway(f1,g1)[[1]]
