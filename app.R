@@ -26,6 +26,9 @@ y = makeYforPlot1(AllStats)
 ui <- fluidPage(
     # *Input() functions,
     titlePanel("ORCAS:  Organic Resource Climate change impact Assessment Simulation"),
+    helpText(a("Try ORCAS Tonnage repurposer", 
+               href="https://ebner.shinyapps.io/ORCAStonnageRepurposer/",
+               target="_blank")),
     fluidRow(
         column(2,
                selectizeInput(inputId = "select", label = h3("Loading..."), 
@@ -41,8 +44,7 @@ ui <- fluidPage(
                h6("Custom input starts by using a copy of MSWFW, and lets you adjust the below parameters"),
                htmlOutput("slider1"),
                htmlOutput("slider2"),
-               htmlOutput("slider3")#,
-               #verbatimTextOutput("value")
+               htmlOutput("slider3")
         ),
         column(10,
                plotOutput(outputId = "pathwaysChart", height = 600, width = 800)
