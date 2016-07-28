@@ -25,7 +25,7 @@ y = makeYforPlot1(AllStats)
 
 ui <- fluidPage(
     # *Input() functions,
-    titlePanel("Waste Treatment Simulator"),
+    titlePanel("ORCAS:  Organic Resource Climate change impact Assessment Simulation"),
     fluidRow(
         column(2,
                selectizeInput(inputId = "select", label = h3("Loading..."), 
@@ -33,11 +33,12 @@ ui <- fluidPage(
                               selected = 1, width='400px',
                               multiple = TRUE, 
                               options = list(
-                                  placeholder = 'select one or more feedstocks',
+                                  placeholder = 'select predefined feedstocks',
                                   onInitialize = I('function() { this.setValue(""); }')
                               )
                ),
                checkboxInput("checkbox", label = "Include Custom Input", value = FALSE),
+               h6("Custom input starts by using a copy of MSWFW, and lets you adjust the below parameters"),
                htmlOutput("slider1"),
                htmlOutput("slider2"),
                htmlOutput("slider3")#,
@@ -97,7 +98,7 @@ server <- function(input, output, session) {
         }
         makePathwaysPlot(doRanges = FALSE,
                          z[z$feedstock %in% theInput,],
-                         title = "Emissions",
+                         title = "Emissions (Kg CO2eq per metric ton of material)",
                          angle=0)
     }, height = 600, width = 800)
 }
