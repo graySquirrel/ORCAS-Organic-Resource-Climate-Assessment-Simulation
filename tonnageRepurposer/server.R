@@ -38,13 +38,37 @@ makeRes <- function(inTab) {
         o <- data.frame(matrix(rep(0,rows*cols),nrow=rows,ncol=cols))
         rownames(o) <- rownames(scaleFacs)
     }
-    colnames(o) <- c("old GHG","new GHG")
+    colnames(o) <- c("old GHG Kg CO2","new GHG Kg CO2")
     o
 }
+
+anyValids <- function(tbl) {
+    if (length(which(as.numeric(rowSums(tbl[,1:4])) == as.numeric(rowSums(tbl[,5:8]))))==0) {
+        return (NULL)
+    }
+    return (c(2:9))
+}
+anyWarnings <- function(tbl) {
+    if (length(which(as.numeric(rowSums(tbl[,1:4])) != as.numeric(rowSums(tbl[,5:8]))))==0) {
+        return (NULL)
+    }
+    return (c(2:9))
+}
+
 shinyServer(function(input, output, session) {
     #cachedTblFrom <- NULL
     #cachedTblTo <- NULL
-    validate <- function(tbl){
+    validate <- function(name,tbl){
+        #updateTableStyle(session, "tblTo", "warning",3:5,2:3)
+        t1 <- sapply(tbl[,2:9],as.numeric)
+        updateTableStyle(session, "tblTo", "valid", 
+                         which(as.numeric(rowSums(t1[,1:4])) == as.numeric(rowSums(t1[,5:8]))),
+                         anyValids(t1)
+        )
+        updateTableStyle(session, "tblTo", "warning", 
+                         which(as.numeric(rowSums(t1[,1:4])) != as.numeric(rowSums(t1[,5:8]))),
+                         anyWarnings(t1)
+        )
     }
     
     #output$resTab <- renderTable(makeRes(input$tblTo))
@@ -52,10 +76,11 @@ shinyServer(function(input, output, session) {
         x <- makeRes(input$tblTo)
         counts <- t(as.matrix(x))
         print(counts)
-        par(mar=c(12,4,1,1))
+        par(mar=c(13,4,1,15))
         barplot(height=counts,
                 col=c("darkblue","red"),
-                legend=rownames(counts),
+                legend.text=rownames(counts),
+                args.legend=list(x = "right",inset=-.3),
                 beside=TRUE,
                 las=2)
         })
@@ -70,6 +95,7 @@ shinyServer(function(input, output, session) {
             tblTo <- input$tblTo
             #print(tblTo)
             #tblTo <- cachedtblTo
+            validate("tblTo", tblTo)
             return(tblTo)
         }
     })  
