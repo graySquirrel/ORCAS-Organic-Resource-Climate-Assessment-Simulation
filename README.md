@@ -1,4 +1,4 @@
-# foodwasteTreatmentSim
+# ORCAS foodwaste Treatment Simulator
 R scripts to support waste treatment simulations to produce GHG estimates
 
 
